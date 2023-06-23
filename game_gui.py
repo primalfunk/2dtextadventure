@@ -120,7 +120,7 @@ class GameGUI(QWidget):
         self.show()
         self.player = Player()
         self.update_player_stats()
-        self.game_map = GameMap(9,9)
+        self.game_map = GameMap(self.data, 9,9)
         self.map_window = MapWindow(self, self.game_map)
 
     def increase_font_size(self):
@@ -166,8 +166,8 @@ class GameGUI(QWidget):
         )
 
     def start_game(self):
-        self.game_map = GameMap(9,9)
-        self.game_map.generate_game_map(self.data["elements"]["rooms"], 5, 8, 10)
+        self.game_map = GameMap(self.data, 9,9)
+        self.game_map.generate_game_map(self.data["elements"]["rooms"], 8, 9, 10)
         self.map_window = MapWindow(self, self.game_map)
         self.map_window.update_map()
         self.map_window.highlight_player_room(self.get_current_room())
@@ -176,9 +176,11 @@ class GameGUI(QWidget):
             self.game_text_area.setAlignment(Qt.AlignLeft | Qt.AlignTop)
             self.game_text_area.setFont(self.font)
             first_room = self.game_map.rooms[0]
-            room_description = f"<b>{first_room.name}</b><br><br>{first_room.description}<br><br>You can go: {', '.join(first_room.connected_rooms.keys())}"
+            available_directions = [direction for direction, room in first_room.connected_rooms.items() if room is not None]
+            room_description = f"<b>{first_room.name}</b><br><br>{first_room.description}<br><br>You can go: {', '.join(available_directions)}"
             self.game_text_area.append(room_description)
             self.current_room = first_room
+            self.map_window.highlight_player_room(self.current_room)
             self.update_player_info()
             self.start_button.setText("Restart")
             self.font_size_increase_button.setEnabled(True)
@@ -219,9 +221,9 @@ class GameGUI(QWidget):
                 return
             self.game_text_area.append(f"You travel {direction}.\n")
             if direction == "north":
-                self.game_map.player.y += 1
-            elif direction == "south":
                 self.game_map.player.y -= 1
+            elif direction == "south":
+                self.game_map.player.y += 1
             elif direction == "east":
                 self.game_map.player.x += 1
             elif direction == "west":
@@ -330,7 +332,6 @@ class MapWindow(QWidget):
         self.layout.addWidget(self.grid_widget)
         self.game_map = game_map
         self.labels = [[None for _ in range(game_map.grid_width)] for _ in range(game_map.grid_height)]
-        
         for i in range(game_map.grid_height):
             for j in range(game_map.grid_width):
                 self.labels[i][j] = QLabel(' ')
@@ -343,29 +344,26 @@ class MapWindow(QWidget):
         for i in range(len(self.labels)):
             for j in range(len(self.labels[0])):
                 label = self.labels[i][j]
+                inverted_y = len(self.labels) - 1 - i
                 label.setStyleSheet("")
-                if (room is not None) and (room.x == j) and (room.y == i):
+                if (room is not None) and (room.x == j) and (room.y == inverted_y):
                     label.setStyleSheet("background-color: red;")
 
     def update_map(self):
         if not hasattr(self, 'isVisible') or not callable(self.isVisible):
             print('Error: Method "isVisible" is not defined in this class.')
             return
-        
         if not hasattr(self, 'game_map') or not hasattr(self.game_map, 'rooms'):
             print('Error: "game_map" or "game_map.rooms" is not defined in this class.')
             return
-        
         if not hasattr(self, 'labels'):
             print('Error: "labels" is not defined in this class.')
             return
-        
-        print('Is Visible:', self.isVisible())
-
         for room in self.game_map.rooms:
             if room is not None:
-                if (0 <= room.y < len(self.labels)) and (0 <= room.x < len(self.labels[0])):
-                    label = self.labels[room.y][room.x]
+                inverted_y = self.game_map.grid_height - 1 - room.y
+                if (0 <= inverted_y < len(self.labels)) and (0 <= room.x < len(self.labels[0])):
+                    label = self.labels[inverted_y][room.x]
                     label.setText(room.symbol)
                     label.setAlignment(Qt.AlignCenter)  # Center align the symbol
                     if room == self.game_map.player.current_room:
@@ -377,7 +375,9 @@ class MapWindow(QWidget):
 
     def show_self(self):
         self.show()
-        print(self.isVisible())
+        current_room = self.game_map.player.current_room
+        if current_room is not None:
+            self.highlight_player_room(current_room)
 
 if __name__ == "__main__":
     app = QApplication([])
