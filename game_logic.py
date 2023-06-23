@@ -65,32 +65,27 @@ class GameMap:
         return math.sqrt(dx**2 + dy**2)
 
     def connect_clusters(self):
-        clusters = [self.room_clusters[root] for root in self.cluster_roots]
-        edges = []
-        for i in range(len(clusters)):
-            for j in range(i+1, len(clusters)):
-                cluster1 = clusters[i]
-                cluster2 = clusters[j]
-                distance = abs(cluster1[0].x - cluster2[0].x) + abs(cluster1[0].y - cluster2[0].y)
-                edges.append((cluster1, cluster2, distance))
-        edges.sort(key=lambda x: x[2])
-        tree = []
-        cluster_sets = [set(cluster) for cluster in clusters]
-        for cluster1, cluster2, distance in edges:
-            set1 = next(s for s in cluster_sets if cluster1[0] in s)
-            set2 = next(s for s in cluster_sets if cluster2[0] in s)
-            if set1 != set2:
-                tree.append((cluster1, cluster2))
-                set1.update(set2)
-                cluster_sets.remove(set2)
-        for cluster1, cluster2 in tree:
-            room1 = random.choice(cluster1)
-            room2 = random.choice(cluster2)
+        connected_clusters = set()
+        for cluster_id in self.cluster_roots:
+            if cluster_id not in connected_clusters:
+                self.connect_cluster(cluster_id, connected_clusters)
+
+    def connect_cluster(self, cluster_id, connected_clusters):
+        cluster_rooms = self.room_clusters[cluster_id]
+        num_rooms = len(cluster_rooms)
+        for i in range(num_rooms - 1):
+            room1 = cluster_rooms[i]
+            room2 = cluster_rooms[i + 1]
             direction = self.get_direction(room1, room2)
             self.connect_rooms(room1, room2, direction)
 
+        connected_clusters.add(cluster_id)
+
     def is_adjacent(self, room1, room2):
-        return abs(room1.x - room2.x) + abs(room1.y - room2.y) == 1
+        return (
+            (abs(room1.x - room2.x) == 1 and room1.y == room2.y) or
+            (abs(room1.y - room2.y) == 1 and room1.x == room2.x)
+        )
 
     def connect_remaining_rooms(self):
         all_rooms = set(room for sublist in self.grid for room in sublist if room is not None)
@@ -109,17 +104,39 @@ class GameMap:
                         break
             if not connected and room != self.player_start_room and not room.connected_rooms:
                 direction = self.calculate_direction(room, self.player_start_room)
-                print(f"Connecting room {room.id} to player's starting room ({self.player_start_room.id})")
+                print(f"Connecting room {room.id} to the player's starting room ({self.player_start_room.id})")
                 self.connect_rooms(room, self.player_start_room, direction)
 
     def connect_rooms(self, room1, room2, direction):
-        print(f"Connecting room {room1.id} to room {room2.id} in direction {direction}")
-        direction_to_room2 = direction
-        direction_to_room1 = self.opposite_direction(direction_to_room2)
-        room1.connected_rooms[direction_to_room2] = room2
-        room2.connected_rooms[direction_to_room1] = room1
-        self.grid[room1.x][room1.y].connected_rooms[direction_to_room2] = self.grid[room2.x][room2.y]
-        self.grid[room2.x][room2.y].connected_rooms[direction_to_room1] = self.grid[room1.x][room1.y]
+        opposite = self.opposite_direction(direction)
+        if self.is_connected(room1, room2):
+            return
+        if direction == "north":
+            if self.is_position_free(room1.x, room1.y - 1):
+                room1.connected_rooms[direction] = room2
+                room2.connected_rooms[opposite] = room1
+                print(f"Connecting room {room1.id} to room {room2.id} in direction {direction}")
+        elif direction == "south":
+            if self.is_position_free(room1.x, room1.y + 1):
+                room1.connected_rooms[direction] = room2
+                room2.connected_rooms[opposite] = room1
+                print(f"Connecting room {room1.id} to room {room2.id} in direction {direction}")
+        elif direction == "east":
+            if self.is_position_free(room1.x + 1, room1.y):
+                room1.connected_rooms[direction] = room2
+                room2.connected_rooms[opposite] = room1
+                print(f"Connecting room {room1.id} to room {room2.id} in direction {direction}")
+                room2.connected_rooms["west"] = room1
+                room1.connected_rooms["west"] = room2
+        elif direction == "west":
+            if self.is_position_free(room1.x - 1, room1.y):
+                room1.connected_rooms[direction] = room2
+                room2.connected_rooms[opposite] = room1
+                print(f"Connecting room {room1.id} to room {room2.id} in direction {direction}")
+                room2.connected_rooms["east"] = room1
+                room1.connected_rooms["east"] = room2
+        else:
+            print(f"Rooms {room1.id} and {room2.id} are not adjacent, cannot connect them.")
 
     def connect_within_cluster(self, cluster_rooms):
         visited = set()
@@ -134,6 +151,7 @@ class GameMap:
         x, y = self.find_free_random_position()
         self.add_room(room, x, y, cluster_id)
         growth_points.append((x, y))
+        
         for _ in range(rooms_in_cluster - 1):
             for _ in range(100):
                 x, y = random.choice(growth_points)
@@ -143,10 +161,12 @@ class GameMap:
                 if 0 <= nx < self.grid_width and 0 <= ny < self.grid_height and self.grid[nx][ny] is None:
                     room = self.generate_room(room_type, rooms_data)
                     self.add_room(room, nx, ny, cluster_id)
+                    self.connect_rooms(room, self.grid[x][y], direction)  # Connect the new room to the previous room
                     growth_points.append((nx, ny))
                     break
             else:
                 break
+        
         self.room_clusters[cluster_id] = [room for room in self.rooms if room.cluster_id == cluster_id]
         self.connect_remaining_rooms()
 
@@ -327,9 +347,9 @@ class GameMap:
             all_rooms.extend(cluster_rooms)
             if cluster_id == 0:
                 self.set_player_start_room(cluster_rooms[0])
-            print(f"Cluster ID: {cluster_id}")
+            print(f"In Cluster ID: {cluster_id}")
             for room in cluster_rooms:
-                print(f"Room: {room.id}, Connected Rooms: {room.connected_rooms}")
+                print(f"..Generated Room: {room.id}")
         prims = Prims(all_rooms)
         prims.generate_mst()
         self.connect_clusters()
@@ -413,9 +433,12 @@ class GameMap:
         return room2 in room1.connected_rooms.values()
     
     def is_position_free(self, x, y):
-        if x < 0 or y < 0 or x >= self.grid_width or y >= self.grid_height:
+        if x < 0 or x >= self.grid_width or y < 0 or y >= self.grid_height:
             return False
-        return self.grid[x][y] is None
+        for room in self.rooms:
+            if room.x == x and room.y == y:
+                return False
+        return True
     
     def print_map(self):
         for y in range(self.grid_height):
