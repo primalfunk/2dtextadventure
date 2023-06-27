@@ -286,14 +286,23 @@ class GameMap:
     def generate_lock(self, lock_data):
         return Lock(lock_data["lock_item"], lock_data["key_item"])
 
+    def generate_healing(self, healing_data):
+        return Healing(healing_data["type"], healing_data["stats"]["hp"])
+
     def generate_weapon(self, weapon_data):
         return Weapon(weapon_data["type"], weapon_data["stats"]["damage"])
 
     def generate_armor(self, armor_data):
         return Armor(armor_data["type"], armor_data["stats"]["defense"])
 
-    def generate_character(self, character_data, is_enemy=True):
-        return Character(character_data["type"], character_data["stats"]["hit_points"], character_data["stats"]["attack_points"], character_data["stats"]["defense_points"])
+    def generate_character(self, character_data, level, isEnemy = True):
+        return Character(character_data["type"],
+                         level,
+                         character_data["stats"]["hp"], 
+                         character_data["stats"]["atk"], 
+                         character_data["stats"]["defp"], 
+                         character_data["stats"]["acc"], 
+                         character_data["stats"]["ev"])
 
     def generate_game_map(self, rooms_data, min_rooms_per_cluster, max_rooms_per_cluster, min_clusters, retry=True):
         self.rooms = []
@@ -314,8 +323,10 @@ class GameMap:
         game_lock_item = self.generate_lock(random.choice(self.data_loader.data["elements"]["puzzle_items"]))
         game_weapon = self.generate_weapon(random.choice(self.data_loader.data["elements"]["weapons"]))
         game_armor = self.generate_armor(random.choice(self.data_loader.data["elements"]["armor"]))
-        game_enemy = self.generate_character(random.choice(self.data_loader.data["elements"]["enemies"]))
-        game_ally = self.generate_character(random.choice(self.data_loader.data["elements"]["allies"]), is_enemy=False)
+        level = 1 # will update when implementing experience
+        game_enemy = self.generate_character(random.choice(self.data_loader.data["elements"]["characters"]), level, True)
+        game_ally = self.generate_character(random.choice(self.data_loader.data["elements"]["characters"]), level, False)
+        healing = self.generate_healing(random.choice(self.data_loader.data["elements"]["healing"]))
         all_rooms = []
         for cluster_id in cluster_ids:
             room_type = next(room_type_cycle)
@@ -350,10 +361,9 @@ class GameMap:
             for room in cluster_rooms:
                 print(f"..Generated Room: {room.id}")
         self.connect_clusters()
-        self.print_map()
 
     def generate_room(self, room_type, rooms_data):
-        room_data = next((data for data in rooms_data if data["type"] == room_type), {"type": "featureless space"})
+        room_data = next((data for data in rooms_data if data["type"] == room_type))
         adjectives = room_data["adjectives"]
         names = room_data["name"]
         scenery = room_data["scenery"]
@@ -526,20 +536,16 @@ class Room:
                 return direction
         return None
    
-class Player:
-    def __init__(self):
-        self.hit_points = 50
-        self.attack_points = 0
-        self.defense_points = 0
-        self.current_room = None
-        self.inventory = []
-        self.x = 0
-        self.y = 0
-
 class Item:
     def __init__(self, name, details):
         self.name = name
         self.details = details
+
+class Healing:
+    def __init__(self, name, hp):
+        self.name = name
+        self.hp = hp
+        
 
 class Key(Item):
     def __init__(self, name, unlock_room):
@@ -562,11 +568,14 @@ class Armor(Item):
         self.defense = defense
 
 class Character:
-    def __init__(self, name, hit_points, attack_points, defense_points):
+    def __init__(self, name, level, hp, atk, defp, acc, ev):
+        self.level = level
         self.name = name
-        self.hit_points = hit_points
-        self.attack_points = attack_points
-        self.defense_points = defense_points
+        self.hp = hp
+        self.atk = atk
+        self.defp = defp
+        self.acc = acc
+        self.ev = ev
         self.inventory = []
         self.current_room = None
         self.x = 0
@@ -576,6 +585,13 @@ class Character:
     def add_item(self, item):
         self.inventory.append(item)
         if isinstance(item, Weapon):
-            self.attack_points += item.damage
+            self.atk += item.damage
         elif isinstance(item, Armor):
-            self.defense_points += item.defense
+            self.defp += item.defense
+
+class Player(Character):
+    def __init__(self):
+        super().__init__(name="Player", level=1, hp=100, atk=10, defp=10, acc=50, ev=50)
+        self.is_enemy = False
+        self.xp = 0
+        

@@ -53,8 +53,6 @@ class GameGUI(QWidget):
         self.min_font_size = 10
         self.max_font_size = 30
         super().__init__()
-        with open("data.json", "r") as file:
-            self.data = json.load(file)
         main_layout = QVBoxLayout()
         self.setLayout(main_layout)
         self.player_info_label = QLabel("")
@@ -87,6 +85,7 @@ class GameGUI(QWidget):
         cursor.insertBlock()
         cursor.setCharFormat(format)
         cursor.insertText("a procedurally generated text adventure")
+        lowest_row_height = 225
         self.start_button = QPushButton("Start")
         quit_button = QPushButton("Quit")
         self.start_button.clicked.connect(self.start_game)
@@ -111,7 +110,7 @@ class GameGUI(QWidget):
         buttons_frame_layout.addStretch(1)
         buttons_frame.setLayout(buttons_frame_layout)
         buttons_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        buttons_frame.setFixedHeight(180)
+        buttons_frame.setFixedHeight(lowest_row_height)
         direction_frame = QFrame()
         direction_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
         direction_layout = QGridLayout()
@@ -126,7 +125,7 @@ class GameGUI(QWidget):
         direction_layout.addWidget(east_button, 1, 2, 1, 1)
         direction_layout.addWidget(south_button, 2, 1, 1, 1)
         direction_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        direction_frame.setFixedHeight(180)
+        direction_frame.setFixedHeight(lowest_row_height)
         direction_frame.setLayout(direction_layout)
         north_button.clicked.connect(lambda: self.travel("north"))
         west_button.clicked.connect(lambda: self.travel("west"))
@@ -144,7 +143,7 @@ class GameGUI(QWidget):
         inventory_layout.addWidget(self.inventory_text)
         inventory_layout.setStretch(0, 0)
         inventory_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        inventory_frame.setFixedHeight(180)
+        inventory_frame.setFixedHeight(lowest_row_height)
         inventory_frame.setLayout(inventory_layout)
         bottom_layout = QHBoxLayout()
         bottom_layout.addWidget(buttons_frame)
@@ -194,9 +193,12 @@ class GameGUI(QWidget):
 
     def update_player_stats(self):
         self.stats_text.setPlainText(
-            f"Hit Points: {self.player.hit_points}\n"
-            f"Attack: {self.player.attack_points}\n"
-            f"Defense: {self.player.defense_points}"
+            f"Level: {self.player.level}\n"
+            f"Hit Points: {self.player.hp}\n"
+            f"Attack: {self.player.atk}\n"
+            f"Defense: {self.player.defp}\n"
+            f"Accuracy: {self.player.acc}\n"
+            f"Evade: {self.player.ev}"
         )
 
     def start_game(self, game_map):
