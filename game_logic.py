@@ -2,7 +2,6 @@ from collections import defaultdict, deque
 import itertools
 import json
 import math
-from prims import Prims
 import random
 
 class GameMap:
@@ -26,6 +25,8 @@ class GameMap:
         self.room_to_cluster_map = {}
         self.mst = set()
 
+    # git update
+    
     def add_room(self, room, x=None, y=None, cluster_id=None):
         if x is None or y is None:
             x, y = self.find_free_random_position()
@@ -350,8 +351,6 @@ class GameMap:
             print(f"In Cluster ID: {cluster_id}")
             for room in cluster_rooms:
                 print(f"..Generated Room: {room.id}")
-        prims = Prims(all_rooms)
-        prims.generate_mst()
         self.connect_clusters()
         self.print_map()
 
