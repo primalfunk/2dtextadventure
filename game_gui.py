@@ -31,11 +31,16 @@ class DataLoader:
             print(f"Error in loading data: {str(e)}")
     
     def create_game_map(self, grid_width=9, grid_height=9):
+        grid_l = grid_width
         if self.data:
             elements = self.data.get("elements")
             if elements:
                 self.game_map = GameMap(elements["rooms"],grid_width, grid_height, data_loader=self)
-                self.game_map.generate_game_map(elements["rooms"], 7, 8, 10)
+                cfp = .75
+                minR = round(((grid_l **2) * cfp) / (grid_l * 1.25)) #creates more, smaller clusters as grid size goes up
+                maxR = round(((grid_l **2) * cfp) / (grid_l / 1.25))
+                numC = round(((grid_l **2) * cfp) / ((minR + maxR) / 2)) # number of clusters based on average cluster size
+                self.game_map.generate_game_map(elements["rooms"], minR, maxR, numC)
         else:
             raise ValueError("Data not loaded, can't create game map")
 
@@ -193,19 +198,18 @@ class GameGUI(QWidget):
 
     def update_player_stats(self):
         self.stats_text.setPlainText(
-            f"Level: {self.player.level}\n"
+            f"Level: {self.player.level}"
             f"Hit Points: {self.player.hp}\n"
             f"Attack: {self.player.atk}\n"
             f"Defense: {self.player.defp}\n"
-            f"Accuracy: {self.player.acc}\n"
-            f"Evade: {self.player.ev}"
+            f"Accuracy: {self.player.defp}\n"
+            f"Defense: {self.player.defp}"
         )
 
     def start_game(self, game_map):
         self.game_map = game_map
         self.map_window = MapWindow(self, self.game_map)
         self.map_window.update_map()
-        self.map_window.highlight_player_room(self.get_current_room())
         if self.start_button.text() == "Start":
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignLeft | Qt.AlignTop)
@@ -254,9 +258,9 @@ class GameGUI(QWidget):
                 return
             self.game_text_area.append(f"You travel {direction}.\n")
             if direction == "north":
-                self.game_map.player.y += 1
-            elif direction == "south":
                 self.game_map.player.y -= 1
+            elif direction == "south":
+                self.game_map.player.y += 1
             elif direction == "east":
                 self.game_map.player.x += 1
             elif direction == "west":
@@ -364,55 +368,74 @@ class MapWindow(QWidget):
         self.grid_layout = QGridLayout(self.grid_widget)
         self.layout.addWidget(self.grid_widget)
         self.game_map = game_map
-        self.labels = [[None for _ in range(game_map.grid_width)] for _ in range(game_map.grid_height)]
-        
-        for i in range(game_map.grid_height):
-            for j in range(game_map.grid_width):
+        self.labels = [[None for _ in range(2*game_map.grid_width - 1)] for _ in range(2*game_map.grid_height - 1)]
+
+        for i in range(2*game_map.grid_height - 1):
+            for j in range(2*game_map.grid_width - 1):
                 self.labels[i][j] = QLabel(' ')
                 self.labels[i][j].setStyleSheet("border: 1px solid black;")
                 self.grid_layout.addWidget(self.labels[i][j], i, j)
         
         self.setLayout(self.layout)
 
-    def highlight_player_room(self, room):
-        for i in range(len(self.labels)):
-            for j in range(len(self.labels[0])):
-                label = self.labels[i][j]
-                label.setStyleSheet("")
-                if (room is not None) and (room.x == j) and (room.y == i):
-                    label.setStyleSheet("background-color: red;")
-
     def update_map(self):
-        if not hasattr(self, 'isVisible') or not callable(self.isVisible):
-            print('Error: Method "isVisible" is not defined in this class.')
-            return
-        
-        if not hasattr(self, 'game_map') or not hasattr(self.game_map, 'rooms'):
-            print('Error: "game_map" or "game_map.rooms" is not defined in this class.')
-            return
-        
-        if not hasattr(self, 'labels'):
-            print('Error: "labels" is not defined in this class.')
-            return
-        
-        print('Is Visible:', self.isVisible())
-
+        border_colors = ["black", "red", "blue", "green", "yellow", "cyan", "magenta", "gray", "silver", "maroon", "purple", "fuchsia", "lime", "olive", 
+                         "navy", "teal", "orange", "pink", "violet", "indigo", "gold", "silver", "bronze", "coral", "beige", "mint", "lavender", "turquoise", "tan", "skyblue", "salmon", 
+                         "plum", "peach", "orchid", "olive", "crimson"]
+        border_color = random.choice(border_colors)
         for room in self.game_map.rooms:
             if room is not None:
-                if (0 <= room.y < len(self.labels)) and (0 <= room.x < len(self.labels[0])):
-                    label = self.labels[room.y][room.x]
-                    label.setText(room.symbol)
-                    label.setAlignment(Qt.AlignCenter)  # Center align the symbol
+                if (0 <= 2*room.y < len(self.labels)) and (0 <= 2*room.x < len(self.labels[0])):
+                    room_label = self.labels[2*room.y][2*room.x]
+                    room_label.setAlignment(Qt.AlignCenter)
+                    room_label.setStyleSheet("border: 2px solid black; font-size: 20px; font-weight: bold;")  # Default room style
+                    # Set room symbol
                     if room == self.game_map.player.current_room:
-                        label.setStyleSheet("background-color: red;")  # Highlight the player's current room
+                        room_label.setText('P')
+                        room_label.setStyleSheet(f"background-color: lime; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                    elif room.enemy:
+                        room_label.setText('E')
+                        room_label.setStyleSheet(f"background-color: green; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                    elif room.weapon:
+                        room_label.setText('W')
+                        room_label.setStyleSheet(f"background-color: blue; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                    elif room.armor:
+                        room_label.setText('A')
+                        room_label.setStyleSheet(f"background-color: fuschia; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                    elif room.key_item:
+                        room_label.setText('K')
+                        room_label.setStyleSheet(f"background-color: olive; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                    elif room.lock_item:
+                        room_label.setText('L')
+                        room_label.setStyleSheet(f"background-color: olive; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                    elif room.ally:
+                        room_label.setText('Y')
+                        room_label.setStyleSheet(f"background-color: cyan; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
                     else:
-                        label.setStyleSheet("")  # Remove any previous highlighting
-                else:
-                    print('Error: Attempted to access out of bounds index in "labels".')
+                        room_label.setText('□')
+
+                    # Draw connections
+                    for direction, connected_room in room.connected_rooms.items():
+                        if connected_room is not None:
+                            connection_label = None
+                            if direction == "north" and 2*room.y - 1 >= 0:
+                                connection_label = self.labels[2*room.y - 1][2*room.x]
+                                connection_label.setText('|')
+                            elif direction == "south" and 2*room.y + 1 < len(self.labels):
+                                connection_label = self.labels[2*room.y + 1][2*room.x]
+                                connection_label.setText('|')
+                            elif direction == "west" and 2*room.x - 1 >= 0:
+                                connection_label = self.labels[2*room.y][2*room.x - 1]
+                                connection_label.setText('-')
+                            elif direction == "east" and 2*room.x + 1 < len(self.labels[0]):
+                                connection_label = self.labels[2*room.y][2*room.x + 1]
+                                connection_label.setText('-')
+                            if connection_label is not None:
+                                connection_label.setAlignment(Qt.AlignCenter)
+                                connection_label.setStyleSheet("font-size: 10px;")
 
     def show_self(self):
         self.show()
-        print(self.isVisible())
 
 if __name__ == "__main__":
     app = QApplication([])
