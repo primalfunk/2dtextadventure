@@ -5,7 +5,8 @@ import math
 import random
 
 class GameMap:
-    def __init__(self, room_data, grid_width, grid_height):
+    def __init__(self, room_data, grid_width, grid_height, data_loader):
+        self.data_loader = data_loader
         self.rooms = []
         self.room_clusters = {}
         self.room_data = room_data
@@ -24,8 +25,6 @@ class GameMap:
         }
         self.room_to_cluster_map = {}
         self.mst = set()
-
-    # git update
     
     def add_room(self, room, x=None, y=None, cluster_id=None):
         if x is None or y is None:
@@ -310,14 +309,13 @@ class GameMap:
         cluster_ids = list(range(num_clusters))
         random.shuffle(cluster_ids)
         room_type_cycle = itertools.cycle(room_types)
-        item_clusters = random.sample(cluster_ids, 6)  # List of 6 random cluster ids
-        json_data = json.load(open("data.json"))
-        game_key_item = self.generate_key(random.choice(json_data["elements"]["puzzle_items"]))
-        game_lock_item = self.generate_lock(random.choice(json_data["elements"]["puzzle_items"]))
-        game_weapon = self.generate_weapon(random.choice(json_data["elements"]["weapons"]))
-        game_armor = self.generate_armor(random.choice(json_data["elements"]["armor"]))
-        game_enemy = self.generate_character(random.choice(json_data["elements"]["enemies"]))
-        game_ally = self.generate_character(random.choice(json_data["elements"]["allies"]), is_enemy=False)
+        item_clusters = random.sample(cluster_ids, 6)
+        game_key_item = self.generate_key(random.choice(self.data_loader.data["elements"]["puzzle_items"]))
+        game_lock_item = self.generate_lock(random.choice(self.data_loader.data["elements"]["puzzle_items"]))
+        game_weapon = self.generate_weapon(random.choice(self.data_loader.data["elements"]["weapons"]))
+        game_armor = self.generate_armor(random.choice(self.data_loader.data["elements"]["armor"]))
+        game_enemy = self.generate_character(random.choice(self.data_loader.data["elements"]["enemies"]))
+        game_ally = self.generate_character(random.choice(self.data_loader.data["elements"]["allies"]), is_enemy=False)
         all_rooms = []
         for cluster_id in cluster_ids:
             room_type = next(room_type_cycle)
