@@ -311,7 +311,7 @@ class GameMap:
         random.shuffle(cluster_ids)
         room_type_cycle = itertools.cycle(room_types)
         item_clusters = random.sample(cluster_ids, 6)  # List of 6 random cluster ids
-        json_data = json.load(open("fantasy.json"))
+        json_data = json.load(open("data.json"))
         game_key_item = self.generate_key(random.choice(json_data["elements"]["puzzle_items"]))
         game_lock_item = self.generate_lock(random.choice(json_data["elements"]["puzzle_items"]))
         game_weapon = self.generate_weapon(random.choice(json_data["elements"]["weapons"]))

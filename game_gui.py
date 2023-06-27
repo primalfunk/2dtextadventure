@@ -12,9 +12,8 @@ class GameGUI(QWidget):
         self.font_size = 14
         self.min_font_size = 10
         self.max_font_size = 30
-
         super().__init__()
-        with open("fantasy.json", "r") as file:
+        with open("data.json", "r") as file:
             self.data = json.load(file)
         main_layout = QVBoxLayout()
         self.setLayout(main_layout)
@@ -399,7 +398,7 @@ class GameGUI(QWidget):
         self.max_font_size = 30
 
         super().__init__()
-        with open("fantasy.json", "r") as file:
+        with open("data.json", "r") as file:
             self.data = json.load(file)
         main_layout = QVBoxLayout()
         self.setLayout(main_layout)
