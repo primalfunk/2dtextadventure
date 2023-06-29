@@ -1,0 +1,14 @@
+DEBUG:root:Failed to create cluster 5, skipping to next.
+DEBUG:root:Failed to create cluster 4, skipping to next.
+DEBUG:root:Failed to create cluster 2, skipping to next.
+DEBUG:root:Failed to create cluster 8, skipping to next.
+DEBUG:root:Failed to create cluster 1, skipping to next.
+DEBUG:root:Failed to create cluster 6, skipping to next.
+DEBUG:root:Failed to create cluster 7, skipping to next.
+DEBUG:root:Failed to create cluster 10, skipping to next.
+DEBUG:root:Failed to create cluster 9, skipping to next.
+DEBUG:root:Failed to create cluster 0, skipping to next.
+DEBUG:root:Failed to create cluster 3, skipping to next.
+INFO:root:Rendering map started.
+DEBUG:root:Created rendered map of size: 18x18
+DEBUG:root:After bringing in the game_map object as an argument.

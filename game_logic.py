@@ -165,29 +165,22 @@ class GameMap:
         room_queue.append((None, position))
         visited_positions.add(position)  # Add the position to visited_positions
         for _ in range(rooms_in_cluster):
-            while room_queue:
-                current_room, current_pos = room_queue.popleft()
-                created_directions = set()  # Keep track of directions in which rooms are created
-                for direction in self.directions.keys():
-                    if direction in created_directions:  # Skip the direction if a room has been created in this direction
-                        continue
-                    dx, dy, _ = self.directions[direction]
-                    new_pos = current_pos[0] + dx, current_pos[1] + dy
-                    if self.is_position_free(*new_pos) and new_pos not in visited_positions:  # Check if the position has been visited
-                        new_room = self.generate_room(room_type, rooms_data, *new_pos)  # generate the room just before adding it
-                        self.add_room(new_room, *new_pos, cluster_id)
-                        if current_room is not None:  # skip connection if it's the first room in cluster
-                            self.connect_rooms(current_room, new_room, direction)
-                        room_queue.append((new_room, new_pos))
-                        visited_positions.add(new_pos)  # Add the new_pos to visited_positions
-                        created_directions.add(direction)  # Add the direction to created_directions
-                        break
-                else:
-                    continue
-                break
-            else:
+            if not room_queue:
                 print(f"Could not create all rooms for cluster {cluster_id}. Exiting.")
-                return False
+                return
+            current_room, current_pos = room_queue.popleft()
+            directions = list(self.directions.keys())
+            random.shuffle(directions)
+            for direction in directions:
+                dx, dy, _ = self.directions[direction]
+                new_pos = current_pos[0] + dx, current_pos[1] + dy
+                if self.is_position_free(*new_pos) and new_pos not in visited_positions:  # Check if the position has been visited
+                    new_room = self.generate_room(room_type, rooms_data, *new_pos)  # generate the room just before adding it
+                    self.add_room(new_room, *new_pos, cluster_id)
+                    if current_room is not None:  # skip connection if it's the first room in cluster
+                        self.connect_rooms(current_room, new_room, direction)
+                    room_queue.append((new_room, new_pos))
+                    visited_positions.add(new_pos)  # Add the new_pos to visited_positions
         return True
             
     def distance_between_clusters(self, cluster_id1, cluster_id2):
