@@ -1,0 +1,743 @@
+root - DEBUG - Data keys after loading: dict_keys(['genre', 'elements'])
+root - DEBUG - Data length after loading: 2
+root - INFO - Data loaded successfully.
+root - INFO - Elements found in data.
+root - DEBUG - Elements before map generation: {'game_title': 
+root - DEBUG - Rooms before map generation: [{'type': 'castle', 
+root - DEBUG - Init_cycle called for adjectives.
+root - DEBUG - Init_cycle called for name.
+root - DEBUG - Init_cycle called for scenery.
+root - DEBUG - Init_cycle called for atmosphere.
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 0 with room type cavern
+root - INFO - Attempting to create cluster 0 with room type cavern
+root - DEBUG - Finding free random position. Start center: True
+root - DEBUG - Checking position: (4, 4)
+root - DEBUG - Start position found: (4, 4)
+root - DEBUG - generate_room called with room_type=cavern, x=4, y=4
+root - DEBUG - Trying to add room at position (4,4) and cluster_id: 0
+root - INFO - Start room for cluster 0 created at (4, 4)
+root - INFO - Initial frontier positions for cluster 0: [(3, 4), (5, 4), (4, 3), (4, 5)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=cavern, x=3, y=4
+root - DEBUG - Trying to add room at position (3,4) and cluster_id: 0
+root - DEBUG - Added room at (3, 4). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 0: [(5, 4), (4, 3), (4, 5), (2, 4), (3, 3), (3, 5)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=cavern, x=5, y=4
+root - DEBUG - Trying to add room at position (5,4) and cluster_id: 0
+root - DEBUG - Added room at (5, 4). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 0: [(4, 3), (4, 5), (2, 4), (3, 3), (3, 5), (6, 4), (5, 3), (5, 5)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=cavern, x=4, y=3
+root - DEBUG - Trying to add room at position (4,3) and cluster_id: 0
+root - DEBUG - Added room at (4, 3). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 0: [(4, 5), (2, 4), (3, 3), (3, 5), (6, 4), (5, 3), (5, 5), (4, 2)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - INFO - Setting player start room: 4, 4
+root - INFO - The player's start room is: 4, 4
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 1 with room type library
+root - INFO - Attempting to create cluster 1 with room type library
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (2, 6)
+root - DEBUG - generate_room called with room_type=library, x=2, y=6
+root - DEBUG - Trying to add room at position (2,6) and cluster_id: 1
+root - INFO - Start room for cluster 1 created at (2, 6)
+root - INFO - Initial frontier positions for cluster 1: [(1, 6), (3, 6), (2, 5), (2, 7)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=1, y=6
+root - DEBUG - Trying to add room at position (1,6) and cluster_id: 1
+root - DEBUG - Added room at (1, 6). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 1: [(3, 6), (2, 5), (2, 7), (0, 6), (1, 5), (1, 7)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=3, y=6
+root - DEBUG - Trying to add room at position (3,6) and cluster_id: 1
+root - DEBUG - Added room at (3, 6). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 1: [(2, 5), (2, 7), (0, 6), (1, 5), (1, 7), (4, 6), (3, 5), (3, 7)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=2, y=5
+root - DEBUG - Trying to add room at position (2,5) and cluster_id: 1
+root - DEBUG - Added room at (2, 5). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 1: [(2, 7), (0, 6), (1, 5), (1, 7), (4, 6), (3, 5), (3, 7), (2, 4)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=2, y=7
+root - DEBUG - Trying to add room at position (2,7) and cluster_id: 1
+root - DEBUG - Added room at (2, 7). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 1: [(0, 6), (1, 5), (1, 7), (4, 6), (3, 5), (3, 7), (2, 4), (2, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 5
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=0, y=6
+root - DEBUG - Trying to add room at position (0,6) and cluster_id: 1
+root - DEBUG - Added room at (0, 6). Rooms in cluster: 6
+root - INFO - Updated frontier positions for cluster 1: [(1, 5), (1, 7), (4, 6), (3, 5), (3, 7), (2, 4), (2, 8), (0, 5), (0, 7)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 6
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=1, y=5
+root - DEBUG - Trying to add room at position (1,5) and cluster_id: 1
+root - DEBUG - Added room at (1, 5). Rooms in cluster: 7
+root - INFO - Updated frontier positions for cluster 1: [(1, 7), (4, 6), (3, 5), (3, 7), (2, 4), (2, 8), (0, 5), (0, 7), (1, 4)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 7
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=1, y=7
+root - DEBUG - Trying to add room at position (1,7) and cluster_id: 1
+root - DEBUG - Added room at (1, 7). Rooms in cluster: 8
+root - INFO - Updated frontier positions for cluster 1: [(4, 6), (3, 5), (3, 7), (2, 4), (2, 8), (0, 5), (0, 7), (1, 4), (1, 8)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 2 with room type castle
+root - INFO - Attempting to create cluster 2 with room type castle
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (0, 4)
+root - DEBUG - generate_room called with room_type=castle, x=0, y=4
+root - DEBUG - Trying to add room at position (0,4) and cluster_id: 2
+root - INFO - Start room for cluster 2 created at (0, 4)
+root - INFO - Initial frontier positions for cluster 2: [(1, 4), (0, 3), (0, 5)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=castle, x=1, y=4
+root - DEBUG - Trying to add room at position (1,4) and cluster_id: 2
+root - DEBUG - Added room at (1, 4). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 2: [(0, 3), (0, 5), (2, 4), (1, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=castle, x=0, y=3
+root - DEBUG - Trying to add room at position (0,3) and cluster_id: 2
+root - DEBUG - Added room at (0, 3). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 2: [(0, 5), (2, 4), (1, 3), (0, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=castle, x=0, y=5
+root - DEBUG - Trying to add room at position (0,5) and cluster_id: 2
+root - DEBUG - Added room at (0, 5). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 2: [(2, 4), (1, 3), (0, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=castle, x=2, y=4
+root - DEBUG - Trying to add room at position (2,4) and cluster_id: 2
+root - DEBUG - Added room at (2, 4). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 2: [(1, 3), (0, 2), (2, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 5
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=castle, x=1, y=3
+root - DEBUG - Trying to add room at position (1,3) and cluster_id: 2
+root - DEBUG - Added room at (1, 3). Rooms in cluster: 6
+root - INFO - Updated frontier positions for cluster 2: [(0, 2), (2, 3), (1, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 6
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=castle, x=0, y=2
+root - DEBUG - Trying to add room at position (0,2) and cluster_id: 2
+root - DEBUG - Added room at (0, 2). Rooms in cluster: 7
+root - INFO - Updated frontier positions for cluster 2: [(2, 3), (1, 2), (0, 1)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 3 with room type featureless space
+root - INFO - Attempting to create cluster 3 with room type featureless space
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (8, 2)
+root - DEBUG - generate_room called with room_type=featureless space, x=8, y=2
+root - DEBUG - Trying to add room at position (8,2) and cluster_id: 3
+root - INFO - Start room for cluster 3 created at (8, 2)
+root - INFO - Initial frontier positions for cluster 3: [(7, 2), (8, 1), (8, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=featureless space, x=7, y=2
+root - DEBUG - Trying to add room at position (7,2) and cluster_id: 3
+root - DEBUG - Added room at (7, 2). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 3: [(8, 1), (8, 3), (6, 2), (7, 1), (7, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=featureless space, x=8, y=1
+root - DEBUG - Trying to add room at position (8,1) and cluster_id: 3
+root - DEBUG - Added room at (8, 1). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 3: [(8, 3), (6, 2), (7, 1), (7, 3), (8, 0)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=featureless space, x=8, y=3
+root - DEBUG - Trying to add room at position (8,3) and cluster_id: 3
+root - DEBUG - Added room at (8, 3). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 3: [(6, 2), (7, 1), (7, 3), (8, 0), (8, 4)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=featureless space, x=6, y=2
+root - DEBUG - Trying to add room at position (6,2) and cluster_id: 3
+root - DEBUG - Added room at (6, 2). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 3: [(7, 1), (7, 3), (8, 0), (8, 4), (5, 2), (6, 1), (6, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 5
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=featureless space, x=7, y=1
+root - DEBUG - Trying to add room at position (7,1) and cluster_id: 3
+root - DEBUG - Added room at (7, 1). Rooms in cluster: 6
+root - INFO - Updated frontier positions for cluster 3: [(7, 3), (8, 0), (8, 4), (5, 2), (6, 1), (6, 3), (7, 0)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 4 with room type tavern
+root - INFO - Attempting to create cluster 4 with room type tavern
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (7, 5)
+root - DEBUG - generate_room called with room_type=tavern, x=7, y=5
+root - DEBUG - Trying to add room at position (7,5) and cluster_id: 4
+root - INFO - Start room for cluster 4 created at (7, 5)
+root - INFO - Initial frontier positions for cluster 4: [(6, 5), (8, 5), (7, 4), (7, 6)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=tavern, x=6, y=5
+root - DEBUG - Trying to add room at position (6,5) and cluster_id: 4
+root - DEBUG - Added room at (6, 5). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 4: [(8, 5), (7, 4), (7, 6), (5, 5), (6, 4), (6, 6)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=tavern, x=8, y=5
+root - DEBUG - Trying to add room at position (8,5) and cluster_id: 4
+root - DEBUG - Added room at (8, 5). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 4: [(7, 4), (7, 6), (5, 5), (6, 4), (6, 6), (8, 4), (8, 6)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=tavern, x=7, y=4
+root - DEBUG - Trying to add room at position (7,4) and cluster_id: 4
+root - DEBUG - Added room at (7, 4). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 4: [(7, 6), (5, 5), (6, 4), (6, 6), (8, 4), (8, 6), (7, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=tavern, x=7, y=6
+root - DEBUG - Trying to add room at position (7,6) and cluster_id: 4
+root - DEBUG - Added room at (7, 6). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 4: [(5, 5), (6, 4), (6, 6), (8, 4), (8, 6), (7, 3), (7, 7)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 5
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=tavern, x=5, y=5
+root - DEBUG - Trying to add room at position (5,5) and cluster_id: 4
+root - DEBUG - Added room at (5, 5). Rooms in cluster: 6
+root - INFO - Updated frontier positions for cluster 4: [(6, 4), (6, 6), (8, 4), (8, 6), (7, 3), (7, 7), (4, 5), (5, 6)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 6
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=tavern, x=6, y=4
+root - DEBUG - Trying to add room at position (6,4) and cluster_id: 4
+root - DEBUG - Added room at (6, 4). Rooms in cluster: 7
+root - INFO - Updated frontier positions for cluster 4: [(6, 6), (8, 4), (8, 6), (7, 3), (7, 7), (4, 5), (5, 6), (6, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 7
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=tavern, x=6, y=6
+root - DEBUG - Trying to add room at position (6,6) and cluster_id: 4
+root - DEBUG - Added room at (6, 6). Rooms in cluster: 8
+root - INFO - Updated frontier positions for cluster 4: [(8, 4), (8, 6), (7, 3), (7, 7), (4, 5), (5, 6), (6, 3), (6, 7)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 5 with room type forest
+root - INFO - Attempting to create cluster 5 with room type forest
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (8, 6)
+root - DEBUG - generate_room called with room_type=forest, x=8, y=6
+root - DEBUG - Trying to add room at position (8,6) and cluster_id: 5
+root - INFO - Start room for cluster 5 created at (8, 6)
+root - INFO - Initial frontier positions for cluster 5: [(8, 7)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=forest, x=8, y=7
+root - DEBUG - Trying to add room at position (8,7) and cluster_id: 5
+root - DEBUG - Added room at (8, 7). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 5: [(7, 7), (8, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=forest, x=7, y=7
+root - DEBUG - Trying to add room at position (7,7) and cluster_id: 5
+root - DEBUG - Added room at (7, 7). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 5: [(8, 8), (6, 7), (7, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=forest, x=8, y=8
+root - DEBUG - Trying to add room at position (8,8) and cluster_id: 5
+root - DEBUG - Added room at (8, 8). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 5: [(6, 7), (7, 8)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 6 with room type garden
+root - INFO - Attempting to create cluster 6 with room type garden
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (8, 0)
+root - DEBUG - generate_room called with room_type=garden, x=8, y=0
+root - DEBUG - Trying to add room at position (8,0) and cluster_id: 6
+root - INFO - Start room for cluster 6 created at (8, 0)
+root - INFO - Initial frontier positions for cluster 6: [(7, 0)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=garden, x=7, y=0
+root - DEBUG - Trying to add room at position (7,0) and cluster_id: 6
+root - DEBUG - Added room at (7, 0). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 6: [(6, 0)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=garden, x=6, y=0
+root - DEBUG - Trying to add room at position (6,0) and cluster_id: 6
+root - DEBUG - Added room at (6, 0). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 6: [(5, 0), (6, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=garden, x=5, y=0
+root - DEBUG - Trying to add room at position (5,0) and cluster_id: 6
+root - DEBUG - Added room at (5, 0). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 6: [(6, 1), (4, 0), (5, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=garden, x=6, y=1
+root - DEBUG - Trying to add room at position (6,1) and cluster_id: 6
+root - DEBUG - Added room at (6, 1). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 6: [(4, 0), (5, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 5
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=garden, x=4, y=0
+root - DEBUG - Trying to add room at position (4,0) and cluster_id: 6
+root - DEBUG - Added room at (4, 0). Rooms in cluster: 6
+root - INFO - Updated frontier positions for cluster 6: [(5, 1), (3, 0), (4, 1)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 7 with room type crypt
+root - INFO - Attempting to create cluster 7 with room type crypt
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (5, 7)
+root - DEBUG - generate_room called with room_type=crypt, x=5, y=7
+root - DEBUG - Trying to add room at position (5,7) and cluster_id: 7
+root - INFO - Start room for cluster 7 created at (5, 7)
+root - INFO - Initial frontier positions for cluster 7: [(4, 7), (6, 7), (5, 6), (5, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=crypt, x=4, y=7
+root - DEBUG - Trying to add room at position (4,7) and cluster_id: 7
+root - DEBUG - Added room at (4, 7). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 7: [(6, 7), (5, 6), (5, 8), (3, 7), (4, 6), (4, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=crypt, x=6, y=7
+root - DEBUG - Trying to add room at position (6,7) and cluster_id: 7
+root - DEBUG - Added room at (6, 7). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 7: [(5, 6), (5, 8), (3, 7), (4, 6), (4, 8), (6, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=crypt, x=5, y=6
+root - DEBUG - Trying to add room at position (5,6) and cluster_id: 7
+root - DEBUG - Added room at (5, 6). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 7: [(5, 8), (3, 7), (4, 6), (4, 8), (6, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=crypt, x=5, y=8
+root - DEBUG - Trying to add room at position (5,8) and cluster_id: 7
+root - DEBUG - Added room at (5, 8). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 7: [(3, 7), (4, 6), (4, 8), (6, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 5
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=crypt, x=3, y=7
+root - DEBUG - Trying to add room at position (3,7) and cluster_id: 7
+root - DEBUG - Added room at (3, 7). Rooms in cluster: 6
+root - INFO - Updated frontier positions for cluster 7: [(4, 6), (4, 8), (6, 8), (3, 8)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 8 with room type cavern
+root - INFO - Attempting to create cluster 8 with room type cavern
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (2, 0)
+root - DEBUG - generate_room called with room_type=cavern, x=2, y=0
+root - DEBUG - Trying to add room at position (2,0) and cluster_id: 8
+root - INFO - Start room for cluster 8 created at (2, 0)
+root - INFO - Initial frontier positions for cluster 8: [(1, 0), (3, 0), (2, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=cavern, x=1, y=0
+root - DEBUG - Trying to add room at position (1,0) and cluster_id: 8
+root - DEBUG - Added room at (1, 0). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 8: [(3, 0), (2, 1), (0, 0), (1, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=cavern, x=3, y=0
+root - DEBUG - Trying to add room at position (3,0) and cluster_id: 8
+root - DEBUG - Added room at (3, 0). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 8: [(2, 1), (0, 0), (1, 1), (3, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=cavern, x=2, y=1
+root - DEBUG - Trying to add room at position (2,1) and cluster_id: 8
+root - DEBUG - Added room at (2, 1). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 8: [(0, 0), (1, 1), (3, 1), (2, 2)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 9 with room type library
+root - INFO - Attempting to create cluster 9 with room type library
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (6, 8)
+root - DEBUG - generate_room called with room_type=library, x=6, y=8
+root - DEBUG - Trying to add room at position (6,8) and cluster_id: 9
+root - INFO - Start room for cluster 9 created at (6, 8)
+root - INFO - Initial frontier positions for cluster 9: [(7, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 5
+root - DEBUG - generate_room called with room_type=library, x=7, y=8
+root - DEBUG - Trying to add room at position (7,8) and cluster_id: 9
+root - DEBUG - Added room at (7, 8). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 9: []
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 10 with room type castle
+root - INFO - Attempting to create cluster 10 with room type castle
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (1, 8)
+root - DEBUG - generate_room called with room_type=castle, x=1, y=8
+root - DEBUG - Trying to add room at position (1,8) and cluster_id: 10
+root - INFO - Start room for cluster 10 created at (1, 8)
+root - INFO - Initial frontier positions for cluster 10: [(0, 8), (2, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 5
+root - DEBUG - generate_room called with room_type=castle, x=0, y=8
+root - DEBUG - Trying to add room at position (0,8) and cluster_id: 10
+root - DEBUG - Added room at (0, 8). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 10: [(2, 8), (0, 7)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 5
+root - DEBUG - generate_room called with room_type=castle, x=2, y=8
+root - DEBUG - Trying to add room at position (2,8) and cluster_id: 10
+root - DEBUG - Added room at (2, 8). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 10: [(0, 7), (3, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 5
+root - DEBUG - generate_room called with room_type=castle, x=0, y=7
+root - DEBUG - Trying to add room at position (0,7) and cluster_id: 10
+root - DEBUG - Added room at (0, 7). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 10: [(3, 8)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 5
+root - DEBUG - generate_room called with room_type=castle, x=3, y=8
+root - DEBUG - Trying to add room at position (3,8) and cluster_id: 10
+root - DEBUG - Added room at (3, 8). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 10: [(4, 8)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 11 with room type featureless space
+root - INFO - Attempting to create cluster 11 with room type featureless space
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (3, 5)
+root - DEBUG - generate_room called with room_type=featureless space, x=3, y=5
+root - DEBUG - Trying to add room at position (3,5) and cluster_id: 11
+root - INFO - Start room for cluster 11 created at (3, 5)
+root - INFO - Initial frontier positions for cluster 11: [(4, 5)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=featureless space, x=4, y=5
+root - DEBUG - Trying to add room at position (4,5) and cluster_id: 11
+root - DEBUG - Added room at (4, 5). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 11: [(4, 6)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 7
+root - DEBUG - generate_room called with room_type=featureless space, x=4, y=6
+root - DEBUG - Trying to add room at position (4,6) and cluster_id: 11
+root - DEBUG - Added room at (4, 6). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 11: []
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>, <game_logic.Room object at 0x000001B2B6B0E470>, <game_logic.Room object at 0x000001B2B6B0E2C0>, <game_logic.Room object at 0x000001B2B6B0E4D0>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 12 with room type tavern
+root - INFO - Attempting to create cluster 12 with room type tavern
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (3, 3)
+root - DEBUG - generate_room called with room_type=tavern, x=3, y=3
+root - DEBUG - Trying to add room at position (3,3) and cluster_id: 12
+root - INFO - Start room for cluster 12 created at (3, 3)
+root - INFO - Initial frontier positions for cluster 12: [(2, 3), (3, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=tavern, x=2, y=3
+root - DEBUG - Trying to add room at position (2,3) and cluster_id: 12
+root - DEBUG - Added room at (2, 3). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 12: [(3, 2), (2, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=tavern, x=3, y=2
+root - DEBUG - Trying to add room at position (3,2) and cluster_id: 12
+root - DEBUG - Added room at (3, 2). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 12: [(2, 2), (4, 2), (3, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=tavern, x=2, y=2
+root - DEBUG - Trying to add room at position (2,2) and cluster_id: 12
+root - DEBUG - Added room at (2, 2). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 12: [(4, 2), (3, 1), (1, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 4
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=tavern, x=4, y=2
+root - DEBUG - Trying to add room at position (4,2) and cluster_id: 12
+root - DEBUG - Added room at (4, 2). Rooms in cluster: 5
+root - INFO - Updated frontier positions for cluster 12: [(3, 1), (1, 2), (5, 2), (4, 1)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 5
+root - DEBUG - Target number of rooms in cluster: 6
+root - DEBUG - generate_room called with room_type=tavern, x=3, y=1
+root - DEBUG - Trying to add room at position (3,1) and cluster_id: 12
+root - DEBUG - Added room at (3, 1). Rooms in cluster: 6
+root - INFO - Updated frontier positions for cluster 12: [(1, 2), (5, 2), (4, 1)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>, <game_logic.Room object at 0x000001B2B6B0E470>, <game_logic.Room object at 0x000001B2B6B0E2C0>, <game_logic.Room object at 0x000001B2B6B0E4D0>, <game_logic.Room object at 0x000001B2B6B0E500>, <game_logic.Room object at 0x000001B2B6B0E530>, <game_logic.Room object at 0x000001B2B6B0E4A0>, <game_logic.Room object at 0x000001B2B6B0E410>, <game_logic.Room object at 0x000001B2B6B0E5C0>, <game_logic.Room object at 0x000001B2B6B0E590>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 13 with room type forest
+root - INFO - Attempting to create cluster 13 with room type forest
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (8, 4)
+root - DEBUG - generate_room called with room_type=forest, x=8, y=4
+root - DEBUG - Trying to add room at position (8,4) and cluster_id: 13
+root - INFO - Start room for cluster 13 created at (8, 4)
+root - INFO - Initial frontier positions for cluster 13: []
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>, <game_logic.Room object at 0x000001B2B6B0E470>, <game_logic.Room object at 0x000001B2B6B0E2C0>, <game_logic.Room object at 0x000001B2B6B0E4D0>, <game_logic.Room object at 0x000001B2B6B0E500>, <game_logic.Room object at 0x000001B2B6B0E530>, <game_logic.Room object at 0x000001B2B6B0E4A0>, <game_logic.Room object at 0x000001B2B6B0E410>, <game_logic.Room object at 0x000001B2B6B0E5C0>, <game_logic.Room object at 0x000001B2B6B0E590>, <game_logic.Room object at 0x000001B2B6B0E620>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 14 with room type garden
+root - INFO - Attempting to create cluster 14 with room type garden
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (5, 1)
+root - DEBUG - generate_room called with room_type=garden, x=5, y=1
+root - DEBUG - Trying to add room at position (5,1) and cluster_id: 14
+root - INFO - Start room for cluster 14 created at (5, 1)
+root - INFO - Initial frontier positions for cluster 14: [(4, 1), (5, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=garden, x=4, y=1
+root - DEBUG - Trying to add room at position (4,1) and cluster_id: 14
+root - DEBUG - Added room at (4, 1). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 14: [(5, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=garden, x=5, y=2
+root - DEBUG - Trying to add room at position (5,2) and cluster_id: 14
+root - DEBUG - Added room at (5, 2). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 14: [(5, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 4
+root - DEBUG - generate_room called with room_type=garden, x=5, y=3
+root - DEBUG - Trying to add room at position (5,3) and cluster_id: 14
+root - DEBUG - Added room at (5, 3). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 14: [(6, 3)]
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>, <game_logic.Room object at 0x000001B2B6B0E470>, <game_logic.Room object at 0x000001B2B6B0E2C0>, <game_logic.Room object at 0x000001B2B6B0E4D0>, <game_logic.Room object at 0x000001B2B6B0E500>, <game_logic.Room object at 0x000001B2B6B0E530>, <game_logic.Room object at 0x000001B2B6B0E4A0>, <game_logic.Room object at 0x000001B2B6B0E410>, <game_logic.Room object at 0x000001B2B6B0E5C0>, <game_logic.Room object at 0x000001B2B6B0E590>, <game_logic.Room object at 0x000001B2B6B0E620>, <game_logic.Room object at 0x000001B2B6B0E5F0>, <game_logic.Room object at 0x000001B2B6B0E3E0>, <game_logic.Room object at 0x000001B2B6B0E560>, <game_logic.Room object at 0x000001B2B6B0E650>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 15 with room type crypt
+root - INFO - Attempting to create cluster 15 with room type crypt
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (0, 1)
+root - DEBUG - generate_room called with room_type=crypt, x=0, y=1
+root - DEBUG - Trying to add room at position (0,1) and cluster_id: 15
+root - INFO - Start room for cluster 15 created at (0, 1)
+root - INFO - Initial frontier positions for cluster 15: [(1, 1), (0, 0)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=crypt, x=1, y=1
+root - DEBUG - Trying to add room at position (1,1) and cluster_id: 15
+root - DEBUG - Added room at (1, 1). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 15: [(0, 0), (1, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 2
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=crypt, x=0, y=0
+root - DEBUG - Trying to add room at position (0,0) and cluster_id: 15
+root - DEBUG - Added room at (0, 0). Rooms in cluster: 3
+root - INFO - Updated frontier positions for cluster 15: [(1, 2)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 3
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=crypt, x=1, y=2
+root - DEBUG - Trying to add room at position (1,2) and cluster_id: 15
+root - DEBUG - Added room at (1, 2). Rooms in cluster: 4
+root - INFO - Updated frontier positions for cluster 15: []
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>, <game_logic.Room object at 0x000001B2B6B0E470>, <game_logic.Room object at 0x000001B2B6B0E2C0>, <game_logic.Room object at 0x000001B2B6B0E4D0>, <game_logic.Room object at 0x000001B2B6B0E500>, <game_logic.Room object at 0x000001B2B6B0E530>, <game_logic.Room object at 0x000001B2B6B0E4A0>, <game_logic.Room object at 0x000001B2B6B0E410>, <game_logic.Room object at 0x000001B2B6B0E5C0>, <game_logic.Room object at 0x000001B2B6B0E590>, <game_logic.Room object at 0x000001B2B6B0E620>, <game_logic.Room object at 0x000001B2B6B0E5F0>, <game_logic.Room object at 0x000001B2B6B0E3E0>, <game_logic.Room object at 0x000001B2B6B0E560>, <game_logic.Room object at 0x000001B2B6B0E650>, <game_logic.Room object at 0x000001B2B6B0E680>, <game_logic.Room object at 0x000001B2B6B0E740>, <game_logic.Room object at 0x000001B2B6B0E770>, <game_logic.Room object at 0x000001B2B6B0E6B0>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 16 with room type cavern
+root - INFO - Attempting to create cluster 16 with room type cavern
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (4, 8)
+root - DEBUG - generate_room called with room_type=cavern, x=4, y=8
+root - DEBUG - Trying to add room at position (4,8) and cluster_id: 16
+root - INFO - Start room for cluster 16 created at (4, 8)
+root - INFO - Initial frontier positions for cluster 16: []
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>, <game_logic.Room object at 0x000001B2B6B0E470>, <game_logic.Room object at 0x000001B2B6B0E2C0>, <game_logic.Room object at 0x000001B2B6B0E4D0>, <game_logic.Room object at 0x000001B2B6B0E500>, <game_logic.Room object at 0x000001B2B6B0E530>, <game_logic.Room object at 0x000001B2B6B0E4A0>, <game_logic.Room object at 0x000001B2B6B0E410>, <game_logic.Room object at 0x000001B2B6B0E5C0>, <game_logic.Room object at 0x000001B2B6B0E590>, <game_logic.Room object at 0x000001B2B6B0E620>, <game_logic.Room object at 0x000001B2B6B0E5F0>, <game_logic.Room object at 0x000001B2B6B0E3E0>, <game_logic.Room object at 0x000001B2B6B0E560>, <game_logic.Room object at 0x000001B2B6B0E650>, <game_logic.Room object at 0x000001B2B6B0E680>, <game_logic.Room object at 0x000001B2B6B0E740>, <game_logic.Room object at 0x000001B2B6B0E770>, <game_logic.Room object at 0x000001B2B6B0E6B0>, <game_logic.Room object at 0x000001B2B6B0E7D0>]
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 17 with room type library
+root - INFO - Attempting to create cluster 17 with room type library
+root - DEBUG - Finding free random position. Start center: False
+root - DEBUG - Start position found: (7, 3)
+root - DEBUG - generate_room called with room_type=library, x=7, y=3
+root - DEBUG - Trying to add room at position (7,3) and cluster_id: 17
+root - INFO - Start room for cluster 17 created at (7, 3)
+root - INFO - Initial frontier positions for cluster 17: [(6, 3)]
+root - DEBUG - Current state of frontier_positions: True
+root - DEBUG - Current number of rooms in cluster: 1
+root - DEBUG - Target number of rooms in cluster: 8
+root - DEBUG - generate_room called with room_type=library, x=6, y=3
+root - DEBUG - Trying to add room at position (6,3) and cluster_id: 17
+root - DEBUG - Added room at (6, 3). Rooms in cluster: 2
+root - INFO - Updated frontier positions for cluster 17: []
+root - INFO - Cluster creation result: True
+root - INFO - Cluster creation result: True
+root - DEBUG - All rooms after extending cluster_rooms: [<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0DA20>, <game_logic.Room object at 0x000001B2B6B0DA50>, <game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0D9C0>, <game_logic.Room object at 0x000001B2B6B0DBD0>, <game_logic.Room object at 0x000001B2B6B0DC00>, <game_logic.Room object at 0x000001B2B6B0DC30>, <game_logic.Room object at 0x000001B2B6B0DBA0>, <game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0DCF0>, <game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DE10>, <game_logic.Room object at 0x000001B2B6B0DE40>, <game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0DCC0>, <game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DEA0>, <game_logic.Room object at 0x000001B2B6B0DF30>, <game_logic.Room object at 0x000001B2B6B0DF60>, <game_logic.Room object at 0x000001B2B6B0D990>, <game_logic.Room object at 0x000001B2B6B0DFC0>, <game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0DF90>, <game_logic.Room object at 0x000001B2B6B0DF00>, <game_logic.Room object at 0x000001B2B6B0DAB0>, <game_logic.Room object at 0x000001B2B6B0E0E0>, <game_logic.Room object at 0x000001B2B6B0E110>, <game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E080>, <game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E140>, <game_logic.Room object at 0x000001B2B6B0E170>, <game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E260>, <game_logic.Room object at 0x000001B2B6B0D720>, <game_logic.Room object at 0x000001B2B6B0D7B0>, <game_logic.Room object at 0x000001B2B6B0E1D0>, <game_logic.Room object at 0x000001B2B6B0E200>, <game_logic.Room object at 0x000001B2B6B0E290>, <game_logic.Room object at 0x000001B2B6B0E350>, <game_logic.Room object at 0x000001B2B6B0E380>, <game_logic.Room object at 0x000001B2B6B0E3B0>, <game_logic.Room object at 0x000001B2B6B0E320>, <game_logic.Room object at 0x000001B2B6B0E2F0>, <game_logic.Room object at 0x000001B2B6B0E440>, <game_logic.Room object at 0x000001B2B6B0E470>, <game_logic.Room object at 0x000001B2B6B0E2C0>, <game_logic.Room object at 0x000001B2B6B0E4D0>, <game_logic.Room object at 0x000001B2B6B0E500>, <game_logic.Room object at 0x000001B2B6B0E530>, <game_logic.Room object at 0x000001B2B6B0E4A0>, <game_logic.Room object at 0x000001B2B6B0E410>, <game_logic.Room object at 0x000001B2B6B0E5C0>, <game_logic.Room object at 0x000001B2B6B0E590>, <game_logic.Room object at 0x000001B2B6B0E620>, <game_logic.Room object at 0x000001B2B6B0E5F0>, <game_logic.Room object at 0x000001B2B6B0E3E0>, <game_logic.Room object at 0x000001B2B6B0E560>, <game_logic.Room object at 0x000001B2B6B0E650>, <game_logic.Room object at 0x000001B2B6B0E680>, <game_logic.Room object at 0x000001B2B6B0E740>, <game_logic.Room object at 0x000001B2B6B0E770>, <game_logic.Room object at 0x000001B2B6B0E6B0>, <game_logic.Room object at 0x000001B2B6B0E7D0>, <game_logic.Room object at 0x000001B2B6B0E7A0>, <game_logic.Room object at 0x000001B2B6B0E710>]
+root - DEBUG - Clusters: dict_keys([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])
+root - DEBUG - Edges: [(1, 0, 2), (1, 0, 4), (1, 0, 11), (1, 0, 12), (1, 0, 14), (1, 1, 2), (1, 1, 7), (1, 1, 10), (1, 1, 11), (1, 2, 0), (1, 2, 1), (1, 2, 12), (1, 2, 15), (1, 3, 6), (1, 3, 13), (1, 3, 14), (1, 3, 17), (1, 4, 0), (1, 4, 5), (1, 4, 7), (1, 4, 11), (1, 4, 13), (1, 4, 17), (1, 5, 4), (1, 5, 7), (1, 5, 9), (1, 6, 3), (1, 6, 8), (1, 6, 14), (1, 7, 1), (1, 7, 4), (1, 7, 5), (1, 7, 9), (1, 7, 10), (1, 7, 11), (1, 7, 16), (1, 8, 6), (1, 8, 12), (1, 8, 15), (1, 9, 5), (1, 9, 7), (1, 10, 1), (1, 10, 7), (1, 10, 16), (1, 11, 0), (1, 11, 1), (1, 11, 4), (1, 11, 7), (1, 12, 0), (1, 12, 2), (1, 12, 8), (1, 12, 14), (1, 12, 15), (1, 13, 3), (1, 13, 4), (1, 14, 0), (1, 14, 3), (1, 14, 6), (1, 14, 12), (1, 14, 17), (1, 15, 2), (1, 15, 8), (1, 15, 12), (1, 16, 7), (1, 16, 10), (1, 17, 3), (1, 17, 4), (1, 17, 14), (2, 0, 1), (2, 0, 7), (2, 0, 17), (2, 1, 0), (2, 1, 12), (2, 2, 10), (2, 2, 11), (2, 3, 4), (2, 3, 12), (2, 4, 3), (2, 4, 9), (2, 4, 14), (2, 5, 13), (2, 6, 12), (2, 6, 17), (2, 7, 0), (2, 8, 14), (2, 9, 4), (2, 9, 16), (2, 10, 2), (2, 11, 2), (2, 11, 12), (2, 11, 16), (2, 12, 1), (2, 12, 3), (2, 12, 6), (2, 12, 11), (2, 13, 5), (2, 13, 17), (2, 14, 4), (2, 14, 8), (2, 16, 9), (2, 16, 11), (2, 17, 0), (2, 17, 6), (2, 17, 13), (3, 0, 3), (3, 0, 6), (3, 0, 13), (3, 1, 4), (3, 1, 15), (3, 1, 16), (3, 2, 8), (3, 3, 0), (3, 3, 5), (3, 4, 1), (3, 4, 6), (3, 5, 3), (3, 6, 0), (3, 6, 4), (3, 7, 14), (3, 8, 2), (3, 9, 10), (3, 10, 9), (3, 10, 11), (3, 11, 10), (3, 11, 14), (3, 12, 17), (3, 13, 0), (3, 14, 7), (3, 14, 11), (3, 14, 15), (3, 15, 1), (3, 15, 14), (3, 16, 1), (3, 17, 12), (4, 0, 8), (4, 0, 10), (4, 0, 15), (4, 0, 16), (4, 1, 8), (4, 2, 4), (4, 2, 7), (4, 2, 14), (4, 4, 2), (4, 4, 12), (4, 4, 16), (4, 5, 11), (4, 5, 16), (4, 5, 17), (4, 6, 13), (4, 6, 15), (4, 7, 2), (4, 7, 12), (4, 7, 17), (4, 8, 0), (4, 8, 1), (4, 9, 11), (4, 10, 0), (4, 11, 5), (4, 11, 9), (4, 11, 17), (4, 12, 4), (4, 12, 7), (4, 13, 6), (4, 13, 14), (4, 14, 2), (4, 14, 13), (4, 15, 0), (4, 15, 6), (4, 16, 0), (4, 16, 4), (4, 16, 5), (4, 17, 5), (4, 17, 7), (4, 17, 11), (5, 0, 5), (5, 0, 9), (5, 1, 5), (5, 1, 9), (5, 1, 14), (5, 2, 17), (5, 3, 7), (5, 3, 8), (5, 3, 11), (5, 3, 15), (5, 4, 10), (5, 5, 0), (5, 5, 1), (5, 5, 10), (5, 6, 11), (5, 7, 3), (5, 7, 13), (5, 8, 3), (5, 8, 11), (5, 9, 0), (5, 9, 1), (5, 9, 13), (5, 9, 17), (5, 10, 4), (5, 10, 5), (5, 10, 12), (5, 11, 3), (5, 11, 6), (5, 11, 8), (5, 11, 13), (5, 11, 15), (5, 12, 10), (5, 13, 7), (5, 13, 9), (5, 13, 11), (5, 14, 1), (5, 15, 3), (5, 15, 11), (5, 17, 2), (5, 17, 9), (6, 1, 17), (6, 2, 3), (6, 2, 6), (6, 2, 13), (6, 2, 16), (6, 3, 2), (6, 3, 9), (6, 5, 6), (6, 5, 14), (6, 6, 2), (6, 6, 5), (6, 6, 7), (6, 7, 6), (6, 8, 17), (6, 9, 3), (6, 9, 14), (6, 10, 15), (6, 12, 13), (6, 12, 16), (6, 13, 2), (6, 13, 12), (6, 14, 5), (6, 14, 9), (6, 14, 16), (6, 15, 10), (6, 15, 17), (6, 16, 2), (6, 16, 12), (6, 16, 14), (6, 17, 1), (6, 17, 8), (6, 17, 15), (7, 1, 3), (7, 1, 6), (7, 1, 13), (7, 3, 1), (7, 4, 8), (7, 4, 15), (7, 6, 1), (7, 6, 9), (7, 7, 8), (7, 7, 15), (7, 8, 4), (7, 8, 7), (7, 8, 10), (7, 9, 6), (7, 10, 8), (7, 10, 14), (7, 13, 1), (7, 14, 10), (7, 15, 4), (7, 15, 7), (7, 16, 17), (7, 17, 16), (8, 2, 5), (8, 2, 9), (8, 3, 16), (8, 5, 2), (8, 5, 12), (8, 6, 16), (8, 9, 2), (8, 9, 12), (8, 10, 17), (8, 12, 5), (8, 12, 9), (8, 13, 16), (8, 16, 3), (8, 16, 6), (8, 16, 13), (8, 17, 10), (9, 3, 10), (9, 6, 10), (9, 8, 13), (9, 8, 16), (9, 10, 3), (9, 10, 6), (9, 10, 13), (9, 13, 8), (9, 13, 10), (9, 13, 15), (9, 15, 13), (9, 15, 16), (9, 16, 8), (9, 16, 15), (11, 5, 8), (11, 5, 15), (11, 8, 5), (11, 8, 9), (11, 9, 8), (11, 9, 15), (11, 15, 5), (11, 15, 9)]
+root - DEBUG - Sets: {0: {0}, 1: {1}, 2: {2}, 3: {3}, 4: {4}, 5: {5}, 6: {6}, 7: {7}, 8: {8}, 9: {9}, 10: {10}, 11: {11}, 12: {12}, 13: {13}, 14: {14}, 15: {15}, 16: {16}, 17: {17}}
+root - INFO - Possible room pairs between cluster 0 and cluster 11 are: [(<game_logic.Room object at 0x000001B2B6B0D750>, <game_logic.Room object at 0x000001B2B6B0E2C0>), (<game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0E470>)]
+root - INFO - Connecting clusters, room 1 4, 4 and room 2 4, 5.
+root - INFO - Trying to connect room1 at (4, 4) to room2 at (4, 5) in the south direction.
+root - INFO - Rooms at (4, 4) and (4, 5) have been connected.
+root - INFO - Possible room pairs between cluster 1 and cluster 10 are: [(<game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0E320>), (<game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0E2F0>), (<game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0E380>), (<game_logic.Room object at 0x000001B2B6B0DB70>, <game_logic.Room object at 0x000001B2B6B0E2F0>)]
+root - INFO - Connecting clusters, room 1 2, 7 and room 2 2, 8.
+root - INFO - Trying to connect room1 at (2, 7) to room2 at (2, 8) in the south direction.
+root - INFO - Rooms at (2, 7) and (2, 8) have been connected.
+root - INFO - Possible room pairs between cluster 3 and cluster 6 are: [(<game_logic.Room object at 0x000001B2B6B0DD50>, <game_logic.Room object at 0x000001B2B6B0DF90>), (<game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0E110>), (<game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0DF00>), (<game_logic.Room object at 0x000001B2B6B0DDE0>, <game_logic.Room object at 0x000001B2B6B0E110>)]
+root - INFO - Connecting clusters, room 1 8, 1 and room 2 8, 0.
+root - INFO - Trying to connect room1 at (8, 1) to room2 at (8, 0) in the north direction.
+root - INFO - Rooms at (8, 1) and (8, 0) have been connected.
+root - INFO - Possible room pairs between cluster 0 and cluster 14 are: [(<game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0E650>), (<game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0E650>)]
+root - INFO - Connecting clusters, room 1 5, 4 and room 2 5, 3.
+root - INFO - Trying to connect room1 at (5, 4) to room2 at (5, 3) in the north direction.
+root - INFO - Rooms at (5, 4) and (5, 3) have been connected.
+root - INFO - Possible room pairs between cluster 0 and cluster 4 are: [(<game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0DEA0>), (<game_logic.Room object at 0x000001B2B6B0D930>, <game_logic.Room object at 0x000001B2B6B0DF30>)]
+root - INFO - Connecting clusters, room 1 5, 4 and room 2 5, 5.
+root - INFO - Trying to connect room1 at (5, 4) to room2 at (5, 5) in the south direction.
+root - INFO - Rooms at (5, 4) and (5, 5) have been connected.
+root - INFO - Possible room pairs between cluster 3 and cluster 14 are: [(<game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0E560>)]
+root - INFO - Connecting clusters, room 1 6, 2 and room 2 5, 2.
+root - INFO - Trying to connect room1 at (6, 2) to room2 at (5, 2) in the west direction.
+root - INFO - Rooms at (6, 2) and (5, 2) have been connected.
+root - INFO - Possible room pairs between cluster 1 and cluster 2 are: [(<game_logic.Room object at 0x000001B2B6B0D9F0>, <game_logic.Room object at 0x000001B2B6B0DBA0>), (<game_logic.Room object at 0x000001B2B6B0DB10>, <game_logic.Room object at 0x000001B2B6B0DC30>), (<game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DBD0>), (<game_logic.Room object at 0x000001B2B6B0DB40>, <game_logic.Room object at 0x000001B2B6B0DC30>)]
+root - INFO - Connecting clusters, room 1 2, 5 and room 2 2, 4.
+root - INFO - Trying to connect room1 at (2, 5) to room2 at (2, 4) in the north direction.
+root - INFO - Rooms at (2, 5) and (2, 4) have been connected.
+root - INFO - Possible room pairs between cluster 3 and cluster 17 are: [(<game_logic.Room object at 0x000001B2B6B0DD20>, <game_logic.Room object at 0x000001B2B6B0E7A0>), (<game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0E7A0>), (<game_logic.Room object at 0x000001B2B6B0DDB0>, <game_logic.Room object at 0x000001B2B6B0E710>)]
+root - INFO - Connecting clusters, room 1 7, 2 and room 2 7, 3.
+root - INFO - Trying to connect room1 at (7, 2) to room2 at (7, 3) in the south direction.
+root - INFO - Rooms at (7, 2) and (7, 3) have been connected.
+root - INFO - Possible room pairs between cluster 3 and cluster 13 are: [(<game_logic.Room object at 0x000001B2B6B0DD80>, <game_logic.Room object at 0x000001B2B6B0E620>)]
+root - INFO - Connecting clusters, room 1 8, 3 and room 2 8, 4.
+root - INFO - Trying to connect room1 at (8, 3) to room2 at (8, 4) in the south direction.
+root - INFO - Rooms at (8, 3) and (8, 4) have been connected.
+root - INFO - Possible room pairs between cluster 2 and cluster 15 are: [(<game_logic.Room object at 0x000001B2B6B0DC90>, <game_logic.Room object at 0x000001B2B6B0E6B0>), (<game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0E680>), (<game_logic.Room object at 0x000001B2B6B0DC60>, <game_logic.Room object at 0x000001B2B6B0E6B0>)]
+root - INFO - Connecting clusters, room 1 1, 3 and room 2 1, 2.
+root - INFO - Trying to connect room1 at (1, 3) to room2 at (1, 2) in the north direction.
+root - INFO - Rooms at (1, 3) and (1, 2) have been connected.
+root - INFO - Possible room pairs between cluster 5 and cluster 9 are: [(<game_logic.Room object at 0x000001B2B6B0DFF0>, <game_logic.Room object at 0x000001B2B6B0E350>), (<game_logic.Room object at 0x000001B2B6B0E020>, <game_logic.Room object at 0x000001B2B6B0E350>)]
+root - INFO - Connecting clusters, room 1 7, 7 and room 2 7, 8.
+root - INFO - Trying to connect room1 at (7, 7) to room2 at (7, 8) in the south direction.
+root - INFO - Rooms at (7, 7) and (7, 8) have been connected.
+root - INFO - Possible room pairs between cluster 6 and cluster 8 are: [(<game_logic.Room object at 0x000001B2B6B0E050>, <game_logic.Room object at 0x000001B2B6B0E1D0>)]
+root - INFO - Connecting clusters, room 1 4, 0 and room 2 3, 0.
+root - INFO - Trying to connect room1 at (4, 0) to room2 at (3, 0) in the west direction.
+root - INFO - Rooms at (4, 0) and (3, 0) have been connected.
+root - INFO - Possible room pairs between cluster 7 and cluster 16 are: [(<game_logic.Room object at 0x000001B2B6B0E0B0>, <game_logic.Room object at 0x000001B2B6B0E7D0>), (<game_logic.Room object at 0x000001B2B6B0E230>, <game_logic.Room object at 0x000001B2B6B0E7D0>)]
+root - INFO - Connecting clusters, room 1 4, 7 and room 2 4, 8.
+root - INFO - Trying to connect room1 at (4, 7) to room2 at (4, 8) in the south direction.
+root - INFO - Rooms at (4, 7) and (4, 8) have been connected.
+root - INFO - Possible room pairs between cluster 0 and cluster 12 are: [(<game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0E500>), (<game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0E500>), (<game_logic.Room object at 0x000001B2B6B0D960>, <game_logic.Room object at 0x000001B2B6B0E5C0>)]
+root - INFO - Connecting clusters, room 1 3, 4 and room 2 3, 3.
+root - INFO - Trying to connect room1 at (3, 4) to room2 at (3, 3) in the north direction.
+root - INFO - Rooms at (3, 4) and (3, 3) have been connected.
+root - INFO - Possible room pairs between cluster 0 and cluster 2 are: [(<game_logic.Room object at 0x000001B2B6B0D900>, <game_logic.Room object at 0x000001B2B6B0DBA0>)]
+root - INFO - Connecting clusters, room 1 3, 4 and room 2 2, 4.
+root - INFO - Trying to connect room1 at (3, 4) to room2 at (2, 4) in the west direction.
+root - INFO - Rooms at (3, 4) and (2, 4) have been connected.
+root - INFO - Possible room pairs between cluster 4 and cluster 5 are: [(<game_logic.Room object at 0x000001B2B6B0DE70>, <game_logic.Room object at 0x000001B2B6B0D990>), (<game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0D990>), (<game_logic.Room object at 0x000001B2B6B0DED0>, <game_logic.Room object at 0x000001B2B6B0DFF0>)]
+root - INFO - Connecting clusters, room 1 8, 5 and room 2 8, 6.
+root - INFO - Trying to connect room1 at (8, 5) to room2 at (8, 6) in the south direction.
+root - INFO - Rooms at (8, 5) and (8, 6) have been connected.
+root - INFO - Possible room pairs between cluster 1 and cluster 7 are: [(<game_logic.Room object at 0x000001B2B6B0DA80>, <game_logic.Room object at 0x000001B2B6B0E260>), (<game_logic.Room object at 0x000001B2B6B0DAE0>, <game_logic.Room object at 0x000001B2B6B0E260>)]
+root - INFO - Connecting clusters, room 1 3, 6 and room 2 3, 7.
+root - INFO - Trying to connect room1 at (3, 6) to room2 at (3, 7) in the south direction.
+root - INFO - Rooms at (3, 6) and (3, 7) have been connected.
+root - INFO - Game map successfully generated.
+root - INFO - Game map successfully generated.

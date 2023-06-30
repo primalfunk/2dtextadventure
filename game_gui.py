@@ -4,7 +4,9 @@ from PySide6 import QtGui
 from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor
 from game_logic import GameMap, Player, Key
 import json
+import logging
 import random
+import traceback
 
 class DataLoader:
     def __init__(self, json_path):
@@ -27,24 +29,45 @@ class DataLoader:
                 if not genres:
                     raise ValueError("Genres not found in data")
                 self.data = random.choice(genres)
+                logging.debug(f"Data keys after loading: {self.data.keys()}")
+                logging.debug(f"Data length after loading: {len(self.data)}")
         except (FileNotFoundError, ValueError) as e:
-            print(f"Error in loading data: {str(e)}")
-    
+            logging.error(f"Error in loading data: {str(e)}")
+        
     def create_game_map(self, grid_width=9, grid_height=9):
-        grid_l = grid_width
-        if self.data:
-            elements = self.data.get("elements")
-            if elements:
-                self.game_map = GameMap(elements["rooms"],grid_width, grid_height, data_loader=self)
-                cfp = .75
-                minR = round(((grid_l **2) * cfp) / (grid_l * 1.25)) #creates more, smaller clusters as grid size goes up
-                maxR = round(((grid_l **2) * cfp) / (grid_l / 1.25))
-                numC = round(((grid_l **2) * cfp) / ((minR + maxR) / 2)) # number of clusters based on average cluster size
-                self.game_map.generate_game_map(elements["rooms"], minR, maxR, numC)
-        else:
-            raise ValueError("Data not loaded, can't create game map")
+        try: 
+            if self.data:
+                logging.info("Data loaded successfully.")
+                elements = self.data.get("elements")
+                if elements:
+                    logging.info("Elements found in data.")
+                    logging.debug(f"Elements before map generation: {str(elements)[:15]}")
+                    logging.debug(f"Rooms before map generation: {str(elements['rooms'])[:20]}")
+                    try:
+                        self.game_map = GameMap(elements["rooms"], grid_width, grid_height, data_loader=self)
+                    except Exception as e:
+                        logging.exception("Failed to initialize game: %s, e)")
+                    retries = 5  # maximum number of retries
+                    for i in range(retries):
+                        successful_generation = self.game_map.generate_game_map(elements["rooms"])
+                        if successful_generation:
+                            logging.info("Game map successfully generated.")
+                            return self.game_map
+                        else:
+                            logging.error(f"***Game map generation failed at attempt {i+1}. Retrying...")
+                    logging.error("Game map generation failed after maximum retries.")
+                    raise Exception("Game map generation failed after maximum retries.")
+                else:
+                    
+                    logging.warning("No data loaded.")
+                    raise ValueError("Data not loaded, can't create game map")
+            return False
+        except Exception as e:
+            logging.error(f"An error occurred during game initialization: {e}")
+            logging.error(traceback.format_exc())
 
     def get_game_map(self):
+        logging.debug(f"Current game map: {self.game_map}")
         if self.game_map:
             return self.game_map
         else:
@@ -206,6 +229,14 @@ class GameGUI(QWidget):
             f"Defense: {self.player.defp}"
         )
 
+    def initialize_game(self):
+        try:
+            game_map = self.data_loader.create_game_map(9,9)
+            print(f"Game map type is {type(game_map)}")
+            self.start_game(game_map)
+        except Exception as e:
+            logging.error(f"Failed to initialize game: {e}")
+
     def start_game(self, game_map):
         self.game_map = game_map
         self.map_window = MapWindow(self, self.game_map)
@@ -224,7 +255,7 @@ class GameGUI(QWidget):
             self.font_size_decrease_button.setEnabled(True)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
             self.map_window.show_self()
-        else: 
+        else:
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignCenter)
             game_title = self.generate_game_title()
@@ -241,6 +272,7 @@ class GameGUI(QWidget):
             self.font_size_increase_button.setEnabled(False)
             self.font_size_decrease_button.setEnabled(False)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
+            self.initialize_game()
             self.hide_map()
         self.map_window.update_map()
 
@@ -369,13 +401,11 @@ class MapWindow(QWidget):
         self.layout.addWidget(self.grid_widget)
         self.game_map = game_map
         self.labels = [[None for _ in range(2*game_map.grid_width - 1)] for _ in range(2*game_map.grid_height - 1)]
-
         for i in range(2*game_map.grid_height - 1):
             for j in range(2*game_map.grid_width - 1):
                 self.labels[i][j] = QLabel(' ')
                 self.labels[i][j].setStyleSheet("border: 1px solid black;")
                 self.grid_layout.addWidget(self.labels[i][j], i, j)
-        
         self.setLayout(self.layout)
 
     def update_map(self):
@@ -412,7 +442,7 @@ class MapWindow(QWidget):
                         room_label.setText('Y')
                         room_label.setStyleSheet(f"background-color: cyan; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
                     else:
-                        room_label.setText('□')
+                        room_label.setText('R')
 
                     # Draw connections
                     for direction, connected_room in room.connected_rooms.items():
@@ -440,9 +470,15 @@ class MapWindow(QWidget):
 if __name__ == "__main__":
     app = QApplication([])
 
-    game_init = DataLoader("data.json")
-    game_init.create_game_map(9,9)
-    game_gui = GameGUI(data_loader=game_init)
-    game_gui.start_game(game_init.get_game_map())
+    logger = logging.getLogger()
+    logger.handlers = []  # clear existing handlers
+    handler = logging.FileHandler('my_errors.log', 'w')
+    formatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.setLevel(logging.DEBUG)
 
+    game_init = DataLoader("data.json")
+    game_gui = GameGUI(data_loader=game_init)
+    game_gui.initialize_game()
     app.exec()
