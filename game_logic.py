@@ -389,7 +389,7 @@ class GameMap:
             logging.info(f"Cluster creation result: {cluster_created}")
             cluster_id += 1
             if not cluster_created:
-                print(f"Failed to create cluster {cluster_id-1}, skipping to next.")
+                logging.info(f"Failed to create cluster {cluster_id-1}, skipping to next.")
                 continue
             cluster_rooms = self.room_clusters[cluster_id-1]
             if cluster_id == 1 and cluster_rooms:
@@ -403,7 +403,7 @@ class GameMap:
                 break
         self.connect_clusters()
         self.add_placeables(all_rooms)
-        print(self.render_fancy_map())
+        logging.info(self.render_fancy_map())
         if self.is_map_full:
             # Log number of clusters
             logging.info(f"Number of clusters created: {len(self.room_clusters)}")
