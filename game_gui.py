@@ -407,43 +407,47 @@ class MapWindow(QWidget):
                 self.labels[i][j].setStyleSheet("border: 1px solid black;")
                 self.grid_layout.addWidget(self.labels[i][j], i, j)
         self.setLayout(self.layout)
+        self.room_type_colors = {}
 
     def update_map(self):
-        border_colors = ["black", "red", "blue", "green", "yellow", "cyan", "magenta", "gray", "silver", "maroon", "purple", "fuchsia", "lime", "olive", 
-                         "navy", "teal", "orange", "pink", "violet", "indigo", "gold", "silver", "bronze", "coral", "beige", "mint", "lavender", "turquoise", "tan", "skyblue", "salmon", 
-                         "plum", "peach", "orchid", "olive", "crimson"]
-        border_color = random.choice(border_colors)
+        all_the_colors = ["yellow", "cyan", "magenta", "silver", "fuchsia", "lime", "teal", 
+          "orange", "pink", "violet", "coral", "beige", "mint", "lavender", 
+          "turquoise", "skyblue", "salmon", "plum", "peach"]
         for room in self.game_map.rooms:
             if room is not None:
                 if (0 <= 2*room.y < len(self.labels)) and (0 <= 2*room.x < len(self.labels[0])):
                     room_label = self.labels[2*room.y][2*room.x]
                     room_label.setAlignment(Qt.AlignCenter)
                     room_label.setStyleSheet("border: 2px solid black; font-size: 20px; font-weight: bold;")  # Default room style
+                    # set type background
+                    if room.type not in self.room_type_colors:
+                        color_choice = random.choice(all_the_colors)
+                        self.room_type_colors[room.type] = color_choice
                     # Set room symbol
                     if room == self.game_map.player.current_room:
                         room_label.setText('P')
-                        room_label.setStyleSheet(f"background-color: lime; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     elif room.enemy:
                         room_label.setText('E')
-                        room_label.setStyleSheet(f"background-color: green; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     elif room.weapon:
                         room_label.setText('W')
-                        room_label.setStyleSheet(f"background-color: blue; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     elif room.armor:
                         room_label.setText('A')
-                        room_label.setStyleSheet(f"background-color: fuschia; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     elif room.key_item:
                         room_label.setText('K')
-                        room_label.setStyleSheet(f"background-color: olive; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     elif room.lock_item:
                         room_label.setText('L')
-                        room_label.setStyleSheet(f"background-color: olive; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     elif room.ally:
                         room_label.setText('Y')
-                        room_label.setStyleSheet(f"background-color: cyan; border: 2px solid {border_color}; font-size: 20px; font-weight: bold;")
+                        room_label.setStyleSheet(f"background-color: red; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     else:
                         room_label.setText('R')
-
+                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; border: 2px solid black; font-size: 20px; font-weight: bold;")
                     # Draw connections
                     for direction, connected_room in room.connected_rooms.items():
                         if connected_room is not None:
