@@ -21,10 +21,33 @@ class DataLoader:
         title = f"{game_title} {treasure}"
         return title
 
+    def scrutinize_data(self, data):
+        logging.info("Scrutinize_data is called.")
+        for genre_data in data["genres"]:
+            genre = genre_data["genre"]
+            logging.info(f"Genre: {genre}")
+            elements = genre_data["elements"]
+            for key, value in elements.items():
+                if key == "rooms":
+                    count = len(value)
+                    logging.info(f"Rooms count: {count}")
+                    for room in value:
+                        room_type = room["type"]
+                        name_count = len(room["name"])
+                        adjectives_count = len(room["adjectives"])
+                        scenery_count = len(room["scenery"])
+                        atmosphere_count = len(room["atmosphere"])
+                        logging.info(f"Room type: {room_type}")
+                        logging.info(f"Name count: {name_count}")
+                        logging.info(f"Adjectives count: {adjectives_count}")
+                        logging.info(f"Scenery count: {scenery_count}")
+                        logging.info(f"Atmosphere count: {atmosphere_count}")
+
     def load_data(self):
         try:
             with open(self.json_path, 'r') as file:
                 data = json.load(file)
+                self.scrutinize_data(data)
                 genres = data.get("genres")
                 if not genres:
                     raise ValueError("Genres not found in data")
@@ -410,63 +433,67 @@ class MapWindow(QWidget):
         self.room_type_colors = {}
 
     def update_map(self):
-        all_the_colors = ["yellow", "cyan", "magenta", "silver", "lime", "teal", 
-          "orange", "pink", "violet", "coral", "mint", "lavender", 
-          "turquoise", "skyblue", "salmon", "peach"]
-        for room in self.game_map.rooms:
-            if room is not None:
-                if (0 <= 2*room.y < len(self.labels)) and (0 <= 2*room.x < len(self.labels[0])):
-                    room_label = self.labels[2*room.y][2*room.x]
-                    room_label.setAlignment(Qt.AlignCenter)
-                    room_label.setStyleSheet("font-size: 20px; font-weight: bold;")  # Default room style
-                    # set type background
-                    if room.type not in self.room_type_colors:
-                        color_choice = random.choice(all_the_colors)
-                        self.room_type_colors[room.type] = color_choice
-                    # Set room symbol
-                    if room == self.game_map.player.current_room:
-                        room_label.setText('P')
-                        room_label.setStyleSheet(f"background-color: red; border: 2px solid black; font-size: 20px; font-weight: bold;")
-                    elif room.enemy:
-                        room_label.setText('E')
-                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
-                    elif room.weapon:
-                        room_label.setText('W')
-                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
-                    elif room.armor:
-                        room_label.setText('A')
-                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
-                    elif room.key_item:
-                        room_label.setText('K')
-                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
-                    elif room.lock_item:
-                        room_label.setText('L')
-                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
-                    elif room.ally:
-                        room_label.setText('A')
-                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
-                    else:
-                        room_label.setText('R')
-                        room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
-                    # Draw connections
-                    for direction, connected_room in room.connected_rooms.items():
-                        if connected_room is not None:
-                            connection_label = None
-                            if direction == "north" and 2*room.y - 1 >= 0:
-                                connection_label = self.labels[2*room.y - 1][2*room.x]
-                                connection_label.setText('|')
-                            elif direction == "south" and 2*room.y + 1 < len(self.labels):
-                                connection_label = self.labels[2*room.y + 1][2*room.x]
-                                connection_label.setText('|')
-                            elif direction == "west" and 2*room.x - 1 >= 0:
-                                connection_label = self.labels[2*room.y][2*room.x - 1]
-                                connection_label.setText('-')
-                            elif direction == "east" and 2*room.x + 1 < len(self.labels[0]):
-                                connection_label = self.labels[2*room.y][2*room.x + 1]
-                                connection_label.setText('-')
-                            if connection_label is not None:
-                                connection_label.setAlignment(Qt.AlignCenter)
-                                connection_label.setStyleSheet("border: 1px solid black; font-size: 10px;")
+        try:
+            all_the_colors = ["yellow", "cyan", "magenta", "silver", "lime", 
+            "orange", "pink", "violet", "coral", "lavender", "turquoise", "skyblue", "salmon", "peachpuff"]
+            for room in self.game_map.rooms:
+                if room is not None:
+                    if (0 <= 2*room.y < len(self.labels)) and (0 <= 2*room.x < len(self.labels[0])):
+                        room_label = self.labels[2*room.y][2*room.x]
+                        room_label.setAlignment(Qt.AlignCenter)
+                        room_label.setStyleSheet("font-size: 20px; font-weight: bold;")  # Default room style
+                        # set type background
+                        if room.type not in self.room_type_colors:
+                            random.shuffle(all_the_colors)
+                            shuffled_colors = all_the_colors
+                            color_choice = shuffled_colors.pop(0)
+                            self.room_type_colors[room.type] = color_choice
+                        # Set room symbol
+                        if room == self.game_map.player.current_room:
+                            room_label.setText('P')
+                            room_label.setStyleSheet(f"background-color: red; border: 2px solid black; font-size: 20px; font-weight: bold;")
+                        elif room.enemy:
+                            room_label.setText('E')
+                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                        elif room.weapon:
+                            room_label.setText('W')
+                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                        elif room.armor:
+                            room_label.setText('A')
+                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                        elif room.key_item:
+                            room_label.setText('K')
+                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                        elif room.lock_item:
+                            room_label.setText('L')
+                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                        elif room.ally:
+                            room_label.setText('A')
+                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                        else:
+                            room_label.setText('R')
+                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                        # Draw connections
+                        for direction, connected_room in room.connected_rooms.items():
+                            if connected_room is not None:
+                                connection_label = None
+                                if direction == "north" and 2*room.y - 1 >= 0:
+                                    connection_label = self.labels[2*room.y - 1][2*room.x]
+                                    connection_label.setText('|')
+                                elif direction == "south" and 2*room.y + 1 < len(self.labels):
+                                    connection_label = self.labels[2*room.y + 1][2*room.x]
+                                    connection_label.setText('|')
+                                elif direction == "west" and 2*room.x - 1 >= 0:
+                                    connection_label = self.labels[2*room.y][2*room.x - 1]
+                                    connection_label.setText('-')
+                                elif direction == "east" and 2*room.x + 1 < len(self.labels[0]):
+                                    connection_label = self.labels[2*room.y][2*room.x + 1]
+                                    connection_label.setText('-')
+                                if connection_label is not None:
+                                    connection_label.setAlignment(Qt.AlignCenter)
+                                    connection_label.setStyleSheet("border: 1px solid black; font-size: 10px;")
+        except Exception as e:
+            logging(f"Error occurred during update_map function: {e}")
 
     def show_self(self):
         self.show()

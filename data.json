@@ -2025,7 +2025,7 @@
             ]
           },
           {
-            "type": "featureless space",
+            "type": "open",
             "name": [
               "Plain",
               "Range",
@@ -2213,6 +2213,34 @@
               "The atmosphere is steeped in a quiet contemplation, inviting those who enter the featureless space to reflect on the vast mysteries of existence.",
               "The air carries the faint echoes of distant whispers, as if the space reverberates with the wisdom and knowledge of countless generations."
             ]
+          },
+          {
+            "type": "sanctum",
+            "name": ["Chamber", "Vault", "Sanctuary", "Grotto", "Den", "Refuge", "Cavern", "Shrine", "Retreat", "Cell", "Cloister", "Haven", "Oasis", "Citadel", "Lair", "Temple", "Hollow", "Cove", "Asylum", "Parlor"],
+            "adjectives": ["Enchanted", "Whispering", "Sacred", "Serene", "Secret", "Mystical", "Ancient", "Ethereal", "Hidden", "Tranquil", "Hallowed", "Forgotten", "Divine", "Seraphic", "Elysian", "Harmonic", "Celestial", "Secretive", "Silent", "Revered"],
+            "scenery": [
+              "Soft candlelight flickers within the refuge, casting gentle shadows on weathered stone walls adorned with sacred symbols.",
+              "An ethereal waterfall cascades down a moss-covered rock face within this hidden haven, its crystalline waters glistening in the soft glow.",
+              "Sunlight filters through the lush foliage, painting dappled hues within this tranquil space, where a canopy of intertwining vines creates a verdant sanctuary.",
+              "In the secluded grotto, a mesmerizing pool shimmers with a captivating iridescence, reflecting the starlit sky in its calm depths.",
+              "A grand mural unfolds within the sacred chamber, depicting celestial realms and mythical creatures in breathtaking detail—an awe-inspiring testament to divine artistry.",
+              "Ancient statues stand sentinel in this hallowed place, emanating a timeless sense of reverence and silent guardianship with their weathered marble forms.",
+              "Within this serene den, shelves lined with ancient tomes stretch towards the vaulted ceiling, their leather-bound covers adorned with intricate, gilded motifs.",
+              "Delicate sconces cast a warm, flickering glow on ancient relics and priceless artifacts among the secret alcoves, each whispering stories of bygone eras.",
+              "A magnificent crystal chandelier hangs within this mystical sanctuary, casting shimmering prisms of light upon the polished marble floors below.",
+              "A tranquil fountain dances amidst this harmonious space, its soothing melody mingling with the gentle rustle of leaves in a hidden courtyard.",
+              "Rays of sunlight filter through a narrow opening, illuminating a hidden garden of vibrant blooms and delicate blossoms within this forgotten cove.",
+              "In a sacred refuge, intricate carvings adorn the walls, depicting mythical creatures frozen in a dance of ancient legends and celestial harmony.",
+              "The celestial temple reveals a mesmerizing tapestry of constellations in its domed ceiling, guiding the path of seekers with their twinkling lights.",
+              "Delicate strands of luminous moss hang from above within this ethereal space, emitting a soft, otherworldly glow that bathes the surroundings in a gentle radiance.",
+              "Through a panoramic window, a secluded oasis unveils a breathtaking view of rolling hills and distant, mist-covered mountains, untouched and serene.",
+              "In this secluded haven, daylight filters through intricate stained glass windows, casting vibrant, kaleidoscopic patterns across the polished stone floors.",
+              "A sacred tree stands tall within this silent refuge, reaching towards the heavens with its ancient branches adorned with shimmering, iridescent leaves.",
+              "Within this hidden sanctuary, delicate wisps of incense waft through the air, creating a sense of tranquility and spiritual contemplation.",
+              "A mesmerizing waterfall plummets into a tranquil pool within this hidden sanctuary, creating a soothing symphony as its cascading waters dance.",
+              "Pillars of ethereal light illuminate a stunning mural within this sacred space, depicting celestial beings and their eternal dance across the night sky."
+            ],
+            "atmosphere": []
           }
         ]
       }

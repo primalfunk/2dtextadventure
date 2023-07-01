@@ -34,7 +34,7 @@ class GameMap:
         self.room_dict = {(x, y): None  for x in range(grid_width) for y in range(grid_height)}
 
     def init_cycle(self, field):
-        logging.debug(f"Init_cycle called for {field}.")
+        #logging.debug(f"Init_cycle called for {field}.")
         all_items = [data[field] for data in self.rooms_data]
         flattened_items = [item for sublist in all_items for item in sublist]
         random.shuffle(flattened_items)
@@ -72,7 +72,7 @@ class GameMap:
         ]
         placeable_attributes = ["key_item", "lock_item", "weapon", "armor", "enemy", "ally"]
         if not all_rooms:
-            logging.error("No rooms were generated. Cannot place items.")
+            #logging.error("No rooms were generated. Cannot place items.")
             raise RuntimeError("No rooms were generated. Cannot place items.")
         possible_locations = all_rooms.copy()
         if self.player_start_room in possible_locations:
@@ -84,15 +84,13 @@ class GameMap:
             else:
                 placeable = method(data)
             setattr(room, attr, placeable)
-            logging.debug(f"Placeable method, data, attribute, room: {method}, {data}, {attr}, {room}")
+            #logging.debug(f"Placeable method, data, attribute, room: {method}, {data}, {attr}, {room}")
             possible_locations.remove(room)
-        logging.debug(self.render_map())
     
     def add_room(self, room, x, y, cluster_id, last_added_room=None, is_first_room=False):
         # Add a room to the map and the rooms list.
         # Then add it to its cluster and connect it to adjacent rooms if possible.
         self._add_room_to_maps_and_list(room, x, y)
-        self._add_room_to_cluster(room, cluster_id)
         # Set the number of maximum connections
         if is_first_room:
             if cluster_id == 0:  # The player's starting room
@@ -128,8 +126,23 @@ class GameMap:
     def _connect_to_existing_room(self, new_room):
         adjacent_rooms = new_room.get_adjacent_rooms()
         for adj_room in adjacent_rooms:
-            direction = self.calculate_direction(adj_room, new_room)
-            self.connect_rooms(adj_room, new_room, direction)
+            # Check if the adjacent room belongs to the same cluster as the new room
+            if adj_room.cluster_id == new_room.cluster_id:
+                # Check if connecting to the adjacent room will exceed max_connections for either room
+                if new_room.count_connections() < new_room.max_connections and adj_room.count_connections() < adj_room.max_connections:
+                    direction = self.calculate_direction(adj_room, new_room)
+                    self.connect_rooms(adj_room, new_room, direction)
+
+    def _connect_room_to_surroundings(self, room):
+        new_connections_made = True
+        while new_connections_made:
+            new_connections_made = False
+            adjacent_rooms = room.get_adjacent_rooms()
+            for adj_room in adjacent_rooms:
+                if self.can_connect_rooms(room, adj_room):
+                    direction = self.calculate_direction(room, adj_room)
+                    self.connect_rooms(room, adj_room, direction)
+                    new_connections_made = True
 
     def _can_connect_to_last_room(self, room, last_added_room):
         return (
@@ -138,23 +151,18 @@ class GameMap:
             and self.is_adjacent(room, last_added_room)
         )
 
-    def _connect_to_any_adjacent_room(self, room):
-        adjacent_rooms = room.get_adjacent_rooms()
-        random.shuffle(adjacent_rooms)  # Randomize the order of the adjacent rooms
-        for adj_room in adjacent_rooms:
-            if self._can_connect_to_last_room(room, adj_room):
-                self._connect_rooms(room, adj_room)
-                break
-
     def _manage_room_clusters(self, room, cluster_id):
         if cluster_id is not None:
             self._add_room_to_cluster(room, cluster_id)
             self.room_to_cluster_map[room] = cluster_id
 
     def _add_room_to_cluster(self, room, cluster_id):
+        logging.info(f"Adding room to cluster {cluster_id} at {room.x}, {room.y}")
         room.cluster_id = cluster_id  # Assign the cluster_id to the room.
         if cluster_id in self.room_clusters:
-            self.room_clusters[cluster_id].append(room)
+            rooms = self.room_clusters[cluster_id]
+            rooms.append(room)
+            random.shuffle(rooms)  # Add randomness to the order of the rooms
         else:
             self.room_clusters[cluster_id] = [room]
 
@@ -196,11 +204,6 @@ class GameMap:
         room1_has_space = room1.count_connections() < room1.max_connections
         room2_has_space = room2.count_connections() < room2.max_connections
         rooms_are_adjacent = self.are_rooms_adjacent(room1, room2)
-        logging.debug(f"Checking connection between room at ({room1.x}, {room1.y}) and room at ({room2.x}, {room2.y})")
-        logging.debug(f"Rooms are already connected: {is_already_connected}")
-        logging.debug(f"Room1 has space for more connections: {room1_has_space}")
-        logging.debug(f"Room2 has space for more connections: {room2_has_space}")
-        logging.debug(f"Rooms are adjacent: {rooms_are_adjacent}")
         return not is_already_connected and room1_has_space and room2_has_space and rooms_are_adjacent
     
     def connect_clusters(self):
@@ -208,9 +211,9 @@ class GameMap:
         for room1 in self.rooms:
             for room2 in self.rooms:
                 if room1 != room2:
-                    logging.debug(f"Considering connecting room at ({room1.x}, {room1.y}) to room at ({room2.x}, {room2.y})")
+                    #logging.debug(f"Considering connecting room at ({room1.x}, {room1.y}) to room at ({room2.x}, {room2.y})")
                     can_connect = self.can_connect_rooms(room1, room2)
-                    logging.debug(f"can_connect_rooms result: {can_connect}")
+                    #logging.debug(f"can_connect_rooms result: {can_connect}")
                     if can_connect:
                         distance = self.manhattan_distance(room1, room2)
                         edges.append((distance, room1, room2))
@@ -219,9 +222,9 @@ class GameMap:
         for distance, room1, room2 in edges:
             if sets[room1] != sets[room2]:
                 direction = self.calculate_direction(room1, room2)
-                logging.debug(f"Attempting to connect room at ({room1.x}, {room1.y}) to room at ({room2.x}, {room2.y}) in the {direction} direction.")
+                #logging.debug(f"Attempting to connect room at ({room1.x}, {room1.y}) to room at ({room2.x}, {room2.y}) in the {direction} direction.")
                 connect_result = self.connect_rooms(room1, room2, direction)
-                logging.debug(f"connect_rooms result: {connect_result}")
+                #logging.debug(f"connect_rooms result: {connect_result}")
                 if connect_result:
                     union = sets[room1].union(sets[room2])
                     for room in union:
@@ -235,17 +238,16 @@ class GameMap:
     def are_rooms_adjacent(self, room1, room2):
         dx = abs(room1.x - room2.x)
         dy = abs(room1.y - room2.y)
-
         return (dx == 1 and dy == 0) or (dx == 0 and dy == 1)
 
     def connect_rooms(self, room1, room2, direction):
-        logging.info(f"Trying to connect room1 at ({room1.x}, {room1.y}) to room2 at ({room2.x}, {room2.y}) in the {direction} direction.")
+        #logging.info(f"Trying to connect room1 at ({room1.x}, {room1.y}) to room2 at ({room2.x}, {room2.y}) in the {direction} direction.")
         if not self.is_adjacent(room1, room2):
-            logging.info(f"Rooms at ({room1.x}, {room1.y}) and ({room2.x}, {room2.y}) are not adjacent, so cannot be connected.")
+            #logging.info(f"Rooms at ({room1.x}, {room1.y}) and ({room2.x}, {room2.y}) are not adjacent, so cannot be connected.")
             return False
         opposite = self.opposite_direction(direction)
         if self.is_connected(room1, room2):
-            logging.info(f"Rooms at ({room1.x}, {room1.y}) and ({room2.x}, {room2.y}) are already connected.")
+            #logging.info(f"Rooms at ({room1.x}, {room1.y}) and ({room2.x}, {room2.y}) are already connected.")
             return False
         room1.connected_rooms[direction] = room2
         room2.connected_rooms[opposite] = room1
@@ -253,7 +255,7 @@ class GameMap:
         pos2 = (room2.x, room2.y)
         self.room_dict[pos1].connected_rooms[direction] = self.room_dict[pos2]
         self.room_dict[pos2].connected_rooms[opposite] = self.room_dict[pos1]
-        logging.info(f"Rooms at ({room1.x}, {room1.y}) and ({room2.x}, {room2.y}) have been connected.")
+        #logging.info(f"Rooms at ({room1.x}, {room1.y}) and ({room2.x}, {room2.y}) have been connected.")
         return True
 
     def create_and_place_items(self, all_rooms):
@@ -267,11 +269,12 @@ class GameMap:
             possible_locations.remove(room)
 
     def create_cluster(self, room_type, cluster_id):
+        max_rooms = 10
+        min_rooms = 7   
         self.frontier_positions.clear()
         frontier_source_rooms = {}  # keep track of source room for each frontier position
-        logging.info(f"Attempting to create cluster {cluster_id} with room type {room_type}")
         start_position = self.find_free_random_position(start_center=cluster_id == 0)
-        logging.debug(f"Start position found: {start_position}")
+        #logging.debug(f"Start position found: {start_position}")
         if start_position is None:
             logging.error("Failed to find a free random position.")
             return False
@@ -280,38 +283,32 @@ class GameMap:
             start_room.max_connections = 1
         elif cluster_id > 0:
             start_room.max_connections = 2
+        logging.info(f"Adding first room in cluster {cluster_id} at {start_position}")
         self.add_room(start_room, *start_position, cluster_id, is_first_room=True)
-        logging.info(f"Start room for cluster {cluster_id} created at {start_position}")
         # Now we also update frontier_source_rooms for each initial frontier position
         initial_frontier_positions = self.get_free_adjacent_positions(start_position, cluster_id)
         self.frontier_positions = list(initial_frontier_positions)
         for pos in initial_frontier_positions:
             frontier_source_rooms[pos] = start_room
-        logging.info(f"Initial frontier positions for cluster {cluster_id}: {self.frontier_positions}")
         rooms_in_cluster = 1
-        cluster_target = random.randint(5, 7)
+        cluster_target = random.randint(min_rooms, max_rooms)
         while self.frontier_positions and rooms_in_cluster < cluster_target:
             # Select a frontier position and remove it from frontier_positions and frontier_source_rooms
             position_index = random.randrange(len(self.frontier_positions))
             position = self.frontier_positions.pop(position_index)
             last_added_room = frontier_source_rooms.pop(position)
-            logging.debug(f"Current state of frontier_positions: {bool(self.frontier_positions)}")
-            logging.debug(f"Current number of rooms in cluster: {rooms_in_cluster}")
-            logging.debug(f"Target number of rooms in cluster: {cluster_target}")
             new_room = self.generate_room(room_type, *position)
             new_room.max_connections = 4
+            logging.info(f"Adding a room for cluster {cluster_id} at {position}, after which there will be {rooms_in_cluster} rooms in the cluster.")
             self.add_room(new_room, *position, cluster_id)
             last_added_room = new_room
             rooms_in_cluster += 1
-            logging.debug(f"Added room at {position}. Rooms in cluster: {rooms_in_cluster}")
             # Add the new positions to frontier_positions and frontier_source_rooms
             new_positions = self.get_free_adjacent_positions(position, cluster_id)
             self.frontier_positions.extend(new_positions)
             for pos in new_positions:
                 frontier_source_rooms[pos] = last_added_room
-            logging.info(f"Updated frontier positions for cluster {cluster_id}: {self.frontier_positions}")
             random.shuffle(self.frontier_positions)
-        logging.info(f"Cluster creation result: {rooms_in_cluster >= 1}")
         return rooms_in_cluster >= 1
     
     def favor_square_cluster(self, current_pos, visited_positions):
@@ -330,22 +327,22 @@ class GameMap:
         return favored_directions
 
     def find_free_random_position(self, start_center=False):
-        logging.debug(f"Finding free random position. Start center: {start_center}")
+        #logging.debug(f"Finding free random position. Start center: {start_center}")
         if start_center:
             x, y = self.grid_width // 2, self.grid_height // 2
-            logging.debug(f"Checking position: ({x}, {y})")
+            #logging.debug(f"Checking position: ({x}, {y})")
             if self.is_position_free(x, y):
                 return (x, y)
         elif self.frontier_positions:
             for position in random.sample(self.frontier_positions, len(self.frontier_positions)):
-                logging.debug(f"Checking position: {position}")
+                #logging.debug(f"Checking position: {position}")
                 if self.is_position_free(*position):
                     return position
         else:
             free_positions = [pos for pos in self.positions if self.is_position_free(*pos)]
             if free_positions:
                 return random.choice(free_positions)
-        logging.debug("No free random position found.")
+        #logging.debug("No free random position found.")
         return None
         
     def generate_key(self, key_data):
@@ -378,6 +375,7 @@ class GameMap:
         room_types = [data["type"] for data in rooms_data]
         self.rooms_data = rooms_data
         random.shuffle(room_types)
+        logging.info(f"Room types selected are: {room_types}")
         self.generate_positions()
         self.cluster_roots = []
         room_type_cycle = itertools.cycle((room_types))
@@ -399,11 +397,33 @@ class GameMap:
                 self.set_player_start_room(cluster_rooms[0])
                 logging.info(f"The player's start room is: {self.player_start_room.x}, {self.player_start_room.y}")
             all_rooms.extend(cluster_rooms)
-            logging.debug(f"All rooms after extending cluster_rooms: {all_rooms}")
+            for room in cluster_rooms:
+                self._connect_room_to_surroundings(room)
+            if self.is_map_full:
+                break
         self.connect_clusters()
         self.add_placeables(all_rooms)
         print(self.render_fancy_map())
         if self.is_map_full:
+            # Log number of clusters
+            logging.info(f"Number of clusters created: {len(self.room_clusters)}")
+            # Log number of rooms in each cluster
+            for cluster_id, rooms in self.room_clusters.items():
+                logging.info(f"Number of rooms in cluster {cluster_id}: {len(rooms)}")
+            # Log number of total connections in each cluster
+            for cluster_id, rooms in self.room_clusters.items():
+                total_connections = sum(len(room.connected_rooms) for room in rooms)
+                logging.info(f"Total connections in cluster {cluster_id}: {total_connections}")
+            # Log all the room types used
+            list_of_types = {}
+            for room in all_rooms:
+                if room.type in list_of_types:
+                    list_of_types[room.type] += 1
+                else:
+                    list_of_types[room.type] = 1
+            for log_type, log_count in list_of_types.items():
+                logging.info(f"Room type {log_type} used: {log_count} times.")
+            
             return True
         logging.error("Game map generation failed.")
         return False
@@ -414,7 +434,7 @@ class GameMap:
         self.positions = positions
     
     def generate_room(self, room_type, x, y):
-        logging.debug(f"generate_room called with room_type={room_type}, x={x}, y={y}")
+        #logging.debug(f"generate_room called with room_type={room_type}, x={x}, y={y}")
         adjective = next(self.adj_cycle)
         name = next(self.name_cycle)
         scene = next(self.scenery_cycle)
@@ -465,6 +485,7 @@ class GameMap:
     
     @property
     def is_map_full(self):
+        logging.info(f"Checked if the map was full. There are {len(self.positions)} empty positions left in the grid.")
         return len(self.positions) == 0
 
     def is_position_free(self, x, y):
@@ -490,7 +511,7 @@ class GameMap:
                 logging.warning(f"Room at position ({room.x}, {room.y} is None)")
             if room is not None:
                 # Display rooms
-                logging.info(f"Rendering room at position ({room.x}, {room.y}).")
+                #logging.info(f"Rendering room at position ({room.x}, {room.y}).")
                 if room == self.player.current_room:
                     rendered_map[2*room.y][2*room.x] = 'P'
                 elif room.enemy:
@@ -509,7 +530,7 @@ class GameMap:
                     rendered_map[2*room.y][2*room.x] = 'X'  # Or another symbol you prefer for generic rooms
                 for direction, connected_room in room.connected_rooms.items():
                     if connected_room is not None:
-                        logging.info(f"Rendering connection from room at ({room.x}, {room.y}) to room at ({connected_room.x}, {connected_room.y}).")
+                        #logging.info(f"Rendering connection from room at ({room.x}, {room.y}) to room at ({connected_room.x}, {connected_room.y}).")
                         if direction == "north" and 2*room.y - 1 >= 0:
                             rendered_map[2*room.y - 1][2*room.x] = '|'
                         elif direction == "south" and 2*room.y + 1 < len(rendered_map):
@@ -552,6 +573,11 @@ class Room:
         self.cluster_id = cluster_id
         self.max_connections = max_connections
 
+    def __lt__(self, other):
+        if isinstance(other, Room):
+            return self.count_connections() < other.count_connections()
+        return NotImplemented
+
     def __str__(self):
         item_descriptions = []
         if self.key_item:
@@ -570,12 +596,6 @@ class Room:
         connections = {direction: (room.name if isinstance(room, Room) else room) for direction, room in self.connected_rooms.items()}
         room_str = f"{self.name} ({self.type}): {self.description}\n\nItems: {item_descriptions_str}\n\nConnections: {connections}"
         return room_str
-
-    def __lt__(self, other):
-        if self.y != other.y:
-            return self.y < other.y
-        else:
-            return self.x < other.x
 
     def count_connections(room):
         return len([direction for direction, connected_room in room.connected_rooms.items() if connected_room is not None])
