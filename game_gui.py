@@ -1,5 +1,5 @@
-from PySide6.QtWidgets import QApplication, QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame
-from PySide6.QtCore import Qt, QCoreApplication
+from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame
+from PySide6.QtCore import Qt, QCoreApplication, QEvent
 from PySide6 import QtGui
 from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor
 from game_logic import GameMap, Player, Key
@@ -47,7 +47,7 @@ class DataLoader:
         try:
             with open(self.json_path, 'r') as file:
                 data = json.load(file)
-                self.scrutinize_data(data)
+                # self.scrutinize_data(data)
                 genres = data.get("genres")
                 if not genres:
                     raise ValueError("Genres not found in data")
@@ -99,6 +99,7 @@ class DataLoader:
 class GameGUI(QWidget):
     def __init__(self, data_loader=None):
         self.data_loader = data_loader
+        self.game_map = None
         self.font = QFont("EuropeanTypewriter", 14)
         self.font_size = 14
         self.min_font_size = 10
@@ -244,7 +245,7 @@ class GameGUI(QWidget):
 
     def update_player_stats(self):
         self.stats_text.setPlainText(
-            f"Level: {self.player.level}"
+            f"Level: {self.player.level}\n"
             f"Hit Points: {self.player.hp}\n"
             f"Attack: {self.player.atk}\n"
             f"Defense: {self.player.defp}\n"
@@ -254,16 +255,17 @@ class GameGUI(QWidget):
 
     def initialize_game(self):
         try:
-            game_map = self.data_loader.create_game_map(9,9)
-            print(f"Game map type is {type(game_map)}")
-            self.start_game(game_map)
+            self.game_map = self.data_loader.create_game_map(9,9)
+            logging.info(f"Game map type is {type(self.game_map)} inside the initialize_game method")
         except Exception as e:
             logging.error(f"Failed to initialize game: {e}")
+            self.game_map = None
 
-    def start_game(self, game_map):
-        self.game_map = game_map
-        self.map_window = MapWindow(self, self.game_map)
-        self.map_window.update_map()
+    def start_game(self):
+        logging.info(f"Start button pressed.")
+        if self.game_map:
+            logging.info(f"Game_map object right here is {type(self.game_map)}")
+            self.map_window = MapWindow(game_map=self.game_map)
         if self.start_button.text() == "Start":
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignLeft | Qt.AlignTop)
@@ -272,6 +274,9 @@ class GameGUI(QWidget):
             available_directions = [direction for direction, room in first_room.connected_rooms.items() if room is not None]
             room_description = f"<b>{first_room.name}</b><br><br>{first_room.description}<br><br>You can go: {', '.join(available_directions)}"
             self.game_text_area.append(room_description)
+            self.game_map.player.x = first_room.x
+            self.game_map.player.y = first_room.y
+            self.game_map.player.current_room = first_room
             self.current_room = first_room
             self.update_player_info()
             self.start_button.setText("Restart")
@@ -279,6 +284,7 @@ class GameGUI(QWidget):
             self.font_size_decrease_button.setEnabled(True)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
             self.map_window.show_self()
+            self.map_window.update_map()
         else:
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignCenter)
@@ -298,7 +304,6 @@ class GameGUI(QWidget):
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
             self.initialize_game()
             self.hide_map()
-        self.map_window.update_map()
 
     def update_inventory_text(self):
         inventory_text = ""
@@ -413,8 +418,8 @@ class GameGUI(QWidget):
 
 
 class MapWindow(QWidget):
-    def __init__(self, parent=None, game_map=None):
-        
+    def __init__(self, game_map):
+        self.game_map = game_map
         super(MapWindow, self).__init__()
         self.setWindowTitle("Game Map")
         self.setGeometry(950, 100, 500, 400)
@@ -423,8 +428,19 @@ class MapWindow(QWidget):
         self.grid_widget.setStyleSheet("background-color: white;")
         self.grid_layout = QGridLayout(self.grid_widget)
         self.layout.addWidget(self.grid_widget)
-        self.game_map = game_map
-        self.labels = [[None for _ in range(2*game_map.grid_width - 1)] for _ in range(2*game_map.grid_height - 1)]
+        try:
+                # Log the type and value of game_map
+            logging.info(f"game_map type: {type(self.game_map)}")
+            logging.info(f"game_map value: {self.game_map}")
+            # If game_map is the expected type, log its grid_width and grid_height
+            if isinstance(self.game_map, GameMap):  # replace GameMap with the actual type of your game_map
+                logging.info(f"game_map.grid_width: {self.game_map.grid_width}")
+                logging.info(f"game_map.grid_height: {self.game_map.grid_height}")
+
+            self.labels = [[None for _ in range(2*game_map.grid_width - 1)] for _ in range(2*game_map.grid_height - 1)]
+        except Exception as e:
+            logging.error(f"Label problem: {e}")
+            logging.error(traceback.format_exc())
         for i in range(2*game_map.grid_height - 1):
             for j in range(2*game_map.grid_width - 1):
                 self.labels[i][j] = QLabel(' ')
@@ -493,23 +509,7 @@ class MapWindow(QWidget):
                                     connection_label.setAlignment(Qt.AlignCenter)
                                     connection_label.setStyleSheet("border: 1px solid black; font-size: 10px;")
         except Exception as e:
-            logging(f"Error occurred during update_map function: {e}")
+            logging.error(f"Error occurred during update_map function: {e}")
 
     def show_self(self):
         self.show()
-
-if __name__ == "__main__":
-    app = QApplication([])
-
-    logger = logging.getLogger()
-    logger.handlers = []  # clear existing handlers
-    handler = logging.FileHandler('my_errors.log', 'w')
-    formatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
-    logger.setLevel(logging.DEBUG)
-
-    game_init = DataLoader("data.json")
-    game_gui = GameGUI(data_loader=game_init)
-    game_gui.initialize_game()
-    app.exec()

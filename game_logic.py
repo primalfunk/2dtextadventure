@@ -355,10 +355,10 @@ class GameMap:
         return Healing(healing_data["type"], healing_data["stats"]["hp"])
 
     def generate_weapon(self, weapon_data):
-        return Weapon(weapon_data["type"], weapon_data["stats"]["damage"])
+        return Weapon(weapon_data["type"], weapon_data["stats"]["damage"], weapon_data["stats"]["accuracy"])
 
     def generate_armor(self, armor_data):
-        return Armor(armor_data["type"], armor_data["stats"]["defense"])
+        return Armor(armor_data["type"], armor_data["stats"]["def"], armor_data["stats"]["ev"])
 
     def generate_character(self, character_data, level, isEnemy = True):
         return Character(character_data["type"],
@@ -636,14 +636,16 @@ class Lock(Item):
         self.locked_room = locked_room
 
 class Weapon(Item):
-    def __init__(self, name, damage):
+    def __init__(self, name, damage, accuracy):
         super().__init__(name, "This weapon can cause " + str(damage) + " points of damage.")
         self.damage = damage
+        self.accuracy = accuracy
 
 class Armor(Item):
-    def __init__(self, name, defense):
-        super().__init__(name, "This armor can defend against " + str(defense) + " points of damage.")
-        self.defense = defense
+    def __init__(self, name, defp, ev):
+        super().__init__(name, "This armor can defend against " + str(defp) + " points of damage.")
+        self.defense = defp
+        self.evasion = ev
 
 class Character:
     def __init__(self, name, level, hp, atk, defp, acc, ev):
