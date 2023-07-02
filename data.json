@@ -4,25 +4,25 @@
       "genre": "Fantasy",
       "elements": {
         "game_title": [
-          "Journey for the",
+          "In Search of the",
           "The Legendary",
-          "Legend of the",
+          "Journey of the",
           "Quest for the",
-          "Secrets of the",
+          "Realm of the",
           "The Secret of the",
           "Tales of the",
           "Age of the",
-          "Mysteries of the",
+          "Expedition of the",
           "Fate of the",
-          "Chronicles of the",
+          "Fantasy Chronicles of the",
           "Saga of the",
           "Adventures of the",
-          "Tales of the",
-          "Mystic Journeys for the",
-          "Knights of the",
-          "Curses and Wonders of the",
-          "Legends and Lore of the",
-          "Quest for the",
+          "Magical Tales of the",
+          "Enchanted Expeditions for the",
+          "Warriors of the",
+          "Curses and Legends of the",
+          "Mythical Odyssey to the",
+          "Fantasy Voyage for the",
           "Realm of the",
           "Echoes from the",
           "Whispers of the",
@@ -32,321 +32,338 @@
           "Chronicles of the",
           "Sands of the",
           "Symphony of the",
-          "The Astral"
+          "Revenge of the",
+          "Countdown to the",
+          "The Mythical",
+          "The Mystical",
+          "The Legendary",
+          "The Curse of the "
         ],
         "treasure": [
-          "Mystic Sword",
+          "Mythical Relic",
+          "Dragon's Hoard",
+          "Wizard's Tome",
           "Enchanted Amulet",
-          "Potion of Healing",
-          "Dragon Egg",
-          "Crystal Ball",
-          "Magic Wand",
-          "Dwarven Hammer",
+          "Sorcerer's Staff",
           "Elven Bow",
-          "Book of Spells",
-          "Golden Chalice",
+          "Fairy's Charm",
+          "Magical Artifact",
+          "Legendary Sword",
+          "Ancient Scroll",
+          "Celestial Crown",
+          "Dwarven Hammer",
+          "Mermaid's Pearl",
+          "Unicorn's Horn",
+          "Goblin's Treasure",
+          "Phoenix Feather",
+          "Enchanted Ring",
+          "Mystic Potion",
+          "Elven Cloak",
+          "Wizard's Crystal",
+          "Forest Guardian's Shield",
+          "Faerie Dust",
+          "Mythical Crown",
+          "Dragon Scale Armor",
+          "Druid's Staff",
+          "Gryphon's Talon",
+          "Sorceress' Mirror",
+          "Magical Compass",
+          "Legendary Dagger",
+          "Enchanted Gauntlet",
+          "Mystic Rune",
+          "Elven Necklace",
+          "Wizard's Robe",
+          "Cursed Relic",
           "Ancient Relic",
-          "Crown of Destiny",
-          "Emerald Pendant",
-          "Scepter of Power",
-          "Scroll of Enchantments",
-          "Lost Artifact",
-          "Royal Medallion",
-          "Starfire Gem",
-          "Tome of Knowledge",
-          "Diamond Talisman",
-          "Ethereal Orb",
-          "Crown of Whispers",
-          "Mystic Elixir",
-          "Eyes of the Serpent",
-          "Celestial Compass",
-          "Lost Symphony",
-          "Enchanted Quill",
-          "Jade Lotus",
-          "Oracle's Mirror",
-          "Sapphire Tear"
+          "Celestial Orb",
+          "Dwarven Shield",
+          "Siren's Song",
+          "Unicorn's Mane",
+          "Goblin King's Crown",
+          "Phoenix Ashes",
+          "Enchanted Quill"
         ],
         "puzzle_items": [
           {
-            "key_item": "runic tablet",
-            "lock_item": "stone door"
+            "key_item": "Mystic Flame Key",
+            "lock_item": "Flameforged Door"
           },
           {
-            "key_item": "wizard's key",
-            "lock_item": "wizard's chest"
+            "key_item": "Celestial Feather Key",
+            "lock_item": "Heaven's Gate"
           },
           {
-            "key_item": "dragon scale",
-            "lock_item": "dragon's gate"
+            "key_item": "Ancient Runestone Key",
+            "lock_item": "Enchanted Runestone Chest"
           },
           {
-            "key_item": "fairy dust",
-            "lock_item": "enchanted forest"
+            "key_item": "Elven Whisper Key",
+            "lock_item": "Whispering Grove Portal"
           },
           {
-            "key_item": "ghost's tear",
-            "lock_item": "spectral barrier"
+            "key_item": "Sorcerer's Eye Key",
+            "lock_item": "Arcane Eye Door"
           },
           {
-            "key_item": "goblin's coin",
-            "lock_item": "goblin's stash"
+            "key_item": "Dwarven Forge Key",
+            "lock_item": "Forgemaster's Vault"
           },
           {
-            "key_item": "moonstone",
-            "lock_item": "lunar vault"
+            "key_item": "Enchanted Rose Key",
+            "lock_item": "Thorned Rose Gate"
           },
           {
-            "key_item": "phoenix feather",
-            "lock_item": "fire door"
+            "key_item": "Dragon Scale Key",
+            "lock_item": "Scalebound Treasure Chest"
           },
           {
-            "key_item": "vampire fang",
-            "lock_item": "crypt entrance"
+            "key_item": "Mythical Crystal Key",
+            "lock_item": "Crystalized Sanctuary"
           },
           {
-            "key_item": "mermaid's pearl",
-            "lock_item": "aqua blue device"
+            "key_item": "Feywood Vine Key",
+            "lock_item": "Vinebound Gate"
           },
           {
-            "key_item": "whispering skull",
-            "lock_item": "whispering grave"
+            "key_item": "Shadowcloak Key",
+            "lock_item": "Shadowed Citadel Door"
           },
           {
-            "key_item": "timekeeper's hourglass",
-            "lock_item": "temporal portal"
+            "key_item": "Arcane Orb Key",
+            "lock_item": "Mystic Orb Chamber"
           },
           {
-            "key_item": "crystal key",
-            "lock_item": "crystal maze"
+            "key_item": "Moonlit Key",
+            "lock_item": "Moonstone Lockbox"
           },
           {
-            "key_item": "enchanted compass",
-            "lock_item": "mystic labyrinth"
+            "key_item": "Emerald Serpent Key",
+            "lock_item": "Serpentine Emerald Door"
           },
           {
-            "key_item": "elven sigil",
-            "lock_item": "ancient gate"
+            "key_item": "Phoenix Tear Key",
+            "lock_item": "Eternal Flame Chest"
           },
           {
-            "key_item": "gargoyle's eye",
-            "lock_item": "haunted citadel"
+            "key_item": "Crystal Lotus Key",
+            "lock_item": "Lotus Blossom Gate"
           },
           {
-            "key_item": "serpent's scale",
-            "lock_item": "serpent's sanctuary"
+            "key_item": "Gryphon Feather Key",
+            "lock_item": "Gryphon's Nest Lockbox"
           },
           {
-            "key_item": "dreamcatcher",
-            "lock_item": "portal of dreams"
+            "key_item": "Celestial Diamond Key",
+            "lock_item": "Diamond Enclave Door"
           },
           {
-            "key_item": "singing crystal",
-            "lock_item": "harmonic chamber"
+            "key_item": "Elven Star Key",
+            "lock_item": "Starlit Enclave Chest"
           },
           {
-            "key_item": "moonlit dagger",
-            "lock_item": "shadowy vault"
+            "key_item": "Enchanted Scepter Key",
+            "lock_item": "Scepter's Sanctum"
           }
         ],
         "characters": [
           {
-            "type": "Goblin",
+            "type": "Knight",
             "stats": {
-              "hp": 30,
-              "atk": 5,
-              "defp": 5,
-              "acc": 33,
-              "ev": 35
+              "hp": 120,
+              "atk": 12,
+              "defp": 10,
+              "acc": 40,
+              "ev": 25
             }
           },
           {
-            "type": "Dragon",
+            "type": "Elf Archer",
             "stats": {
-              "hp": 200,
-              "atk": 35,
-              "defp": 60,
-              "acc": 35,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Dark Wizard",
-            "stats": {
-              "hp": 70,
-              "atk": 20,
-              "defp": 25,
-              "acc": 50,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Giant Spider",
-            "stats": {
-              "hp": 40,
-              "atk": 15,
-              "defp": 15,
-              "acc": 35,
-              "ev": 40
-            }
-          },
-          {
-            "type": "Ogre",
-            "stats": {
-              "hp": 180,
-              "atk": 20,
-              "defp": 40,
-              "acc": 33,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Vampire",
-            "stats": {
-              "hp": 70,
-              "atk": 25,
-              "defp": 30,
+              "hp": 80,
+              "atk": 10,
+              "defp": 8,
               "acc": 45,
               "ev": 35
             }
           },
           {
-            "type": "Werewolf",
+            "type": "Dwarf Berserker",
             "stats": {
-              "hp": 60,
-              "atk": 25,
-              "defp": 25,
-              "acc": 40,
+              "hp": 150,
+              "atk": 15,
+              "defp": 12,
+              "acc": 35,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Sorceress",
+            "stats": {
+              "hp": 70,
+              "atk": 10,
+              "defp": 6,
+              "acc": 50,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Rogue Assassin",
+            "stats": {
+              "hp": 90,
+              "atk": 14,
+              "defp": 6,
+              "acc": 50,
               "ev": 40
             }
           },
           {
-            "type": "Ghost",
+            "type": "Druid",
             "stats": {
-              "hp": 30,
-              "atk": 15,
-              "defp": 15,
+              "hp": 100,
+              "atk": 8,
+              "defp": 8,
               "acc": 40,
-              "ev": 40
+              "ev": 35
             }
           },
           {
-            "type": "Skeleton Warrior",
+            "type": "Paladin",
             "stats": {
-              "hp": 60,
-              "atk": 15,
-              "defp": 20,
+              "hp": 110,
+              "atk": 11,
+              "defp": 12,
+              "acc": 35,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Witch",
+            "stats": {
+              "hp": 80,
+              "atk": 10,
+              "defp": 6,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Barbarian",
+            "stats": {
+              "hp": 130,
+              "atk": 13,
+              "defp": 10,
+              "acc": 30,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Enchantress",
+            "stats": {
+              "hp": 90,
+              "atk": 9,
+              "defp": 8,
+              "acc": 45,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Necromancer",
+            "stats": {
+              "hp": 70,
+              "atk": 11,
+              "defp": 5,
+              "acc": 40,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Bard",
+            "stats": {
+              "hp": 80,
+              "atk": 8,
+              "defp": 6,
+              "acc": 45,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Warlock",
+            "stats": {
+              "hp": 90,
+              "atk": 12,
+              "defp": 7,
+              "acc": 40,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Priest",
+            "stats": {
+              "hp": 100,
+              "atk": 7,
+              "defp": 10,
               "acc": 35,
               "ev": 30
             }
           },
           {
-            "type": "Demon",
-            "stats": {
-              "hp": 140,
-              "atk": 35,
-              "defp": 50,
-              "acc": 45,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Imp",
-            "stats": {
-              "hp": 30,
-              "atk": 8,
-              "defp": 10,
-              "acc": 40,
-              "ev": 40
-            }
-          },
-          {
-            "type": "Basilisk",
-            "stats": {
-              "hp": 120,
-              "atk": 25,
-              "defp": 50,
-              "acc": 33,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Troll",
-            "stats": {
-              "hp": 180,
-              "atk": 20,
-              "defp": 40,
-              "acc": 33,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Harpy",
-            "stats": {
-              "hp": 40,
-              "atk": 20,
-              "defp": 15,
-              "acc": 40,
-              "ev": 35
-            }
-          },
-          {
-            "type": "Zombie",
-            "stats": {
-              "hp": 100,
-              "atk": 10,
-              "defp": 15,
-              "acc": 33,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Griffon",
+            "type": "Archer",
             "stats": {
               "hp": 80,
-              "atk": 30,
-              "defp": 35,
-              "acc": 35,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Mummy",
-            "stats": {
-              "hp": 90,
-              "atk": 15,
-              "defp": 30,
-              "acc": 35,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Pixie",
-            "stats": {
-              "hp": 30,
-              "atk": 10,
-              "defp": 10,
+              "atk": 9,
+              "defp": 6,
               "acc": 50,
               "ev": 40
             }
           },
           {
-            "type": "Wraith",
+            "type": "Wizard",
             "stats": {
-              "hp": 60,
-              "atk": 20,
-              "defp": 20,
+              "hp": 70,
+              "atk": 12,
+              "defp": 5,
               "acc": 40,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Thief",
+            "stats": {
+              "hp": 90,
+              "atk": 10,
+              "defp": 6,
+              "acc": 50,
               "ev": 35
             }
           },
           {
-            "type": "Golem",
+            "type": "Summoner",
             "stats": {
-              "hp": 200,
-              "atk": 20,
-              "defp": 60,
-              "acc": 33,
-              "ev": 5
+              "hp": 80,
+              "atk": 8,
+              "defp": 7,
+              "acc": 40,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Ranger",
+            "stats": {
+              "hp": 90,
+              "atk": 11,
+              "defp": 6,
+              "acc": 45,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Warrior",
+            "stats": {
+              "hp": 100,
+              "atk": 12,
+              "defp": 10,
+              "acc": 35,
+              "ev": 25
             }
           }
         ],
@@ -476,123 +493,451 @@
           {
             "type": "Silver sword",
             "stats": {
-              "damage": 40
-            }
-          },
-          {
-            "type": "Wooden staff",
-            "stats": {
-              "damage": 20
+              "damage": 40,
+              "accuracy": 20
             }
           },
           {
             "type": "Enchanted bow",
             "stats": {
-              "damage": 25
+              "damage": 30,
+              "accuracy": 40
             }
           },
           {
-            "type": "Flaming axe",
+            "type": "Mystic staff",
             "stats": {
-              "damage": 45
+              "damage": 25,
+              "accuracy": 35
             }
           },
           {
-            "type": "Obsidian dagger",
+            "type": "Dagger of Shadows",
             "stats": {
-              "damage": 35
+              "damage": 20,
+              "accuracy": 25
             }
           },
           {
-            "type": "Dragon bone mace",
+            "type": "Warhammer",
             "stats": {
-              "damage": 50
+              "damage": 50,
+              "accuracy": 10
             }
           },
           {
-            "type": "Crystal wand",
+            "type": "Poisoned dagger",
             "stats": {
-              "damage": 30
+              "damage": 35,
+              "accuracy": 30
             }
           },
           {
-            "type": "Goblin sling",
+            "type": "Flaming sword",
             "stats": {
-              "damage": 15
+              "damage": 45,
+              "accuracy": 15
             }
           },
           {
-            "type": "Dwarven hammer",
+            "type": "Arcane staff",
             "stats": {
-              "damage": 40
+              "damage": 30,
+              "accuracy": 35
             }
           },
           {
-            "type": "Eldritch scythe",
+            "type": "Crossbow",
             "stats": {
-              "damage": 55
+              "damage": 40,
+              "accuracy": 20
+            }
+          },
+          {
+            "type": "Thunder hammer",
+            "stats": {
+              "damage": 55,
+              "accuracy": 5
+            }
+          },
+          {
+            "type": "Vorpal Blade",
+            "stats": {
+              "damage": 50,
+              "accuracy": 25
+            }
+          },
+          {
+            "type": "Frost Bow",
+            "stats": {
+              "damage": 35,
+              "accuracy": 40
+            }
+          },
+          {
+            "type": "Sorcerer's Staff",
+            "stats": {
+              "damage": 30,
+              "accuracy": 35
+            }
+          },
+          {
+            "type": "Shadow Dagger",
+            "stats": {
+              "damage": 25,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Hammer of Justice",
+            "stats": {
+              "damage": 60,
+              "accuracy": 15
+            }
+          },
+          {
+            "type": "Venomous Whip",
+            "stats": {
+              "damage": 45,
+              "accuracy": 20
+            }
+          },
+          {
+            "type": "Divine Sword",
+            "stats": {
+              "damage": 55,
+              "accuracy": 10
+            }
+          },
+          {
+            "type": "Elemental Staff",
+            "stats": {
+              "damage": 40,
+              "accuracy": 35
+            }
+          },
+          {
+            "type": "Giant Crossbow",
+            "stats": {
+              "damage": 45,
+              "accuracy": 25
+            }
+          },
+          {
+            "type": "Mjolnir",
+            "stats": {
+              "damage": 65,
+              "accuracy": 5
             }
           }
         ],
         "armor": [
           {
-            "type": "Silver armor",
+            "type": "Dragon Scale Armor",
             "stats": {
-              "defense": 30
+              "def": 35,
+              "ev": 15
             }
           },
           {
-            "type": "Leather tunic",
+            "type": "Elven Cloak",
             "stats": {
-              "defense": 15
+              "def": 25,
+              "ev": 20
             }
           },
           {
-            "type": "Chainmail vest",
+            "type": "Dwarven Plate Mail",
             "stats": {
-              "defense": 25
+              "def": 30,
+              "ev": 25
             }
           },
           {
-            "type": "Dragon scale mail",
+            "type": "Magical Robe",
             "stats": {
-              "defense": 45
+              "def": 20,
+              "ev": 25
             }
           },
           {
-            "type": "Ghostly cloak",
+            "type": "Enchanted Shield",
             "stats": {
-              "defense": 35
+              "def": 25,
+              "ev": 30
             }
           },
           {
-            "type": "Forest spirit hide",
+            "type": "Celestial Armor",
             "stats": {
-              "defense": 20
+              "def": 30,
+              "ev": 35
             }
           },
           {
-            "type": "Dwarven plate",
+            "type": "Goblin Hide",
             "stats": {
-              "defense": 40
+              "def": 15,
+              "ev": 35
             }
           },
           {
-            "type": "Mage's robe",
+            "type": "Knight's Plate",
             "stats": {
-              "defense": 25
+              "def": 35,
+              "ev": 20
             }
           },
           {
-            "type": "Angel's aegis",
+            "type": "Ancient Relic",
             "stats": {
-              "defense": 50
+              "def": 25,
+              "ev": 25
             }
           },
           {
-            "type": "Demon bone guard",
+            "type": "Elven Bow",
             "stats": {
-              "defense": 55
+              "def": 20,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Royal Armor",
+            "stats": {
+              "def": 30,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Amulet of Protection",
+            "stats": {
+              "def": 25,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Wizard's Cloak",
+            "stats": {
+              "def": 30,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Paladin's Shield",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Mystic Robes",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Enchanted Chainmail",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Sorcerer's Robe",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Druid's Cloak",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Holy Barrier",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Rogue's Leather Armor",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Legendary Plate Mail",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Golem's Shield",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Magical Silk Robes",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Bard's Cloak",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Crystal Shield",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Archer's Leather Armor",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Titanium Plate Mail",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Enchanted Ward",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Sorceress' Robe",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Warlock's Cloak",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Divine Barrier",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Assassin's Leather Armor",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Dragonhide Armor",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Mystical Shield",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Ancient Enchanted Robes",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Warrior's Cloak",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Divine Shield",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Ranger's Leather Armor",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Legendary Dragon Scale Armor",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Shield of Light",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Arcane Robes",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Ancient Cloak",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Divine Barrier",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Thief's Leather Armor",
+            "stats": {
+              "def": 15,
+              "ev": 45
             }
           }
         ],
@@ -1126,9 +1471,8 @@
               "Muffled",
               "Inhumed",
               "Cold",
-              "Warm" 
-            ]
-            ,
+              "Warm"
+            ],
             "scenery": [
               "Stalactites hang like ancient daggers from the ceiling, their pointed tips glistening with moisture in the dimly lit cavern.",
               "Bioluminescent fungi carpet the rocky walls, casting an otherworldly glow that illuminates the hidden recesses of the cavern.",
@@ -2351,7 +2695,7 @@
               "The sanctum is bathed in a soft, golden glow, as if a celestial light permeates every corner, bestowing a sense of inner illumination.",
               "The sanctum resonates with a melodic hum, as if the very walls sing a hymn of tranquility that soothes weary souls.",
               "The scent of smoldering incense fills the sanctum, its fragrant tendrils swirling like ethereal wisps, carrying prayers and aspirations to the heavens."
-              ]
+            ]
           },
           {
             "type": "treasury",
@@ -3066,25 +3410,25 @@
       "genre": "Sci-Fi",
       "elements": {
         "game_title": [
-          "Journey for the",
+          "Searching for the",
           "The Legendary",
-          "Legend of the",
+          "Voyage of the",
           "Quest for the",
-          "Secrets of the",
+          "Launch of the",
           "The Secret of the",
           "Tales of the",
           "Age of the",
-          "Mysteries of the",
+          "Flight of the",
           "Fate of the",
-          "Chronicles of the",
+          "Stellar Chronicles of the",
           "Saga of the",
           "Adventures of the",
-          "Tales of the",
-          "Mystic Journeys for the",
-          "Knights of the",
+          "Alien Tales of the",
+          "Interstellar Journeys for the",
+          "Mercenaries of the",
           "Curses and Wonders of the",
-          "Legends and Lore of the",
-          "Quest for the",
+          "Intergalactic Journey to the",
+          "Space Voyage for the",
           "Realm of the",
           "Echoes from the",
           "Whispers of the",
@@ -3094,323 +3438,341 @@
           "Chronicles of the",
           "Sands of the",
           "Symphony of the",
-          "The Astral"
+          "Revenge of the",
+          "Countdown to the",
+          "The Golden",
+          "The Silver",
+          "The Titanium",
+          "The Cybernetic",
+          "The Artificial"
         ],
         "treasure": [
-          "Mystic Sword",
-          "Enchanted Amulet",
-          "Potion of Healing",
-          "Dragon Egg",
-          "Crystal Ball",
-          "Magic Wand",
-          "Dwarven Hammer",
-          "Elven Bow",
-          "Book of Spells",
-          "Golden Chalice",
-          "Ancient Relic",
-          "Crown of Destiny",
-          "Emerald Pendant",
-          "Scepter of Power",
-          "Scroll of Enchantments",
-          "Lost Artifact",
-          "Royal Medallion",
-          "Starfire Gem",
-          "Tome of Knowledge",
-          "Diamond Talisman",
-          "Ethereal Orb",
-          "Crown of Whispers",
-          "Mystic Elixir",
-          "Eyes of the Serpent",
-          "Celestial Compass",
-          "Lost Symphony",
-          "Enchanted Quill",
-          "Jade Lotus",
-          "Oracle's Mirror",
-          "Sapphire Tear"
+          "Stellar Sphere",
+          "Quantum Relic",
+          "Celestial Nexus",
+          "Cosmic Elixir",
+          "Astro Matrix",
+          "Nebula Essence",
+          "Interstellar Beacon",
+          "Luminous Nova",
+          "Galactic Mirage",
+          "Ethereal Prism",
+          "Celestial Veil",
+          "Cosmic Catalyst",
+          "Astral Nexus",
+          "Stardust Harmonizer",
+          "Interdimensional Artifact",
+          "Eternal Radiance",
+          "Cosmic Serpent",
+          "Hypernova Core",
+          "Cosmic Resonator",
+          "Aurora Crown",
+          "Stellar Codex",
+          "Luminary Talisman",
+          "Astrofire Crystal",
+          "Ethereal Whisper",
+          "Galactic Arcana",
+          "Celestial Navigator",
+          "Nebula Shroud",
+          "Quantum Dynamo",
+          "Stardust Infuser",
+          "Galaxy's Edge",
+          "Celestial Orb",
+          "Astro Luminary",
+          "Cosmic Chronometer",
+          "Astral Cascade",
+          "Stellar Catalyst",
+          "Interstellar Compass",
+          "Cosmic Spiral",
+          "Nebula Emissary",
+          "Quantum Harmonizer",
+          "Ethereal Matrix",
+          "Celestial Guardian",
+          "Astro Trinket"
         ],
         "puzzle_items": [
           {
-            "key_item": "runic tablet",
-            "lock_item": "stone door"
+            "key_item": "Nebula Crystal Key",
+            "lock_item": "Stellar Gateway"
           },
           {
-            "key_item": "wizard's key",
-            "lock_item": "wizard's chest"
+            "key_item": "Plasma Core Key",
+            "lock_item": "Energy Core Chamber"
           },
           {
-            "key_item": "dragon scale",
-            "lock_item": "dragon's gate"
+            "key_item": "Xenotech Key",
+            "lock_item": "Alien Artifact Vault"
           },
           {
-            "key_item": "fairy dust",
-            "lock_item": "enchanted forest"
+            "key_item": "Quantum Data Key",
+            "lock_item": "Cosmic Data Terminal"
           },
           {
-            "key_item": "ghost's tear",
-            "lock_item": "spectral barrier"
+            "key_item": "Astroblade Key",
+            "lock_item": "Celestial Blade Locker"
           },
           {
-            "key_item": "goblin's coin",
-            "lock_item": "goblin's stash"
+            "key_item": "Void Essence Key",
+            "lock_item": "Dimensional Rift Gate"
           },
           {
-            "key_item": "moonstone",
-            "lock_item": "lunar vault"
+            "key_item": "Lunar Shard Key",
+            "lock_item": "Moonstone Gateway"
           },
           {
-            "key_item": "phoenix feather",
-            "lock_item": "fire door"
+            "key_item": "Nano DNA Key",
+            "lock_item": "Genetic Research Lab"
           },
           {
-            "key_item": "vampire fang",
-            "lock_item": "crypt entrance"
+            "key_item": "Stargazer Key",
+            "lock_item": "Galactic Observatory"
           },
           {
-            "key_item": "mermaid's pearl",
-            "lock_item": "aqua blue device"
+            "key_item": "Ethereal Essence Key",
+            "lock_item": "Ether Chamber"
           },
           {
-            "key_item": "whispering skull",
-            "lock_item": "whispering grave"
+            "key_item": "Plasma Nova Key",
+            "lock_item": "Nova Reactor Control"
           },
           {
-            "key_item": "timekeeper's hourglass",
-            "lock_item": "temporal portal"
+            "key_item": "Starfire Key",
+            "lock_item": "Cosmic Flame Vault"
           },
           {
-            "key_item": "crystal key",
-            "lock_item": "crystal maze"
+            "key_item": "Nanobot Key",
+            "lock_item": "Nanotech Storage Facility"
           },
           {
-            "key_item": "enchanted compass",
-            "lock_item": "mystic labyrinth"
+            "key_item": "Celestial Compass Key",
+            "lock_item": "Celestial Navigation System"
           },
           {
-            "key_item": "elven sigil",
-            "lock_item": "ancient gate"
+            "key_item": "Hydrogen Core Key",
+            "lock_item": "Ionization Chamber"
           },
           {
-            "key_item": "gargoyle's eye",
-            "lock_item": "haunted citadel"
+            "key_item": "Alien Encrypted Key",
+            "lock_item": "Extraterrestrial Encryption Chamber"
           },
           {
-            "key_item": "serpent's scale",
-            "lock_item": "serpent's sanctuary"
+            "key_item": "Quantum Phase Key",
+            "lock_item": "Quantum Phase Generator"
           },
           {
-            "key_item": "dreamcatcher",
-            "lock_item": "portal of dreams"
+            "key_item": "Astrobiotic Key",
+            "lock_item": "Astrobiotic Research Lab"
           },
           {
-            "key_item": "singing crystal",
-            "lock_item": "harmonic chamber"
+            "key_item": "Astrocrystal Key",
+            "lock_item": "Crystalline Matrix Chamber"
           },
           {
-            "key_item": "moonlit dagger",
-            "lock_item": "shadowy vault"
+            "key_item": "Neural Nexus Key",
+            "lock_item": "Neurological Nexus Vault"
           }
         ],
         "characters": [
           {
-            "type": "Sentinel",
-            "stats": {
-              "hp": 50,
-              "atk": 15,
-              "defp": 20,
-              "acc": 55,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Zephyr",
-            "stats": {
-              "hp": 20,
-              "atk": 10,
-              "defp": 5,
-              "acc": 40,
-              "ev": 60
-            }
-          },
-          {
-            "type": "Cyberhound",
-            "stats": {
-              "hp": 40,
-              "atk": 20,
-              "defp": 10,
-              "acc": 50,
-              "ev": 25
-            }
-          },
-          {
-            "type": "Xenomite",
-            "stats": {
-              "hp": 25,
-              "atk": 25,
-              "defp": 5,
-              "acc": 40,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Specter",
-            "stats": {
-              "hp": 15,
-              "atk": 30,
-              "defp": 5,
-              "acc": 50,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Automaton",
-            "stats": {
-              "hp": 80,
-              "atk": 10,
-              "defp": 50,
-              "acc": 45,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Nanoborg",
-            "stats": {
-              "hp": 60,
-              "atk": 25,
-              "defp": 30,
-              "acc": 60,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Plasmoid",
-            "stats": {
-              "hp": 30,
-              "atk": 35,
-              "defp": 5,
-              "acc": 45,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Phantom",
-            "stats": {
-              "hp": 10,
-              "atk": 10,
-              "defp": 5,
-              "acc": 35,
-              "ev": 60
-            }
-          },
-          {
-            "type": "Titan",
-            "stats": {
-              "hp": 150,
-              "atk": 35,
-              "defp": 60,
-              "acc": 40,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Siren",
-            "stats": {
-              "hp": 15,
-              "atk": 10,
-              "defp": 5,
-              "acc": 60,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Voidspawn",
-            "stats": {
-              "hp": 35,
-              "atk": 25,
-              "defp": 15,
-              "acc": 45,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Goliath",
-            "stats": {
-              "hp": 200,
-              "atk": 35,
-              "defp": 60,
-              "acc": 30,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Nebulite",
-            "stats": {
-              "hp": 25,
-              "atk": 30,
-              "defp": 10,
-              "acc": 40,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Wraith",
-            "stats": {
-              "hp": 20,
-              "atk": 25,
-              "defp": 5,
-              "acc": 55,
-              "ev": 30
-            }
-          },
-          {
-            "type": "Aegis",
-            "stats": {
-              "hp": 100,
-              "atk": 15,
-              "defp": 60,
-              "acc": 35,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Technomancer",
-            "stats": {
-              "hp": 40,
-              "atk": 30,
-              "defp": 20,
-              "acc": 60,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Chimera",
-            "stats": {
-              "hp": 60,
-              "atk": 35,
-              "defp": 25,
-              "acc": 40,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Harbinger",
-            "stats": {
-              "hp": 80,
-              "atk": 40,
-              "defp": 30,
-              "acc": 50,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Shadowfiend",
-            "stats": {
-              "hp": 30,
-              "atk": 40,
-              "defp": 10,
-              "acc": 50,
-              "ev": 15
-            }
+          "type": "Android",
+          "stats": {
+            "hp": 120,
+            "atk": 10,
+            "defp": 8,
+            "acc": 40,
+            "ev": 35
           }
+        },
+        {
+          "type": "Alien Warrior",
+          "stats": {
+            "hp": 100,
+            "atk": 12,
+            "defp": 10,
+            "acc": 35,
+            "ev": 30
+          }
+        },
+        {
+          "type": "Cybernetic Hacker",
+          "stats": {
+            "hp": 80,
+            "atk": 9,
+            "defp": 6,
+            "acc": 45,
+            "ev": 40
+          }
+        },
+        {
+          "type": "Psi Mage",
+          "stats": {
+            "hp": 90,
+            "atk": 8,
+            "defp": 7,
+            "acc": 40,
+            "ev": 35
+          }
+        },
+        {
+          "type": "Mech Pilot",
+          "stats": {
+            "hp": 110,
+            "atk": 13,
+            "defp": 9,
+            "acc": 35,
+            "ev": 25
+          }
+        },
+        {
+          "type": "Space Explorer",
+          "stats": {
+            "hp": 100,
+            "atk": 10,
+            "defp": 8,
+            "acc": 40,
+            "ev": 30
+          }
+        },
+        {
+          "type": "Cyborg Assassin",
+          "stats": {
+            "hp": 90,
+            "atk": 14,
+            "defp": 6,
+            "acc": 50,
+            "ev": 35
+          }
+        },
+        {
+          "type": "Astrobiologist",
+          "stats": {
+            "hp": 80,
+            "atk": 7,
+            "defp": 7,
+            "acc": 35,
+            "ev": 30
+          }
+        },
+        {
+          "type": "Robotic Engineer",
+          "stats": {
+            "hp": 90,
+            "atk": 8,
+            "defp": 9,
+            "acc": 40,
+            "ev": 35
+          }
+        },
+        {
+          "type": "Exosuit Operative",
+          "stats": {
+            "hp": 110,
+            "atk": 12,
+            "defp": 11,
+            "acc": 30,
+            "ev": 25
+          }
+        },
+        {
+          "type": "Telepathic Empath",
+          "stats": {
+            "hp": 80,
+            "atk": 7,
+            "defp": 6,
+            "acc": 40,
+            "ev": 35
+          }
+        },
+        {
+          "type": "Mechanical Engineer",
+          "stats": {
+            "hp": 90,
+            "atk": 9,
+            "defp": 8,
+            "acc": 35,
+            "ev": 30
+          }
+        },
+        {
+          "type": "Alien Diplomat",
+          "stats": {
+            "hp": 100,
+            "atk": 8,
+            "defp": 9,
+            "acc": 40,
+            "ev": 35
+          }
+        },
+        {
+          "type": "Galactic Mercenary",
+          "stats": {
+            "hp": 110,
+            "atk": 12,
+            "defp": 10,
+            "acc": 30,
+            "ev": 25
+          }
+        },
+        {
+          "type": "Astroengineer",
+          "stats": {
+            "hp": 90,
+            "atk": 9,
+            "defp": 7,
+            "acc": 40,
+            "ev": 30
+          }
+        },
+        {
+          "type": "Alien Tracker",
+          "stats": {
+            "hp": 80,
+            "atk": 10,
+            "defp": 6,
+            "acc": 45,
+            "ev": 35
+          }
+        },
+        {
+          "type": "Plasma Gunslinger",
+          "stats": {
+            "hp": 90,
+            "atk": 14,
+            "defp": 6,
+            "acc": 50,
+            "ev": 35
+          }
+        },
+        {
+          "type": "Interstellar Pilot",
+          "stats": {
+            "hp": 100,
+            "atk": 10,
+            "defp": 8,
+            "acc": 40,
+            "ev": 30
+          }
+        },
+        {
+          "type": "Cybernetic Engineer",
+          "stats": {
+            "hp": 80,
+            "atk": 8,
+            "defp": 7,
+            "acc": 35,
+            "ev": 40
+          }
+        },
+        {
+          "type": "Exoplanet Explorer",
+          "stats": {
+            "hp": 90,
+            "atk": 9,
+            "defp": 8,
+            "acc": 40,
+            "ev": 35
+          }
+        }
         ],
         "healing": [
           {
@@ -3536,206 +3898,498 @@
         ],
         "weapons": [
           {
-            "type": "Silver sword",
+            "type": "Plasma Blaster",
             "stats": {
-              "damage": 40
+              "damage": 40,
+              "accuracy": 20
             }
           },
           {
-            "type": "Wooden staff",
+            "type": "Quantum Laser Rifle",
             "stats": {
-              "damage": 20
+              "damage": 50,
+              "accuracy": 30
             }
           },
           {
-            "type": "Enchanted bow",
+            "type": "Electrostatic Disruptor",
             "stats": {
-              "damage": 25
+              "damage": 35,
+              "accuracy": 25
             }
           },
           {
-            "type": "Flaming axe",
+            "type": "Ion Sword",
             "stats": {
-              "damage": 45
+              "damage": 30,
+              "accuracy": 15
             }
           },
           {
-            "type": "Obsidian dagger",
+            "type": "Nanoblade",
             "stats": {
-              "damage": 35
+              "damage": 25,
+              "accuracy": 10
             }
           },
           {
-            "type": "Dragon bone mace",
+            "type": "Plasma Launcher",
             "stats": {
-              "damage": 50
+              "damage": 45,
+              "accuracy": 25
             }
           },
           {
-            "type": "Crystal wand",
+            "type": "Particle Beam Cannon",
             "stats": {
-              "damage": 30
+              "damage": 55,
+              "accuracy": 35
             }
           },
           {
-            "type": "Goblin sling",
+            "type": "Gravity Distorter",
             "stats": {
-              "damage": 15
+              "damage": 40,
+              "accuracy": 30
             }
           },
           {
-            "type": "Dwarven hammer",
+            "type": "Photon Blaster",
             "stats": {
-              "damage": 40
+              "damage": 30,
+              "accuracy": 20
             }
           },
           {
-            "type": "Eldritch scythe",
+            "type": "Plasma Saber",
             "stats": {
-              "damage": 55
+              "damage": 35,
+              "accuracy": 15
+            }
+          },
+          {
+            "type": "Pulse Rifle",
+            "stats": {
+              "damage": 45,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Laser Sniper Rifle",
+            "stats": {
+              "damage": 50,
+              "accuracy": 40
+            }
+          },
+          {
+            "type": "Disintegrator Cannon",
+            "stats": {
+              "damage": 60,
+              "accuracy": 35
+            }
+          },
+          {
+            "type": "Plasma Blade",
+            "stats": {
+              "damage": 25,
+              "accuracy": 15
+            }
+          },
+          {
+            "type": "Ion Blaster",
+            "stats": {
+              "damage": 35,
+              "accuracy": 25
+            }
+          },
+          {
+            "type": "Electro Pulse Gauntlet",
+            "stats": {
+              "damage": 30,
+              "accuracy": 20
+            }
+          },
+          {
+            "type": "Neural Disruptor",
+            "stats": {
+              "damage": 40,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Quantum Dagger",
+            "stats": {
+              "damage": 20,
+              "accuracy": 10
+            }
+          },
+          {
+            "type": "Plasma Sniper Rifle",
+            "stats": {
+              "damage": 55,
+              "accuracy": 40
+            }
+          },
+          {
+            "type": "Gravity Hammer",
+            "stats": {
+              "damage": 50,
+              "accuracy": 35
             }
           }
         ],
         "armor": [
           {
-            "type": "Silver armor",
+            "type": "Powered Exosuit",
             "stats": {
-              "defense": 30
+              "def": 35,
+              "ev": 15
             }
           },
           {
-            "type": "Leather tunic",
+            "type": "Energy Shield",
             "stats": {
-              "defense": 15
+              "def": 25,
+              "ev": 20
             }
           },
           {
-            "type": "Chainmail vest",
+            "type": "Nanofiber Armor",
             "stats": {
-              "defense": 25
+              "def": 30,
+              "ev": 25
             }
           },
           {
-            "type": "Dragon scale mail",
+            "type": "Cybernetic Helmet",
             "stats": {
-              "defense": 45
+              "def": 20,
+              "ev": 25
             }
           },
           {
-            "type": "Ghostly cloak",
+            "type": "Plasma Shield",
             "stats": {
-              "defense": 35
+              "def": 25,
+              "ev": 30
             }
           },
           {
-            "type": "Forest spirit hide",
+            "type": "Ionized Armor",
             "stats": {
-              "defense": 20
+              "def": 30,
+              "ev": 35
             }
           },
           {
-            "type": "Dwarven plate",
+            "type": "Gravity Boots",
             "stats": {
-              "defense": 40
+              "def": 15,
+              "ev": 35
             }
           },
           {
-            "type": "Mage's robe",
+            "type": "Advanced Tactical Suit",
             "stats": {
-              "defense": 25
+              "def": 35,
+              "ev": 20
             }
           },
           {
-            "type": "Angel's aegis",
+            "type": "Energy Absorber",
             "stats": {
-              "defense": 50
+              "def": 25,
+              "ev": 25
             }
           },
           {
-            "type": "Demon bone guard",
+            "type": "Plasma Rifle Gauntlet",
             "stats": {
-              "defense": 55
+              "def": 20,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Exoskeleton Armor",
+            "stats": {
+              "def": 30,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Force Field Generator",
+            "stats": {
+              "def": 25,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Quantum Shield",
+            "stats": {
+              "def": 30,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Jetpack",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "EVA Suit",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Plasma Shield",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Nanotech Armor",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Holographic Visor",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Particle Beam Shield",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Plasma Thruster Boots",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Advanced Battle Armor",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Energy Dampener",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Nano Plating",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Cybernetic Visor",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Plasma Disruptor Shield",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Anti-Gravity Boots",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Nano Fiber Suit",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Energy Deflector",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Quantum Resistant Armor",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Cybernetic Implants",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Plasma Absorption Shield",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Stealth Suit",
+            "stats": {
+              "def": 15,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Advanced Power Armor",
+            "stats": {
+              "def": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Energy Amplifier",
+            "stats": {
+              "def": 25,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Nanomachine Coating",
+            "stats": {
+              "def": 30,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Cybernetic Arm",
+            "stats": {
+              "def": 20,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Plasma Reflective Shield",
+            "stats": {
+              "def": 25,
+              "ev": 45
+            }
+          },
+          {
+            "type": "Hover Boots",
+            "stats": {
+              "def": 15,
+              "ev": 45
             }
           }
         ],
         "rooms": [
           {
-            "type": "alien planetscape",
+            "type": "alien planet",
             "name": [
-              "Donjon",
-              "Oubliette",
-              "Armory",
-              "Gallery",
-              "Solar",
-              "Boudoir",
-              "Conservatory",
-              "Observatory",
-              "Torture chamber",
-              "Buttereau",
-              "Chapel",
-              "Crypt",
-              "Guardroom",
-              "Keep",
-              "Moat",
-              "Drawbridge",
-              "Great Hall",
-              "Library",
-              "Wine cellar",
-              "Music room",
-              "Treasury",
-              "Dungeon",
-              "Courtyard",
-              "Oratory",
-              "Antechamber",
-              "Armory",
-              "Chamber of Secrets",
-              "Parlor",
-              "Refectory",
-              "Scribe's study",
-              "Throne room",
-              "Wardrobe",
-              "Billiards room",
-              "Banquet hall",
-              "Garden room",
-              "Conservatory",
-              "Map room",
-              "Alchemist's laboratory",
-              "Secret passage",
-              "Tower room",
-              "Vestibule",
-              "Sewing room"
+              "Extraterrestrial Laboratory",
+              "Nebula Observatory",
+              "Alien Hive Chamber",
+              "Cosmic Gardens",
+              "Starship Hangar",
+              "Celestial Library",
+              "Bio-Engineering Facility",
+              "Xenobotanical Garden",
+              "Astrogeology Research Station",
+              "Alien Artifact Chamber",
+              "Quantum Nexus Chamber",
+              "Astrozoology Habitat",
+              "Interstellar Lounge",
+              "Temporal Nexus Chamber",
+              "Plasma Forge",
+              "Alien Council Chamber",
+              "Gravity Manipulation Chamber",
+              "Cybernetics Lab",
+              "Astrocartography Room",
+              "Holographic Simulation Chamber",
+              "Stellar Observatory",
+              "Exoplanetarium",
+              "Nano-Engineering Lab",
+              "Cosmic Energy Core",
+              "Alien Relic Vault",
+              "Astrobiology Research Lab",
+              "Teleportation Chamber",
+              "Exotic Matter Chamber",
+              "Neural Interface Chamber",
+              "Quantum Entanglement Chamber",
+              "Alien Archives",
+              "Astrochemical Synthesis Lab",
+              "Interdimensional Portal Room",
+              "Gravitational Anomaly Chamber",
+              "Cybernetic Enhancement Suite",
+              "Astromancy Chamber",
+              "Alien Diplomatic Quarters",
+              "Chrono-Spatial Manipulation Chamber",
+              "Exo-Archaeology Excavation Site",
+              "Cosmic Fusion Reactor"
             ],
             "adjectives": [
-              "Small",
+              "Futuristic",
+              "Advanced",
+              "Extraterrestrial",
+              "Otherworldly",
+              "High-tech",
+              "Ethereal",
+              "Cosmic",
+              "Innovative",
+              "Alien",
+              "Interstellar",
+              "Technological",
+              "Mysterious",
+              "Unexplored",
+              "Astronomical",
+              "Outer space",
+              "Galactic",
+              "Robotic",
+              "Epic",
+              "Intergalactic",
+              "Hypermodern",
+              "Unknown",
+              "Cutting-edge",
+              "Enigmatic",
+              "Sci-fi",
               "Large",
-              "Compact",
+              "Small",
               "Spacious",
-              "Cramped",
-              "Dimly lit",
-              "Well-lit",
-              "Airy",
-              "Stuffy",
-              "Noisy",
+              "Modest",
+              "Simple",
+              "Minimal",
+              "Bright",
+              "Dim",
+              "Neat",
               "Quiet",
-              "Bustling",
-              "Plain",
-              "Plainly decorated",
-              "Tidy",
-              "Cluttered",
-              "Clean",
-              "Dirty",
-              "Dull",
-              "Plain-looking",
-              "Minimalistic",
-              "Functional",
-              "Gloomy",
-              "Muted",
-              "Neutral",
+              "Lively",
+              "Serene",
               "Ordinary",
-              "Average-sized",
-              "Cozy",
-              "Unadorned",
-              "Unremarkable"
+              "Plain"
             ],
             "scenery": [
               "Towering stone edifices punctuate the skyline, their ivy-clad facades whispering tales of antiquity.",
@@ -3819,52 +4473,52 @@
               "You tread upon a smooth, glass-like surface, reflecting the alien sky above and creating an illusion of infinite depth.",
               "A soft mist envelopes the alien planetscape, lending an ethereal quality to the already mysterious surroundings.",
               "The atmosphere crackles with an otherworldly energy, making every hair on your body stand on end."
-              ]
+            ]
           },
           {
             "type": "spaceship interior",
             "name": [
-              "Glade",
-              "Thicket",
-              "Arboretum",
-              "Grove",
-              "Clearing",
-              "Copse",
-              "Vale",
-              "Dell",
-              "Enclave",
-              "Wooded Hill",
-              "Bosk",
-              "Coppice",
-              "Wold",
-              "Chase",
-              "Spinney",
-              "Tangle",
-              "Covert",
-              "Wildwood",
-              "Hollygrove",
-              "Quarrywood",
-              "Holm",
-              "Glen",
-              "Weald",
-              "Spinney",
-              "Thorp",
-              "Weir",
-              "Holt",
-              "Shaw",
-              "Dingle",
-              "Coppice",
-              "Clough",
-              "Brake",
-              "Borstal",
-              "Vivary",
-              "Glebe",
-              "Leaze",
-              "Hanger",
-              "Cwm",
-              "Gorse",
-              "Gill",
-              "Glacis"
+              "Command Bridge",
+              "Engine Room",
+              "Astrogation Chamber",
+              "Life Support Module",
+              "Crew Quarters",
+              "Holographic Control Room",
+              "Robotics Lab",
+              "Zero-Gravity Chamber",
+              "Cargo Hold",
+              "Medbay",
+              "Virtual Reality Chamber",
+              "Security Control Center",
+              "Nanofabrication Workshop",
+              "Observation Deck",
+              "Teleportation Chamber",
+              "Energy Core Chamber",
+              "Astrometrics Lab",
+              "Hydroponics Bay",
+              "Gravity Control Room",
+              "Cybernetics Research Facility",
+              "Hyperdrive Chamber",
+              "Warp Engine Compartment",
+              "Astrobiology Lab",
+              "Hangar Bay",
+              "Lounge Area",
+              "Data Processing Center",
+              "Cloaking Device Control Room",
+              "Weapon Arsenal",
+              "Navigational Control Room",
+              "Virtual Gravity Gymnasium",
+              "Holodeck",
+              "Temporal Displacement Chamber",
+              "Artificial Intelligence Core",
+              "Energy Shield Generator Room",
+              "Cryogenic Stasis Chamber",
+              "Advanced Propulsion Lab",
+              "Alien Artifact Analysis Lab",
+              "Escape Pod Bay",
+              "Soundproof Meditation Chamber",
+              "Antimatter Storage Compartment",
+              "Biohazard Containment Facility"
             ],
             "adjectives": [
               "Small",
@@ -4027,40 +4681,48 @@
           {
             "type": "lunar base",
             "name": [
-              "Grotto",
-              "Abyss",
-              "Chasm",
-              "Gulch",
-              "Hollow",
-              "Labyrinth",
-              "Rift",
-              "Subterrane",
-              "Catacomb",
-              "Vault",
-              "Glen",
-              "Foss",
-              "Ravine",
-              "Gully",
-              "Depths",
-              "Excavation",
-              "Gulf",
-              "Grot",
-              "Fossor",
-              "Antre",
-              "Spelunc",
-              "Adit",
-              "Delve",
-              "Umbral",
-              "Swart",
-              "Earthmote",
-              "Clochard",
-              "Gloam",
-              "Charnel",
-              "Subterrene",
-              "Gastromancy",
-              "Crypt",
-              "Faldstool",
-              "Megalith"
+              "Command Center",
+              "Airlock",
+              "Research Laboratory",
+              "Living Quarters",
+              "Greenhouse",
+              "Control Room",
+              "Lunar Rover Garage",
+              "Solar Energy Array",
+              "Oxygen Generation Facility",
+              "Meteorology Station",
+              "Communication Center",
+              "Hydroponics Chamber",
+              "Gravity Simulator",
+              "Mining Operations Control",
+              "Medical Bay",
+              "Observatory Dome",
+              "Cafeteria",
+              "Workshop",
+              "Training Facility",
+              "Emergency Shelter",
+              "Sleeping Pods",
+              "Waste Recycling Unit",
+              "Library Archive",
+              "Fitness Center",
+              "Radiation Shielding Room",
+              "Storage Warehouse",
+              "EVA Suit Maintenance",
+              "Water Purification Plant",
+              "Astrogeology Laboratory",
+              "Security Hub",
+              "Conference Room",
+              "Entertainment Lounge",
+              "Maintenance Corridor",
+              "Nuclear Reactor",
+              "Artificial Gravity Control",
+              "Astrobiology Research Unit",
+              "Microgravity Research Chamber",
+              "Data Analysis Center",
+              "Rocket Launch Pad",
+              "Geodesic Dome Habitat",
+              "Robotics Workshop",
+              "Transportation Hub"
             ],
             "adjectives": [
               "Small",
@@ -4201,56 +4863,37 @@
           {
             "type": "alien cavern",
             "name": [
-              "Sepulcher",
-              "Ossuary",
-              "Mausoleum",
-              "Burial Chamber",
-              "Tomb",
-              "Grave",
-              "Columbarium",
-              "Funerary Vault",
-              "Necropolis",
-              "Mortuary",
-              "Sepulture",
-              "Reliquary",
-              "Cenotaph",
-              "Ossuarium",
-              "Sepulchral Chamber",
-              "Charnel House",
-              "Burial Vault",
-              "Crypta",
-              "Barrow",
-              "Tumulus",
-              "Burial Shrine",
-              "Funereal Chamber",
-              "Graveyard",
-              "Tombulus",
-              "Memorial Crypt",
-              "Grave Niche",
-              "Cryptic Sepulture",
-              "Burial Sanctum",
-              "Funereal Mausoleum",
-              "Mortuary Catacomb",
-              "Cenobium",
-              "Funerary Shrine",
-              "Mortsafe",
-              "Sepulchral Niche",
-              "Burial Ossuary",
-              "Cryptic Tomb",
-              "Charnel Crypt",
-              "Grave Cairn",
-              "Mausolus",
-              "Burial Mound",
-              "Columbarium Vault",
-              "Funerary Sarcophagus",
-              "Necrotomb",
-              "Memorial Catacomb",
-              "Crypt Reliquary",
-              "Sepulchral Sanctum",
-              "Burial Cell",
-              "Tumular Crypt",
-              "Funereal Ossuary",
-              "Mortuary Cenotaph"
+              "Bioluminescent Chamber",
+              "Crystal Labyrinth",
+              "Subterranean Lake",
+              "Fungal Overgrowth Chamber",
+              "Echoing Abyss",
+              "Stalactite Forest",
+              "Glyph-carved Chamber",
+              "Chasm of Whispers",
+              "Glowing Fissure",
+              "Magma Chamber",
+              "Mystic Altar",
+              "Cavernous Ravine",
+              "Ancient Carving Chamber",
+              "Underground Waterfall",
+              "Phosphorescent Grotto",
+              "Submerged Passage",
+              "Geothermal Vent",
+              "Ethereal Crystal Cave",
+              "Hidden Shrine",
+              "Luminescent Tunnels",
+              "Insectoid Nest",
+              "Rumbling Chasm",
+              "Shadowy Abyss",
+              "Primordial Chamber",
+              "Spectral Echo Chamber",
+              "Cave of Enigmatic Symbols",
+              "Crystalline Vein",
+              "Vegetation-covered Gorge",
+              "Underground Oasis",
+              "Glowworm Burrow",
+              "Mystical Pool"
             ],
             "adjectives": [
               "Small",
@@ -4395,50 +5038,37 @@
           {
             "type": "bio-dome",
             "name": [
-              "Reading Nook",
-              "Parchment Keep",
-              "Scroll Sanctuary",
-              "Tome Alcove",
-              "Manuscript Chamber",
-              "Chronicle Hall",
-              "Librarium",
-              "Folio Cloister",
-              "Scriptorium",
-              "Bookish Vault",
-              "Bookery",
-              "Scrolls Hall",
-              "Lore Den",
-              "Manuscriptarium",
-              "Repository",
-              "Study",
-              "Archive",
-              "Scriptorium",
-              "Lore Chamber",
-              "Repository",
-              "Scroll Sanctum",
-              "Knowledge Vault",
-              "Library",
-              "Book Crypt",
-              "Tome Chamber",
-              "Book Repository",
-              "Bookcase Hall",
-              "Manuscript Sanctum",
-              "Reading Room",
-              "Parchment Alcove",
-              "Quill Chamber",
-              "Book Haven",
-              "Codex Chamber",
-              "Script Library",
-              "Folio Hall",
-              "Buchhalle",
-              "Manuskriptkammer",
-              "Schreibstube",
-              "Leseszimmer",
-              "Archivraum",
-              "Handschriftenhalle",
-              "Wissenskammer",
-              "Salle de Lecture",
-              "Salle des Archives"
+              "Botanical Garden",
+              "Aquatic Habitat",
+              "Insectarium",
+              "Aviary",
+              "Fungi Research Lab",
+              "Ecosystem Control Center",
+              "Genetic Modification Chamber",
+              "Flora Observation Deck",
+              "Bio-Engineering Facility",
+              "Zoological Enclosure",
+              "Horticulture Lab",
+              "Ecological Research Station",
+              "Bio-Diversity Archive",
+              "Microbial Cultivation Chamber",
+              "Hybridization Nursery",
+              "Entomology Lab",
+              "Amphibian Sanctuary",
+              "Biodome Control Room",
+              "Arboreal Canopy",
+              "Herbology Classroom",
+              "Butterfly Pavilion",
+              "Reptile Habitat",
+              "Marine Biome",
+              "Mycotherapy Center",
+              "Invertebrate Exhibit",
+              "Biofeedback Meditation Chamber",
+              "Phytochemical Research Lab",
+              "Vertebrate Breeding Facility",
+              "Symbiotic Ecosystem",
+              "Pheromone Analysis Chamber",
+              "Aerial Botany Platform"
             ],
             "adjectives": [
               "Small",
@@ -4580,46 +5210,37 @@
           {
             "type": "futuristic research lab",
             "name": [
-              "Alehouse",
-              "Banquet-hall",
-              "Gild-hall",
-              "Buttery",
-              "Cupboard",
-              "Doom-ring",
-              "Guest-hall",
-              "Hearthstead",
-              "Herber",
-              "Boarden",
-              "Offertory",
-              "Scop-room",
-              "Wineroom",
-              "Wassail-room",
-              "Wardrobe",
-              "Weaving-room",
-              "Butchery",
-              "Tiltyard",
-              "Bathhouse",
-              "Tavern",
-              "Taproom",
-              "Goblet-hall",
-              "Feast-hall",
-              "Chamberlain",
-              "Larder",
-              "Cellar",
-              "Pilgrim's Room",
-              "Minstrel's Gallery",
-              "Winetower",
-              "Brauerstube",
-              "Kufersaal",
-              "Taverna",
-              "Tirelire",
-              "Brasserie",
-              "Biergarten",
-              "Salle des Fetes",
-              "Festsaal",
-              "Weinstube",
-              "Herberg",
-              "Speisekammer"
+              "Nanoengineering Laboratory",
+              "Artificial Intelligence Research Chamber",
+              "Quantum Computing Facility",
+              "Biomedical Research Lab",
+              "Cybernetics Testing Chamber",
+              "Astrobiology Study Room",
+              "Advanced Materials Research Lab",
+              "Genetic Engineering Lab",
+              "Robotics Development Center",
+              "Virtual Reality Simulation Chamber",
+              "Neural Interface Testing Room",
+              "Nanomedicine Research Facility",
+              "Exoplanet Analysis Laboratory",
+              "Astrophysics Research Observatory",
+              "Energy Efficiency Experiment Room",
+              "Fusion Reactor Prototype Lab",
+              "Quantum Physics Laboratory",
+              "Space-Time Manipulation Chamber",
+              "Photonics Research Facility",
+              "Neuroscience Research Lab",
+              "Synthetic Biology Workshop",
+              "Holographic Projection Room",
+              "Materials Synthesis Laboratory",
+              "Advanced Weaponry Testing Range",
+              "Renewable Energy Research Lab",
+              "Quantum Teleportation Experiment Room",
+              "Molecular Nanotechnology Lab",
+              "Cryogenics Research Vault",
+              "Astronomy Data Processing Center",
+              "Antimatter Containment Facility",
+              "Gravity Manipulation Testing Chamber"
             ],
             "adjectives": [
               "Small",
@@ -4751,46 +5372,37 @@
           {
             "type": "alien temple",
             "name": [
-              "Meadow",
-              "Arbor",
-              "Labyrinth",
-              "Orchard",
-              "Glade",
-              "Parterre",
-              "Bower",
-              "Grotto",
-              "Courtyard",
-              "Terrace",
-              "Hedgerow",
-              "Herbary",
-              "Atrium",
-              "Topiary",
-              "Pleasance",
-              "Clover",
-              "Rill",
-              "Trellis",
-              "Rosarium",
-              "Folly",
-              "Thicket",
-              "Pleasaunce",
-              "Pergola",
-              "Cloister",
-              "Quincunx",
-              "Espalier",
-              "Herbery",
-              "Paradise",
-              "Lawn",
-              "Verdure",
-              "Arbour",
-              "Courtil",
-              "Quarry",
-              "Querencia",
-              "Palissade",
-              "Copse",
-              "Viridarium",
-              "Roseate",
-              "Gardenette",
-              "Serenity"
+              "Sacred Altar Chamber",
+              "Mystical Ritual Hall",
+              "Ancient Crypt",
+              "Divine Sanctuary",
+              "Cosmic Oracle Chamber",
+              "Sculpted Hieroglyphs Hall",
+              "Celestial Offering Room",
+              "Ethereal Meditation Chamber",
+              "Enigmatic Passage",
+              "Chamber of Eternal Light",
+              "Sacrificial Pit",
+              "Wisdom's Library",
+              "Guardian Statue Chamber",
+              "Serenity Garden",
+              "Chamber of Prophecies",
+              "Cosmic Alignment Hall",
+              "Hallowed Halls of Knowledge",
+              "Purification Pool",
+              "Celestial Sculpture Gallery",
+              "Hall of Cosmic Echoes",
+              "Shrine of Sacred Artifacts",
+              "Divination Chamber",
+              "Ceremonial Antechamber",
+              "Labyrinth of Trials",
+              "Mystic Serpent Chamber",
+              "Forgotten Sacristy",
+              "Chamber of Celestial Harmony",
+              "Chalice Room",
+              "Hall of Ancestral Spirits",
+              "Sands of Time Chamber",
+              "Cryptic Engravings Hall"
             ],
             "adjectives": [
               "Small",
@@ -4933,56 +5545,37 @@
           {
             "type": "toxic alien wasteland",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Toxic Sludge Pit",
+              "Mutated Flora Field",
+              "Acidic Vapor Chamber",
+              "Radioactive Crater",
+              "Corroded Ruins",
+              "Toxic Fog Trench",
+              "Contaminated Water Reservoir",
+              "Biohazardous Hotspot",
+              "Barren Desolation Zone",
+              "Toxic Gas Pocket",
+              "Decayed Skeleton Cove",
+              "Virulent Fungal Thicket",
+              "Eroded Landmass",
+              "Toxic Sinkhole",
+              "Hazardous Radiation Zone",
+              "Poisonous Mist Marsh",
+              "Toxic Spore Infestation",
+              "Toxic Sludge Lagoon",
+              "Corrosive Acid Storm",
+              "Biochemical Waste Pit",
+              "Toxic Vapor Canyon",
+              "Toxic Swamp",
+              "Venomous Insect Nest",
+              "Toxic Ash Wastes",
+              "Contaminated Oasis",
+              "Noxious Vapors Den",
+              "Toxic Magma Chasm",
+              "Diseased Wildlife Enclosure",
+              "Acidic Rainfall Basin",
+              "Radioactive Debris Field",
+              "Toxic Quicksand Quarry"
             ],
             "adjectives": [
               "Vast",
@@ -6267,25 +6860,25 @@
       "genre": "Western",
       "elements": {
         "game_title": [
-          "Journey for the",
+          "In Search of the",
           "The Legendary",
-          "Legend of the",
+          "Journey of the",
           "Quest for the",
-          "Secrets of the",
+          "Trailblazing",
           "The Secret of the",
           "Tales of the",
           "Age of the",
-          "Mysteries of the",
+          "Ride of the",
           "Fate of the",
-          "Chronicles of the",
+          "Frontier Chronicles of the",
           "Saga of the",
           "Adventures of the",
-          "Tales of the",
-          "Mystic Journeys for the",
-          "Knights of the",
-          "Curses and Wonders of the",
-          "Legends and Lore of the",
-          "Quest for the",
+          "Wild West Tales of the",
+          "Frontier Expeditions for the",
+          "Gunslingers of the",
+          "Curses and Legends of the",
+          "Frontier Odyssey to the",
+          "Frontier Voyage for the",
           "Realm of the",
           "Echoes from the",
           "Whispers of the",
@@ -6295,321 +6888,342 @@
           "Chronicles of the",
           "Sands of the",
           "Symphony of the",
-          "The Astral"
+          "Revenge of the",
+          "Countdown to the",
+          "The Golden",
+          "The Silver",
+          "The Titanium",
+          "The Outlaw's",
+          "The Frontier's",
+          "The Rustler's",
+          "The Wild West's",
+          "The Legendary"
         ],
         "treasure": [
-          "Mystic Sword",
-          "Enchanted Amulet",
-          "Potion of Healing",
-          "Dragon Egg",
-          "Crystal Ball",
-          "Magic Wand",
-          "Dwarven Hammer",
-          "Elven Bow",
-          "Book of Spells",
-          "Golden Chalice",
-          "Ancient Relic",
-          "Crown of Destiny",
-          "Emerald Pendant",
-          "Scepter of Power",
-          "Scroll of Enchantments",
-          "Lost Artifact",
-          "Royal Medallion",
-          "Starfire Gem",
-          "Tome of Knowledge",
-          "Diamond Talisman",
-          "Ethereal Orb",
-          "Crown of Whispers",
-          "Mystic Elixir",
-          "Eyes of the Serpent",
-          "Celestial Compass",
-          "Lost Symphony",
-          "Enchanted Quill",
-          "Jade Lotus",
-          "Oracle's Mirror",
-          "Sapphire Tear"
+          "Frontier Relic",
+          "Outlaw's Legacy",
+          "Gold Rush Treasure",
+          "Desperado's Gambit",
+          "Trailblazer's Charm",
+          "Lone Ranger's Revolver",
+          "Stagecoach Key",
+          "Cowboy's Elixir",
+          "Bounty Hunter's Badge",
+          "Wild West Artefact",
+          "Prospector's Fortune",
+          "Bandit's Loot",
+          "Frontier Justice",
+          "Marshal's Lariat",
+          "Pioneer's Compass",
+          "Saloon Showdown",
+          "Outlaw's Hideout",
+          "Gold Nugget Heist",
+          "Desert Rose Talisman",
+          "Stagecoach Run",
+          "Cowboy's Treasure Map",
+          "Bounty Hunter's Contract",
+          "Wild West Relic",
+          "Prospector's Pan",
+          "Bandit's Stash",
+          "Frontier Conquest",
+          "Marshal's Six Shooter",
+          "Pioneer's Wagon",
+          "Saloon Brawl",
+          "Outlaw's Duel",
+          "Gold Rush Adventure",
+          "Desperado's Escape",
+          "Stagecoach Robbery",
+          "Cowboy's Hat",
+          "Bounty Hunter's Trail",
+          "Wild West Myth",
+          "Prospector's Claim",
+          "Bandit's Escape Route",
+          "Frontier Showdown",
+          "Marshal's Posse",
+          "Pioneer's Homestead",
+          "Saloon Poker Showdown"
         ],
         "puzzle_items": [
           {
-            "key_item": "runic tablet",
-            "lock_item": "stone door"
+            "key_item": "Rustler's Lasso Key",
+            "lock_item": "Outlaw's Hideout"
           },
           {
-            "key_item": "wizard's key",
-            "lock_item": "wizard's chest"
+            "key_item": "Gold Nugget Key",
+            "lock_item": "Prospector's Vault"
           },
           {
-            "key_item": "dragon scale",
-            "lock_item": "dragon's gate"
+            "key_item": "Desperado's Revolver Key",
+            "lock_item": "Bandit's Chest"
           },
           {
-            "key_item": "fairy dust",
-            "lock_item": "enchanted forest"
+            "key_item": "Frontier Badge Key",
+            "lock_item": "Sheriff's Strongbox"
           },
           {
-            "key_item": "ghost's tear",
-            "lock_item": "spectral barrier"
+            "key_item": "Poker Chip Key",
+            "lock_item": "Gambler's Safe"
           },
           {
-            "key_item": "goblin's coin",
-            "lock_item": "goblin's stash"
+            "key_item": "Silver Spur Key",
+            "lock_item": "Rancher's Gate"
           },
           {
-            "key_item": "moonstone",
-            "lock_item": "lunar vault"
+            "key_item": "Bounty Hunter's Rope Key",
+            "lock_item": "Wanted Outlaw's Cell"
           },
           {
-            "key_item": "phoenix feather",
-            "lock_item": "fire door"
+            "key_item": "Stagecoach Wheel Key",
+            "lock_item": "Stagecoach Treasure Compartment"
           },
           {
-            "key_item": "vampire fang",
-            "lock_item": "crypt entrance"
+            "key_item": "Saddlebag Key",
+            "lock_item": "Cowboy's Chest"
           },
           {
-            "key_item": "mermaid's pearl",
-            "lock_item": "aqua blue device"
+            "key_item": "Frontier Compass Key",
+            "lock_item": "Explorer's Lockbox"
           },
           {
-            "key_item": "whispering skull",
-            "lock_item": "whispering grave"
+            "key_item": "Saloon Poker Key",
+            "lock_item": "Saloon's Hidden Stash"
           },
           {
-            "key_item": "timekeeper's hourglass",
-            "lock_item": "temporal portal"
+            "key_item": "Tumbleweed Key",
+            "lock_item": "Ghost Town's Secret"
           },
           {
-            "key_item": "crystal key",
-            "lock_item": "crystal maze"
+            "key_item": "Gold Rush Pickaxe Key",
+            "lock_item": "Gold Mine Entrance"
           },
           {
-            "key_item": "enchanted compass",
-            "lock_item": "mystic labyrinth"
+            "key_item": "Marshal's Badge Key",
+            "lock_item": "Lawman's Armory"
           },
           {
-            "key_item": "elven sigil",
-            "lock_item": "ancient gate"
+            "key_item": "Panning Pan Key",
+            "lock_item": "Prospector's Locker"
           },
           {
-            "key_item": "gargoyle's eye",
-            "lock_item": "haunted citadel"
+            "key_item": "Desert Rose Key",
+            "lock_item": "Cactus Canyon's Hidden Oasis"
           },
           {
-            "key_item": "serpent's scale",
-            "lock_item": "serpent's sanctuary"
+            "key_item": "Frontier Journal Key",
+            "lock_item": "Frontier Historian's Chest"
           },
           {
-            "key_item": "dreamcatcher",
-            "lock_item": "portal of dreams"
+            "key_item": "Saloon Whiskey Key",
+            "lock_item": "Bootlegger's Stash"
           },
           {
-            "key_item": "singing crystal",
-            "lock_item": "harmonic chamber"
+            "key_item": "Wanted Poster Key",
+            "lock_item": "Bounty Board's Secret Compartment"
           },
           {
-            "key_item": "moonlit dagger",
-            "lock_item": "shadowy vault"
+            "key_item": "Cowboy Hat Key",
+            "lock_item": "Rancher's Hatbox"
           }
         ],
         "characters": [
           {
+            "type": "Gunslinger",
+            "stats": {
+              "hp": 100,
+              "atk": 12,
+              "defp": 10,
+              "acc": 35,
+              "ev": 30
+            }
+          },
+          {
             "type": "Outlaw",
             "stats": {
-              "hp": 40,
-              "atk": 20,
-              "defp": 10,
-              "acc": 45,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Bandit",
-            "stats": {
-              "hp": 30,
-              "atk": 15,
-              "defp": 5,
+              "hp": 90,
+              "atk": 14,
+              "defp": 6,
               "acc": 40,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Cattle Rustler",
-            "stats": {
-              "hp": 35,
-              "atk": 25,
-              "defp": 10,
-              "acc": 50,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Bounty Hunter",
-            "stats": {
-              "hp": 45,
-              "atk": 30,
-              "defp": 15,
-              "acc": 55,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Desperado",
-            "stats": {
-              "hp": 50,
-              "atk": 35,
-              "defp": 20,
-              "acc": 40,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Lawman",
-            "stats": {
-              "hp": 55,
-              "atk": 20,
-              "defp": 25,
-              "acc": 45,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Gambler",
-            "stats": {
-              "hp": 25,
-              "atk": 15,
-              "defp": 5,
-              "acc": 55,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Renegade",
-            "stats": {
-              "hp": 40,
-              "atk": 25,
-              "defp": 10,
-              "acc": 50,
-              "ev": 10
+              "ev": 35
             }
           },
           {
             "type": "Sheriff",
             "stats": {
-              "hp": 60,
-              "atk": 30,
-              "defp": 30,
-              "acc": 45,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Prospector",
-            "stats": {
-              "hp": 30,
-              "atk": 15,
-              "defp": 10,
-              "acc": 40,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Gunslinger",
-            "stats": {
-              "hp": 50,
-              "atk": 35,
-              "defp": 20,
-              "acc": 60,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Vigilante",
-            "stats": {
-              "hp": 40,
-              "atk": 30,
-              "defp": 15,
-              "acc": 50,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Outlaw Leader",
-            "stats": {
-              "hp": 75,
-              "atk": 40,
-              "defp": 25,
-              "acc": 55,
-              "ev": 10
+              "hp": 110,
+              "atk": 10,
+              "defp": 12,
+              "acc": 35,
+              "ev": 25
             }
           },
           {
             "type": "Bounty Hunter",
             "stats": {
-              "hp": 60,
-              "atk": 35,
-              "defp": 30,
+              "hp": 100,
+              "atk": 11,
+              "defp": 8,
+              "acc": 40,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Frontiersman",
+            "stats": {
+              "hp": 120,
+              "atk": 10,
+              "defp": 10,
+              "acc": 35,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Saloon Singer",
+            "stats": {
+              "hp": 80,
+              "atk": 8,
+              "defp": 6,
               "acc": 45,
-              "ev": 5
+              "ev": 40
+            }
+          },
+          {
+            "type": "Native Scout",
+            "stats": {
+              "hp": 90,
+              "atk": 9,
+              "defp": 7,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Gold Prospector",
+            "stats": {
+              "hp": 80,
+              "atk": 8,
+              "defp": 6,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Stagecoach Driver",
+            "stats": {
+              "hp": 90,
+              "atk": 9,
+              "defp": 8,
+              "acc": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Rancher",
+            "stats": {
+              "hp": 110,
+              "atk": 11,
+              "defp": 10,
+              "acc": 30,
+              "ev": 25
             }
           },
           {
             "type": "Sharpshooter",
             "stats": {
-              "hp": 45,
-              "atk": 40,
-              "defp": 15,
-              "acc": 60,
-              "ev": 10
+              "hp": 90,
+              "atk": 13,
+              "defp": 8,
+              "acc": 40,
+              "ev": 35
             }
           },
           {
-            "type": "Bandit Chief",
+            "type": "Cowgirl",
             "stats": {
               "hp": 80,
-              "atk": 45,
-              "defp": 35,
-              "acc": 50,
-              "ev": 5
+              "atk": 9,
+              "defp": 6,
+              "acc": 45,
+              "ev": 40
             }
           },
           {
-            "type": "Lawman Marshal",
+            "type": "Lawman",
             "stats": {
               "hp": 100,
-              "atk": 30,
-              "defp": 40,
-              "acc": 45,
-              "ev": 10
+              "atk": 11,
+              "defp": 10,
+              "acc": 35,
+              "ev": 30
             }
           },
           {
-            "type": "Renegade Gunslinger",
+            "type": "Prospector",
             "stats": {
-              "hp": 70,
-              "atk": 45,
-              "defp": 25,
-              "acc": 55,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Sheriff Outlaw",
-            "stats": {
-              "hp": 120,
-              "atk": 40,
-              "defp": 50,
+              "hp": 90,
+              "atk": 8,
+              "defp": 7,
               "acc": 40,
-              "ev": 5
+              "ev": 35
             }
           },
           {
-            "type": "Legendary Gunslinger",
+            "type": "Bandit",
             "stats": {
-              "hp": 150,
-              "atk": 50,
-              "defp": 60,
-              "acc": 60,
-              "ev": 5
+              "hp": 100,
+              "atk": 12,
+              "defp": 6,
+              "acc": 40,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Frontier Doctor",
+            "stats": {
+              "hp": 110,
+              "atk": 8,
+              "defp": 12,
+              "acc": 35,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Pioneer",
+            "stats": {
+              "hp": 90,
+              "atk": 9,
+              "defp": 8,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Stagecoach Guard",
+            "stats": {
+              "hp": 100,
+              "atk": 10,
+              "defp": 10,
+              "acc": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Gambling Maverick",
+            "stats": {
+              "hp": 80,
+              "atk": 8,
+              "defp": 6,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Wandering Gunslinger",
+            "stats": {
+              "hp": 110,
+              "atk": 11,
+              "defp": 8,
+              "acc": 35,
+              "ev": 25
             }
           }
         ],
@@ -6737,125 +7351,460 @@
         ],
         "weapons": [
           {
-            "type": "Silver sword",
+            "type": "Colt Peacemaker",
             "stats": {
-              "damage": 40
+              "damage": 30,
+              "accuracy": 20
             }
           },
           {
-            "type": "Wooden staff",
+            "type": "Winchester Rifle",
             "stats": {
-              "damage": 20
+              "damage": 40,
+              "accuracy": 30
             }
           },
           {
-            "type": "Enchanted bow",
+            "type": "Double-barrel Shotgun",
             "stats": {
-              "damage": 25
+              "damage": 35,
+              "accuracy": 25
             }
           },
           {
-            "type": "Flaming axe",
+            "type": "Bowie Knife",
             "stats": {
-              "damage": 45
+              "damage": 25,
+              "accuracy": 10
             }
           },
           {
-            "type": "Obsidian dagger",
+            "type": "Derringer Pistol",
             "stats": {
-              "damage": 35
+              "damage": 20,
+              "accuracy": 15
             }
           },
           {
-            "type": "Dragon bone mace",
+            "type": "Henry Repeater",
             "stats": {
-              "damage": 50
+              "damage": 35,
+              "accuracy": 25
             }
           },
           {
-            "type": "Crystal wand",
+            "type": "Sawed-off Shotgun",
             "stats": {
-              "damage": 30
+              "damage": 40,
+              "accuracy": 30
             }
           },
           {
-            "type": "Goblin sling",
+            "type": "Sharps Rifle",
             "stats": {
-              "damage": 15
+              "damage": 45,
+              "accuracy": 35
             }
           },
           {
-            "type": "Dwarven hammer",
+            "type": "Lever-action Carbine",
             "stats": {
-              "damage": 40
+              "damage": 30,
+              "accuracy": 20
             }
           },
           {
-            "type": "Eldritch scythe",
+            "type": "Tomahawk",
             "stats": {
-              "damage": 55
+              "damage": 25,
+              "accuracy": 15
+            }
+          },
+          {
+            "type": "Volcanic Pistol",
+            "stats": {
+              "damage": 35,
+              "accuracy": 25
+            }
+          },
+          {
+            "type": "Buffalo Rifle",
+            "stats": {
+              "damage": 45,
+              "accuracy": 35
+            }
+          },
+          {
+            "type": "Gatling Gun",
+            "stats": {
+              "damage": 60,
+              "accuracy": 40
+            }
+          },
+          {
+            "type": "Bow and Arrow",
+            "stats": {
+              "damage": 30,
+              "accuracy": 25
+            }
+          },
+          {
+            "type": "Pepperbox Revolver",
+            "stats": {
+              "damage": 35,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Throwing Knives",
+            "stats": {
+              "damage": 25,
+              "accuracy": 20
+            }
+          },
+          {
+            "type": "Lancaster Shotgun",
+            "stats": {
+              "damage": 40,
+              "accuracy": 35
+            }
+          },
+          {
+            "type": "Buffalo Pistol",
+            "stats": {
+              "damage": 35,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Scoped Rifle",
+            "stats": {
+              "damage": 45,
+              "accuracy": 40
+            }
+          },
+          {
+            "type": "Revolving Rifle",
+            "stats": {
+              "damage": 40,
+              "accuracy": 35
             }
           }
         ],
         "armor": [
           {
-            "type": "Silver armor",
+            "type": "Leather Vest",
             "stats": {
-              "defense": 30
+              "def": 15,
+              "ev": 20
             }
           },
           {
-            "type": "Leather tunic",
+            "type": "Studded Cowboy Hat",
             "stats": {
-              "defense": 15
+              "def": 10,
+              "ev": 25
             }
           },
           {
-            "type": "Chainmail vest",
+            "type": "Bandit Mask",
             "stats": {
-              "defense": 25
+              "def": 5,
+              "ev": 30
             }
           },
           {
-            "type": "Dragon scale mail",
+            "type": "Sheriff's Badge",
             "stats": {
-              "defense": 45
+              "def": 20,
+              "ev": 15
             }
           },
           {
-            "type": "Ghostly cloak",
+            "type": "Spiked Leather Gloves",
             "stats": {
-              "defense": 35
+              "def": 10,
+              "ev": 20
             }
           },
           {
-            "type": "Forest spirit hide",
+            "type": "Duster Coat",
             "stats": {
-              "defense": 20
+              "def": 25,
+              "ev": 10
             }
           },
           {
-            "type": "Dwarven plate",
+            "type": "Cowboy Boots",
             "stats": {
-              "defense": 40
+              "def": 15,
+              "ev": 15
             }
           },
           {
-            "type": "Mage's robe",
+            "type": "Buffalo Hide Chaps",
             "stats": {
-              "defense": 25
+              "def": 20,
+              "ev": 10
             }
           },
           {
-            "type": "Angel's aegis",
+            "type": "Saddlebag Holster",
             "stats": {
-              "defense": 50
+              "def": 10,
+              "ev": 20
             }
           },
           {
-            "type": "Demon bone guard",
+            "type": "Ranger Hat",
             "stats": {
-              "defense": 55
+              "def": 5,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Vigilante Mask",
+            "stats": {
+              "def": 10,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Buckskin Jacket",
+            "stats": {
+              "def": 25,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Gunbelt",
+            "stats": {
+              "def": 15,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Rawhide Gloves",
+            "stats": {
+              "def": 10,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Lace-up Boots",
+            "stats": {
+              "def": 15,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Suede Pants",
+            "stats": {
+              "def": 20,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Gunfighter's Hat",
+            "stats": {
+              "def": 5,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Outlaw Mask",
+            "stats": {
+              "def": 10,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Leather Jacket",
+            "stats": {
+              "def": 25,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Gun Holster",
+            "stats": {
+              "def": 15,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Rawhide Gloves",
+            "stats": {
+              "def": 10,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Leather Boots",
+            "stats": {
+              "def": 15,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Denim Pants",
+            "stats": {
+              "def": 20,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Cowboy Hat",
+            "stats": {
+              "def": 5,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Bandana",
+            "stats": {
+              "def": 10,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Leather Vest",
+            "stats": {
+              "def": 15,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Spurs",
+            "stats": {
+              "def": 10,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Rawhide Chaps",
+            "stats": {
+              "def": 20,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Cowhide Holster",
+            "stats": {
+              "def": 10,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Leather Gloves",
+            "stats": {
+              "def": 10,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Leather Boots",
+            "stats": {
+              "def": 15,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Jeans",
+            "stats": {
+              "def": 20,
+              "ev": 0
+            }
+          },
+          {
+            "type": "Wide-brim Hat",
+            "stats": {
+              "def": 0,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Bandit Scarf",
+            "stats": {
+              "def": 5,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Leather Jacket",
+            "stats": {
+              "def": 20,
+              "ev": 0
+            }
+          },
+          {
+            "type": "Gun Belt",
+            "stats": {
+              "def": 10,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Leather Gloves",
+            "stats": {
+              "def": 10,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Cowboy Boots",
+            "stats": {
+              "def": 15,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Denim Pants",
+            "stats": {
+              "def": 20,
+              "ev": 0
+            }
+          },
+          {
+            "type": "Stetson Hat",
+            "stats": {
+              "def": 0,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Neckerchief",
+            "stats": {
+              "def": 5,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Leather Vest",
+            "stats": {
+              "def": 15,
+              "ev": 5
+            }
+          },
+          {
+            "type": "Spiked Spurs",
+            "stats": {
+              "def": 10,
+              "ev": 10
+            }
+          },
+          {
+            "type": "Rawhide Chaps",
+            "stats": {
+              "def": 20,
+              "ev": 0
+            }
+          },
+          {
+            "type": "Holster Belt",
+            "stats": {
+              "def": 10,
+              "ev": 5
             }
           }
         ],
@@ -6863,48 +7812,26 @@
           {
             "type": "saloon",
             "name": [
-              "Donjon",
-              "Oubliette",
-              "Armory",
-              "Gallery",
-              "Solar",
-              "Boudoir",
-              "Conservatory",
-              "Observatory",
-              "Torture chamber",
-              "Buttereau",
-              "Chapel",
-              "Crypt",
-              "Guardroom",
-              "Keep",
-              "Moat",
-              "Drawbridge",
-              "Great Hall",
-              "Library",
-              "Wine cellar",
-              "Music room",
-              "Treasury",
-              "Dungeon",
-              "Courtyard",
-              "Oratory",
-              "Antechamber",
-              "Armory",
-              "Chamber of Secrets",
-              "Parlor",
-              "Refectory",
-              "Scribe's study",
-              "Throne room",
-              "Wardrobe",
-              "Billiards room",
-              "Banquet hall",
-              "Garden room",
-              "Conservatory",
-              "Map room",
-              "Alchemist's laboratory",
-              "Secret passage",
-              "Tower room",
-              "Vestibule",
-              "Sewing room"
+              "Card Shark's Den",
+              "Piano Parlor",
+              "Dance Hall",
+              "Poker Room",
+              "Shooting Gallery",
+              "Billiards Lounge",
+              "Whiskey Tasting Room",
+              "VIP Saloon Suite",
+              "Stage and Performance Area",
+              "Cigar Lounge",
+              "Gambling Parlor",
+              "Secret Backroom",
+              "Saloon Kitchen",
+              "Bartender's Quarters",
+              "Balcony Overlook",
+              "Gaming Hall",
+              "Salon and Barber Shop",
+              "Arm Wrestling Arena",
+              "Gambling Den",
+              "Smoking Lounge"
             ],
             "adjectives": [
               "Ancient",
@@ -7050,47 +7977,26 @@
           {
             "type": "sheriff's office",
             "name": [
-              "Glade",
-              "Thicket",
-              "Arboretum",
-              "Grove",
-              "Clearing",
-              "Copse",
-              "Vale",
-              "Dell",
-              "Enclave",
-              "Wooded Hill",
-              "Bosk",
-              "Coppice",
-              "Wold",
-              "Chase",
-              "Spinney",
-              "Tangle",
-              "Covert",
-              "Wildwood",
-              "Hollygrove",
-              "Quarrywood",
-              "Holm",
-              "Glen",
-              "Weald",
-              "Spinney",
-              "Thorp",
-              "Weir",
-              "Holt",
-              "Shaw",
-              "Dingle",
-              "Coppice",
-              "Clough",
-              "Brake",
-              "Borstal",
-              "Vivary",
-              "Glebe",
-              "Leaze",
-              "Hanger",
-              "Cwm",
-              "Gorse",
-              "Gill",
-              "Glacis"
+              "Desk Area",
+              "Holding Cells",
+              "Evidence Room",
+              "Interrogation Chamber",
+              "Booking Station",
+              "Dispatch Center",
+              "Armory",
+              "Forensics Lab",
+              "Briefing Room",
+              "Jailhouse Yard",
+              "Conference Room",
+              "Fingerprinting Station",
+              "Witness Interview Room",
+              "Evidence Processing Area",
+              "Surveillance Control Room",
+              "Archives",
+              "Patrol Vehicle Garage",
+              "Gymnasium",
+              "Crime Scene Investigation Room",
+              "Break Room"
             ],
             "adjectives": [
               "Enchanted",
@@ -7295,40 +8201,26 @@
           {
             "type": "general store",
             "name": [
-              "Grotto",
-              "Abyss",
-              "Chasm",
-              "Gulch",
-              "Hollow",
-              "Labyrinth",
-              "Rift",
-              "Subterrane",
-              "Catacomb",
-              "Vault",
-              "Glen",
-              "Foss",
-              "Ravine",
-              "Gully",
-              "Depths",
-              "Excavation",
-              "Gulf",
-              "Grot",
-              "Fossor",
-              "Antre",
-              "Spelunc",
-              "Adit",
-              "Delve",
-              "Umbral",
-              "Swart",
-              "Earthmote",
-              "Clochard",
-              "Gloam",
-              "Charnel",
-              "Subterrene",
-              "Gastromancy",
-              "Crypt",
-              "Faldstool",
-              "Megalith"
+              "Frontier Emporium",
+              "Supply Depot",
+              "Provisions Corner",
+              "Trading Post",
+              "Outpost Market",
+              "Rancher's Mercantile",
+              "Pioneer Outfitters",
+              "Wild West Trading Co.",
+              "Trailblazer's General Store",
+              "Frontier Provisions",
+              "Rustic Supply Shop",
+              "Cowboy's Corner Store",
+              "Saddle and Sundries",
+              "Frontier Dry Goods",
+              "Western Wares",
+              "Homesteader's Market",
+              "Ranch Supply Depot",
+              "Prairie Peddler",
+              "Westward Trading Post",
+              "Frontier Outpost"
             ],
             "adjectives": [
               "Mystic",
@@ -7489,56 +8381,45 @@
           {
             "type": "old-fashioned bank",
             "name": [
-              "Sepulcher",
-              "Ossuary",
-              "Mausoleum",
-              "Burial Chamber",
-              "Tomb",
-              "Grave",
-              "Columbarium",
-              "Funerary Vault",
-              "Necropolis",
-              "Mortuary",
-              "Sepulture",
-              "Reliquary",
-              "Cenotaph",
-              "Ossuarium",
-              "Sepulchral Chamber",
-              "Charnel House",
-              "Burial Vault",
-              "Crypta",
-              "Barrow",
-              "Tumulus",
-              "Burial Shrine",
-              "Funereal Chamber",
-              "Graveyard",
-              "Tombulus",
-              "Memorial Crypt",
-              "Grave Niche",
-              "Cryptic Sepulture",
-              "Burial Sanctum",
-              "Funereal Mausoleum",
-              "Mortuary Catacomb",
-              "Cenobium",
-              "Funerary Shrine",
-              "Mortsafe",
-              "Sepulchral Niche",
-              "Burial Ossuary",
-              "Cryptic Tomb",
-              "Charnel Crypt",
-              "Grave Cairn",
-              "Mausolus",
-              "Burial Mound",
-              "Columbarium Vault",
-              "Funerary Sarcophagus",
-              "Necrotomb",
-              "Memorial Catacomb",
-              "Crypt Reliquary",
-              "Sepulchral Sanctum",
-              "Burial Cell",
-              "Tumular Crypt",
-              "Funereal Ossuary",
-              "Mortuary Cenotaph"
+              "Bank Teller Area",
+              "Safe Deposit Boxes",
+              "Currency Vault",
+              "Loan Office",
+              "Transaction Counter",
+              "Security Center",
+              "Gold Bullion Room",
+              "Accounts Department",
+              "Boardroom",
+              "Bank Courtyard",
+              "Bank Conference Room",
+              "Check Verification Station",
+              "Customer Interview Room",
+              "Currency Sorting Area",
+              "Surveillance Room",
+              "Historical Archives",
+              "Bank Garage",
+              "Bank Gymnasium",
+              "Fraud Investigation Unit",
+              "Staff Break Room",
+              "Money Transfer Desk",
+              "Investment Advisory Office",
+              "Account Opening Area",
+              "Financial Planning Nook",
+              "Transaction Audit Room",
+              "Bank Manager's Office",
+              "Customer Service Counter",
+              "Loan Application Kiosk",
+              "Security Guard Post",
+              "Document Notarization Booth",
+              "Coin Exchange Window",
+              "Cash Handling Station",
+              "Currency Conversion Booth",
+              "Credit Card Processing Room",
+              "Dispute Resolution Office",
+              "Bank Lobby Area",
+              "Mortgage Department",
+              "Risk Assessment Chamber",
+              "Business Banking Lounge"
             ],
             "adjectives": [
               "Cool",
@@ -7703,60 +8584,46 @@
           {
             "type": "train station",
             "name": [
-              "Sagacity Nook",
-              "Parchment Keep",
-              "Scroll Sanctuary",
-              "Tome Alcove",
-              "Manuscript Chamber",
-              "Codex Haven",
-              "Chronicle Hall",
-              "Librarium",
-              "Folio Cloister",
-              "Scriptorium",
-              "Bookish Vault",
-              "Bookery",
-              "Scrolls Hall",
-              "Lore Den",
-              "Manuscriptarium",
-              "Archivist's Abode",
-              "Repository",
-              "Study",
-              "Wordsmith's Treasury",
-              "Archive",
-              "Scriptorium",
-              "Lore Chamber",
-              "Repository",
-              "Scroll Sanctum",
-              "Knowledge Vault",
-              "Literary Labyrinth",
-              "Library",
-              "Book Crypt",
-              "Tome Chamber",
-              "Book Repository",
-              "Bookcase Hall",
-              "Manuscript Sanctum",
-              "Reading Room",
-              "Parchment Alcove",
-              "Quill Chamber",
-              "Book Haven",
-              "Codex Chamber",
-              "Script Library",
-              "Folio Hall",
-              "Buchhalle",
-              "Manuskriptkammer",
-              "Schreibstube",
-              "Leseszimmer",
-              "Archivraum",
-              "Handschriftenhalle",
-              "Wissenskammer",
-              "Salle de Lecture",
-              "Salle des Archives",
-              "Cabinet de Curiosites",
-              "Salle d'Etude",
-              "Reserve de Livres",
-              "Chambre des Manuscrits",
-              "Salle de Litterature",
-              "Salle de Savoir"
+              "Ticket Counter",
+              "Platform Entrance",
+              "Waiting Area",
+              "Baggage Claim",
+              "Station Master's Office",
+              "Train Dispatch Room",
+              "Luggage Storage Area",
+              "Passenger Lounge",
+              "Ticket Validation Booth",
+              "Conductor's Compartment",
+              "Platform Announcement Area",
+              "Ticket Sales Office",
+              "Restroom Facilities",
+              "Telegraph Room",
+              "Freight Loading Zone",
+              "Information Desk",
+              "Cafeteria Car",
+              "Express Mail Service",
+              "Passenger Boarding Bridge",
+              "Station Clock Tower",
+              "Ticket Collection Booth",
+              "Train Schedule Board",
+              "Platform Shelter",
+              "Baggage Handling Room",
+              "Passenger Boarding Area",
+              "Station Agent's Desk",
+              "Train Arrival Platform",
+              "Ticket Validation Gate",
+              "Railway Police Office",
+              "Lost and Found Office",
+              "Platform Seating Area",
+              "Ticket Reservation Counter",
+              "Concession Stand",
+              "Parcel Pickup Counter",
+              "Platform Safety Barrier",
+              "Passenger Information Center",
+              "Station Cafe",
+              "Express Freight Office",
+              "Ticket Inspection Point",
+              "Waiting Room"
             ],
             "adjectives": [
               "Enchanted",
@@ -7907,46 +8774,48 @@
           {
             "type": "outlaw hideout",
             "name": [
-              "Alehouse",
-              "Banquet-hall",
-              "Gild-hall",
-              "Buttery",
-              "Cupboard",
-              "Doom-ring",
-              "Guest-hall",
-              "Hearthstead",
-              "Herber",
-              "Boarden",
-              "Offertory",
-              "Scop-room",
-              "Wineroom",
-              "Wassail-room",
-              "Wardrobe",
-              "Weaving-room",
-              "Butchery",
-              "Tiltyard",
-              "Bathhouse",
-              "Tavern",
-              "Taproom",
-              "Goblet-hall",
-              "Feast-hall",
-              "Chamberlain",
-              "Larder",
-              "Cellar",
-              "Pilgrim's Room",
-              "Minstrel's Gallery",
-              "Winetower",
-              "Brauerstube",
-              "Kufersaal",
-              "Taverna",
-              "Tirelire",
-              "Brasserie",
-              "Biergarten",
-              "Salle des Fetes",
-              "Festsaal",
-              "Weinstube",
-              "Herberg",
-              "Speisekammer"
+              "Secret Hideaway",
+              "Bandit's Den",
+              "Stash Room",
+              "Hidden Tunnel",
+              "Outlaw's Retreat",
+              "Hideout Cabin",
+              "Concealed Cellar",
+              "Escape Route",
+              "Underground Bunker",
+              "Smuggler's Cavern",
+              "Robber's Lair",
+              "Hideaway Loft",
+              "Secret Compartment",
+              "Safehouse Basement",
+              "Disguise Workshop",
+              "Hideout Saloon",
+              "Hideout Stables",
+              "Lookout Tower",
+              "Outlaw's Campfire",
+              "Hideout Veranda",
+              "Escape Boat Dock",
+              "Tunnel Network",
+              "Hideout Workshop",
+              "Outlaw's Lookout",
+              "Concealed Hidey-hole",
+              "Clandestine Meeting Room",
+              "Smuggler's Passage",
+              "Hideout Armory",
+              "Bandit's Quarters",
+              "Secret Tunnel Entrance",
+              "Hidden Loot Vault",
+              "Robber's Cache",
+              "Hideout Kitchen",
+              "Outlaw's Sleeping Quarters",
+              "Secret Meeting Spot",
+              "Underground Hideout",
+              "Hideout Watchtower",
+              "Thieves' Hideaway",
+              "Hidden Bunkers",
+              "Outlaw's Shack",
+              "Hideout Library",
+              "Underground Escape Route"
             ],
             "adjectives": [
               "Enchanted",
@@ -8098,46 +8967,47 @@
           {
             "type": "ranch",
             "name": [
-              "Meadow",
-              "Arbor",
-              "Labyrinth",
-              "Orchard",
-              "Glade",
-              "Parterre",
-              "Bower",
-              "Grotto",
-              "Courtyard",
-              "Terrace",
-              "Hedgerow",
-              "Herbary",
-              "Atrium",
-              "Topiary",
-              "Pleasance",
-              "Clover",
-              "Rill",
-              "Trellis",
-              "Rosarium",
-              "Folly",
-              "Thicket",
-              "Pleasaunce",
-              "Pergola",
-              "Cloister",
-              "Quincunx",
-              "Espalier",
-              "Herbery",
-              "Paradise",
-              "Lawn",
-              "Verdure",
-              "Arbour",
-              "Courtil",
-              "Quarry",
-              "Querencia",
-              "Palissade",
-              "Copse",
-              "Viridarium",
-              "Roseate",
-              "Gardenette",
-              "Serenity"
+              "Main Ranch House",
+              "Stable Barn",
+              "Corral Area",
+              "Ranch Office",
+              "Hayloft Storage",
+              "Cowboy Quarters",
+              "Cattle Auction Yard",
+              "Ranch Kitchen",
+              "Riding Arena",
+              "Ranch Workshop",
+              "Livestock Pens",
+              "Ranch Foreman's Office",
+              "Pasturelands",
+              "Ranch Equipment Shed",
+              "Horse Training Arena",
+              "Cattle Ranch",
+              "Rancher's Residence",
+              "Rustic Outbuilding",
+              "Ranch Trail",
+              "Ranch Garden",
+              "Ranch Pond",
+              "Ranch Gate",
+              "Ranch Corral",
+              "Ranch Orchard",
+              "Cattle Rancher's Cabin",
+              "Ranch Guest Lodge",
+              "Ranch Storehouse",
+              "Ranch Wrangler's Quarters",
+              "Ranch Windmill",
+              "Ranch Picnic Area",
+              "Ranch Bunkhouse",
+              "Ranch Forestry Area",
+              "Ranch Workshop",
+              "Ranch Watering Hole",
+              "Ranch Horse Paddock",
+              "Ranch Gazebo",
+              "Ranch Hayfield",
+              "Ranch Pasture",
+              "Ranch Training Arena",
+              "Ranch Livestock Clinic",
+              "Ranch Saddle Room"
             ],
             "adjectives": [
               "Blossoming",
@@ -8290,56 +9160,48 @@
           {
             "type": "gold mine",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Mining Shaft",
+              "Prospector's Hut",
+              "Gold Processing Room",
+              "Mining Cart Tracks",
+              "Miner's Camp",
+              "Ore Sorting Area",
+              "Gold Nugget Storage",
+              "Mining Supply Depot",
+              "Ventilation Shaft",
+              "Miner's Mess Hall",
+              "Mining Equipment Workshop",
+              "Tunnel Entrance",
+              "Gold Vein Excavation",
+              "Miner's Quarters",
+              "Mining Office",
+              "Water Pump Station",
+              "Gold Dust Refinery",
+              "Mine Shaft Elevator",
+              "Assay Office",
+              "Gold Panning Area",
+              "Mining Explosives Storage",
+              "Prospector's Outpost",
+              "Mining Operations Control Room",
+              "Rock Crushing Facility",
+              "Miner's Supply Store",
+              "Gold Mine Canteen",
+              "Mining Surveyor's Cabin",
+              "Gold Ore Hopper",
+              "Miner's Blacksmith Shop",
+              "Mining Camp Hospital",
+              "Gold Mine Foreman's Office",
+              "Miner's Recreational Area",
+              "Mining Cart Repair Shop",
+              "Miner's Safety Training Area",
+              "Gold Mine Tailings Pond",
+              "Miner's Shower Room",
+              "Gold Dust Weighing Station",
+              "Mining Engineer's Lab",
+              "Miner's Rest Area",
+              "Gold Mine Waterwheel",
+              "Prospector's Lookout Point",
+              "Mining Shaft Support Room"
             ],
             "adjectives": [
               "Vast",
@@ -8480,56 +9342,47 @@
           {
             "type": "gambling den",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "High Stakes Poker Room",
+              "Gambler's Lounge",
+              "Card Shark's Table",
+              "Roulette Wheel Area",
+              "Gambling Parlor",
+              "Blackjack Salon",
+              "Slot Machine Arcade",
+              "Gambler's Private Booth",
+              "Craps Table",
+              "Baccarat Salon",
+              "Gambler's VIP Lounge",
+              "Penny Slots Corner",
+              "Poker Tournament Arena",
+              "Champagne Bar",
+              "Gambler's Smoking Room",
+              "Gaming Chips Exchange Counter",
+              "Whiskey and Cards Saloon",
+              "Gambler's Betting Parlor",
+              "Fortune Teller's Corner",
+              "Gambler's Secret Hideaway",
+              "Gaming Den",
+              "Gambling Hall",
+              "Gambler's Redemption Counter",
+              "Gambler's Cigar Lounge",
+              "Gambler's Billiards Room",
+              "Gaming Floor",
+              "Gambler's VIP Suite",
+              "Gambler's Buffet Area",
+              "Gambler's Slot Tournament Zone",
+              "Casino Cashier",
+              "Gambler's Card Collection Room",
+              "Gambler's Whiskey Bar",
+              "Gambler's Music Stage",
+              "Gambler's Lucky Charm Corner",
+              "Gambler's Sports Betting Lounge",
+              "Gambler's Valet Service",
+              "Gambler's Poker Strategy Library",
+              "Gambler's Jackpot Room",
+              "Gambler's Roulette Strategy Corner",
+              "Gambler's High Roller Lounge",
+              "Gambler's Slot Machine Oasis"
             ],
             "adjectives": [
               "Vast",
@@ -8670,56 +9523,46 @@
           {
             "type": "federal building",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Courthouse",
+              "Federal Office",
+              "Government Conference Room",
+              "Legal Library",
+              "Treasury Department",
+              "Customs Office",
+              "Federal Courtroom",
+              "Administrative Office",
+              "Government Archives",
+              "Internal Affairs Bureau",
+              "Taxation Division",
+              "Public Records Department",
+              "Federal Security Wing",
+              "Government Lobby",
+              "Land Management Bureau",
+              "Federal Investigation Bureau",
+              "Executive Office",
+              "Federal Agency Headquarters",
+              "Government Press Room",
+              "Postal Services Office",
+              "Federal Auditorium",
+              "Federal Police Station",
+              "Department of Justice",
+              "Passport Office",
+              "Government Research Lab",
+              "Federal Employment Office",
+              "Federal Archives",
+              "Government Intelligence Agency",
+              "Federal Licensing Division",
+              "Government Information Center",
+              "Federal Tax Office",
+              "Government Planning Department",
+              "Federal Bureau of Investigation",
+              "Government Ethics Committee",
+              "Federal Regulatory Agency",
+              "Government Contracts Division",
+              "Federal Human Resources Office",
+              "Government Diplomatic Wing",
+              "Federal Emergency Management Office",
+              "Government Public Affairs Office"
             ],
             "adjectives": [
               "Vast",
@@ -8860,56 +9703,48 @@
           {
             "type": "frontier encampment",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Campfire Circle",
+              "Frontier Trading Post",
+              "Pioneer Tent",
+              "Wilderness Cooking Area",
+              "Scout Lookout",
+              "Fortified Barricade",
+              "Frontier Supply Depot",
+              "Settler's Shelter",
+              "Frontier Blacksmith",
+              "Hunting Grounds",
+              "Frontier Meeting Hall",
+              "Trailblazer's Outpost",
+              "Frontier Medical Tent",
+              "Scavenger's Workshop",
+              "Frontier Outpost",
+              "Trading Caravan Site",
+              "Frontier Watchtower",
+              "Survival Training Area",
+              "Frontier Communal Area",
+              "Trail Marker Station",
+              "Frontier Command Tent",
+              "Pioneer Farming Patch",
+              "Frontier Defense Perimeter",
+              "Outpost Storehouse",
+              "Frontier Schoolhouse",
+              "Frontier Livestock Pen",
+              "Settler's Well",
+              "Frontier Stable",
+              "Frontier Trading Market",
+              "Frontier Guard Tower",
+              "Frontier Carpenter's Hut",
+              "Frontier Hunting Lodge",
+              "Frontier Exploration Camp",
+              "Frontier Scout's Tent",
+              "Frontier River Crossing",
+              "Frontier Expedition Base",
+              "Frontier Tannery",
+              "Frontier Herbalist's Hut",
+              "Frontier Lookout Point",
+              "Frontier Camp Hospital",
+              "Frontier Tool Shed",
+              "Frontier Apothecary Tent"
             ],
             "adjectives": [
               "Vast",
@@ -9050,56 +9885,49 @@
           {
             "type": "old church",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Western Chapel",
+              "Frontier Sanctuary",
+              "Pioneer Church",
+              "Wilderness Prayer Room",
+              "Settler's Meeting Hall",
+              "Frontier Pulpit",
+              "Western Hymn Singing Area",
+              "Trailblazer's Congregation Space",
+              "Frontier Sunday School Room",
+              "Frontier Sermon Hall",
+              "Frontier Prayer Garden",
+              "Western Bible Study Room",
+              "Western Worship Center",
+              "Pioneer Pew",
+              "Frontier Choir Loft",
+              "Frontier Preacher's Study",
+              "Western Baptismal Pool",
+              "Western Memorial Garden",
+              "Western Missionary Quarters",
+              "Frontier Church Bell Tower",
+              "Frontier Community Outreach Center",
+              "Western Worship Gathering Place",
+              "Settler's Devotional Corner",
+              "Western Spiritual Retreat",
+              "Western Fellowship Hall",
+              "Western Gospel Tent",
+              "Western Prayer Circle",
+              "Western Crossroads",
+              "Western Sunday School Classroom",
+              "Western Worship Stage",
+              "Western Church Bell",
+              "Western Sermon Podium",
+              "Western Faith Library",
+              "Western Prayer Labyrinth",
+              "Western Choir Rehearsal Space",
+              "Western Church Vestibule",
+              "Western Church Cemetery",
+              "Western Missionary Training Center",
+              "Western Sacred Art Display",
+              "Western Church Kitchen",
+              "Western Church Garden",
+              "Western Community Service Room",
+              "Western Church Administration Office"
             ],
             "adjectives": [
               "Vast",
@@ -9240,56 +10068,47 @@
           {
             "type": "blacksmith's forge",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Forge Workshop",
+              "Blacksmith's Anvil",
+              "Metalworking Area",
+              "Blacksmith's Workbench",
+              "Smelting Furnace",
+              "Tool Sharpening Station",
+              "Forge Bellows Room",
+              "Heat Treatment Chamber",
+              "Forge Storage Area",
+              "Forging Station",
+              "Anvil Hammering Zone",
+              "Metal Shaping Corner",
+              "Blacksmith's Quenching Basin",
+              "Forged Weapon Display",
+              "Forge Design Studio",
+              "Iron Stockpile",
+              "Metal Casting Zone",
+              "Forge Grinding Wheel Area",
+              "Blacksmith's Tool Rack",
+              "Tempering Oven",
+              "Forge Workshop Office",
+              "Blacksmith's Leatherworking Section",
+              "Forge Bellows Maintenance Area",
+              "Metal Finishing Room",
+              "Forge Safety Equipment Storage",
+              "Blacksmith's Apprentice Training Space",
+              "Forge Scrap Metal Recycling Area",
+              "Anvil Inspecting Station",
+              "Forge Workshop Gallery",
+              "Forge Blueprint Room",
+              "Blacksmith's Smithing Techniques Library",
+              "Forge Coal Storage",
+              "Blacksmith's Leather Crafting Bench",
+              "Metal Engraving Station",
+              "Forge Workshop Break Room",
+              "Forge Workshop Supplies Room",
+              "Blacksmith's Grinding and Polishing Area",
+              "Forge Workshop Rest Area",
+              "Forge Water Trough",
+              "Blacksmith's Custom Orders Office",
+              "Metalworking Tools Display"
             ],
             "adjectives": [
               "Vast",
@@ -9430,56 +10249,23 @@
           {
             "type": "trading post",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Main Hall",
+              "Frontier General Store",
+              "Trading Counter",
+              "Trading Post Warehouse",
+              "Trading Post Office",
+              "Stables",
+              "Supply Depot",
+              "Trading Tent",
+              "Storage Area",
+              "Mercantile",
+              "Blacksmith",
+              "Trading Room",
+              "Corral",
+              "Trading Board",
+              "Outdoor Market",
+              "Trading Courtyard",
+              "Saddle Shop"
             ],
             "adjectives": [
               "Vast",
@@ -9620,56 +10406,46 @@
           {
             "type": "frontier town square",
             "name": [
-              "Plain",
-              "Range",
-              "Moor",
-              "Expanse",
-              "Plateau",
-              "Veldt",
-              "Steppe",
-              "Savannah",
-              "Prarie",
-              "Meadow",
-              "Heath",
-              "Champaign",
-              "Fell",
-              "Downs",
-              "Lea",
-              "Wold",
-              "Bluff",
-              "Mere",
-              "Tundra",
-              "Fen",
-              "Moorland",
-              "Brae",
-              "Pampa",
-              "Polder",
-              "Veld",
-              "Mesa",
-              "Prairieland",
-              "Moorlands",
-              "Sward",
-              "Mere",
-              "Chase",
-              "Carr",
-              "Haugh",
-              "Pampas",
-              "Crag",
-              "Tarn",
-              "Fallow",
-              "Tableland",
-              "Bog",
-              "Mere",
-              "Marais",
-              "Wetland",
-              "Moorland",
-              "Cuesta",
-              "Swamp",
-              "Wetland",
-              "Moorland",
-              "Plainland",
-              "Pampas",
-              "Lea"
+              "Town Saloon",
+              "Town General Store",
+              "Town Bank",
+              "Town Sheriff's Office",
+              "Town Blacksmith",
+              "Town Hotel",
+              "Town Post Office",
+              "Town Church",
+              "Town Schoolhouse",
+              "Town Jail",
+              "Town Barbershop",
+              "Town Livery Stable",
+              "Town Restaurant",
+              "Town Undertaker's Parlor",
+              "Town Library",
+              "Town Theater",
+              "Town Tavern",
+              "Town Boarding House",
+              "Town Gunsmith",
+              "Town Bakery",
+              "Town Saddlery",
+              "Town Tailor Shop",
+              "Town Cobbler's Workshop",
+              "Town Photography Studio",
+              "Town Dentist's Office",
+              "Town Cigar Shop",
+              "Town Ice Cream Parlor",
+              "Town Millinery",
+              "Town Gaming Hall",
+              "Town Laundry",
+              "Town Druggist",
+              "Town Marketplace",
+              "Town Watchmaker's Shop",
+              "Town Provisions Store",
+              "Town Farrier",
+              "Town Newspaper Office",
+              "Town Tea Room",
+              "Town Diner",
+              "Town Cafe",
+              "Town Hall"
             ],
             "adjectives": [
               "Vast",
@@ -9814,25 +10590,25 @@
       "genre": "Post-Apocalyptic",
       "elements": {
         "game_title": [
-          "Journey for the",
+          "In Search of the",
           "The Legendary",
-          "Legend of the",
+          "Journey of the",
           "Quest for the",
-          "Secrets of the",
+          "Survival in the",
           "The Secret of the",
           "Tales of the",
           "Age of the",
-          "Mysteries of the",
+          "Expedition of the",
           "Fate of the",
-          "Chronicles of the",
+          "Apocalyptic Chronicles of the",
           "Saga of the",
           "Adventures of the",
-          "Tales of the",
-          "Mystic Journeys for the",
-          "Knights of the",
-          "Curses and Wonders of the",
-          "Legends and Lore of the",
-          "Quest for the",
+          "Wasteland Tales of the",
+          "Apocalyptic Expeditions for the",
+          "Scavengers of the",
+          "Curses and Ruins of the",
+          "Post-Apocalyptic Odyssey to the",
+          "Apocalyptic Voyage for the",
           "Realm of the",
           "Echoes from the",
           "Whispers of the",
@@ -9842,321 +10618,342 @@
           "Chronicles of the",
           "Sands of the",
           "Symphony of the",
-          "The Astral"
+          "Revenge of the",
+          "Countdown to the",
+          "The Forgotten",
+          "The Desolate",
+          "The Ruined",
+          "The Mutated",
+          "The Ravaged",
+          "The Toxic",
+          "The Nuclear",
+          "The Post-Apocalyptic"
         ],
         "treasure": [
-          "Mystic Sword",
-          "Enchanted Amulet",
-          "Potion of Healing",
-          "Dragon Egg",
-          "Crystal Ball",
-          "Magic Wand",
-          "Dwarven Hammer",
-          "Elven Bow",
-          "Book of Spells",
-          "Golden Chalice",
-          "Ancient Relic",
-          "Crown of Destiny",
-          "Emerald Pendant",
-          "Scepter of Power",
-          "Scroll of Enchantments",
-          "Lost Artifact",
-          "Royal Medallion",
-          "Starfire Gem",
-          "Tome of Knowledge",
-          "Diamond Talisman",
-          "Ethereal Orb",
-          "Crown of Whispers",
-          "Mystic Elixir",
-          "Eyes of the Serpent",
-          "Celestial Compass",
-          "Lost Symphony",
-          "Enchanted Quill",
-          "Jade Lotus",
-          "Oracle's Mirror",
-          "Sapphire Tear"
+          "Apocalypse Relic",
+          "Radiation Shield",
+          "Wasteland Savior",
+          "Mutant's Bane",
+          "Survivor's Haven",
+          "Anomaly Detector",
+          "Scavenger's Compass",
+          "Nomad's Journey",
+          "Mutant Hunter's Blade",
+          "Desolation Catalyst",
+          "Dystopian Relic",
+          "Survivalist's Toolkit",
+          "Ruin's Treasure",
+          "Ruined City Blueprint",
+          "Apocalyptic Amulet",
+          "Mutant Slayers",
+          "Post-Apocalyptic Hideout",
+          "Radiation Cleanser",
+          "Wasteland Explorer",
+          "Anomaly Disruptor",
+          "Scrap Metal Forge",
+          "Nomad's Shelter",
+          "Mutant Hunter's Rifle",
+          "Desolation Guardian",
+          "Dystopian Artifact",
+          "Survivor's Resilience",
+          "Ravaged Wasteland Key",
+          "Apocalyptic Enigma",
+          "Mutant Infested Ruins",
+          "Post-Apocalyptic Survivor",
+          "Radiation Immunity Serum",
+          "Wasteland Raider's Mask",
+          "Anomaly Seeker",
+          "Scrap Metal Armor",
+          "Nomad's Caravan",
+          "Mutant Hunter's Gear",
+          "Desolation Vanguard",
+          "Dystopian Chronicle",
+          "Survivor's Legacy",
+          "Ravaged Wasteland Sanctuary",
+          "Apocalyptic Guardian",
+          "Mutant-Free Zone"
         ],
         "puzzle_items": [
           {
-            "key_item": "runic tablet",
-            "lock_item": "stone door"
+            "key_item": "Radiation Mask Key",
+            "lock_item": "Contaminated Vault"
           },
           {
-            "key_item": "wizard's key",
-            "lock_item": "wizard's chest"
+            "key_item": "Scavenger's Toolbox Key",
+            "lock_item": "Junkyard Storage Container"
           },
           {
-            "key_item": "dragon scale",
-            "lock_item": "dragon's gate"
+            "key_item": "Survivor's Canteen Key",
+            "lock_item": "Water Purification Chamber"
           },
           {
-            "key_item": "fairy dust",
-            "lock_item": "enchanted forest"
+            "key_item": "Gasoline Canister Key",
+            "lock_item": "Fuel Depot Door"
           },
           {
-            "key_item": "ghost's tear",
-            "lock_item": "spectral barrier"
+            "key_item": "Rusty Crowbar Key",
+            "lock_item": "Abandoned Warehouse"
           },
           {
-            "key_item": "goblin's coin",
-            "lock_item": "goblin's stash"
+            "key_item": "Mutant Serum Key",
+            "lock_item": "Biohazard Lab"
           },
           {
-            "key_item": "moonstone",
-            "lock_item": "lunar vault"
+            "key_item": "Nomad's Satchel Key",
+            "lock_item": "Traveler's Cache"
           },
           {
-            "key_item": "phoenix feather",
-            "lock_item": "fire door"
+            "key_item": "Ration Supply Key",
+            "lock_item": "Survivor's Pantry"
           },
           {
-            "key_item": "vampire fang",
-            "lock_item": "crypt entrance"
+            "key_item": "Scrap Metal Key",
+            "lock_item": "Scavenger's Hideout"
           },
           {
-            "key_item": "mermaid's pearl",
-            "lock_item": "aqua blue device"
+            "key_item": "Apocalyptic Diary Key",
+            "lock_item": "Survivor's Journal"
           },
           {
-            "key_item": "whispering skull",
-            "lock_item": "whispering grave"
+            "key_item": "Hazmat Suit Key",
+            "lock_item": "Quarantine Zone Entrance"
           },
           {
-            "key_item": "timekeeper's hourglass",
-            "lock_item": "temporal portal"
+            "key_item": "Desolate Wasteland Key",
+            "lock_item": "Ruined City Gate"
           },
           {
-            "key_item": "crystal key",
-            "lock_item": "crystal maze"
+            "key_item": "Plunderer's Backpack Key",
+            "lock_item": "Bandit's Stash"
           },
           {
-            "key_item": "enchanted compass",
-            "lock_item": "mystic labyrinth"
+            "key_item": "Toxic Antidote Key",
+            "lock_item": "Chemical Containment Chamber"
           },
           {
-            "key_item": "elven sigil",
-            "lock_item": "ancient gate"
+            "key_item": "Barterer's Token Key",
+            "lock_item": "Trading Post's Safe"
           },
           {
-            "key_item": "gargoyle's eye",
-            "lock_item": "haunted citadel"
+            "key_item": "Radiated Crystal Key",
+            "lock_item": "Mutated Crystal Chamber"
           },
           {
-            "key_item": "serpent's scale",
-            "lock_item": "serpent's sanctuary"
+            "key_item": "Survivalist's Toolbox Key",
+            "lock_item": "Survival Bunker"
           },
           {
-            "key_item": "dreamcatcher",
-            "lock_item": "portal of dreams"
+            "key_item": "Marauder's Motorcycle Key",
+            "lock_item": "Raider's Garage"
           },
           {
-            "key_item": "singing crystal",
-            "lock_item": "harmonic chamber"
+            "key_item": "Tribal Talisman Key",
+            "lock_item": "Ancient Tribal Shrine"
           },
           {
-            "key_item": "moonlit dagger",
-            "lock_item": "shadowy vault"
+            "key_item": "Apocalyptic Relic Key",
+            "lock_item": "Lost Ruins' Vault"
           }
         ],
         "characters": [
           {
+            "type": "Survivalist",
+            "stats": {
+              "hp": 90,
+              "atk": 10,
+              "defp": 8,
+              "acc": 35,
+              "ev": 30
+            }
+          },
+          {
             "type": "Scavenger",
             "stats": {
-              "hp": 30,
-              "atk": 10,
-              "defp": 5,
-              "acc": 40,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Mutant Brute",
-            "stats": {
               "hp": 80,
-              "atk": 40,
-              "defp": 20,
-              "acc": 35,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Raider",
-            "stats": {
-              "hp": 40,
-              "atk": 20,
-              "defp": 10,
-              "acc": 45,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Plague Rat",
-            "stats": {
-              "hp": 20,
-              "atk": 15,
-              "defp": 5,
-              "acc": 50,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Radiation Crawler",
-            "stats": {
-              "hp": 50,
-              "atk": 25,
-              "defp": 10,
+              "atk": 9,
+              "defp": 7,
               "acc": 40,
-              "ev": 10
+              "ev": 35
             }
           },
           {
-            "type": "Cybernetic Scorpion",
-            "stats": {
-              "hp": 60,
-              "atk": 35,
-              "defp": 15,
-              "acc": 50,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Wasteland Sniper",
-            "stats": {
-              "hp": 40,
-              "atk": 30,
-              "defp": 10,
-              "acc": 60,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Feral Ghoul",
-            "stats": {
-              "hp": 25,
-              "atk": 20,
-              "defp": 5,
-              "acc": 45,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Scrapyard Mechanic",
-            "stats": {
-              "hp": 30,
-              "atk": 15,
-              "defp": 10,
-              "acc": 40,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Elite Warlord",
-            "stats": {
-              "hp": 150,
-              "atk": 50,
-              "defp": 40,
-              "acc": 55,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Toxic Wraith",
-            "stats": {
-              "hp": 30,
-              "atk": 25,
-              "defp": 5,
-              "acc": 45,
-              "ev": 15
-            }
-          },
-          {
-            "type": "Rust Golem",
+            "type": "Wasteland Warrior",
             "stats": {
               "hp": 100,
-              "atk": 35,
-              "defp": 50,
-              "acc": 30,
-              "ev": 5
+              "atk": 12,
+              "defp": 10,
+              "acc": 35,
+              "ev": 30
             }
           },
           {
-            "type": "Marauder",
+            "type": "Mutant Brawler",
             "stats": {
-              "hp": 50,
-              "atk": 20,
-              "defp": 15,
+              "hp": 110,
+              "atk": 14,
+              "defp": 6,
               "acc": 40,
-              "ev": 10
+              "ev": 25
+            }
+          },
+          {
+            "type": "Nomad Scout",
+            "stats": {
+              "hp": 90,
+              "atk": 8,
+              "defp": 6,
+              "acc": 45,
+              "ev": 40
+            }
+          },
+          {
+            "type": "Rogue Mechanic",
+            "stats": {
+              "hp": 80,
+              "atk": 7,
+              "defp": 7,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Raider Chief",
+            "stats": {
+              "hp": 120,
+              "atk": 13,
+              "defp": 9,
+              "acc": 35,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Medic",
+            "stats": {
+              "hp": 100,
+              "atk": 8,
+              "defp": 10,
+              "acc": 30,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Stealth Operative",
+            "stats": {
+              "hp": 90,
+              "atk": 9,
+              "defp": 7,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Cybernetic Augmented",
+            "stats": {
+              "hp": 110,
+              "atk": 12,
+              "defp": 8,
+              "acc": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Post-Apocalyptic Engineer",
+            "stats": {
+              "hp": 80,
+              "atk": 7,
+              "defp": 9,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Desert Sniper",
+            "stats": {
+              "hp": 90,
+              "atk": 10,
+              "defp": 6,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Nomadic Leader",
+            "stats": {
+              "hp": 100,
+              "atk": 11,
+              "defp": 8,
+              "acc": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Mutated Shaman",
+            "stats": {
+              "hp": 110,
+              "atk": 12,
+              "defp": 7,
+              "acc": 40,
+              "ev": 25
             }
           },
           {
             "type": "Scrapyard Tinkerer",
             "stats": {
-              "hp": 40,
-              "atk": 15,
-              "defp": 10,
-              "acc": 50,
-              "ev": 10
-            }
-          },
-          {
-            "type": "Plague Doctor",
-            "stats": {
-              "hp": 25,
-              "atk": 10,
-              "defp": 5,
-              "acc": 55,
-              "ev": 20
-            }
-          },
-          {
-            "type": "Biohazard Brawler",
-            "stats": {
-              "hp": 70,
-              "atk": 30,
-              "defp": 25,
+              "hp": 80,
+              "atk": 8,
+              "defp": 7,
               "acc": 45,
-              "ev": 10
+              "ev": 40
             }
           },
           {
-            "type": "Outpost Sniper",
+            "type": "Guerilla Fighter",
             "stats": {
-              "hp": 45,
-              "atk": 35,
-              "defp": 10,
-              "acc": 60,
-              "ev": 5
-            }
-          },
-          {
-            "type": "Tribal Shaman",
-            "stats": {
-              "hp": 35,
-              "atk": 20,
-              "defp": 10,
+              "hp": 90,
+              "atk": 10,
+              "defp": 7,
               "acc": 40,
-              "ev": 15
+              "ev": 35
             }
           },
           {
-            "type": "Radiation Overlord",
+            "type": "Radiation Medic",
             "stats": {
-              "hp": 200,
-              "atk": 50,
-              "defp": 60,
+              "hp": 100,
+              "atk": 8,
+              "defp": 9,
               "acc": 35,
-              "ev": 5
+              "ev": 30
             }
           },
           {
-            "type": "Wasteland Nomad",
+            "type": "Apocalyptic Sniper",
             "stats": {
-              "hp": 60,
-              "atk": 25,
-              "defp": 20,
-              "acc": 50,
-              "ev": 10
+              "hp": 90,
+              "atk": 11,
+              "defp": 6,
+              "acc": 40,
+              "ev": 35
+            }
+          },
+          {
+            "type": "Renegade Scout",
+            "stats": {
+              "hp": 100,
+              "atk": 9,
+              "defp": 7,
+              "acc": 35,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Mutant Beastmaster",
+            "stats": {
+              "hp": 120,
+              "atk": 14,
+              "defp": 6,
+              "acc": 40,
+              "ev": 25
             }
           }
         ],
@@ -10284,125 +11081,425 @@
         ],
         "weapons": [
           {
-            "type": "Silver sword",
+            "type": "Scrap Axe",
             "stats": {
-              "damage": 40
+              "damage": 30,
+              "accuracy": 20
             }
           },
           {
-            "type": "Wooden staff",
+            "type": "Radiation Blaster",
             "stats": {
-              "damage": 20
+              "damage": 40,
+              "accuracy": 30
             }
           },
           {
-            "type": "Enchanted bow",
+            "type": "Plasma Pistol",
             "stats": {
-              "damage": 25
+              "damage": 35,
+              "accuracy": 25
             }
           },
           {
-            "type": "Flaming axe",
+            "type": "Rusty Machete",
             "stats": {
-              "damage": 45
+              "damage": 25,
+              "accuracy": 15
             }
           },
           {
-            "type": "Obsidian dagger",
+            "type": "Biohazard Crossbow",
             "stats": {
-              "damage": 35
+              "damage": 20,
+              "accuracy": 10
             }
           },
           {
-            "type": "Dragon bone mace",
+            "type": "Scavenger Shotgun",
             "stats": {
-              "damage": 50
+              "damage": 35,
+              "accuracy": 25
             }
           },
           {
-            "type": "Crystal wand",
+            "type": "Plasma Rifle",
             "stats": {
-              "damage": 30
+              "damage": 40,
+              "accuracy": 30
             }
           },
           {
-            "type": "Goblin sling",
+            "type": "Toxic Blade",
             "stats": {
-              "damage": 15
+              "damage": 45,
+              "accuracy": 35
             }
           },
           {
-            "type": "Dwarven hammer",
+            "type": "Acidic Revolver",
             "stats": {
-              "damage": 40
+              "damage": 30,
+              "accuracy": 20
             }
           },
           {
-            "type": "Eldritch scythe",
+            "type": "Blaster Shotgun",
             "stats": {
-              "damage": 55
+              "damage": 25,
+              "accuracy": 15
+            }
+          },
+          {
+            "type": "Plasma Grenade",
+            "stats": {
+              "damage": 35,
+              "accuracy": 25
+            }
+          },
+          {
+            "type": "Rusty Crossbow",
+            "stats": {
+              "damage": 40,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Nuclear Warhammer",
+            "stats": {
+              "damage": 60,
+              "accuracy": 40
+            }
+          },
+          {
+            "type": "Toxic Bow",
+            "stats": {
+              "damage": 30,
+              "accuracy": 25
+            }
+          },
+          {
+            "type": "Plasma Dagger",
+            "stats": {
+              "damage": 35,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Chemical Flamethrower",
+            "stats": {
+              "damage": 25,
+              "accuracy": 20
+            }
+          },
+          {
+            "type": "Scrap Sniper Rifle",
+            "stats": {
+              "damage": 40,
+              "accuracy": 35
+            }
+          },
+          {
+            "type": "Toxic Pistol",
+            "stats": {
+              "damage": 35,
+              "accuracy": 30
+            }
+          },
+          {
+            "type": "Plasma Launcher",
+            "stats": {
+              "damage": 45,
+              "accuracy": 40
+            }
+          },
+          {
+            "type": "Rusty Revolver",
+            "stats": {
+              "damage": 40,
+              "accuracy": 35
             }
           }
         ],
         "armor": [
           {
-            "type": "Silver armor",
+            "type": "Rusty Metal Chestplate",
             "stats": {
-              "defense": 30
+              "def": 30,
+              "ev": 15
             }
           },
           {
-            "type": "Leather tunic",
+            "type": "Tattered Gas Mask",
             "stats": {
-              "defense": 15
+              "def": 20,
+              "ev": 20
             }
           },
           {
-            "type": "Chainmail vest",
+            "type": "Bulletproof Vest",
             "stats": {
-              "defense": 25
+              "def": 35,
+              "ev": 10
             }
           },
           {
-            "type": "Dragon scale mail",
+            "type": "Reinforced Riot Helmet",
             "stats": {
-              "defense": 45
+              "def": 25,
+              "ev": 15
             }
           },
           {
-            "type": "Ghostly cloak",
+            "type": "Heavy Metal Leggings",
             "stats": {
-              "defense": 35
+              "def": 40,
+              "ev": 5
             }
           },
           {
-            "type": "Forest spirit hide",
+            "type": "Scavenger's Leather Jacket",
             "stats": {
-              "defense": 20
+              "def": 20,
+              "ev": 25
             }
           },
           {
-            "type": "Dwarven plate",
+            "type": "Metal Plated Boots",
             "stats": {
-              "defense": 40
+              "def": 25,
+              "ev": 20
             }
           },
           {
-            "type": "Mage's robe",
+            "type": "Hazmat Suit",
             "stats": {
-              "defense": 25
+              "def": 30,
+              "ev": 15
             }
           },
           {
-            "type": "Angel's aegis",
+            "type": "Riot Shield",
             "stats": {
-              "defense": 50
+              "def": 35,
+              "ev": 10
             }
           },
           {
-            "type": "Demon bone guard",
+            "type": "Reinforced Arm Guards",
             "stats": {
-              "defense": 55
+              "def": 15,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Steel Helmet",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Bulletproof Trenchcoat",
+            "stats": {
+              "def": 30,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Biohazard Mask",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Spiked Shoulder Pads",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Scrap Metal Chestplate",
+            "stats": {
+              "def": 30,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Gasoline-soaked Bandana",
+            "stats": {
+              "def": 15,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Reinforced Knee Guards",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Armored Gas Mask",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Scrap Metal Helmet",
+            "stats": {
+              "def": 30,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Electrified Gloves",
+            "stats": {
+              "def": 15,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Rugged Leather Pants",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Metal Reinforced Jacket",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Barbed Wire Arm Wraps",
+            "stats": {
+              "def": 15,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Reinforced Goggles",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Chainmail Vest",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Toxic Waste Mask",
+            "stats": {
+              "def": 15,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Scrap Metal Leg Guards",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Gasoline-soaked Gloves",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Bulletproof Helmet",
+            "stats": {
+              "def": 30,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Rusty Chainmail Hood",
+            "stats": {
+              "def": 15,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Scavenger's Duster",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Spiked Armored Boots",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Reinforced Chest Guard",
+            "stats": {
+              "def": 30,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Biohazard Leggings",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Steel Shoulder Plates",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Radiation Resistant Suit",
+            "stats": {
+              "def": 30,
+              "ev": 15
+            }
+          },
+          {
+            "type": "Reinforced Elbow Guards",
+            "stats": {
+              "def": 15,
+              "ev": 30
+            }
+          },
+          {
+            "type": "Scrap Metal Helmet",
+            "stats": {
+              "def": 20,
+              "ev": 25
+            }
+          },
+          {
+            "type": "Toxic Gauntlets",
+            "stats": {
+              "def": 25,
+              "ev": 20
+            }
+          },
+          {
+            "type": "Armored Gas Mask",
+            "stats": {
+              "def": 30,
+              "ev": 15
             }
           }
         ],
@@ -10410,48 +11507,26 @@
           {
             "type": "abandoned warehouse",
             "name": [
-              "Donjon",
-              "Oubliette",
-              "Armory",
-              "Gallery",
-              "Solar",
-              "Boudoir",
-              "Conservatory",
-              "Observatory",
-              "Torture chamber",
-              "Buttereau",
-              "Chapel",
-              "Crypt",
-              "Guardroom",
-              "Keep",
-              "Moat",
-              "Drawbridge",
-              "Great Hall",
-              "Library",
-              "Wine cellar",
-              "Music room",
-              "Treasury",
-              "Dungeon",
-              "Courtyard",
-              "Oratory",
-              "Antechamber",
-              "Armory",
-              "Chamber of Secrets",
-              "Parlor",
-              "Refectory",
-              "Scribe's study",
-              "Throne room",
-              "Wardrobe",
-              "Billiards room",
-              "Banquet hall",
-              "Garden room",
-              "Conservatory",
-              "Map room",
-              "Alchemist's laboratory",
-              "Secret passage",
-              "Tower room",
-              "Vestibule",
-              "Sewing room"
+              "Storage Area",
+              "Collapsed Section",
+              "Rusted Machinery",
+              "Darkened Corridor",
+              "Broken Conveyor Belt",
+              "Abandoned Office",
+              "Empty Loading Dock",
+              "Decaying Equipment Room",
+              "Dusty Workshop",
+              "Crumbled Control Room",
+              "Neglected Storage Closet",
+              "Desolate Break Room",
+              "Collapsed Stairwell",
+              "Forgotten Shipping Area",
+              "Barren Assembly Line",
+              "Ruined Restroom",
+              "Overgrown Yard",
+              "Cracked Concrete Floor",
+              "Forsaken Boiler Room",
+              "Collapsed Roof Area"
             ],
             "adjectives": [
               "Ancient",
