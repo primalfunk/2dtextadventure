@@ -3,6 +3,7 @@ import itertools
 import logging
 from operator import attrgetter
 import random
+from random import choice
 
 class GameMap:
     def __init__(self, rooms_data, grid_width, grid_height, data_loader):
@@ -52,35 +53,44 @@ class GameMap:
             self.generate_weapon,
             self.generate_armor,
             self.generate_character,
+            self.generate_character,
+            self.generate_character,
             self.generate_character
         ]
         game_data = {
-            "key_item": random.choice(self.data_loader.genre["elements"]["puzzle_items"]),
-            "lock_item": random.choice(self.data_loader.genre["elements"]["puzzle_items"]),
-            "weapon": random.choice(self.data_loader.genre["elements"]["weapons"]),
-            "armor": random.choice(self.data_loader.genre["elements"]["armor"]),
-            "enemy": random.choice(self.data_loader.genre["elements"]["characters"]),
-            "ally": random.choice(self.data_loader.genre["elements"]["characters"])
+            "key_item": self.data_loader.genre["elements"]["puzzle_items"].pop(random.randrange(len(self.data_loader.genre["elements"]["puzzle_items"]))),
+            "lock_item": self.data_loader.genre["elements"]["puzzle_items"].pop(random.randrange(len(self.data_loader.genre["elements"]["puzzle_items"]))),
+            "weapon": self.data_loader.genre["elements"]["weapons"].pop(random.randrange(len(self.data_loader.genre["elements"]["weapons"]))),
+            "armor": self.data_loader.genre["elements"]["armor"].pop(random.randrange(len(self.data_loader.genre["elements"]["armor"])))
         }
         placeable_data = [
             game_data["key_item"],
             game_data["lock_item"],
             game_data["weapon"],
             game_data["armor"],
-            (game_data["enemy"], 1, True),
-            (game_data["ally"], 1, False)
         ]
-        placeable_attributes = ["key_item", "lock_item", "weapon", "armor", "enemy", "ally"]
+        enemy_char_data = [self.data_loader.genre["elements"]["characters"].pop(random.randrange(len(self.data_loader.genre["elements"]["characters"]))) for _ in range(3)]
+        ally_char_data = [self.data_loader.genre["elements"]["characters"].pop(random.randrange(len(self.data_loader.genre["elements"]["characters"])))]
+        placeable_data.extend((enemy, random.randint(max(1, self.player.level - 5), self.player.level + 5), True) for enemy in enemy_char_data)
+        placeable_data.extend((ally, random.randint(max(1, self.player.level - 5), self.player.level + 5), False) for ally in ally_char_data)
+        placeable_attributes = ["key_item", "lock_item", "weapon", "armor"]
+        placeable_attributes.extend("enemy" for _ in range(3))
+        placeable_attributes.append("ally")
+        
         if not all_rooms:
             #logging.error("No rooms were generated. Cannot place items.")
             raise RuntimeError("No rooms were generated. Cannot place items.")
         possible_locations = all_rooms.copy()
         if self.player_start_room in possible_locations:
             possible_locations.remove(self.player_start_room)
+        
         for method, data, attr in zip(placeable_methods, placeable_data, placeable_attributes):
             room = random.choice(possible_locations)
             if isinstance(data, tuple):
                 placeable = method(*data)
+                if issubclass(type(placeable), Character):
+                    level_difference = placeable.level - self.player.level
+                    placeable.name = Character.generate_decorated_name(placeable.name, placeable.is_enemy, level_difference)
             else:
                 placeable = method(data)
             setattr(room, attr, placeable)
@@ -360,14 +370,15 @@ class GameMap:
     def generate_armor(self, armor_data):
         return Armor(armor_data["type"], armor_data["stats"]["def"], armor_data["stats"]["ev"])
 
-    def generate_character(self, character_data, level, isEnemy = True):
+    def generate_character(self, character_data, level, is_enemy = True):
         return Character(character_data["type"],
                          level,
                          character_data["stats"]["hp"], 
                          character_data["stats"]["atk"], 
                          character_data["stats"]["defp"], 
                          character_data["stats"]["acc"], 
-                         character_data["stats"]["ev"])
+                         character_data["stats"]["ev"],
+                         is_enemy)
 
     def generate_game_map(self, rooms_data):
         self.rooms = []
@@ -423,8 +434,21 @@ class GameMap:
                     list_of_types[room.type] = 1
             for log_type, log_count in list_of_types.items():
                 logging.info(f"Room type {log_type} used: {log_count} times.")
-            
+            for room in all_rooms:
+                if room.key_item:
+                    print(f"Room at {room.x}, {room.y} has {room.key_item.name}")
+                if room.lock_item:
+                    print(f"Room at {room.x}, {room.y} has {room.lock_item.name}")
+                if room.ally:
+                    print(f"Room at {room.x}, {room.y} has {room.ally.name}")
+                if room.enemy:
+                    print(f"Room at {room.x}, {room.y} has {room.enemy.name}")
+                if room.weapon:
+                    print(f"Room at {room.x}, {room.y} has {room.weapon.name}")
+                if room.armor:
+                    print(f"Room at {room.x}, {room.y} has {room.armor.name}")
             return True
+
         logging.error("Game map generation failed.")
         return False
 
@@ -648,19 +672,21 @@ class Armor(Item):
         self.evasion = ev
 
 class Character:
-    def __init__(self, name, level, hp, atk, defp, acc, ev):
-        self.level = level
+    def __init__(self, name, level, hp, atk, defp, acc, ev, is_enemy):
         self.name = name
-        self.hp = hp
-        self.atk = atk
-        self.defp = defp
-        self.acc = acc
-        self.ev = ev
+        self.level = level
+        self.hp = hp + sum(random.randint(4, 6) for _ in range(self.level))  # Base HP is 10, plus 4-6 per level
+        self.atk = atk + sum(random.randint(2, 4) for _ in range(self.level))  # Base attack is 5, plus 2-4 per level
+        self.defp = defp + sum(random.randint(1, 3) for _ in range(self.level))  # Base defense is 5, plus 1-3 per level
+        self.acc = acc + sum(random.randint(0, 2) for _ in range(self.level))  # Base accuracy is 70%, plus 0-2% per level
+        self.ev = ev + sum(random.randint(0, 2) for _ in range(self.level))  # Base evasion is 10%, plus 0-2% per level
+        self.weapon = None
+        self.armor = None
         self.inventory = []
         self.current_room = None
         self.x = 0
         self.y = 0
-        self.is_enemy = None
+        self.is_enemy = is_enemy
 
     def add_item(self, item):
         self.inventory.append(item)
@@ -669,8 +695,64 @@ class Character:
         elif isinstance(item, Armor):
             self.defp += item.defense
 
+    def attack(self, target):
+        # Calculate if the attack hits
+        hit_rate = max(self.acc - target.ev, 10)  # Ensure hit rate is never less than 10
+        if random.randint(1, 100) <= hit_rate:
+            # Calculate damage
+            damage = self.atk - int(random.uniform(0.75, 1.1) * 0.5 * target.defp)
+            # Apply defense reduction
+            damage -= int(damage * target.defp / 100)
+            # Check for critical hit
+            if random.randint(1, 100) <= 2:
+                # Increase damage by 150% to 300%
+                damage = int(damage * random.uniform(1.5, 3))
+                critical = True
+            else:
+                critical = False
+            # Ensure damage is at least 1
+            damage = max(damage, 1)
+            # Apply damage
+            target.hp -= damage
+            # Return result
+            return True, damage, critical
+        else:
+            # Attack missed
+            return False, 0, False
+        
+    def roll_initiative(self):
+        return random.randint(1, 20) + self.ev
+    
+    @staticmethod
+    def generate_decorated_name(base_name, is_hostile, level_difference):
+        descriptors = {
+            5: ["Terrifying", "Fearsome", "Formidable", "Intimidating", "Dreadful", "Scary"],
+            4: ["Dangerous", "Deadly", "Lethal", "Menacing", "Threatening"],
+            3: ["Expert", "Proficient", "Skilled", "Experienced", "Talented", "Boss"],
+            2: ["Tough", "Hard", "Solid", "Rugged", "Stout", "Strong", "Veteran", ],
+            1: ["Challenging", "Mature", "Grown", "Trained", "Earnest"],
+            0: ["Normal", "Average", "Standard", "Regular", "Usual"],
+            -1: ["Easy", "Simple", "Mild", "Young", "Sick-looking"],
+            -2: ["Innocuous", "Harmless", "Old", "Gentle", "Mild"],
+            -3: ["Inexperienced", "Novice", "Beginner", "Rookie", "Untrained"],
+            -4: ["Weak", "Fragile", "Frail", "Feeble", "Tottering", "Sickly"],
+            -5: ["Helpless", "Uninteresting", "Inept", "Ineffectual", "Sad"]
+        }
+        friendly_synonyms = ["friendly", "ally", "peaceful", "relaxed", "polite", "smiling"]
+        hostile_synonyms = ["hostile", "enemy", "angry", "violent", "very rude"]
+        if level_difference > 5:
+            level_difference = 5
+        elif level_difference < -5:
+            level_difference = -5
+        
+        if level_difference not in descriptors:
+            level_difference = "Unknown"
+        else:
+            level_difference = choice(descriptors[level_difference])
+        type_desc = choice(hostile_synonyms if is_hostile else friendly_synonyms)
+        return f"{level_difference} {base_name} ({type_desc})"
+
 class Player(Character):
     def __init__(self):
-        super().__init__(name="Player", level=1, hp=100, atk=10, defp=10, acc=50, ev=50)
-        self.is_enemy = False
+        super().__init__(name="Player", level=1, hp=100, atk=10, defp=10, acc=50, ev=50, is_enemy=False)
         self.xp = 0

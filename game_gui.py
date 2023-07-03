@@ -1,10 +1,11 @@
-from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame
-from PySide6.QtCore import Qt, QCoreApplication, QEvent
-from PySide6 import QtGui
-from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor
+from combat import Combat
 from game_logic import GameMap, Player, Key
 import json
 import logging
+from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame
+from PySide6.QtCore import Qt, QCoreApplication, QThread
+from PySide6 import QtGui
+from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor
 import random
 import traceback
 
@@ -109,6 +110,8 @@ class DataLoader:
 
 class GameGUI(QWidget):
     def __init__(self, data_loader=None):
+        self.combat_object = None
+        self.combat_thread = None
         self.data_loader = data_loader
         self.game_map = None
         self.font = QFont("EuropeanTypewriter", 14)
@@ -325,6 +328,7 @@ class GameGUI(QWidget):
             next_room = self.current_room.connected_rooms[direction]
             if next_room is None:
                 self.game_text_area.append("You can't go that way.")
+                self.game_text_area.moveCursor(QtGui.QTextCursor.End)
                 return
             self.game_text_area.append(f"You travel {direction}.\n")
             if direction == "north":
@@ -392,7 +396,6 @@ class GameGUI(QWidget):
 
     def interact(self):
         current_room = self.game_map.player.current_room
-
         if self.interact_button.text() == "Pick Up":
             if current_room.key_item:
                 item = current_room.key_item
@@ -411,10 +414,25 @@ class GameGUI(QWidget):
                 current_room.armor = None
             self.update_interact_button()
             self.update_inventory_text()
-        else:
-            # Handle other interact actions (e.g., attacking, greeting, unlocking)
-            # ...
-            pass
+        elif self.interact_button.text() == "Attack":
+            try:
+                self.combat_object = Combat(self.game_map.player, [], [current_room.enemy], self)
+                self.combat_object.combatUpdateSignal.connect(self.update_combat_text)
+                self.combat_object.combatEndSignal.connect(self.combat_object.stop_combat)
+                self.combat_thread = QThread()
+                self.combat_object.moveToThread(self.combat_thread)
+                self.combat_thread.started.connect(self.combat_object.combat)
+                self.combat_thread.finished.connect(self.combat_object.stop_combat)
+                self.combat_thread.finished.connect(self.combat_thread.deleteLater)
+                self.combat_thread.finished.connect(self.combat_object.deleteLater)
+                self.combat_thread.start()
+            except Exception:
+                logging.exception("Caught an error")
+        self.game_text_area.moveCursor(QtGui.QTextCursor.End)
+
+    def update_combat_text(self, text):
+        self.game_text_area.append(text)
+        self.update_player_stats()
         self.game_text_area.moveCursor(QtGui.QTextCursor.End)
 
     def show_self(self):
@@ -479,7 +497,7 @@ class MapWindow(QWidget):
                             room_label.setStyleSheet(f"background-color: red; border: 2px solid black; font-size: 20px; font-weight: bold;")
                         elif room.enemy:
                             room_label.setText('E')
-                            room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
+                            room_label.setStyleSheet(f"background-color: yellow; font-size: 20px; font-weight: bold;")
                         elif room.weapon:
                             room_label.setText('W')
                             room_label.setStyleSheet(f"background-color: {self.room_type_colors[room.type]}; font-size: 20px; font-weight: bold;")
@@ -516,7 +534,6 @@ class MapWindow(QWidget):
                                     connection_label.setText('-')
                                 if connection_label is not None:
                                     connection_label.setAlignment(Qt.AlignCenter)
-                                    connection_label.setStyleSheet("border: 1px solid black; font-size: 10px;")
         except Exception as e:
             logging.error(f"Error occurred during update_map function: {e}")
 
