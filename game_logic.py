@@ -55,12 +55,12 @@ class GameMap:
             self.generate_character
         ]
         game_data = {
-            "key_item": random.choice(self.data_loader.data["elements"]["puzzle_items"]),
-            "lock_item": random.choice(self.data_loader.data["elements"]["puzzle_items"]),
-            "weapon": random.choice(self.data_loader.data["elements"]["weapons"]),
-            "armor": random.choice(self.data_loader.data["elements"]["armor"]),
-            "enemy": random.choice(self.data_loader.data["elements"]["characters"]),
-            "ally": random.choice(self.data_loader.data["elements"]["characters"])
+            "key_item": random.choice(self.data_loader.genre["elements"]["puzzle_items"]),
+            "lock_item": random.choice(self.data_loader.genre["elements"]["puzzle_items"]),
+            "weapon": random.choice(self.data_loader.genre["elements"]["weapons"]),
+            "armor": random.choice(self.data_loader.genre["elements"]["armor"]),
+            "enemy": random.choice(self.data_loader.genre["elements"]["characters"]),
+            "ally": random.choice(self.data_loader.genre["elements"]["characters"])
         }
         placeable_data = [
             game_data["key_item"],

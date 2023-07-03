@@ -12,16 +12,23 @@ class DataLoader:
     def __init__(self, json_path):
         self.json_path = json_path
         self.data = None
+        self.genre = None
         self.game_map = None
+        self.treasure = None
+        self.title = None
         self.load_data()
 
     def generate_game_title(self):
-        game_title = random.choice(self.data["elements"]["game_title"]) 
-        treasure = random.choice(self.data["elements"]["treasure"])
+        logging.info(f"DL/Generate_game_title: Data now looks this way: {str(self.genre)[:50]}")
+        game_title = random.choice(self.genre["elements"]["game_title"]) 
+        treasure = random.choice(self.genre["elements"]["treasure"])
+        self.title = game_title
+        self.treasure = treasure
+        logging.info(f"DL/Generate_game_title: title parts are {game_title} {treasure}")
         title = f"{game_title} {treasure}"
         return title
 
-    def scrutinize_data(self, data):
+    def scrutinize_data(self, data): # debugging method
         logging.info("Scrutinize_data is called.")
         for genre_data in data["genres"]:
             genre = genre_data["genre"]
@@ -43,33 +50,34 @@ class DataLoader:
                         logging.info(f"Scenery count: {scenery_count}")
                         logging.info(f"Atmosphere count: {atmosphere_count}")
 
+    def select_random_genre(self):
+        try:
+            genres = self.data.get("genres")
+            logging.info(f"Select_random_genre: Genres comes up as {str(genres)[:50]}")
+            if not genres:
+                raise ValueError("Genres not found in data")
+            self.genre = random.choice(genres)
+            logging.debug(f"Select_random_genre: Data keys after loading: {self.data.keys()}")
+            logging.debug(f"Data length after loading: {len(self.data)}")
+        except ValueError as e:
+            logging.error(f"Error in selecting random genre: {str(e)}")
+
     def load_data(self):
         try:
             with open(self.json_path, 'r') as file:
-                data = json.load(file)
-                # self.scrutinize_data(data)
-                genres = data.get("genres")
-                if not genres:
-                    raise ValueError("Genres not found in data")
-                if self.data is None:
-                    self.data = random.choice(genres)
-                else:
-                    self.data = None
-                    self.data = random.choice(genres)
-                logging.debug(f"Data keys after loading: {self.data.keys()}")
-                logging.debug(f"Data length after loading: {len(self.data)}")
+                self.data = json.load(file)
         except (FileNotFoundError, ValueError) as e:
             logging.error(f"Error in loading data: {str(e)}")
         
     def create_game_map(self, grid_width=9, grid_height=9):
         try: 
-            if self.data:
-                logging.info("Data loaded successfully.")
-                elements = self.data.get("elements")
+            if self.genre:
+                logging.info("Genre data loaded successfully.")
+                elements = self.genre.get("elements")
                 if elements:
                     logging.info("Elements found in data.")
-                    logging.debug(f"Elements before map generation: {str(elements)[:15]}")
-                    logging.debug(f"Rooms before map generation: {str(elements['rooms'])[:20]}")
+                    logging.debug(f"Elements before map generation: {str(elements)[:50]}")
+                    logging.debug(f"Rooms before map generation: {str(elements['rooms'])[:50]}")
                     try:
                         self.game_map = GameMap(elements["rooms"], grid_width, grid_height, data_loader=self)
                     except Exception as e:
@@ -84,14 +92,13 @@ class DataLoader:
                             logging.error(f"***Game map generation failed at attempt {i+1}. Retrying...")
                     logging.error("Game map generation failed after maximum retries.")
                     raise Exception("Game map generation failed after maximum retries.")
-                else:
-                    
-                    logging.warning("No data loaded.")
-                    raise ValueError("Data not loaded, can't create game map")
-            return False
+            else:
+                logging.warning("No genre data loaded.")
+                raise ValueError("No genre data loaded, can't create game map")
         except Exception as e:
             logging.error(f"An error occurred during game initialization: {e}")
             logging.error(traceback.format_exc())
+        return False
 
     def get_game_map(self):
         logging.debug(f"Current game map: {self.game_map}")
@@ -131,7 +138,10 @@ class GameGUI(QWidget):
         self.font_size_decrease_button.clicked.connect(self.decrease_font_size)
         self.font_size_increase_button.clicked.connect(self.increase_font_size)
         main_layout.addWidget(self.game_text_area)
-        game_title = self.generate_game_title()
+        logging.info(f"Initialize game is called.")
+        self.initialize_game()
+        logging.info(f"Generate_game_title is called.")
+        game_title = self.data_loader.generate_game_title()
         format = QtGui.QTextCharFormat()
         format.setFont(QFont("EuropeanTypewriter", 30))
         cursor = self.game_text_area.textCursor()
@@ -209,7 +219,7 @@ class GameGUI(QWidget):
         main_layout.setStretch(1, 2) 
         main_layout.setStretch(2, 1)
         main_layout.addLayout(bottom_layout)
-        self.setWindowTitle("Game of Games")
+        self.setWindowTitle("Undisclosed Game Title")
         self.setGeometry(100, 100, 800, 600)
         self.show()
         self.player = Player()
@@ -241,9 +251,6 @@ class GameGUI(QWidget):
             cursor.setPosition(title_length, QTextCursor.KeepAnchor)
             cursor.setCharFormat(format_bold)
 
-    def generate_game_title(self):
-        return self.data_loader.generate_game_title() if self.data_loader else "Exciting Title Of Game"
-
     def update_player_info(self):
         self.player_info_label.setText(f"Player Info - Position: ({self.current_room.x}, {self.current_room.y})")
 
@@ -257,18 +264,11 @@ class GameGUI(QWidget):
             f"Defense: {self.player.defp}"
         )
 
-    def initialize_game(self, fresh):
-        try:
-            if fresh:
-                self.game_map = self.data_loader.create_game_map(9,9)
-            else:
-                self.game_map = self.data_loader.create_game_map(9,9)
-            logging.info(f"Game map type is {type(self.game_map)}, Fresh start is {fresh}")
-
-
-        except Exception as e:
-            logging.error(f"Failed to initialize game: {e}")
-            self.game_map = None
+    def initialize_game(self):
+        self.data_loader.select_random_genre()
+        logging.info(f"self.data_loader.genre is this: {str(self.data_loader.genre)[:50]}")
+        self.data_loader.create_game_map()
+        self.game_map = self.data_loader.get_game_map()
 
     def start_game(self):
         logging.info(f"Start button pressed.")
@@ -295,9 +295,10 @@ class GameGUI(QWidget):
             self.map_window.show_self()
             self.map_window.update_map()
         else:
+            self.initialize_game()
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignCenter)
-            game_title = self.generate_game_title()
+            game_title = self.data_loader.generate_game_title()
             format = QtGui.QTextCharFormat()
             format.setFont(QFont("EuropeanTypewriter", 30))
             cursor = self.game_text_area.textCursor()
@@ -311,7 +312,6 @@ class GameGUI(QWidget):
             self.font_size_increase_button.setEnabled(False)
             self.font_size_decrease_button.setEnabled(False)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
-            self.initialize_game(fresh=False)
             self.hide_map()
 
     def update_inventory_text(self):

@@ -1,1684 +1,673 @@
-root - DEBUG - Data keys after loading: dict_keys(['genre', 'elements'])
-root - DEBUG - Data length after loading: 2
-root - INFO - Data loaded successfully.
+root - INFO - Initialize game is called.
+root - INFO - Select_random_genre: Genres comes up as [{'genre': 'Fantasy', 'elements': {'game_title': [
+root - DEBUG - Select_random_genre: Data keys after loading: dict_keys(['genres'])
+root - DEBUG - Data length after loading: 1
+root - INFO - self.data_loader.genre is this: {'genre': 'Western', 'elements': {'game_title': ['
+root - INFO - Genre data loaded successfully.
 root - INFO - Elements found in data.
-root - DEBUG - Elements before map generation: {'game_title': 
-root - DEBUG - Rooms before map generation: [{'type': 'castle', 
-root - INFO - Room types selected are: ['treasury', 'reliquary', 'forest', 'cavern', 'crypt', 'gallery', 'apothecary', 'castle', 'tavern', 'library', 'garden', 'sanctum', 'open']
+root - DEBUG - Elements before map generation: {'game_title': ['In Search of the', 'The Legendary
+root - DEBUG - Rooms before map generation: [{'type': 'saloon', 'name': ["Card Shark's Den", '
+root - INFO - Room types selected are: ['old church', 'general store', 'frontier encampment', "blacksmith's forge", 'outlaw hideout', "sheriff's office", 'frontier town square', 'old-fashioned bank', 'train station', 'gambling den', 'federal building', 'ranch', 'saloon', 'gold mine', 'trading post']
 root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 0 with room type treasury
+root - INFO - Attempting to create cluster 0 with room type old church
 root - INFO - Adding first room in cluster 0 at (4, 4)
 root - INFO - Adding room to cluster 0 at 4, 4
-root - INFO - Adding a room for cluster 0 at (4, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 5
-root - INFO - Adding a room for cluster 0 at (3, 5), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 5
-root - INFO - Adding a room for cluster 0 at (2, 5), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 2, 5
-root - INFO - Adding a room for cluster 0 at (5, 5), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 5
-root - INFO - Adding a room for cluster 0 at (2, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 2, 6
-root - INFO - Adding a room for cluster 0 at (4, 3), after which there will be 6 rooms in the cluster.
+root - INFO - Adding a room for cluster 0 at (4, 3), after which there will be 1 rooms in the cluster.
 root - INFO - Adding room to cluster 0 at 4, 3
-root - INFO - Adding a room for cluster 0 at (6, 5), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 6, 5
+root - INFO - Adding a room for cluster 0 at (4, 5), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 4, 5
+root - INFO - Adding a room for cluster 0 at (4, 2), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 4, 2
+root - INFO - Adding a room for cluster 0 at (5, 2), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 5, 2
+root - INFO - Adding a room for cluster 0 at (6, 2), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 6, 2
+root - INFO - Adding a room for cluster 0 at (5, 4), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 5, 4
 root - INFO - Cluster creation result: True
-root - INFO - Setting player start room: 6, 5
-root - INFO - The player's start room is: 6, 5
-root - INFO - Checked if the map was full. There are 73 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 73 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 73 empty positions left in the grid.
+root - INFO - Setting player start room: 4, 4
+root - INFO - The player's start room is: 4, 4
+root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 1 with room type reliquary
-root - INFO - Adding first room in cluster 1 at (3, 2)
-root - INFO - Adding room to cluster 1 at 3, 2
-root - INFO - Adding a room for cluster 1 at (2, 2), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 2, 2
-root - INFO - Adding a room for cluster 1 at (2, 3), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 2, 3
-root - INFO - Adding a room for cluster 1 at (2, 1), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 2, 1
-root - INFO - Adding a room for cluster 1 at (1, 2), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 1, 2
-root - INFO - Adding a room for cluster 1 at (1, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 1, 1
-root - INFO - Adding a room for cluster 1 at (0, 1), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 0, 1
+root - INFO - Attempting to create cluster 1 with room type general store
+root - INFO - Adding first room in cluster 1 at (2, 8)
+root - INFO - Adding room to cluster 1 at 2, 8
+root - INFO - Adding a room for cluster 1 at (2, 7), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 2, 7
+root - INFO - Adding a room for cluster 1 at (1, 8), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 1, 8
+root - INFO - Adding a room for cluster 1 at (3, 8), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 3, 8
+root - INFO - Adding a room for cluster 1 at (1, 7), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 1, 7
+root - INFO - Adding a room for cluster 1 at (1, 6), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 1, 6
+root - INFO - Adding a room for cluster 1 at (0, 6), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 0, 6
+root - INFO - Adding a room for cluster 1 at (0, 7), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 0, 7
+root - INFO - Adding a room for cluster 1 at (2, 6), after which there will be 8 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 2, 6
+root - INFO - Adding a room for cluster 1 at (3, 6), after which there will be 9 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 3, 6
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 2 with room type forest
-root - INFO - Adding first room in cluster 2 at (6, 0)
-root - INFO - Adding room to cluster 2 at 6, 0
-root - INFO - Adding a room for cluster 2 at (5, 0), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 5, 0
-root - INFO - Adding a room for cluster 2 at (4, 0), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 0
-root - INFO - Adding a room for cluster 2 at (4, 1), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 1
-root - INFO - Adding a room for cluster 2 at (7, 0), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 7, 0
-root - INFO - Adding a room for cluster 2 at (4, 2), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 2
-root - INFO - Adding a room for cluster 2 at (8, 0), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 8, 0
+root - INFO - Attempting to create cluster 2 with room type frontier encampment
+root - INFO - Adding first room in cluster 2 at (1, 2)
+root - INFO - Adding room to cluster 2 at 1, 2
+root - INFO - Adding a room for cluster 2 at (1, 3), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 1, 3
+root - INFO - Adding a room for cluster 2 at (1, 4), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 1, 4
+root - INFO - Adding a room for cluster 2 at (0, 4), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 0, 4
+root - INFO - Adding a room for cluster 2 at (1, 5), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 1, 5
+root - INFO - Adding a room for cluster 2 at (2, 5), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 2, 5
+root - INFO - Adding a room for cluster 2 at (1, 1), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 1, 1
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 59 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 59 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 59 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 3 with room type cavern
-root - INFO - Adding first room in cluster 3 at (1, 6)
-root - INFO - Adding room to cluster 3 at 1, 6
-root - INFO - Adding a room for cluster 3 at (1, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 7
-root - INFO - Adding a room for cluster 3 at (1, 8), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 8
-root - INFO - Adding a room for cluster 3 at (1, 5), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 5
-root - INFO - Adding a room for cluster 3 at (2, 7), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 7
-root - INFO - Adding a room for cluster 3 at (1, 4), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 4
-root - INFO - Adding a room for cluster 3 at (0, 5), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 0, 5
-root - INFO - Adding a room for cluster 3 at (1, 3), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 3
-root - INFO - Adding a room for cluster 3 at (2, 8), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 50 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 50 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 50 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 4 with room type crypt
-root - INFO - Adding first room in cluster 4 at (3, 4)
-root - INFO - Adding room to cluster 4 at 3, 4
-root - INFO - Adding a room for cluster 4 at (3, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 3, 3
-root - INFO - Adding a room for cluster 4 at (2, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 2, 4
+root - INFO - Attempting to create cluster 3 with room type blacksmith's forge
+root - INFO - Adding first room in cluster 3 at (8, 1)
+root - INFO - Adding room to cluster 3 at 8, 1
+root - INFO - Adding a room for cluster 3 at (7, 1), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 7, 1
+root - INFO - Adding a room for cluster 3 at (8, 0), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 8, 0
+root - INFO - Adding a room for cluster 3 at (7, 0), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 7, 0
+root - INFO - Adding a room for cluster 3 at (7, 2), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 7, 2
+root - INFO - Adding a room for cluster 3 at (8, 2), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 8, 2
+root - INFO - Adding a room for cluster 3 at (8, 3), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 8, 3
+root - INFO - Adding a room for cluster 3 at (8, 4), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 8, 4
+root - INFO - Adding a room for cluster 3 at (6, 0), after which there will be 8 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 6, 0
+root - INFO - Adding a room for cluster 3 at (7, 3), after which there will be 9 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 7, 3
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 47 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 47 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 47 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 5 with room type gallery
-root - INFO - Adding first room in cluster 5 at (8, 2)
-root - INFO - Adding room to cluster 5 at 8, 2
-root - INFO - Adding a room for cluster 5 at (8, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 8, 3
-root - INFO - Adding a room for cluster 5 at (7, 2), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 7, 2
-root - INFO - Adding a room for cluster 5 at (8, 4), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 8, 4
-root - INFO - Adding a room for cluster 5 at (7, 4), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 7, 4
-root - INFO - Adding a room for cluster 5 at (7, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 7, 1
-root - INFO - Adding a room for cluster 5 at (6, 1), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 6, 1
-root - INFO - Adding a room for cluster 5 at (6, 2), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 6, 2
+root - INFO - Attempting to create cluster 4 with room type outlaw hideout
+root - INFO - Adding first room in cluster 4 at (5, 1)
+root - INFO - Adding room to cluster 4 at 5, 1
+root - INFO - Adding a room for cluster 4 at (6, 1), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 6, 1
+root - INFO - Adding a room for cluster 4 at (4, 1), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 4, 1
+root - INFO - Adding a room for cluster 4 at (4, 0), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 4, 0
+root - INFO - Adding a room for cluster 4 at (5, 0), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 5, 0
+root - INFO - Adding a room for cluster 4 at (3, 0), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 3, 0
+root - INFO - Adding a room for cluster 4 at (2, 0), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 2, 0
+root - INFO - Adding a room for cluster 4 at (2, 1), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 2, 1
+root - INFO - Adding a room for cluster 4 at (2, 2), after which there will be 8 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 2, 2
+root - INFO - Adding a room for cluster 4 at (3, 1), after which there will be 9 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 3, 1
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 39 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 39 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 39 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 37 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 37 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 37 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 6 with room type apothecary
-root - INFO - Adding first room in cluster 6 at (6, 4)
-root - INFO - Adding room to cluster 6 at 6, 4
-root - INFO - Adding a room for cluster 6 at (6, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 6, 3
-root - INFO - Adding a room for cluster 6 at (5, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 5, 4
-root - INFO - Adding a room for cluster 6 at (7, 3), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 7, 3
-root - INFO - Adding a room for cluster 6 at (5, 3), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 5, 3
-root - INFO - Adding a room for cluster 6 at (5, 2), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 5, 2
-root - INFO - Adding a room for cluster 6 at (5, 1), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 5, 1
+root - INFO - Attempting to create cluster 5 with room type sheriff's office
+root - INFO - Adding first room in cluster 5 at (4, 6)
+root - INFO - Adding room to cluster 5 at 4, 6
+root - INFO - Adding a room for cluster 5 at (5, 6), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 5, 6
+root - INFO - Adding a room for cluster 5 at (4, 7), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 4, 7
+root - INFO - Adding a room for cluster 5 at (3, 7), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 3, 7
+root - INFO - Adding a room for cluster 5 at (6, 6), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 6, 6
+root - INFO - Adding a room for cluster 5 at (7, 6), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 7, 6
+root - INFO - Adding a room for cluster 5 at (5, 7), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 5, 7
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 32 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 32 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 32 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 30 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 30 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 30 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 7 with room type castle
+root - INFO - Attempting to create cluster 6 with room type frontier town square
+root - INFO - Adding first room in cluster 6 at (1, 0)
+root - INFO - Adding room to cluster 6 at 1, 0
+root - INFO - Adding a room for cluster 6 at (0, 0), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 0, 0
+root - INFO - Adding a room for cluster 6 at (0, 1), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 0, 1
+root - INFO - Adding a room for cluster 6 at (0, 2), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 0, 2
+root - INFO - Adding a room for cluster 6 at (0, 3), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 0, 3
+root - INFO - Cluster creation result: True
+root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 7 with room type old-fashioned bank
 root - INFO - Adding first room in cluster 7 at (4, 8)
 root - INFO - Adding room to cluster 7 at 4, 8
-root - INFO - Adding a room for cluster 7 at (4, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 4, 7
-root - INFO - Adding a room for cluster 7 at (4, 6), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 4, 6
-root - INFO - Adding a room for cluster 7 at (3, 8), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 3, 8
-root - INFO - Adding a room for cluster 7 at (3, 7), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 3, 7
-root - INFO - Adding a room for cluster 7 at (5, 7), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 5, 7
-root - INFO - Adding a room for cluster 7 at (5, 6), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 5, 6
+root - INFO - Adding a room for cluster 7 at (5, 8), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 5, 8
+root - INFO - Adding a room for cluster 7 at (6, 8), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 6, 8
+root - INFO - Adding a room for cluster 7 at (7, 8), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 7, 8
+root - INFO - Adding a room for cluster 7 at (7, 7), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 7, 7
+root - INFO - Adding a room for cluster 7 at (8, 7), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 8, 7
+root - INFO - Adding a room for cluster 7 at (6, 7), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 6, 7
+root - INFO - Adding a room for cluster 7 at (8, 6), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 8, 6
+root - INFO - Adding a room for cluster 7 at (8, 8), after which there will be 8 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 8, 8
+root - INFO - Adding a room for cluster 7 at (8, 5), after which there will be 9 rooms in the cluster.
+root - INFO - Adding room to cluster 7 at 8, 5
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 15 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 15 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 15 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 8 with room type tavern
-root - INFO - Adding first room in cluster 8 at (3, 6)
-root - INFO - Adding room to cluster 8 at 3, 6
+root - INFO - Attempting to create cluster 8 with room type train station
+root - INFO - Adding first room in cluster 8 at (6, 5)
+root - INFO - Adding room to cluster 8 at 6, 5
+root - INFO - Adding a room for cluster 8 at (6, 4), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 6, 4
+root - INFO - Adding a room for cluster 8 at (7, 5), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 7, 5
+root - INFO - Adding a room for cluster 8 at (6, 3), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 6, 3
+root - INFO - Adding a room for cluster 8 at (7, 4), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 7, 4
+root - INFO - Adding a room for cluster 8 at (5, 3), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 5, 3
+root - INFO - Adding a room for cluster 8 at (5, 5), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 5, 5
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 24 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 24 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 24 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 8 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 8 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 8 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 9 with room type library
-root - INFO - Adding first room in cluster 9 at (8, 5)
-root - INFO - Adding room to cluster 9 at 8, 5
-root - INFO - Adding a room for cluster 9 at (8, 6), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 8, 6
-root - INFO - Adding a room for cluster 9 at (8, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 8, 7
-root - INFO - Adding a room for cluster 9 at (7, 6), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 7, 6
-root - INFO - Adding a room for cluster 9 at (7, 5), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 7, 5
-root - INFO - Adding a room for cluster 9 at (7, 7), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 7, 7
-root - INFO - Adding a room for cluster 9 at (6, 6), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 6, 6
-root - INFO - Adding a room for cluster 9 at (6, 7), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 6, 7
+root - INFO - Attempting to create cluster 9 with room type gambling den
+root - INFO - Adding first room in cluster 9 at (3, 2)
+root - INFO - Adding room to cluster 9 at 3, 2
+root - INFO - Adding a room for cluster 9 at (3, 3), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 9 at 3, 3
+root - INFO - Adding a room for cluster 9 at (3, 4), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 9 at 3, 4
+root - INFO - Adding a room for cluster 9 at (3, 5), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 9 at 3, 5
+root - INFO - Adding a room for cluster 9 at (2, 4), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 9 at 2, 4
+root - INFO - Adding a room for cluster 9 at (2, 3), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 9 at 2, 3
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 16 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 16 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 16 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 10 with room type garden
-root - INFO - Adding first room in cluster 10 at (2, 0)
-root - INFO - Adding room to cluster 10 at 2, 0
-root - INFO - Adding a room for cluster 10 at (3, 0), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 3, 0
-root - INFO - Adding a room for cluster 10 at (1, 0), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 1, 0
-root - INFO - Adding a room for cluster 10 at (3, 1), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 3, 1
-root - INFO - Adding a room for cluster 10 at (0, 0), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 0, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 11 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 11 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 11 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 11 with room type sanctum
-root - INFO - Adding first room in cluster 11 at (8, 8)
-root - INFO - Adding room to cluster 11 at 8, 8
-root - INFO - Adding a room for cluster 11 at (7, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 11 at 7, 8
-root - INFO - Adding a room for cluster 11 at (6, 8), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 11 at 6, 8
-root - INFO - Adding a room for cluster 11 at (5, 8), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 11 at 5, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 12 with room type open
-root - INFO - Adding first room in cluster 12 at (0, 8)
-root - INFO - Adding room to cluster 12 at 0, 8
-root - INFO - Adding a room for cluster 12 at (0, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 0, 7
-root - INFO - Adding a room for cluster 12 at (0, 6), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 0, 6
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 13 with room type treasury
-root - INFO - Adding first room in cluster 13 at (0, 3)
-root - INFO - Adding room to cluster 13 at 0, 3
-root - INFO - Adding a room for cluster 13 at (0, 2), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 13 at 0, 2
-root - INFO - Adding a room for cluster 13 at (0, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 13 at 0, 4
+root - INFO - Attempting to create cluster 10 with room type federal building
+root - INFO - Adding first room in cluster 10 at (0, 5)
+root - INFO - Adding room to cluster 10 at 0, 5
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 14 with room type reliquary
-root - INFO - Adding first room in cluster 14 at (8, 1)
-root - INFO - Adding room to cluster 14 at 8, 1
+root - INFO - Attempting to create cluster 11 with room type ranch
+root - INFO - Adding first room in cluster 11 at (0, 8)
+root - INFO - Adding room to cluster 11 at 0, 8
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - X X X X-E-X-X-X-X 
-| | |   | | | | | 
-X-X-Y X X X X X X 
-    | | |       | 
-X-X-X-X-X-X X-X-X 
-    |   |   |   | 
-X-X-X X-X-X X X-X 
-        |       | 
-X-X X W-X-X X X-X 
-  | |   |   |   | 
-X-X-X-X-X-X-X-X K 
-    | | | | |   | 
-X-X-X X X X X X-X 
-  | |           | 
-X-A X-X X-X-X X-X 
+root - INFO - X-X X-X-X X-X-X X 
+  |     |     | | 
+X-L-X X-X X X X-X 
+  |     | | | | | 
+X-X-E X-X-X-X-Y X 
   |     |   | | | 
-X-X-X-X-X-L X X X 
+X-X-X X-X-X X X A 
+  |     |       | 
+X-X-X X-X-X-X X-X 
+  |     |       | 
+X X X X-X-X X X X 
+| | |   |   | |   
+X-X X-X-X-X-X-X-X 
+  | |   | | | |   
+X-X-X-X W X X X-X 
+    |     |       
+X-X-X-X-X X-X-K-X 
                   
 root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - Number of clusters created: 15
-root - INFO - Number of rooms in cluster 0: 8
-root - INFO - Number of rooms in cluster 1: 7
-root - INFO - Number of rooms in cluster 2: 7
-root - INFO - Number of rooms in cluster 3: 9
-root - INFO - Number of rooms in cluster 4: 3
-root - INFO - Number of rooms in cluster 5: 8
-root - INFO - Number of rooms in cluster 6: 7
-root - INFO - Number of rooms in cluster 7: 7
-root - INFO - Number of rooms in cluster 8: 1
-root - INFO - Number of rooms in cluster 9: 8
-root - INFO - Number of rooms in cluster 10: 5
-root - INFO - Number of rooms in cluster 11: 4
-root - INFO - Number of rooms in cluster 12: 3
-root - INFO - Number of rooms in cluster 13: 3
-root - INFO - Number of rooms in cluster 14: 1
-root - INFO - Total connections in cluster 0: 32
-root - INFO - Total connections in cluster 1: 28
-root - INFO - Total connections in cluster 2: 28
-root - INFO - Total connections in cluster 3: 36
-root - INFO - Total connections in cluster 4: 12
-root - INFO - Total connections in cluster 5: 32
-root - INFO - Total connections in cluster 6: 28
-root - INFO - Total connections in cluster 7: 28
-root - INFO - Total connections in cluster 8: 4
-root - INFO - Total connections in cluster 9: 32
-root - INFO - Total connections in cluster 10: 20
-root - INFO - Total connections in cluster 11: 16
-root - INFO - Total connections in cluster 12: 12
-root - INFO - Total connections in cluster 13: 12
-root - INFO - Total connections in cluster 14: 4
-root - INFO - Room type treasury used: 11 times.
-root - INFO - Room type reliquary used: 8 times.
-root - INFO - Room type forest used: 7 times.
-root - INFO - Room type cavern used: 9 times.
-root - INFO - Room type crypt used: 3 times.
-root - INFO - Room type gallery used: 8 times.
-root - INFO - Room type apothecary used: 7 times.
-root - INFO - Room type castle used: 7 times.
-root - INFO - Room type tavern used: 1 times.
-root - INFO - Room type library used: 8 times.
-root - INFO - Room type garden used: 5 times.
-root - INFO - Room type sanctum used: 4 times.
-root - INFO - Room type open used: 3 times.
-root - INFO - Game map successfully generated.
-root - INFO - Game map type is <class 'game_logic.GameMap'>, Fresh start is True
-root - INFO - Start button pressed.
-root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971BA0>
-root - INFO - game_map.grid_width: 9
-root - INFO - game_map.grid_height: 9
-root - INFO - Start button pressed.
-root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971BA0>
-root - INFO - game_map.grid_width: 9
-root - INFO - game_map.grid_height: 9
-root - INFO - Data loaded successfully.
-root - INFO - Elements found in data.
-root - DEBUG - Elements before map generation: {'game_title': 
-root - DEBUG - Rooms before map generation: [{'type': 'castle', 
-root - INFO - Room types selected are: ['treasury', 'open', 'cavern', 'gallery', 'crypt', 'forest', 'garden', 'library', 'tavern', 'reliquary', 'sanctum', 'apothecary', 'castle']
-root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 0 with room type treasury
-root - INFO - Adding first room in cluster 0 at (4, 4)
-root - INFO - Adding room to cluster 0 at 4, 4
-root - INFO - Adding a room for cluster 0 at (5, 4), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 4
-root - INFO - Adding a room for cluster 0 at (6, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 6, 4
-root - INFO - Adding a room for cluster 0 at (3, 4), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 4
-root - INFO - Adding a room for cluster 0 at (4, 5), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 5
-root - INFO - Adding a room for cluster 0 at (6, 5), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 6, 5
-root - INFO - Adding a room for cluster 0 at (2, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 2, 4
-root - INFO - Cluster creation result: True
-root - INFO - Setting player start room: 3, 4
-root - INFO - The player's start room is: 3, 4
-root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 1 with room type open
-root - INFO - Adding first room in cluster 1 at (3, 5)
-root - INFO - Adding room to cluster 1 at 3, 5
-root - INFO - Adding a room for cluster 1 at (3, 6), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 3, 6
-root - INFO - Adding a room for cluster 1 at (3, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 3, 7
-root - INFO - Adding a room for cluster 1 at (4, 7), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 4, 7
-root - INFO - Adding a room for cluster 1 at (4, 8), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 4, 8
-root - INFO - Adding a room for cluster 1 at (4, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 4, 6
-root - INFO - Adding a room for cluster 1 at (5, 8), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 5, 8
-root - INFO - Adding a room for cluster 1 at (2, 5), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 2, 5
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 2 with room type cavern
-root - INFO - Adding first room in cluster 2 at (6, 6)
-root - INFO - Adding room to cluster 2 at 6, 6
-root - INFO - Adding a room for cluster 2 at (6, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 6, 7
-root - INFO - Adding a room for cluster 2 at (7, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 7, 7
-root - INFO - Adding a room for cluster 2 at (7, 6), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 7, 6
-root - INFO - Adding a room for cluster 2 at (6, 8), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 6, 8
-root - INFO - Adding a room for cluster 2 at (8, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 8, 6
-root - INFO - Adding a room for cluster 2 at (8, 5), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 8, 5
-root - INFO - Adding a room for cluster 2 at (8, 7), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 8, 7
-root - INFO - Adding a room for cluster 2 at (7, 8), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 7, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 3 with room type gallery
-root - INFO - Adding first room in cluster 3 at (3, 8)
-root - INFO - Adding room to cluster 3 at 3, 8
-root - INFO - Adding a room for cluster 3 at (2, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 8
-root - INFO - Adding a room for cluster 3 at (2, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 7
-root - INFO - Adding a room for cluster 3 at (1, 8), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 8
-root - INFO - Adding a room for cluster 3 at (1, 7), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 7
-root - INFO - Adding a room for cluster 3 at (0, 7), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 0, 7
-root - INFO - Adding a room for cluster 3 at (0, 8), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 0, 8
-root - INFO - Adding a room for cluster 3 at (0, 6), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 0, 6
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 49 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 49 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 49 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 4 with room type crypt
-root - INFO - Adding first room in cluster 4 at (5, 7)
-root - INFO - Adding room to cluster 4 at 5, 7
-root - INFO - Adding a room for cluster 4 at (5, 6), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 5, 6
-root - INFO - Adding a room for cluster 4 at (5, 5), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 5, 5
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 46 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 46 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 46 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 5 with room type forest
-root - INFO - Adding first room in cluster 5 at (0, 4)
-root - INFO - Adding room to cluster 5 at 0, 4
-root - INFO - Adding a room for cluster 5 at (0, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 0, 5
-root - INFO - Adding a room for cluster 5 at (1, 5), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 1, 5
-root - INFO - Adding a room for cluster 5 at (1, 4), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 1, 4
-root - INFO - Adding a room for cluster 5 at (0, 3), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 0, 3
-root - INFO - Adding a room for cluster 5 at (1, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 1, 6
-root - INFO - Adding a room for cluster 5 at (2, 6), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 2, 6
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 39 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 39 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 39 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 6 with room type garden
-root - INFO - Adding first room in cluster 6 at (3, 1)
-root - INFO - Adding room to cluster 6 at 3, 1
-root - INFO - Adding a room for cluster 6 at (3, 2), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 3, 2
-root - INFO - Adding a room for cluster 6 at (2, 2), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 2, 2
-root - INFO - Adding a room for cluster 6 at (4, 1), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 4, 1
-root - INFO - Adding a room for cluster 6 at (2, 1), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 2, 1
-root - INFO - Adding a room for cluster 6 at (1, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 1, 1
-root - INFO - Adding a room for cluster 6 at (3, 3), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 3, 3
-root - INFO - Adding a room for cluster 6 at (4, 2), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 4, 2
-root - INFO - Adding a room for cluster 6 at (4, 3), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 4, 3
-root - INFO - Adding a room for cluster 6 at (2, 0), after which there will be 9 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 2, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 29 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 29 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 29 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 7 with room type library
-root - INFO - Adding first room in cluster 7 at (6, 1)
-root - INFO - Adding room to cluster 7 at 6, 1
-root - INFO - Adding a room for cluster 7 at (7, 1), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 7, 1
-root - INFO - Adding a room for cluster 7 at (8, 1), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 8, 1
-root - INFO - Adding a room for cluster 7 at (5, 1), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 5, 1
-root - INFO - Adding a room for cluster 7 at (6, 2), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 6, 2
-root - INFO - Adding a room for cluster 7 at (5, 2), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 5, 2
-root - INFO - Adding a room for cluster 7 at (7, 2), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 7, 2
-root - INFO - Adding a room for cluster 7 at (6, 3), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 6, 3
-root - INFO - Adding a room for cluster 7 at (8, 0), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 8, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 20 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 20 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 20 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 8 with room type tavern
-root - INFO - Adding first room in cluster 8 at (2, 3)
-root - INFO - Adding room to cluster 8 at 2, 3
-root - INFO - Adding a room for cluster 8 at (1, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 1, 3
-root - INFO - Adding a room for cluster 8 at (1, 2), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 1, 2
-root - INFO - Adding a room for cluster 8 at (0, 2), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 0, 2
-root - INFO - Adding a room for cluster 8 at (0, 1), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 0, 1
-root - INFO - Adding a room for cluster 8 at (0, 0), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 0, 0
-root - INFO - Adding a room for cluster 8 at (1, 0), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 1, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 9 with room type reliquary
-root - INFO - Adding first room in cluster 9 at (7, 3)
-root - INFO - Adding room to cluster 9 at 7, 3
-root - INFO - Adding a room for cluster 9 at (8, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 8, 3
-root - INFO - Adding a room for cluster 9 at (8, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 8, 4
-root - INFO - Adding a room for cluster 9 at (8, 2), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 8, 2
-root - INFO - Adding a room for cluster 9 at (7, 4), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 7, 4
-root - INFO - Adding a room for cluster 9 at (7, 5), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 7, 5
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 10 with room type sanctum
-root - INFO - Adding first room in cluster 10 at (5, 3)
-root - INFO - Adding room to cluster 10 at 5, 3
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 11 with room type apothecary
-root - INFO - Adding first room in cluster 11 at (8, 8)
-root - INFO - Adding room to cluster 11 at 8, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 12 with room type castle
-root - INFO - Adding first room in cluster 12 at (4, 0)
-root - INFO - Adding room to cluster 12 at 4, 0
-root - INFO - Adding a room for cluster 12 at (3, 0), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 3, 0
-root - INFO - Adding a room for cluster 12 at (5, 0), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 5, 0
-root - INFO - Adding a room for cluster 12 at (6, 0), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 6, 0
-root - INFO - Adding a room for cluster 12 at (7, 0), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 7, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - X X X X X X X X X 
-| | | | | | | | | 
-A-X-X-X-X-Y-X-X-X 
-      |     | | | 
-X X-X-X-X-X X X X 
-|     |       |   
-X X X X X X E X-X 
-| | | | | | |     
-X X-X-X-X-X-X-X X 
-|   | | | | |   | 
-X X-X X X X X-X X 
-|     | |   |   | 
-X X X-X X-X X-X-K 
-| |   |     |     
-X-X-X-X-X-X W-X-X 
-      | |     | | 
-X-X-X-L X-X-X X X 
-                  
-root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - Number of clusters created: 13
+root - INFO - Number of clusters created: 12
 root - INFO - Number of rooms in cluster 0: 7
-root - INFO - Number of rooms in cluster 1: 8
-root - INFO - Number of rooms in cluster 2: 9
-root - INFO - Number of rooms in cluster 3: 8
-root - INFO - Number of rooms in cluster 4: 3
+root - INFO - Number of rooms in cluster 1: 10
+root - INFO - Number of rooms in cluster 2: 7
+root - INFO - Number of rooms in cluster 3: 10
+root - INFO - Number of rooms in cluster 4: 10
 root - INFO - Number of rooms in cluster 5: 7
-root - INFO - Number of rooms in cluster 6: 10
-root - INFO - Number of rooms in cluster 7: 9
+root - INFO - Number of rooms in cluster 6: 5
+root - INFO - Number of rooms in cluster 7: 10
 root - INFO - Number of rooms in cluster 8: 7
 root - INFO - Number of rooms in cluster 9: 6
 root - INFO - Number of rooms in cluster 10: 1
 root - INFO - Number of rooms in cluster 11: 1
-root - INFO - Number of rooms in cluster 12: 5
 root - INFO - Total connections in cluster 0: 28
-root - INFO - Total connections in cluster 1: 32
-root - INFO - Total connections in cluster 2: 36
-root - INFO - Total connections in cluster 3: 32
-root - INFO - Total connections in cluster 4: 12
+root - INFO - Total connections in cluster 1: 40
+root - INFO - Total connections in cluster 2: 28
+root - INFO - Total connections in cluster 3: 40
+root - INFO - Total connections in cluster 4: 40
 root - INFO - Total connections in cluster 5: 28
-root - INFO - Total connections in cluster 6: 40
-root - INFO - Total connections in cluster 7: 36
+root - INFO - Total connections in cluster 6: 20
+root - INFO - Total connections in cluster 7: 40
 root - INFO - Total connections in cluster 8: 28
 root - INFO - Total connections in cluster 9: 24
 root - INFO - Total connections in cluster 10: 4
 root - INFO - Total connections in cluster 11: 4
-root - INFO - Total connections in cluster 12: 20
-root - INFO - Room type treasury used: 7 times.
-root - INFO - Room type open used: 8 times.
-root - INFO - Room type cavern used: 9 times.
-root - INFO - Room type gallery used: 8 times.
-root - INFO - Room type crypt used: 3 times.
-root - INFO - Room type forest used: 7 times.
-root - INFO - Room type garden used: 10 times.
-root - INFO - Room type library used: 9 times.
-root - INFO - Room type tavern used: 7 times.
-root - INFO - Room type reliquary used: 6 times.
-root - INFO - Room type sanctum used: 1 times.
-root - INFO - Room type apothecary used: 1 times.
-root - INFO - Room type castle used: 5 times.
+root - INFO - Room type old church used: 7 times.
+root - INFO - Room type general store used: 10 times.
+root - INFO - Room type frontier encampment used: 7 times.
+root - INFO - Room type blacksmith's forge used: 10 times.
+root - INFO - Room type outlaw hideout used: 10 times.
+root - INFO - Room type sheriff's office used: 7 times.
+root - INFO - Room type frontier town square used: 5 times.
+root - INFO - Room type old-fashioned bank used: 10 times.
+root - INFO - Room type train station used: 7 times.
+root - INFO - Room type gambling den used: 6 times.
+root - INFO - Room type federal building used: 1 times.
+root - INFO - Room type ranch used: 1 times.
 root - INFO - Game map successfully generated.
-root - INFO - Game map type is <class 'game_logic.GameMap'>, Fresh start is False
+root - DEBUG - Current game map: <game_logic.GameMap object at 0x000001998C1758D0>
+root - INFO - Generate_game_title is called.
+root - INFO - DL/Generate_game_title: Data now looks this way: {'genre': 'Western', 'elements': {'game_title': ['
+root - INFO - DL/Generate_game_title: title parts are The Silver Wild West Myth
 root - INFO - Start button pressed.
 root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
 root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971D80>
+root - INFO - game_map value: <game_logic.GameMap object at 0x000001998C1758D0>
 root - INFO - game_map.grid_width: 9
 root - INFO - game_map.grid_height: 9
 root - INFO - Start button pressed.
 root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
 root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971D80>
+root - INFO - game_map value: <game_logic.GameMap object at 0x000001998C1758D0>
 root - INFO - game_map.grid_width: 9
 root - INFO - game_map.grid_height: 9
-root - INFO - Data loaded successfully.
+root - INFO - Select_random_genre: Genres comes up as [{'genre': 'Fantasy', 'elements': {'game_title': [
+root - DEBUG - Select_random_genre: Data keys after loading: dict_keys(['genres'])
+root - DEBUG - Data length after loading: 1
+root - INFO - self.data_loader.genre is this: {'genre': 'Fantasy', 'elements': {'game_title': ['
+root - INFO - Genre data loaded successfully.
 root - INFO - Elements found in data.
-root - DEBUG - Elements before map generation: {'game_title': 
-root - DEBUG - Rooms before map generation: [{'type': 'castle', 
-root - INFO - Room types selected are: ['sanctum', 'treasury', 'gallery', 'tavern', 'cavern', 'castle', 'forest', 'apothecary', 'reliquary', 'garden', 'crypt', 'open', 'library']
-root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 0 with room type sanctum
-root - INFO - Adding first room in cluster 0 at (4, 4)
-root - INFO - Adding room to cluster 0 at 4, 4
-root - INFO - Adding a room for cluster 0 at (3, 4), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 4
-root - INFO - Adding a room for cluster 0 at (4, 3), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 3
-root - INFO - Adding a room for cluster 0 at (5, 4), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 4
-root - INFO - Adding a room for cluster 0 at (3, 5), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 5
-root - INFO - Adding a room for cluster 0 at (3, 3), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 3
-root - INFO - Adding a room for cluster 0 at (6, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 6, 4
-root - INFO - Adding a room for cluster 0 at (5, 5), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 5
-root - INFO - Adding a room for cluster 0 at (2, 4), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 2, 4
-root - INFO - Adding a room for cluster 0 at (1, 4), after which there will be 9 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 1, 4
-root - INFO - Cluster creation result: True
-root - INFO - Setting player start room: 3, 5
-root - INFO - The player's start room is: 3, 5
-root - INFO - Checked if the map was full. There are 71 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 71 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 71 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 1 with room type treasury
-root - INFO - Adding first room in cluster 1 at (7, 3)
-root - INFO - Adding room to cluster 1 at 7, 3
-root - INFO - Adding a room for cluster 1 at (7, 2), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 7, 2
-root - INFO - Adding a room for cluster 1 at (7, 1), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 7, 1
-root - INFO - Adding a room for cluster 1 at (8, 3), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 8, 3
-root - INFO - Adding a room for cluster 1 at (8, 2), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 8, 2
-root - INFO - Adding a room for cluster 1 at (7, 0), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 7, 0
-root - INFO - Adding a room for cluster 1 at (8, 0), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 8, 0
-root - INFO - Adding a room for cluster 1 at (7, 4), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 7, 4
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 63 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 63 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 63 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 2 with room type gallery
-root - INFO - Adding first room in cluster 2 at (3, 1)
-root - INFO - Adding room to cluster 2 at 3, 1
-root - INFO - Adding a room for cluster 2 at (4, 1), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 1
-root - INFO - Adding a room for cluster 2 at (4, 2), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 2
-root - INFO - Adding a room for cluster 2 at (4, 0), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 0
-root - INFO - Adding a room for cluster 2 at (3, 0), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 3, 0
-root - INFO - Adding a room for cluster 2 at (2, 0), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 2, 0
-root - INFO - Adding a room for cluster 2 at (1, 0), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 1, 0
-root - INFO - Adding a room for cluster 2 at (5, 0), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 5, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 55 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 55 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 55 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 3 with room type tavern
-root - INFO - Adding first room in cluster 3 at (2, 1)
-root - INFO - Adding room to cluster 3 at 2, 1
-root - INFO - Adding a room for cluster 3 at (1, 1), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 1
-root - INFO - Adding a room for cluster 3 at (0, 1), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 0, 1
-root - INFO - Adding a room for cluster 3 at (2, 2), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 2
-root - INFO - Adding a room for cluster 3 at (1, 2), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 2
-root - INFO - Adding a room for cluster 3 at (2, 3), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 3
-root - INFO - Adding a room for cluster 3 at (1, 3), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 3
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 48 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 48 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 48 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 4 with room type cavern
-root - INFO - Adding first room in cluster 4 at (6, 1)
-root - INFO - Adding room to cluster 4 at 6, 1
-root - INFO - Adding a room for cluster 4 at (6, 2), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 6, 2
-root - INFO - Adding a room for cluster 4 at (6, 0), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 6, 0
-root - INFO - Adding a room for cluster 4 at (5, 2), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 5, 2
-root - INFO - Adding a room for cluster 4 at (5, 3), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 5, 3
-root - INFO - Adding a room for cluster 4 at (5, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 5, 1
-root - INFO - Adding a room for cluster 4 at (6, 3), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 6, 3
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 41 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 41 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 41 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 5 with room type castle
-root - INFO - Adding first room in cluster 5 at (8, 1)
-root - INFO - Adding room to cluster 5 at 8, 1
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 6 with room type forest
-root - INFO - Adding first room in cluster 6 at (1, 5)
-root - INFO - Adding room to cluster 6 at 1, 5
-root - INFO - Adding a room for cluster 6 at (0, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 0, 5
-root - INFO - Adding a room for cluster 6 at (0, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 0, 4
-root - INFO - Adding a room for cluster 6 at (1, 6), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 1, 6
-root - INFO - Adding a room for cluster 6 at (0, 3), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 0, 3
-root - INFO - Adding a room for cluster 6 at (1, 7), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 1, 7
-root - INFO - Adding a room for cluster 6 at (2, 7), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 2, 7
-root - INFO - Adding a room for cluster 6 at (0, 2), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 0, 2
-root - INFO - Adding a room for cluster 6 at (1, 8), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 1, 8
-root - INFO - Adding a room for cluster 6 at (0, 6), after which there will be 9 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 0, 6
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 30 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 30 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 30 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 7 with room type apothecary
-root - INFO - Adding first room in cluster 7 at (4, 6)
-root - INFO - Adding room to cluster 7 at 4, 6
-root - INFO - Adding a room for cluster 7 at (3, 6), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 3, 6
-root - INFO - Adding a room for cluster 7 at (4, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 4, 7
-root - INFO - Adding a room for cluster 7 at (2, 6), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 2, 6
-root - INFO - Adding a room for cluster 7 at (4, 5), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 4, 5
-root - INFO - Adding a room for cluster 7 at (5, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 5, 6
-root - INFO - Adding a room for cluster 7 at (5, 7), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 5, 7
-root - INFO - Adding a room for cluster 7 at (4, 8), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 4, 8
-root - INFO - Adding a room for cluster 7 at (3, 8), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 3, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 21 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 21 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 21 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 8 with room type reliquary
-root - INFO - Adding first room in cluster 8 at (8, 6)
-root - INFO - Adding room to cluster 8 at 8, 6
-root - INFO - Adding a room for cluster 8 at (8, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 8, 7
-root - INFO - Adding a room for cluster 8 at (7, 6), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 7, 6
-root - INFO - Adding a room for cluster 8 at (8, 8), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 8, 8
-root - INFO - Adding a room for cluster 8 at (7, 7), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 7, 7
-root - INFO - Adding a room for cluster 8 at (8, 5), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 8, 5
-root - INFO - Adding a room for cluster 8 at (8, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 8, 4
-root - INFO - Adding a room for cluster 8 at (7, 8), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 7, 8
-root - INFO - Adding a room for cluster 8 at (7, 5), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 7, 5
-root - INFO - Adding a room for cluster 8 at (6, 7), after which there will be 9 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 6, 7
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 11 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 11 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 11 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 9 with room type garden
-root - INFO - Adding first room in cluster 9 at (6, 8)
-root - INFO - Adding room to cluster 9 at 6, 8
-root - INFO - Adding a room for cluster 9 at (5, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 5, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 10 with room type crypt
-root - INFO - Adding first room in cluster 10 at (2, 5)
-root - INFO - Adding room to cluster 10 at 2, 5
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 8 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 8 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 8 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 11 with room type open
-root - INFO - Adding first room in cluster 11 at (0, 8)
-root - INFO - Adding room to cluster 11 at 0, 8
-root - INFO - Adding a room for cluster 11 at (0, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 11 at 0, 7
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 12 with room type library
-root - INFO - Adding first room in cluster 12 at (3, 2)
-root - INFO - Adding room to cluster 12 at 3, 2
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 13 with room type sanctum
-root - INFO - Adding first room in cluster 13 at (6, 6)
-root - INFO - Adding room to cluster 13 at 6, 6
-root - INFO - Adding a room for cluster 13 at (6, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 13 at 6, 5
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 14 with room type treasury
-root - INFO - Adding first room in cluster 14 at (3, 7)
-root - INFO - Adding room to cluster 14 at 3, 7
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 15 with room type gallery
-root - INFO - Adding first room in cluster 15 at (2, 8)
-root - INFO - Adding room to cluster 15 at 2, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 16 with room type tavern
-root - INFO - Adding first room in cluster 16 at (0, 0)
-root - INFO - Adding room to cluster 16 at 0, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - X-X-X-X X-X X-X-X 
-  |   | |     |   
-X-X X-X-X-X X-X-X 
-| | | |       |   
-X X X X X-X X-X-X 
-      | |     |   
-X-X X-X X-X X X-X 
-  |   | |   | | | 
-X-X-A-E-X-X-X-X W 
-  |   | | | | |   
-X-X X-X X X Y X X 
-| |   |   |   | | 
-K X-X X-X X-X X-X 
-  |     |       | 
-X-X-X-X X-X-X X-X 
-  | |   | |     | 
-X-X X X-X X X-X-L 
-                  
-root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - Number of clusters created: 17
-root - INFO - Number of rooms in cluster 0: 10
-root - INFO - Number of rooms in cluster 1: 8
-root - INFO - Number of rooms in cluster 2: 8
-root - INFO - Number of rooms in cluster 3: 7
-root - INFO - Number of rooms in cluster 4: 7
-root - INFO - Number of rooms in cluster 5: 1
-root - INFO - Number of rooms in cluster 6: 10
-root - INFO - Number of rooms in cluster 7: 9
-root - INFO - Number of rooms in cluster 8: 10
-root - INFO - Number of rooms in cluster 9: 2
-root - INFO - Number of rooms in cluster 10: 1
-root - INFO - Number of rooms in cluster 11: 2
-root - INFO - Number of rooms in cluster 12: 1
-root - INFO - Number of rooms in cluster 13: 2
-root - INFO - Number of rooms in cluster 14: 1
-root - INFO - Number of rooms in cluster 15: 1
-root - INFO - Number of rooms in cluster 16: 1
-root - INFO - Total connections in cluster 0: 40
-root - INFO - Total connections in cluster 1: 32
-root - INFO - Total connections in cluster 2: 32
-root - INFO - Total connections in cluster 3: 28
-root - INFO - Total connections in cluster 4: 28
-root - INFO - Total connections in cluster 5: 4
-root - INFO - Total connections in cluster 6: 40
-root - INFO - Total connections in cluster 7: 36
-root - INFO - Total connections in cluster 8: 40
-root - INFO - Total connections in cluster 9: 8
-root - INFO - Total connections in cluster 10: 4
-root - INFO - Total connections in cluster 11: 8
-root - INFO - Total connections in cluster 12: 4
-root - INFO - Total connections in cluster 13: 8
-root - INFO - Total connections in cluster 14: 4
-root - INFO - Total connections in cluster 15: 4
-root - INFO - Total connections in cluster 16: 4
-root - INFO - Room type sanctum used: 12 times.
-root - INFO - Room type treasury used: 9 times.
-root - INFO - Room type gallery used: 9 times.
-root - INFO - Room type tavern used: 8 times.
-root - INFO - Room type cavern used: 7 times.
-root - INFO - Room type castle used: 1 times.
-root - INFO - Room type forest used: 10 times.
-root - INFO - Room type apothecary used: 9 times.
-root - INFO - Room type reliquary used: 10 times.
-root - INFO - Room type garden used: 2 times.
-root - INFO - Room type crypt used: 1 times.
-root - INFO - Room type open used: 2 times.
-root - INFO - Room type library used: 1 times.
-root - INFO - Game map successfully generated.
-root - INFO - Game map type is <class 'game_logic.GameMap'>, Fresh start is False
-root - INFO - Start button pressed.
-root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971BA0>
-root - INFO - game_map.grid_width: 9
-root - INFO - game_map.grid_height: 9
-root - INFO - Start button pressed.
-root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971BA0>
-root - INFO - game_map.grid_width: 9
-root - INFO - game_map.grid_height: 9
-root - INFO - Data loaded successfully.
-root - INFO - Elements found in data.
-root - DEBUG - Elements before map generation: {'game_title': 
-root - DEBUG - Rooms before map generation: [{'type': 'castle', 
-root - INFO - Room types selected are: ['garden', 'library', 'castle', 'apothecary', 'treasury', 'sanctum', 'open', 'reliquary', 'tavern', 'cavern', 'forest', 'gallery', 'crypt']
+root - DEBUG - Elements before map generation: {'game_title': ['In Search of the', 'The Legendary
+root - DEBUG - Rooms before map generation: [{'type': 'castle', 'name': ['Donjon', 'Oubliette'
+root - INFO - Room types selected are: ['garden', 'crypt', 'gallery', 'castle', 'tavern', 'apothecary', 'cavern', 'library', 'reliquary', 'forest', 'sanctum', 'treasury', 'open']
 root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
 root - INFO - Attempting to create cluster 0 with room type garden
 root - INFO - Adding first room in cluster 0 at (4, 4)
 root - INFO - Adding room to cluster 0 at 4, 4
-root - INFO - Adding a room for cluster 0 at (4, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 5
-root - INFO - Adding a room for cluster 0 at (4, 6), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 6
-root - INFO - Adding a room for cluster 0 at (3, 5), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 5
-root - INFO - Adding a room for cluster 0 at (3, 4), after which there will be 4 rooms in the cluster.
+root - INFO - Adding a room for cluster 0 at (3, 4), after which there will be 1 rooms in the cluster.
 root - INFO - Adding room to cluster 0 at 3, 4
-root - INFO - Adding a room for cluster 0 at (3, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 6
-root - INFO - Adding a room for cluster 0 at (5, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 4
-root - INFO - Adding a room for cluster 0 at (2, 4), after which there will be 7 rooms in the cluster.
+root - INFO - Adding a room for cluster 0 at (2, 4), after which there will be 2 rooms in the cluster.
 root - INFO - Adding room to cluster 0 at 2, 4
+root - INFO - Adding a room for cluster 0 at (2, 5), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 2, 5
+root - INFO - Adding a room for cluster 0 at (4, 3), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 4, 3
+root - INFO - Adding a room for cluster 0 at (1, 5), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 1, 5
+root - INFO - Adding a room for cluster 0 at (3, 5), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 0 at 3, 5
 root - INFO - Cluster creation result: True
-root - INFO - Setting player start room: 4, 6
-root - INFO - The player's start room is: 4, 6
-root - INFO - Checked if the map was full. There are 73 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 73 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 73 empty positions left in the grid.
+root - INFO - Setting player start room: 1, 5
+root - INFO - The player's start room is: 1, 5
+root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 74 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 1 with room type library
-root - INFO - Adding first room in cluster 1 at (5, 2)
-root - INFO - Adding room to cluster 1 at 5, 2
-root - INFO - Adding a room for cluster 1 at (5, 1), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 5, 1
-root - INFO - Adding a room for cluster 1 at (4, 1), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 4, 1
-root - INFO - Adding a room for cluster 1 at (5, 0), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 5, 0
-root - INFO - Adding a room for cluster 1 at (6, 0), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 6, 0
-root - INFO - Adding a room for cluster 1 at (3, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 3, 1
-root - INFO - Adding a room for cluster 1 at (7, 0), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 7, 0
-root - INFO - Adding a room for cluster 1 at (4, 0), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 4, 0
-root - INFO - Adding a room for cluster 1 at (4, 2), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 4, 2
+root - INFO - Attempting to create cluster 1 with room type crypt
+root - INFO - Adding first room in cluster 1 at (8, 6)
+root - INFO - Adding room to cluster 1 at 8, 6
+root - INFO - Adding a room for cluster 1 at (8, 7), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 8, 7
+root - INFO - Adding a room for cluster 1 at (8, 8), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 8, 8
+root - INFO - Adding a room for cluster 1 at (8, 5), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 8, 5
+root - INFO - Adding a room for cluster 1 at (7, 5), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 7, 5
+root - INFO - Adding a room for cluster 1 at (7, 6), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 7, 6
+root - INFO - Adding a room for cluster 1 at (6, 5), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 6, 5
+root - INFO - Adding a room for cluster 1 at (7, 8), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 1 at 7, 8
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 66 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 2 with room type castle
-root - INFO - Adding first room in cluster 2 at (2, 8)
-root - INFO - Adding room to cluster 2 at 2, 8
-root - INFO - Adding a room for cluster 2 at (3, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 3, 8
-root - INFO - Adding a room for cluster 2 at (1, 8), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 1, 8
-root - INFO - Adding a room for cluster 2 at (2, 7), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 2, 7
-root - INFO - Adding a room for cluster 2 at (4, 8), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 8
-root - INFO - Adding a room for cluster 2 at (4, 7), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 4, 7
-root - INFO - Adding a room for cluster 2 at (5, 7), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 5, 7
+root - INFO - Attempting to create cluster 2 with room type gallery
+root - INFO - Adding first room in cluster 2 at (7, 0)
+root - INFO - Adding room to cluster 2 at 7, 0
+root - INFO - Adding a room for cluster 2 at (6, 0), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 6, 0
+root - INFO - Adding a room for cluster 2 at (7, 1), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 7, 1
+root - INFO - Adding a room for cluster 2 at (8, 1), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 8, 1
+root - INFO - Adding a room for cluster 2 at (8, 2), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 8, 2
+root - INFO - Adding a room for cluster 2 at (8, 0), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 8, 0
+root - INFO - Adding a room for cluster 2 at (5, 0), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 5, 0
+root - INFO - Adding a room for cluster 2 at (4, 0), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 4, 0
+root - INFO - Adding a room for cluster 2 at (8, 3), after which there will be 8 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 8, 3
+root - INFO - Adding a room for cluster 2 at (3, 0), after which there will be 9 rooms in the cluster.
+root - INFO - Adding room to cluster 2 at 3, 0
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 57 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 56 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 56 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 56 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 3 with room type apothecary
-root - INFO - Adding first room in cluster 3 at (8, 6)
-root - INFO - Adding room to cluster 3 at 8, 6
-root - INFO - Adding a room for cluster 3 at (8, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 8, 5
-root - INFO - Adding a room for cluster 3 at (7, 5), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 7, 5
-root - INFO - Adding a room for cluster 3 at (8, 7), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 8, 7
-root - INFO - Adding a room for cluster 3 at (6, 5), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 6, 5
-root - INFO - Adding a room for cluster 3 at (5, 5), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 5, 5
-root - INFO - Adding a room for cluster 3 at (6, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 6, 4
-root - INFO - Adding a room for cluster 3 at (6, 3), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 6, 3
+root - INFO - Attempting to create cluster 3 with room type castle
+root - INFO - Adding first room in cluster 3 at (1, 4)
+root - INFO - Adding room to cluster 3 at 1, 4
+root - INFO - Adding a room for cluster 3 at (0, 4), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 0, 4
+root - INFO - Adding a room for cluster 3 at (1, 3), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 1, 3
+root - INFO - Adding a room for cluster 3 at (0, 5), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 0, 5
+root - INFO - Adding a room for cluster 3 at (2, 3), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 2, 3
+root - INFO - Adding a room for cluster 3 at (3, 3), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 3, 3
+root - INFO - Adding a room for cluster 3 at (3, 2), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 3 at 3, 2
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 49 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 49 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 49 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 4 with room type treasury
-root - INFO - Adding first room in cluster 4 at (0, 1)
-root - INFO - Adding room to cluster 4 at 0, 1
-root - INFO - Adding a room for cluster 4 at (0, 0), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 0, 0
-root - INFO - Adding a room for cluster 4 at (1, 1), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 1, 1
-root - INFO - Adding a room for cluster 4 at (0, 2), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 0, 2
-root - INFO - Adding a room for cluster 4 at (0, 3), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 0, 3
-root - INFO - Adding a room for cluster 4 at (2, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 2, 1
-root - INFO - Adding a room for cluster 4 at (0, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 0, 4
-root - INFO - Adding a room for cluster 4 at (1, 4), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 1, 4
-root - INFO - Adding a room for cluster 4 at (2, 0), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 2, 0
+root - INFO - Attempting to create cluster 4 with room type tavern
+root - INFO - Adding first room in cluster 4 at (5, 6)
+root - INFO - Adding room to cluster 4 at 5, 6
+root - INFO - Adding a room for cluster 4 at (5, 5), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 5, 5
+root - INFO - Adding a room for cluster 4 at (5, 7), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 5, 7
+root - INFO - Adding a room for cluster 4 at (5, 4), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 5, 4
+root - INFO - Adding a room for cluster 4 at (6, 6), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 6, 6
+root - INFO - Adding a room for cluster 4 at (5, 8), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 5, 8
+root - INFO - Adding a room for cluster 4 at (6, 7), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 4 at 6, 7
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 42 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 42 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 42 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 5 with room type sanctum
-root - INFO - Adding first room in cluster 5 at (8, 8)
-root - INFO - Adding room to cluster 5 at 8, 8
-root - INFO - Adding a room for cluster 5 at (7, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 7, 8
-root - INFO - Adding a room for cluster 5 at (7, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 7, 7
-root - INFO - Adding a room for cluster 5 at (6, 7), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 6, 7
-root - INFO - Adding a room for cluster 5 at (6, 6), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 6, 6
-root - INFO - Adding a room for cluster 5 at (5, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 5, 6
-root - INFO - Adding a room for cluster 5 at (7, 6), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 7, 6
+root - INFO - Attempting to create cluster 5 with room type apothecary
+root - INFO - Adding first room in cluster 5 at (6, 1)
+root - INFO - Adding room to cluster 5 at 6, 1
+root - INFO - Adding a room for cluster 5 at (6, 2), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 6, 2
+root - INFO - Adding a room for cluster 5 at (7, 2), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 7, 2
+root - INFO - Adding a room for cluster 5 at (7, 3), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 7, 3
+root - INFO - Adding a room for cluster 5 at (5, 2), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 5, 2
+root - INFO - Adding a room for cluster 5 at (6, 3), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 6, 3
+root - INFO - Adding a room for cluster 5 at (7, 4), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 5 at 7, 4
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 33 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 33 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 33 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 35 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 35 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 35 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 6 with room type open
-root - INFO - Adding first room in cluster 6 at (7, 3)
-root - INFO - Adding room to cluster 6 at 7, 3
-root - INFO - Adding a room for cluster 6 at (7, 2), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 7, 2
-root - INFO - Adding a room for cluster 6 at (7, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 7, 4
-root - INFO - Adding a room for cluster 6 at (8, 3), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 8, 3
-root - INFO - Adding a room for cluster 6 at (6, 2), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 6, 2
-root - INFO - Adding a room for cluster 6 at (7, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 7, 1
-root - INFO - Adding a room for cluster 6 at (8, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 8, 4
-root - INFO - Adding a room for cluster 6 at (8, 2), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 8, 2
+root - INFO - Attempting to create cluster 6 with room type cavern
+root - INFO - Adding first room in cluster 6 at (1, 0)
+root - INFO - Adding room to cluster 6 at 1, 0
+root - INFO - Adding a room for cluster 6 at (1, 1), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 1, 1
+root - INFO - Adding a room for cluster 6 at (0, 1), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 0, 1
+root - INFO - Adding a room for cluster 6 at (0, 0), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 0, 0
+root - INFO - Adding a room for cluster 6 at (0, 2), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 0, 2
+root - INFO - Adding a room for cluster 6 at (2, 1), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 2, 1
+root - INFO - Adding a room for cluster 6 at (2, 0), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 2, 0
+root - INFO - Adding a room for cluster 6 at (2, 2), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 6 at 2, 2
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 27 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 27 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 27 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 7 with room type reliquary
-root - INFO - Adding first room in cluster 7 at (3, 0)
-root - INFO - Adding room to cluster 7 at 3, 0
+root - INFO - Attempting to create cluster 7 with room type library
+root - INFO - Adding first room in cluster 7 at (1, 2)
+root - INFO - Adding room to cluster 7 at 1, 2
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 24 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 24 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 24 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 26 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 26 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 26 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 8 with room type tavern
-root - INFO - Adding first room in cluster 8 at (8, 0)
-root - INFO - Adding room to cluster 8 at 8, 0
-root - INFO - Adding a room for cluster 8 at (8, 1), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 8, 1
+root - INFO - Attempting to create cluster 8 with room type reliquary
+root - INFO - Adding first room in cluster 8 at (0, 8)
+root - INFO - Adding room to cluster 8 at 0, 8
+root - INFO - Adding a room for cluster 8 at (1, 8), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 1, 8
+root - INFO - Adding a room for cluster 8 at (1, 7), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 1, 7
+root - INFO - Adding a room for cluster 8 at (2, 8), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 2, 8
+root - INFO - Adding a room for cluster 8 at (1, 6), after which there will be 4 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 1, 6
+root - INFO - Adding a room for cluster 8 at (0, 6), after which there will be 5 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 0, 6
+root - INFO - Adding a room for cluster 8 at (2, 7), after which there will be 6 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 2, 7
+root - INFO - Adding a room for cluster 8 at (0, 7), after which there will be 7 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 0, 7
+root - INFO - Adding a room for cluster 8 at (3, 7), after which there will be 8 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 3, 7
+root - INFO - Adding a room for cluster 8 at (4, 7), after which there will be 9 rooms in the cluster.
+root - INFO - Adding room to cluster 8 at 4, 7
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 22 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 22 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 22 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 16 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 16 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 16 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 9 with room type cavern
-root - INFO - Adding first room in cluster 9 at (4, 3)
-root - INFO - Adding room to cluster 9 at 4, 3
-root - INFO - Adding a room for cluster 9 at (5, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 5, 3
-root - INFO - Adding a room for cluster 9 at (3, 3), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 3, 3
-root - INFO - Adding a room for cluster 9 at (3, 2), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 3, 2
-root - INFO - Adding a room for cluster 9 at (2, 3), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 2, 3
-root - INFO - Adding a room for cluster 9 at (2, 2), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 2, 2
-root - INFO - Adding a room for cluster 9 at (1, 3), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 1, 3
-root - INFO - Adding a room for cluster 9 at (1, 2), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 1, 2
+root - INFO - Attempting to create cluster 9 with room type forest
+root - INFO - Adding first room in cluster 9 at (6, 8)
+root - INFO - Adding room to cluster 9 at 6, 8
+root - INFO - Cluster creation result: True
+root - INFO - Checked if the map was full. There are 15 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 15 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 15 empty positions left in the grid.
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 10 with room type sanctum
+root - INFO - Adding first room in cluster 10 at (8, 4)
+root - INFO - Adding room to cluster 10 at 8, 4
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 14 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 14 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 14 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 10 with room type forest
-root - INFO - Adding first room in cluster 10 at (0, 8)
-root - INFO - Adding room to cluster 10 at 0, 8
-root - INFO - Adding a room for cluster 10 at (0, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 0, 7
-root - INFO - Adding a room for cluster 10 at (1, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 1, 7
-root - INFO - Adding a room for cluster 10 at (1, 6), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 1, 6
-root - INFO - Adding a room for cluster 10 at (0, 6), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 0, 6
-root - INFO - Adding a room for cluster 10 at (1, 5), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 1, 5
-root - INFO - Adding a room for cluster 10 at (2, 5), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 2, 5
+root - INFO - Attempting to create cluster 11 with room type treasury
+root - INFO - Adding first room in cluster 11 at (6, 4)
+root - INFO - Adding room to cluster 11 at 6, 4
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 7 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 11 with room type gallery
-root - INFO - Adding first room in cluster 11 at (5, 8)
-root - INFO - Adding room to cluster 11 at 5, 8
-root - INFO - Adding a room for cluster 11 at (6, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 11 at 6, 8
+root - INFO - Attempting to create cluster 12 with room type open
+root - INFO - Adding first room in cluster 12 at (2, 6)
+root - INFO - Adding room to cluster 12 at 2, 6
+root - INFO - Adding a room for cluster 12 at (3, 6), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 12 at 3, 6
+root - INFO - Adding a room for cluster 12 at (4, 6), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 12 at 4, 6
+root - INFO - Adding a room for cluster 12 at (4, 5), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 12 at 4, 5
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 12 with room type crypt
-root - INFO - Adding first room in cluster 12 at (3, 7)
-root - INFO - Adding room to cluster 12 at 3, 7
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
 root - INFO - Attempting to create cluster 13 with room type garden
-root - INFO - Adding first room in cluster 13 at (1, 0)
-root - INFO - Adding room to cluster 13 at 1, 0
+root - INFO - Adding first room in cluster 13 at (5, 1)
+root - INFO - Adding room to cluster 13 at 5, 1
+root - INFO - Adding a room for cluster 13 at (4, 1), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 13 at 4, 1
+root - INFO - Adding a room for cluster 13 at (3, 1), after which there will be 2 rooms in the cluster.
+root - INFO - Adding room to cluster 13 at 3, 1
+root - INFO - Adding a room for cluster 13 at (4, 2), after which there will be 3 rooms in the cluster.
+root - INFO - Adding room to cluster 13 at 4, 2
 root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 5 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 14 with room type library
-root - INFO - Adding first room in cluster 14 at (6, 1)
-root - INFO - Adding room to cluster 14 at 6, 1
+root - INFO - Attempting to create cluster 14 with room type crypt
+root - INFO - Adding first room in cluster 14 at (5, 3)
+root - INFO - Adding room to cluster 14 at 5, 3
+root - INFO - Cluster creation result: True
+root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
+root - INFO - Checked if the map was full. There are 4 empty positions left in the grid.
+root - DEBUG - Current state of is_map_full: False
+root - INFO - Attempting to create cluster 15 with room type gallery
+root - INFO - Adding first room in cluster 15 at (4, 8)
+root - INFO - Adding room to cluster 15 at 4, 8
+root - INFO - Adding a room for cluster 15 at (3, 8), after which there will be 1 rooms in the cluster.
+root - INFO - Adding room to cluster 15 at 3, 8
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 15 with room type castle
-root - INFO - Adding first room in cluster 15 at (0, 5)
-root - INFO - Adding room to cluster 15 at 0, 5
+root - INFO - Attempting to create cluster 16 with room type castle
+root - INFO - Adding first room in cluster 16 at (7, 7)
+root - INFO - Adding room to cluster 16 at 7, 7
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
 root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
 root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 16 with room type apothecary
-root - INFO - Adding first room in cluster 16 at (2, 6)
-root - INFO - Adding room to cluster 16 at 2, 6
+root - INFO - Attempting to create cluster 17 with room type tavern
+root - INFO - Adding first room in cluster 17 at (0, 3)
+root - INFO - Adding room to cluster 17 at 0, 3
 root - INFO - Cluster creation result: True
 root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - X-X X X X K-X-X-X 
-|   | | | |   |   
-X-X-X-X-X-X-X X-X 
-| | | |   |       
-X X X X X-X-X X-X 
-|         |   |   
-X-X W X X X X-A-X 
-|   | | | | |     
-X X-X-X-X-X-X X X 
-| |     |     | | 
-X Y X-X-X-X-X-X-X 
-        |   |   | 
-X X X-X-X-X X E-X 
-| |   | |       | 
-X X X X X-X-X X-X 
-| | | |         | 
-X-X-X-X-X-X L-X-X 
+root - INFO - X-X-X-X-X-X-X-X-X 
+  |   | | | | |   
+L-X-X X X X X X-X 
+|     |     | | | 
+X X X E X X-X X X 
+  | | | |   |   | 
+X X X X X-X W X-X 
+| | | | |       | 
+X-X-X-X-X-X X X X 
+    | | |   | | | 
+X-X-X X X Y-X-X-X 
+| | | |   |     | 
+X X X X X-K X-A-X 
+  |       |     | 
+X X-X-X X-X-X X-X 
+| |       |     | 
+X-X-X-X X-X X-X-X 
                   
 root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - Number of clusters created: 17
-root - INFO - Number of rooms in cluster 0: 8
-root - INFO - Number of rooms in cluster 1: 9
-root - INFO - Number of rooms in cluster 2: 7
-root - INFO - Number of rooms in cluster 3: 8
-root - INFO - Number of rooms in cluster 4: 9
+root - INFO - Number of clusters created: 18
+root - INFO - Number of rooms in cluster 0: 7
+root - INFO - Number of rooms in cluster 1: 8
+root - INFO - Number of rooms in cluster 2: 10
+root - INFO - Number of rooms in cluster 3: 7
+root - INFO - Number of rooms in cluster 4: 7
 root - INFO - Number of rooms in cluster 5: 7
 root - INFO - Number of rooms in cluster 6: 8
 root - INFO - Number of rooms in cluster 7: 1
-root - INFO - Number of rooms in cluster 8: 2
-root - INFO - Number of rooms in cluster 9: 8
-root - INFO - Number of rooms in cluster 10: 7
-root - INFO - Number of rooms in cluster 11: 2
-root - INFO - Number of rooms in cluster 12: 1
-root - INFO - Number of rooms in cluster 13: 1
+root - INFO - Number of rooms in cluster 8: 10
+root - INFO - Number of rooms in cluster 9: 1
+root - INFO - Number of rooms in cluster 10: 1
+root - INFO - Number of rooms in cluster 11: 1
+root - INFO - Number of rooms in cluster 12: 4
+root - INFO - Number of rooms in cluster 13: 4
 root - INFO - Number of rooms in cluster 14: 1
-root - INFO - Number of rooms in cluster 15: 1
+root - INFO - Number of rooms in cluster 15: 2
 root - INFO - Number of rooms in cluster 16: 1
-root - INFO - Total connections in cluster 0: 32
-root - INFO - Total connections in cluster 1: 36
-root - INFO - Total connections in cluster 2: 28
-root - INFO - Total connections in cluster 3: 32
-root - INFO - Total connections in cluster 4: 36
+root - INFO - Number of rooms in cluster 17: 1
+root - INFO - Total connections in cluster 0: 28
+root - INFO - Total connections in cluster 1: 32
+root - INFO - Total connections in cluster 2: 40
+root - INFO - Total connections in cluster 3: 28
+root - INFO - Total connections in cluster 4: 28
 root - INFO - Total connections in cluster 5: 28
 root - INFO - Total connections in cluster 6: 32
 root - INFO - Total connections in cluster 7: 4
-root - INFO - Total connections in cluster 8: 8
-root - INFO - Total connections in cluster 9: 32
-root - INFO - Total connections in cluster 10: 28
-root - INFO - Total connections in cluster 11: 8
-root - INFO - Total connections in cluster 12: 4
-root - INFO - Total connections in cluster 13: 4
-root - INFO - Total connections in cluster 14: 4
-root - INFO - Total connections in cluster 15: 4
-root - INFO - Total connections in cluster 16: 4
-root - INFO - Room type garden used: 9 times.
-root - INFO - Room type library used: 10 times.
-root - INFO - Room type castle used: 8 times.
-root - INFO - Room type apothecary used: 9 times.
-root - INFO - Room type treasury used: 9 times.
-root - INFO - Room type sanctum used: 7 times.
-root - INFO - Room type open used: 8 times.
-root - INFO - Room type reliquary used: 1 times.
-root - INFO - Room type tavern used: 2 times.
-root - INFO - Room type cavern used: 8 times.
-root - INFO - Room type forest used: 7 times.
-root - INFO - Room type gallery used: 2 times.
-root - INFO - Room type crypt used: 1 times.
-root - INFO - Game map successfully generated.
-root - INFO - Game map type is <class 'game_logic.GameMap'>, Fresh start is False
-root - INFO - Start button pressed.
-root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971D80>
-root - INFO - game_map.grid_width: 9
-root - INFO - game_map.grid_height: 9
-root - INFO - Start button pressed.
-root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971D80>
-root - INFO - game_map.grid_width: 9
-root - INFO - game_map.grid_height: 9
-root - INFO - Data loaded successfully.
-root - INFO - Elements found in data.
-root - DEBUG - Elements before map generation: {'game_title': 
-root - DEBUG - Rooms before map generation: [{'type': 'castle', 
-root - INFO - Room types selected are: ['sanctum', 'garden', 'treasury', 'gallery', 'tavern', 'open', 'cavern', 'library', 'castle', 'crypt', 'forest', 'reliquary', 'apothecary']
-root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 0 with room type sanctum
-root - INFO - Adding first room in cluster 0 at (4, 4)
-root - INFO - Adding room to cluster 0 at 4, 4
-root - INFO - Adding a room for cluster 0 at (4, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 5
-root - INFO - Adding a room for cluster 0 at (4, 3), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 3
-root - INFO - Adding a room for cluster 0 at (5, 4), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 4
-root - INFO - Adding a room for cluster 0 at (4, 2), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 2
-root - INFO - Adding a room for cluster 0 at (4, 1), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 4, 1
-root - INFO - Adding a room for cluster 0 at (3, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 4
-root - INFO - Adding a room for cluster 0 at (3, 5), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 3, 5
-root - INFO - Adding a room for cluster 0 at (5, 1), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 1
-root - INFO - Adding a room for cluster 0 at (5, 3), after which there will be 9 rooms in the cluster.
-root - INFO - Adding room to cluster 0 at 5, 3
-root - INFO - Cluster creation result: True
-root - INFO - Setting player start room: 4, 3
-root - INFO - The player's start room is: 4, 3
-root - INFO - Checked if the map was full. There are 71 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 71 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 71 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 1 with room type garden
-root - INFO - Adding first room in cluster 1 at (4, 7)
-root - INFO - Adding room to cluster 1 at 4, 7
-root - INFO - Adding a room for cluster 1 at (4, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 4, 8
-root - INFO - Adding a room for cluster 1 at (3, 7), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 3, 7
-root - INFO - Adding a room for cluster 1 at (2, 7), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 2, 7
-root - INFO - Adding a room for cluster 1 at (1, 7), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 1, 7
-root - INFO - Adding a room for cluster 1 at (3, 6), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 3, 6
-root - INFO - Adding a room for cluster 1 at (5, 8), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 1 at 5, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 64 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 2 with room type treasury
-root - INFO - Adding first room in cluster 2 at (7, 3)
-root - INFO - Adding room to cluster 2 at 7, 3
-root - INFO - Adding a room for cluster 2 at (8, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 8, 3
-root - INFO - Adding a room for cluster 2 at (7, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 7, 4
-root - INFO - Adding a room for cluster 2 at (6, 3), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 6, 3
-root - INFO - Adding a room for cluster 2 at (8, 2), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 8, 2
-root - INFO - Adding a room for cluster 2 at (7, 5), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 7, 5
-root - INFO - Adding a room for cluster 2 at (6, 2), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 6, 2
-root - INFO - Adding a room for cluster 2 at (8, 1), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 8, 1
-root - INFO - Adding a room for cluster 2 at (6, 4), after which there will be 8 rooms in the cluster.
-root - INFO - Adding room to cluster 2 at 6, 4
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 55 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 55 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 55 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 3 with room type gallery
-root - INFO - Adding first room in cluster 3 at (1, 0)
-root - INFO - Adding room to cluster 3 at 1, 0
-root - INFO - Adding a room for cluster 3 at (1, 1), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 1
-root - INFO - Adding a room for cluster 3 at (2, 1), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 1
-root - INFO - Adding a room for cluster 3 at (3, 1), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 3, 1
-root - INFO - Adding a room for cluster 3 at (0, 1), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 0, 1
-root - INFO - Adding a room for cluster 3 at (2, 2), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 2, 2
-root - INFO - Adding a room for cluster 3 at (1, 2), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 3 at 1, 2
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 48 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 48 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 48 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 4 with room type tavern
-root - INFO - Adding first room in cluster 4 at (8, 6)
-root - INFO - Adding room to cluster 4 at 8, 6
-root - INFO - Adding a room for cluster 4 at (8, 7), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 8, 7
-root - INFO - Adding a room for cluster 4 at (8, 8), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 8, 8
-root - INFO - Adding a room for cluster 4 at (8, 5), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 8, 5
-root - INFO - Adding a room for cluster 4 at (7, 6), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 7, 6
-root - INFO - Adding a room for cluster 4 at (7, 8), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 7, 8
-root - INFO - Adding a room for cluster 4 at (8, 4), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 8, 4
-root - INFO - Adding a room for cluster 4 at (7, 7), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 4 at 7, 7
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 40 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 5 with room type open
-root - INFO - Adding first room in cluster 5 at (0, 4)
-root - INFO - Adding room to cluster 5 at 0, 4
-root - INFO - Adding a room for cluster 5 at (0, 5), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 0, 5
-root - INFO - Adding a room for cluster 5 at (1, 4), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 1, 4
-root - INFO - Adding a room for cluster 5 at (1, 5), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 1, 5
-root - INFO - Adding a room for cluster 5 at (0, 6), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 0, 6
-root - INFO - Adding a room for cluster 5 at (2, 4), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 2, 4
-root - INFO - Adding a room for cluster 5 at (0, 7), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 5 at 0, 7
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 33 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 33 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 33 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 6 with room type cavern
-root - INFO - Adding first room in cluster 6 at (7, 1)
-root - INFO - Adding room to cluster 6 at 7, 1
-root - INFO - Adding a room for cluster 6 at (7, 0), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 7, 0
-root - INFO - Adding a room for cluster 6 at (8, 0), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 8, 0
-root - INFO - Adding a room for cluster 6 at (6, 0), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 6, 0
-root - INFO - Adding a room for cluster 6 at (6, 1), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 6, 1
-root - INFO - Adding a room for cluster 6 at (5, 0), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 5, 0
-root - INFO - Adding a room for cluster 6 at (4, 0), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 4, 0
-root - INFO - Adding a room for cluster 6 at (7, 2), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 6 at 7, 2
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 25 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 7 with room type library
-root - INFO - Adding first room in cluster 7 at (2, 0)
-root - INFO - Adding room to cluster 7 at 2, 0
-root - INFO - Adding a room for cluster 7 at (3, 0), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 7 at 3, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 23 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 23 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 23 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 8 with room type castle
-root - INFO - Adding first room in cluster 8 at (3, 8)
-root - INFO - Adding room to cluster 8 at 3, 8
-root - INFO - Adding a room for cluster 8 at (2, 8), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 2, 8
-root - INFO - Adding a room for cluster 8 at (1, 8), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 1, 8
-root - INFO - Adding a room for cluster 8 at (0, 8), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 8 at 0, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 19 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 19 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 19 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 9 with room type crypt
-root - INFO - Adding first room in cluster 9 at (0, 2)
-root - INFO - Adding room to cluster 9 at 0, 2
-root - INFO - Adding a room for cluster 9 at (0, 3), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 0, 3
-root - INFO - Adding a room for cluster 9 at (1, 3), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 1, 3
-root - INFO - Adding a room for cluster 9 at (2, 3), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 2, 3
-root - INFO - Adding a room for cluster 9 at (3, 3), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 3, 3
-root - INFO - Adding a room for cluster 9 at (3, 2), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 9 at 3, 2
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 10 with room type forest
-root - INFO - Adding first room in cluster 10 at (2, 5)
-root - INFO - Adding room to cluster 10 at 2, 5
-root - INFO - Adding a room for cluster 10 at (2, 6), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 2, 6
-root - INFO - Adding a room for cluster 10 at (1, 6), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 10 at 1, 6
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 10 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 10 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 10 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 11 with room type reliquary
-root - INFO - Adding first room in cluster 11 at (5, 2)
-root - INFO - Adding room to cluster 11 at 5, 2
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 9 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 12 with room type apothecary
-root - INFO - Adding first room in cluster 12 at (4, 6)
-root - INFO - Adding room to cluster 12 at 4, 6
-root - INFO - Adding a room for cluster 12 at (5, 6), after which there will be 1 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 5, 6
-root - INFO - Adding a room for cluster 12 at (6, 6), after which there will be 2 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 6, 6
-root - INFO - Adding a room for cluster 12 at (5, 5), after which there will be 3 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 5, 5
-root - INFO - Adding a room for cluster 12 at (6, 7), after which there will be 4 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 6, 7
-root - INFO - Adding a room for cluster 12 at (6, 5), after which there will be 5 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 6, 5
-root - INFO - Adding a room for cluster 12 at (5, 7), after which there will be 6 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 5, 7
-root - INFO - Adding a room for cluster 12 at (6, 8), after which there will be 7 rooms in the cluster.
-root - INFO - Adding room to cluster 12 at 6, 8
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-root - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-root - DEBUG - Current state of is_map_full: False
-root - INFO - Attempting to create cluster 13 with room type sanctum
-root - INFO - Adding first room in cluster 13 at (0, 0)
-root - INFO - Adding room to cluster 13 at 0, 0
-root - INFO - Cluster creation result: True
-root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - X-X-L X X X X-X X 
-  |   | | |   | | 
-X-X-X-X-X-X-X X-X 
-| | |   |       | 
-X X X X-X-X X X X 
-  | |   |   | | | 
-X X X X-X-X-X-X-X 
-|       |     | | 
-X-X-X-X-X-X-X X X 
-|       |     |   
-X-X A-X-W-X Y-X-X 
-|     | |     | | 
-X X X X X-X X-X E 
-  | |   |       | 
-X-X-X-X-X-X X-X-X 
-| | |   |       | 
-X X X X-X-K-X X-X 
-                  
-root - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-root - INFO - Number of clusters created: 14
-root - INFO - Number of rooms in cluster 0: 10
-root - INFO - Number of rooms in cluster 1: 7
-root - INFO - Number of rooms in cluster 2: 9
-root - INFO - Number of rooms in cluster 3: 7
-root - INFO - Number of rooms in cluster 4: 8
-root - INFO - Number of rooms in cluster 5: 7
-root - INFO - Number of rooms in cluster 6: 8
-root - INFO - Number of rooms in cluster 7: 2
-root - INFO - Number of rooms in cluster 8: 4
-root - INFO - Number of rooms in cluster 9: 6
-root - INFO - Number of rooms in cluster 10: 3
-root - INFO - Number of rooms in cluster 11: 1
-root - INFO - Number of rooms in cluster 12: 8
-root - INFO - Number of rooms in cluster 13: 1
-root - INFO - Total connections in cluster 0: 40
-root - INFO - Total connections in cluster 1: 28
-root - INFO - Total connections in cluster 2: 36
-root - INFO - Total connections in cluster 3: 28
-root - INFO - Total connections in cluster 4: 32
-root - INFO - Total connections in cluster 5: 28
-root - INFO - Total connections in cluster 6: 32
-root - INFO - Total connections in cluster 7: 8
-root - INFO - Total connections in cluster 8: 16
-root - INFO - Total connections in cluster 9: 24
-root - INFO - Total connections in cluster 10: 12
+root - INFO - Total connections in cluster 8: 40
+root - INFO - Total connections in cluster 9: 4
+root - INFO - Total connections in cluster 10: 4
 root - INFO - Total connections in cluster 11: 4
-root - INFO - Total connections in cluster 12: 32
-root - INFO - Total connections in cluster 13: 4
-root - INFO - Room type sanctum used: 11 times.
-root - INFO - Room type garden used: 7 times.
-root - INFO - Room type treasury used: 9 times.
-root - INFO - Room type gallery used: 7 times.
+root - INFO - Total connections in cluster 12: 16
+root - INFO - Total connections in cluster 13: 16
+root - INFO - Total connections in cluster 14: 4
+root - INFO - Total connections in cluster 15: 8
+root - INFO - Total connections in cluster 16: 4
+root - INFO - Total connections in cluster 17: 4
+root - INFO - Room type garden used: 11 times.
+root - INFO - Room type crypt used: 9 times.
+root - INFO - Room type gallery used: 12 times.
+root - INFO - Room type castle used: 8 times.
 root - INFO - Room type tavern used: 8 times.
-root - INFO - Room type open used: 7 times.
+root - INFO - Room type apothecary used: 7 times.
 root - INFO - Room type cavern used: 8 times.
-root - INFO - Room type library used: 2 times.
-root - INFO - Room type castle used: 4 times.
-root - INFO - Room type crypt used: 6 times.
-root - INFO - Room type forest used: 3 times.
-root - INFO - Room type reliquary used: 1 times.
-root - INFO - Room type apothecary used: 8 times.
+root - INFO - Room type library used: 1 times.
+root - INFO - Room type reliquary used: 10 times.
+root - INFO - Room type forest used: 1 times.
+root - INFO - Room type sanctum used: 1 times.
+root - INFO - Room type treasury used: 1 times.
+root - INFO - Room type open used: 4 times.
 root - INFO - Game map successfully generated.
-root - INFO - Game map type is <class 'game_logic.GameMap'>, Fresh start is False
-root - INFO - Start button pressed.
-root - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-root - INFO - game_map type: <class 'game_logic.GameMap'>
-root - INFO - game_map value: <game_logic.GameMap object at 0x00000201F5971BA0>
-root - INFO - game_map.grid_width: 9
-root - INFO - game_map.grid_height: 9
+root - DEBUG - Current game map: <game_logic.GameMap object at 0x000001998C176AA0>
+root - INFO - DL/Generate_game_title: Data now looks this way: {'genre': 'Fantasy', 'elements': {'game_title': ['
+root - INFO - DL/Generate_game_title: title parts are Saga of the Dragon's Hoard
