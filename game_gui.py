@@ -51,7 +51,11 @@ class DataLoader:
                 genres = data.get("genres")
                 if not genres:
                     raise ValueError("Genres not found in data")
-                self.data = random.choice(genres)
+                if self.data is None:
+                    self.data = random.choice(genres)
+                else:
+                    self.data = None
+                    self.data = random.choice(genres)
                 logging.debug(f"Data keys after loading: {self.data.keys()}")
                 logging.debug(f"Data length after loading: {len(self.data)}")
         except (FileNotFoundError, ValueError) as e:
@@ -253,10 +257,15 @@ class GameGUI(QWidget):
             f"Defense: {self.player.defp}"
         )
 
-    def initialize_game(self):
+    def initialize_game(self, fresh):
         try:
-            self.game_map = self.data_loader.create_game_map(9,9)
-            logging.info(f"Game map type is {type(self.game_map)} inside the initialize_game method")
+            if fresh:
+                self.game_map = self.data_loader.create_game_map(9,9)
+            else:
+                self.game_map = self.data_loader.create_game_map(9,9)
+            logging.info(f"Game map type is {type(self.game_map)}, Fresh start is {fresh}")
+
+
         except Exception as e:
             logging.error(f"Failed to initialize game: {e}")
             self.game_map = None
@@ -302,7 +311,7 @@ class GameGUI(QWidget):
             self.font_size_increase_button.setEnabled(False)
             self.font_size_decrease_button.setEnabled(False)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
-            self.initialize_game()
+            self.initialize_game(fresh=False)
             self.hide_map()
 
     def update_inventory_text(self):

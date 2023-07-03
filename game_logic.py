@@ -435,8 +435,8 @@ class GameMap:
     
     def generate_room(self, room_type, x, y):
         #logging.debug(f"generate_room called with room_type={room_type}, x={x}, y={y}")
-        adjective = next(self.adj_cycle)
-        name = next(self.name_cycle)
+        adjective = next(self.adj_cycle).title()
+        name = next(self.name_cycle).title()
         scene = next(self.scenery_cycle)
         atmos = next(self.atmosphere_cycle)
         unique_name = f'{adjective} {name}'
