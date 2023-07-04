@@ -674,11 +674,11 @@ class Character:
             2: ["Tough", "Hard", "Solid", "Rugged", "Stout", "Strong", "Veteran", ],
             1: ["Challenging", "Full-grown", "Trained", "Tricky"],
             0: ["Normal", "Average", "Standard", "Regular", "Usual"],
-            -1: ["Easy", "Simple", "Mild", "Young", "Sick-looking"],
-            -2: ["Innocuous", "Harmless", "Old", "Gentle", "Mild"],
-            -3: ["Inexperienced", "Novice", "Beginner", "Rookie", "Untrained"],
+            -1: ["Hesitant", "Unprepared", "Immature", "Bruised", "Sick-looking"],
+            -2: ["Innocuous", "Harmless", "Old", "Scowling", "Unfortunate"],
+            -3: ["Inexperienced", "Novice", "Beginner", "Rookie"],
             -4: ["Weak", "Fragile", "Frail", "Feeble", "Tottering", "Sickly"],
-            -5: ["Helpless", "Uninteresting", "Inept", "Ineffectual", "Sad"]
+            -5: ["Helpless", "Uninteresting", "Inept", "Ineffectual", "Sad", "Lame"]
         }
         friendly_synonyms = ["friendly", "ally", "peaceful", "relaxed", "polite", "smiling"]
         hostile_synonyms = ["hostile", "enemy", "angry", "violent", "rude", "crazed"]

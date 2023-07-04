@@ -29,6 +29,7 @@ class Combat(QObject):
         self.rounds = 0
 
     def combat_round(self):
+        round_text = ""
         logging.info(f"Combat round started with: {self.player.name} Level {self.player.level} HP {self.player.hp} Atk {self.player.atk} Defp {self.player.defp} Acc {self.player.acc} Ev {self.player.ev}")
         if self.player.ally is None:
             logging.info(f"There are no allies present.")
@@ -39,16 +40,10 @@ class Combat(QObject):
         characters = self.allies + self.enemies + [self.player]
         initiative_rolls = {character: character.roll_initiative() for character in characters}
         characters.sort(key=lambda x: initiative_rolls[x], reverse=True)
-        logging.info("Initiative rolls:")
         for character, roll in initiative_rolls.items():
-            logging.info(f"{character.name} rolls {roll} for initiative.")
-        logging.info(f"Round move order:")
-        move_orders = ""
-        for char in characters:
-            move_orders += f"{char.name} "
-        logging.info(f"Move orders are: {move_orders}.")
+            round_text += (f"{character.name} rolls {roll}, ")
+        round_text += (f"{characters[0].name} goes first.\n")
         while self.running and self.player.hp > 0 and not all(enemy.hp <= 0 for enemy in self.enemies):
-            round_text = ""
             for character in characters:
                 if character.hp > 0:
                     if character.is_enemy:
@@ -84,9 +79,10 @@ class Combat(QObject):
                             else:
                                 round_text += (f"{character.name} attacks {enemy.name} but misses.\n")
             self.rounds += 1
+            round_text += "\n"
             self.combatUpdateSignal.emit(round_text)
             self.statsUpdateSignal.emit("UpdatePlayerStats")
-            time.sleep(2)
+            time.sleep(1.5)
             if self.player.hp <= 0 or all(enemy.hp <= 0 for enemy in self.enemies):
                 self.combatEndSignal.emit("Combat has ended.")
                 self.battleEndSignal.emit("It's all over, folks.")
