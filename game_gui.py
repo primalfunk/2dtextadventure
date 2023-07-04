@@ -727,14 +727,11 @@ class MapWindow(QWidget):
                     if (0 <= 2*room.y < len(self.labels)) and (0 <= 2*room.x < len(self.labels[0])):
                         room_label = self.labels[2*room.y][2*room.x]
                         room_label.setAlignment(Qt.AlignCenter)
-                        # set type background
-
                         if room.type not in self.room_type_colors:
                             random.shuffle(all_the_colors)
                             shuffled_colors = all_the_colors
                             color_choice = shuffled_colors.pop(0)
                             self.room_type_colors[room.type] = color_choice
-                            
                             room_type_text_label = QLabel(room.type)
                             room_type_text_label.setFont(self.fontA)
                             room_type_text_label.setStyleSheet(f"background-color: {color_choice}; border: 1px solid black; color: {self.textColor};")
@@ -742,11 +739,10 @@ class MapWindow(QWidget):
                             self.room_type_legend_labels[room.type] = room_type_text_label
                         else:
                             color_choice = self.room_type_colors[room.type]
-                        
                         if room == self.game_map.player.current_room:
                             room_label.setPixmap(self.room_pixmaps["player"])
                             room_label.setStyleSheet("background-color: lime; border: 2px dashed black")
-                        elif room.enemy:
+                        elif room.enemy and not room.enemy.is_dead:
                             room_label.setPixmap(self.room_pixmaps["enemy"])
                             room_label.setStyleSheet("background-color: red;")
                         elif room.weapon:
@@ -767,7 +763,6 @@ class MapWindow(QWidget):
                         else:
                             room_label.setPixmap(self.room_pixmaps["empty"])
                             room_label.setStyleSheet(f"background-color: {color_choice};")
-                        
                         for direction, connected_room in room.connected_rooms.items():
                             if connected_room is not None:
                                 connection_label = None
