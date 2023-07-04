@@ -118,13 +118,49 @@ class DataLoader:
 class GameGUI(QWidget):
     def __init__(self, data_loader=None):
         super().__init__()
+        self.subsToChoose = [
+        "2023 - all wrongs left unreserved",
+        "2023 - where rights make lefts",
+        "2023 - more rights than a roundabout",
+        "2023 - right-hand traffic not guaranteed",
+        "2023 - your rights are in another castle",
+        "2023 - all rights are on vacation",
+        "2023 - rights reserved, but we lost the reservation",
+        "2023 - we asked for rights, they sent us lefts",
+        "2023 - all rights reversed",
+        "2023 - no rights were harmed in the making",
+        "2023 - rights have been left in the past",
+        "2023 - rights not included",
+        "2023 - rights are overrated",
+        "2023 - not even wrongs are reserved",
+        "2023 - rights sold separately",
+        "2023 - please mind your rights",
+        "2023 - some rights reserved, others misplaced",
+        "2023 - all rights turned left",
+        "2023 - right-free zone",
+        "2023 - rights went left, never came back",
+        "2023 - rights are left to your imagination",
+        "2023 - all rights, no lefts",
+        "2023 - rights are off-duty",
+        "2023 - rights are not right now",
+        "2023 - rights are having a timeout",
+        "2023 - rights, once left, are never right",
+        "2023 - rights took the wrong turn",
+        "2023 - rights have left the chat",
+        "2023 - rights, not even once",
+        "2023 - no rights to begin with",
+        "2023 - little to no rights reserved",
+        "2023 - some rights reserved but you have to guess which",
+        "2023 - your rights are my rights, your lefts my lefts",
+        "2023 - lefts are not wrong but rights are always correct"
+        ]
         # gain focus immediately when created
         self.setFocusPolicy(Qt.StrongFocus)
         self.combat_object = None
         self.combat_thread = None
         self.data_loader = data_loader
         self.game_map = None
-        self.fontB = QFont("Sunny", 44)
+        self.chooseFonts = ["FoglihtenNo07calt", "FoglihtenNo04,", "Foglihten", "GlukMixer", "Mas Pendi Wow", "Great Vibes", "a Antara Distance", "a Anggota", "g Gerdu"]
         self.fontT = QFont("Roboto", 14)
         self.fontM = QFont("Fira Sans Medium", 14)
         self.font_size = 14
@@ -163,14 +199,18 @@ class GameGUI(QWidget):
         logging.info(f"Generate_game_title is called.")
         game_title = self.data_loader.generate_game_title()
         format = QtGui.QTextCharFormat()
-        format.setFont(self.fontB)
+        font_choice = random.choice(self.chooseFonts)
+        print(f"font_choice: {font_choice}")
+        font = QFont({font_choice}, 40)
+        format.setFont(font)
         cursor = self.game_text_area.textCursor()
         cursor.setCharFormat(format)
         cursor.insertText(game_title)
         format.setFont(self.fontT)
         cursor.insertBlock()
         cursor.setCharFormat(format)
-        cursor.insertText("a procedurally generated text adventure by j menard \nyosl 2023 no rights to begin with\n")
+        self.subLine = random.choice(self.subsToChoose)
+        cursor.insertText(f"a procedurally generated text adventure by j menard \n{self.subLine}\n")
         lowest_row_height = 280
         self.start_button = QPushButton("Start")
         self.start_button.setFont(self.fontT)
@@ -312,7 +352,6 @@ class GameGUI(QWidget):
         self.direction_frame.setStyleSheet(f"background-color: {self.backColorA};")
         self.inventory_frame.setStyleSheet(f"background-color: {self.backColorA};")
 
-    # Define the travel functions
     def travel_to_north(self):
         self.travel("north")
 
@@ -416,14 +455,18 @@ class GameGUI(QWidget):
             self.game_text_area.setAlignment(Qt.AlignCenter)
             game_title = self.data_loader.generate_game_title()
             format = QtGui.QTextCharFormat()
-            format.setFont(self.fontB)
+            font_choice = random.choice(self.chooseFonts)
+            print(f"font_choice: {font_choice}")
+            font = QFont({font_choice}, 40)
+            format.setFont(font)
             cursor = self.game_text_area.textCursor()
             cursor.setCharFormat(format)
             cursor.insertText(game_title)
             format.setFont(self.fontT)
             cursor.insertBlock()
             cursor.setCharFormat(format)
-            cursor.insertText("a procedurally generated text adventure by j menard\nyosl 2023 no rights to begin with")
+            self.subLine = random.choice(self.subsToChoose)
+            cursor.insertText(f"a procedurally generated text adventure by j menard\n{self.subLine}\n")
             self.start_button.setText("Start")
             self.font_size_increase_button.setEnabled(False)
             self.font_size_decrease_button.setEnabled(False)
@@ -467,6 +510,7 @@ class GameGUI(QWidget):
                 self.game_map.player.x -= 1
             self.current_room = next_room
             self.game_map.player.current_room = next_room
+            self.game_text_area.clear()
             self.display_room(self.current_room)
             self.update_player_info()
             self.update_interact_button()
@@ -632,7 +676,6 @@ class MapWindow(QWidget):
         self.layout = QHBoxLayout()
         self.room_type_legend_labels = {}
         self.fontA = QFont("Roboto", 7)
-        self.fontB = QFont("Fira Sans Medium", 14)
         self.backColor = "#b1b1fa"
         self.textColor = "#000088"
         self.grid_widget = QWidget()

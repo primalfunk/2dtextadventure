@@ -38,7 +38,6 @@ class GameMap:
         self.player = player
 
     def init_cycle(self, field):
-        #logging.debug(f"Init_cycle called for {field}.")
         all_items = [data[field] for data in self.rooms_data]
         flattened_items = [item for sublist in all_items for item in sublist]
         random.shuffle(flattened_items)
@@ -50,6 +49,11 @@ class GameMap:
         return abs(x1 - x2) + abs(y1 - y2) == 1
 
     def add_placeables(self, all_rooms, enemy_count):
+        # This function creates an infinite cycle from a list.
+        def create_cycle_from_list(item_list):
+            random.shuffle(item_list)
+            return itertools.cycle(item_list)
+
         placeable_methods = [
             self.generate_key,
             self.generate_lock,
@@ -58,47 +62,45 @@ class GameMap:
         ] + [self.generate_character] * (enemy_count + 1)
 
         game_data = {
-            "key_item": self.data_loader.genre["elements"]["puzzle_items"].pop(random.randrange(len(self.data_loader.genre["elements"]["puzzle_items"]))),
-            "lock_item": self.data_loader.genre["elements"]["puzzle_items"].pop(random.randrange(len(self.data_loader.genre["elements"]["puzzle_items"]))),
-            "weapon": self.data_loader.genre["elements"]["weapons"].pop(random.randrange(len(self.data_loader.genre["elements"]["weapons"]))),
-            "armor": self.data_loader.genre["elements"]["armor"].pop(random.randrange(len(self.data_loader.genre["elements"]["armor"])))
+            "key_item": create_cycle_from_list(self.data_loader.genre["elements"]["puzzle_items"].copy()),
+            "lock_item": create_cycle_from_list(self.data_loader.genre["elements"]["puzzle_items"].copy()),
+            "weapon": create_cycle_from_list(self.data_loader.genre["elements"]["weapons"].copy()),
+            "armor": create_cycle_from_list(self.data_loader.genre["elements"]["armor"].copy()),
         }
+        self.character_cycle = create_cycle_from_list(self.data_loader.genre["elements"]["characters"])
+        
         placeable_data = [
-            game_data["key_item"],
-            game_data["lock_item"],
-            game_data["weapon"],
-            game_data["armor"],
+            next(game_data["key_item"]),
+            next(game_data["lock_item"]),
+            next(game_data["weapon"]),
+            next(game_data["armor"]),
         ]
         start_level_diff = max(1, self.player.level - 5)
         end_level_diff = self.player.level + 5
         level_diffs = list(range(start_level_diff, end_level_diff))
-        full_weights = [6 - abs(i) for i in range(-5, 6)]  # [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]
+        full_weights = [6 - abs(i) for i in range(-5, 6)]
         weights = full_weights[(start_level_diff - 1):(end_level_diff - 1)]
-
         for _ in range(enemy_count):
-            enemy = self.data_loader.genre["elements"]["characters"].pop(random.randrange(len(self.data_loader.genre["elements"]["characters"])))
-            enemy_level = np.random.choice(level_diffs, p=np.array(weights)/sum(weights))
-            placeable_data.append((enemy, enemy_level, True))
-        ally = self.data_loader.genre["elements"]["characters"].pop(random.randrange(len(self.data_loader.genre["elements"]["characters"])))
-        ally_level = np.random.choice(level_diffs, p=np.array(weights)/sum(weights))
-        placeable_data.append((ally, ally_level, False))
+            placeable_data.append(self.generate_character_data(weights, level_diffs, True))
+        placeable_data.append(self.generate_character_data(weights, level_diffs, False))
         placeable_attributes = ["key_item", "lock_item", "weapon", "armor"]
-        placeable_attributes.extend("enemy" for _ in range(3))
+        placeable_attributes.extend("enemy" for _ in range(enemy_count))
         placeable_attributes.append("ally")
         possible_locations = all_rooms.copy()
         if self.player_start_room in possible_locations:
             possible_locations.remove(self.player_start_room)
+        if len(possible_locations) < len(placeable_data):
+            raise Exception("Not enough rooms for all placeable items!")
         for method, data, attr in zip(placeable_methods, placeable_data, placeable_attributes):
             room = random.choice(possible_locations)
-            if isinstance(data, tuple):
-                placeable = method(*data)
-                if issubclass(type(placeable), Character):
-                    level_difference = placeable.level - self.player.level
-                    placeable.name = Character.generate_decorated_name(placeable.name, placeable.is_enemy, level_difference)
-            else:
-                placeable = method(data)
+            placeable = method(*data) if isinstance(data, tuple) else method(data)
             setattr(room, attr, placeable)
             possible_locations.remove(room)
+
+    def generate_character_data(self, weights, level_diffs, is_enemy):
+        character = next(self.character_cycle)
+        level = np.random.choice(level_diffs, p=np.array(weights)/sum(weights))
+        return character, level, is_enemy
     
     def add_room(self, room, x, y, cluster_id, last_added_room=None, is_first_room=False):
         self._add_room_to_maps_and_list(room, x, y)
