@@ -248,7 +248,7 @@ class GameGUI(QWidget):
                                     self.south_button,
                                     self.interact_button]
         self.setWindowTitle("Undeclared Game Title")
-        self.setGeometry(100, 100, 800, 600)
+        self.setGeometry(200, 100, 950, 700)
         self.show()
         self.set_GUI_color()
         self.player = Player()
@@ -553,6 +553,7 @@ class MapWindow(QWidget):
         self.setWindowTitle("Game Map")
         self.setGeometry(950, 100, 500, 400)
         self.layout = QHBoxLayout()
+        self.room_type_legend_labels = {}
         self.fontA = QFont("Roboto", 7)
         self.fontB = QFont("Fira Sans Medium", 14)
         self.backColor = "#b1b1fa"
@@ -564,6 +565,10 @@ class MapWindow(QWidget):
         self.legend_widget.setMinimumWidth(100)
         self.legend_widget.setStyleSheet(f"background-color: {self.backColor};")
         self.legend_layout = QVBoxLayout(self.legend_widget)
+        self.room_type_legend_widget = QWidget()
+        self.room_type_legend_widget.setMinimumWidth(100)
+        self.room_type_legend_widget.setStyleSheet(f"background-color: {self.backColor};")
+        self.room_type_legend_layout = QVBoxLayout(self.room_type_legend_widget)
         self.legend_labels = {
             QPixmap("img/player.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Player"),
             QPixmap("img/enemy.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Enemy"),
@@ -589,6 +594,7 @@ class MapWindow(QWidget):
 
         self.layout.addWidget(self.legend_widget)
         self.layout.addWidget(self.grid_widget)
+        self.layout.addWidget(self.room_type_legend_widget)
         try:
            self.labels = [[None for _ in range(2*game_map.grid_width - 1)] for _ in range(2*game_map.grid_height - 1)]
         except Exception as e:
@@ -600,7 +606,7 @@ class MapWindow(QWidget):
                 if i % 2 == 0 and j % 2 == 0:
                     self.labels[i][j].setStyleSheet("background-color: white; min-width: 50px; min-height: 50px; font-size: 10px;")  # Change font size to 10px
                 else:
-                    self.labels[i][j].setStyleSheet("background-color: black; min-width: 10px; min-height: 10px;")
+                    self.labels[i][j].setStyleSheet(f"background-color: {self.backColor}; min-width: 10px; min-height: 10px;")
                 self.grid_layout.addWidget(self.labels[i][j], i, j)
         self.room_pixmaps = {
             "player": QPixmap("img/player.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
@@ -614,6 +620,8 @@ class MapWindow(QWidget):
             }
         self.setLayout(self.layout)
         self.room_type_colors = {}
+        self.update_map()
+        self.create_room_type_legend()
 
     def update_map(self):
         try:
@@ -637,6 +645,12 @@ class MapWindow(QWidget):
                             shuffled_colors = all_the_colors
                             color_choice = shuffled_colors.pop(0)
                             self.room_type_colors[room.type] = color_choice
+                            
+                            room_type_text_label = QLabel(room.type)
+                            room_type_text_label.setFont(self.fontA)
+                            room_type_text_label.setStyleSheet(f"background-color: {color_choice}; border: 1px solid black; color: {self.textColor};")
+                            room_type_text_label.setAlignment(Qt.AlignCenter)
+                            self.room_type_legend_labels[room.type] = room_type_text_label
                         else:
                             color_choice = self.room_type_colors[room.type]
                         
@@ -684,6 +698,11 @@ class MapWindow(QWidget):
                                     connection_label.setAlignment(Qt.AlignCenter)
         except Exception as e:
             logging.error(f"Error occurred during update_map function: {e}")
+    
+    def create_room_type_legend(self):
+        for room_type_label in self.room_type_legend_labels.values():
+            room_type_label.setWordWrap(True)
+            self.room_type_legend_layout.addWidget(room_type_label)
 
     def show_self(self):
         self.show()

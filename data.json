@@ -4013,7 +4013,7 @@
         ],
         "rooms": [
           {
-            "type": "alien planetscape",
+            "type": "planetside",
             "name": [
               "Bio-Dome",
               "Mineral Outcrop",
@@ -4475,7 +4475,7 @@
           ]
           },
           {
-            "type": "alien cavern",
+            "type": "cavern",
             "name": [
               "Chamber",
               "Gallery",
@@ -4815,7 +4815,7 @@
             ]
           },
           {
-            "type": "futuristic research lab",
+            "type": "research lab",
             "name": [
               "Nanoengineering Laboratory",
               "Artificial Intelligence Research Chamber",
@@ -5105,7 +5105,7 @@
             ]
           },
           {
-            "type": "toxic alien wasteland",
+            "type": "alien wasteland",
             "name": [
             "Ravine",
             "Hill",
@@ -5545,7 +5545,7 @@
           ]
           },
           {
-            "type": "cybernetic hive",
+            "type": "cyber hive",
             "name": [
               "Node",
               "Sector",
@@ -5695,7 +5695,7 @@
           ]
           },
           {
-            "type": "alien spaceship interior",
+            "type": "alien spaceship",
             "name": [
               "Corridor",
               "Bridge",
@@ -5998,7 +5998,7 @@
           ]
           },
           {
-            "type": "underground bunker",
+            "type": "bunker",
             "name": [
               "Room",
               "Corridor",
@@ -7512,7 +7512,7 @@
           ]
           },
           {
-            "type": "old-fashioned bank",
+            "type": "bank",
             "name": [
               "Bank Teller Area",
               "Safe Deposit Boxes",
@@ -9227,7 +9227,7 @@
           ]
           },
           {
-            "type": "frontier town square",
+            "type": "frontier square",
             "name": [
               "Town Saloon",
               "Town General Store",
@@ -10307,7 +10307,7 @@
         ],
         "rooms": [
           {
-            "type": "abandoned warehouse",
+            "type": "warehouse",
             "name": [
               "Loading Bay",
               "Storage Area",
@@ -10451,7 +10451,7 @@
               ]
           },
           {
-            "type": "ruined city street",
+            "type": "city street",
             "name": [
               "Intersection",
               "Sidewalk",
@@ -10582,7 +10582,7 @@
               ]
           },
           {
-            "type": "abandoned city street",
+            "type": "avenue",
             "name": [
               "Intersection",
               "Sidewalk",
@@ -10869,7 +10869,7 @@
             ]
           },
           {
-            "type": "abandoned library",
+            "type": "library",
             "name": [
               "Reading Room",
               "Reference Section",
@@ -11009,7 +11009,7 @@
             ]
           },
           {
-            "type": "abandoned skyscraper",
+            "type": "skyscraper",
             "name": [
               "Lobby",
               "Elevator Bank",
@@ -11149,7 +11149,7 @@
             ]
           },
           {
-            "type": "sewer system",
+            "type": "sewers",
             "name": [
               "Main Tunnel",
               "Overflow Chamber",
@@ -11434,7 +11434,7 @@
             ]
           },
           {
-            "type": "desolate road",
+            "type": "road",
             "name": [
               "Pathway",
               "Highway",
@@ -11578,7 +11578,7 @@
             ]
           },
           {
-            "type": "trashed Manhattan-style block",
+            "type": "city block",
             "name": [
               "Crosswalk",
               "Pedestrian Plaza",
@@ -11872,7 +11872,7 @@
             ]
           },
           {
-            "type": "decrepit hospital",
+            "type": "hospital",
             "name": [
               "Emergency Room",
               "Operating Room",
@@ -12009,7 +12009,7 @@
             ]
           },
           {
-            "type": "barren farmland",
+            "type": "farmland",
             "name": [
               "Barn",
               "Crop Field",
@@ -12154,7 +12154,7 @@
             ]
           },
           {
-            "type": "burnt out nuclear power plant",
+            "type": "power plant",
             "name": [
               "Control Room",
               "Reactor Core",
@@ -12298,7 +12298,7 @@
             ]
           },
           {
-            "type": "decaying city ruins",
+            "type": "city ruins",
             "name": [
               "Subway Station",
               "Municipal Building",
