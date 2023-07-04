@@ -3,9 +3,11 @@ from game_logic import GameMap, Player, Key
 import json
 import logging
 import os
-from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame, QGridLayout
-from PySide6.QtCore import Qt, QCoreApplication, QThread
+from PySide6.QtWidgets import QApplication, QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame, QGridLayout
+from PySide6.QtCore import Qt, QCoreApplication, QThread, Signal, QTimer
+from PySide6.QtGui import QKeySequence, QShortcut
 from PySide6 import QtGui
+from PySide6 import QtCore
 from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor, QPixmap
 import random
 import sys
@@ -115,6 +117,9 @@ class DataLoader:
 
 class GameGUI(QWidget):
     def __init__(self, data_loader=None):
+        super().__init__()
+        # gain focus immediately when created
+        self.setFocusPolicy(Qt.StrongFocus)
         self.combat_object = None
         self.combat_thread = None
         self.data_loader = data_loader
@@ -129,7 +134,7 @@ class GameGUI(QWidget):
         self.backColorB = "powderblue"
         self.textColorA = "#000088"
         self.textColorB = "black"
-        super().__init__()
+        
         main_layout = QVBoxLayout()
         self.setLayout(main_layout)
     
@@ -165,8 +170,7 @@ class GameGUI(QWidget):
         format.setFont(self.fontT)
         cursor.insertBlock()
         cursor.setCharFormat(format)
-        cursor.insertText("a procedurally generated text adventure by j menard\n")
-        cursor.insertText("YOSL 2023")
+        cursor.insertText("a procedurally generated text adventure by j menard \nyosl 2023 no rights to begin with\n")
         lowest_row_height = 280
         self.start_button = QPushButton("Start")
         self.start_button.setFont(self.fontT)
@@ -222,6 +226,33 @@ class GameGUI(QWidget):
         self.east_button.clicked.connect(lambda: self.travel("east"))
         self.south_button.clicked.connect(lambda: self.travel("south"))
         self.interact_button.clicked.connect(lambda: self.interact())
+        
+        # Keyboard shortcuts
+        shortcut_north = QShortcut(QKeySequence("n"), self)
+        shortcut_south = QShortcut(QKeySequence("s"), self)
+        shortcut_west = QShortcut(QKeySequence("w"), self)
+        shortcut_east = QShortcut(QKeySequence("e"), self)
+        shortcut_start = QShortcut(QKeySequence("t"), self)
+        shortcut_quit = QShortcut(QKeySequence("q"), self)
+
+        shortcut_north.activated.connect(self.travel_to_north)
+        shortcut_south.activated.connect(self.travel_to_south)
+        shortcut_west.activated.connect(self.travel_to_west)
+        shortcut_east.activated.connect(self.travel_to_east)
+        shortcut_start.activated.connect(self.start_game)
+        shortcut_quit.activated.connect(QCoreApplication.instance().quit)
+
+        # Adding arrow key shortcuts
+        shortcut_up = QShortcut(QKeySequence(Qt.Key_Up), self)
+        shortcut_down = QShortcut(QKeySequence(Qt.Key_Down), self)
+        shortcut_left = QShortcut(QKeySequence(Qt.Key_Left), self)
+        shortcut_right = QShortcut(QKeySequence(Qt.Key_Right), self)
+
+        shortcut_up.activated.connect(self.travel_to_north)
+        shortcut_down.activated.connect(self.travel_to_south)
+        shortcut_left.activated.connect(self.travel_to_west)
+        shortcut_right.activated.connect(self.travel_to_east)
+        
         self.inventory_frame = QFrame()
         self.inventory_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
         inventory_layout = QVBoxLayout()
@@ -281,6 +312,19 @@ class GameGUI(QWidget):
         self.direction_frame.setStyleSheet(f"background-color: {self.backColorA};")
         self.inventory_frame.setStyleSheet(f"background-color: {self.backColorA};")
 
+    # Define the travel functions
+    def travel_to_north(self):
+        self.travel("north")
+
+    def travel_to_south(self):
+        self.travel("south")
+
+    def travel_to_west(self):
+        self.travel("west")
+
+    def travel_to_east(self):
+        self.travel("east")
+    
     def disable_all_buttons(self):
         for button in self.interactive_buttons:
             button.setDisabled(True)
@@ -339,8 +383,14 @@ class GameGUI(QWidget):
         self.data_loader.game_map.set_player(self.player)
         self.enable_all_buttons()
         if self.game_map:
-            logging.info(f"Game_map object right here is {type(self.game_map)}")
+            self.game_map = self.data_loader.create_game_map(self)
             self.map_window = MapWindow(game_map=self.game_map)
+            self.map_window.setFixedSize(self.width(), self.height())
+            map_window_x = self.geometry().x() + self.width()
+            map_window_y = self.frameGeometry().y()
+            self.map_window.move(map_window_x, map_window_y)
+            # return focus to main window
+            QTimer.singleShot(100, self.regain_focus)
         if self.start_button.text() == "Start":
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignLeft | Qt.AlignTop)
@@ -373,13 +423,16 @@ class GameGUI(QWidget):
             format.setFont(self.fontT)
             cursor.insertBlock()
             cursor.setCharFormat(format)
-            cursor.insertText("a procedurally generated text adventure by j menard\n")
-            cursor.insertText("YOSL 2023")
+            cursor.insertText("a procedurally generated text adventure by j menard\nyosl 2023 no rights to begin with")
             self.start_button.setText("Start")
             self.font_size_increase_button.setEnabled(False)
             self.font_size_decrease_button.setEnabled(False)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
             self.hide_map()
+
+    def regain_focus(self):
+            self.activateWindow()
+            self.raise_()
 
     def update_inventory_text(self):
         inventory_text = ""
@@ -550,13 +603,32 @@ class GameGUI(QWidget):
             self.game_text_area.append(f"You have been defeated. Please restart to continue.\n")
             self.disable_all_buttons()
 
+class AspectRatioWidget(QWidget):
+    def __init__(self, widget):
+        super().__init__()
+        self._layout = QVBoxLayout(self)
+        self._layout.setContentsMargins(0, 0, 0, 0)
+        self._layout.addWidget(widget)
+    
+    def resizeEvent(self, e):
+        w = e.size().width()
+        h = e.size().height()
+
+        if w > h:  # if the width is greater than the height
+            widget_h = h
+            widget_w = h
+        else:  # if the width is less than or equal to the height
+            widget_w = w
+            widget_h = w
+
+        self._layout.itemAt(0).widget().resize(widget_w, widget_h)
 
 class MapWindow(QWidget):
     def __init__(self, game_map):
         self.game_map = game_map
         super(MapWindow, self).__init__()
-        self.setWindowTitle("Game Map")
-        self.setGeometry(950, 100, 500, 400)
+        self.setWindowTitle("The Map of Maps")
+        self.setWindowFlags(Qt.Window | Qt.WindowDoesNotAcceptFocus)
         self.layout = QHBoxLayout()
         self.room_type_legend_labels = {}
         self.fontA = QFont("Roboto", 7)
@@ -568,10 +640,12 @@ class MapWindow(QWidget):
         self.grid_layout = QGridLayout(self.grid_widget)
         self.legend_widget = QWidget()
         self.legend_widget.setMinimumWidth(100)
+        self.legend_widget.setMaximumWidth(100)
         self.legend_widget.setStyleSheet(f"background-color: {self.backColor};")
         self.legend_layout = QVBoxLayout(self.legend_widget)
         self.room_type_legend_widget = QWidget()
         self.room_type_legend_widget.setMinimumWidth(100)
+        self.room_type_legend_widget.setMaximumWidth(100)
         self.room_type_legend_widget.setStyleSheet(f"background-color: {self.backColor};")
         self.room_type_legend_layout = QVBoxLayout(self.room_type_legend_widget)
         self.legend_labels = {
@@ -596,9 +670,11 @@ class MapWindow(QWidget):
             legend_item_layout.addWidget(label)
             legend_item_widget.setLayout(legend_item_layout)
             self.legend_layout.addWidget(legend_item_widget)
-
+        self.ar_widget_g = AspectRatioWidget(self.grid_widget)
+        self.ar_widget_l = AspectRatioWidget(self.legend_widget)
+        self.ar_widget_r = AspectRatioWidget(self.room_type_legend_widget)
         self.layout.addWidget(self.legend_widget)
-        self.layout.addWidget(self.grid_widget)
+        self.layout.addWidget(self.ar_widget_g)
         self.layout.addWidget(self.room_type_legend_widget)
         try:
            self.labels = [[None for _ in range(2*game_map.grid_width - 1)] for _ in range(2*game_map.grid_height - 1)]
@@ -609,7 +685,7 @@ class MapWindow(QWidget):
                 self.labels[i][j] = QLabel(' ')
                 self.labels[i][j].setAlignment(Qt.AlignCenter)
                 if i % 2 == 0 and j % 2 == 0:
-                    self.labels[i][j].setStyleSheet("background-color: white; min-width: 50px; min-height: 50px; font-size: 10px;")  # Change font size to 10px
+                    self.labels[i][j].setStyleSheet("background-color: black; min-width: 50px; min-height: 50px; font-size: 10px;")  # Change font size to 10px
                 else:
                     self.labels[i][j].setStyleSheet(f"background-color: {self.backColor}; min-width: 10px; min-height: 10px;")
                 self.grid_layout.addWidget(self.labels[i][j], i, j)
@@ -627,6 +703,10 @@ class MapWindow(QWidget):
         self.room_type_colors = {}
         self.update_map()
         self.create_room_type_legend()
+
+    def focusInEvent(self, event):
+            self.focusGained.emit()
+            super().focusInEvent(event)
 
     def resource_path(self, relative_path):
         base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
