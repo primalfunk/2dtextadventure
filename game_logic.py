@@ -625,6 +625,10 @@ class Armor(Item):
         self.evasion = ev
 
 class Character:
+    BASE_XP = 100
+    XP_GROWTH_FACTOR = 1.2
+    LEVEL_DIFF_FACTOR = 0.2
+
     def __init__(self, name, level, hp, atk, defp, acc, ev, is_enemy):
         self.name = name
         self.level = level
@@ -641,6 +645,15 @@ class Character:
         self.y = 0
         self.is_enemy = is_enemy
         self.ally = None
+        self.is_dead = False
+
+    def xp_required_to_level_up(self):
+        return self.BASE_XP * (self.XP_GROWTH_FACTOR ** self.level)
+
+    def calculate_xp_award(self, player_level):
+        level_difference = self.level - player_level
+        level_difference = max(min(level_difference, 5), -5)
+        return self.BASE_XP * (1 + level_difference * self.LEVEL_DIFF_FACTOR)
 
     def add_item(self, item):
         self.inventory.append(item)
@@ -659,7 +672,7 @@ class Character:
             4: ["Dangerous", "Deadly", "Lethal", "Menacing", "Threatening"],
             3: ["Expert", "Proficient", "Skilled", "Experienced", "Talented", "Boss"],
             2: ["Tough", "Hard", "Solid", "Rugged", "Stout", "Strong", "Veteran", ],
-            1: ["Challenging", "Mature", "Grown", "Trained", "Earnest"],
+            1: ["Challenging", "Full-grown", "Trained", "Tricky"],
             0: ["Normal", "Average", "Standard", "Regular", "Usual"],
             -1: ["Easy", "Simple", "Mild", "Young", "Sick-looking"],
             -2: ["Innocuous", "Harmless", "Old", "Gentle", "Mild"],
@@ -685,3 +698,17 @@ class Player(Character):
     def __init__(self):
         super().__init__(name="Player", level=1, hp=100, atk=30, defp=10, acc=60, ev=35, is_enemy=False)
         self.xp = 0
+
+    def gain_xp(self, xp_amount):
+        self.xp += xp_amount
+        while self.xp >= self.xp_required_to_level_up():
+            self.xp -= self.xp_required_to_level_up()
+            self.level_up()
+
+    def level_up(self):
+        self.level += 1
+        self.hp += 48 + random.randint(2, 12)
+        self.atk += 4 + random.randint(1, 3)
+        self.defp += 3 + random.randint(1, 2)
+        self.acc += random.randint(1, 2)
+        self.ev += random.randint(1, 2)

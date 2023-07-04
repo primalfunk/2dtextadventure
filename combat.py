@@ -8,6 +8,7 @@ class Combat(QObject):
     combatUpdateSignal = Signal(str)
     statsUpdateSignal = Signal(str)
     combatEndSignal = Signal(str)
+    battleEndSignal = Signal(str)
 
     def __init__(self, player, allies, enemies, game_gui):
         super().__init__()
@@ -19,6 +20,13 @@ class Combat(QObject):
         self.allies = allies
         self.enemies = enemies
         self.game_gui = game_gui
+        self.p_successful_crits = 0
+        self.p_successful_attacks = 0
+        self.p_total_damage = 0
+        self.e_successful_crits = 0
+        self.e_successful_attacks = 0
+        self.e_total_damage = 0
+        self.rounds = 0
 
     def combat_round(self):
         logging.info(f"Combat round started with: {self.player.name} Level {self.player.level} HP {self.player.hp} Atk {self.player.atk} Defp {self.player.defp} Acc {self.player.acc} Ev {self.player.ev}")
@@ -50,8 +58,13 @@ class Combat(QObject):
                             hit, damage, critical = self.attack(character, target)
                             if critical:
                                 round_text += (f"{character.name} attacks {target.name} gets a critical hit, dealing {damage} damage!\n")
+                                self.e_successful_crits += 1
+                                self.e_successful_attacks += 1
+                                self.e_total_damage += damage
                             elif hit:
                                 round_text += (f"{character.name} attacks {target.name} and hits for {damage} damage.\n")
+                                self.e_successful_attacks += 1
+                                self.e_total_damage += damage
                             else:
                                 round_text += (f"{character.name} attacks {target.name} but misses.\n")
                     else:
@@ -61,18 +74,24 @@ class Combat(QObject):
                             hit, damage, critical = self.attack(character, enemy)
                             if critical:
                                 round_text += (f"{character.name} attacks {enemy.name} gets a critical hit, dealing {damage} damage!\n")
+                                self.p_successful_crits
+                                self.p_successful_attacks += 1
+                                self.p_total_damage += damage
                             elif hit:
                                 round_text += (f"{character.name} attacks {enemy.name} and hits for {damage} damage.\n")
+                                self.p_successful_attacks += 1
+                                self.p_total_damage += damage
                             else:
                                 round_text += (f"{character.name} attacks {enemy.name} but misses.\n")
-                    round_text += "\n"
-                    self.combatUpdateSignal.emit(round_text)
-                    self.statsUpdateSignal.emit("UpdatePlayerStats")
-                    time.sleep(1)
-                if self.player.hp <= 0 or all(enemy.hp <= 0 for enemy in self.enemies):
-                    self.combatEndSignal.emit("Combat has ended.")
-                    self.running = False
-                    break
+            self.rounds += 1
+            self.combatUpdateSignal.emit(round_text)
+            self.statsUpdateSignal.emit("UpdatePlayerStats")
+            time.sleep(2)
+            if self.player.hp <= 0 or all(enemy.hp <= 0 for enemy in self.enemies):
+                self.combatEndSignal.emit("Combat has ended.")
+                self.battleEndSignal.emit("It's all over, folks.")
+                self.running = False
+                break
 
     def calculate_hit_rate(self, attacker_accuracy, defender_evasion):
         logging.info(f"Attacker accuracy: {attacker_accuracy}, defender evasion: {defender_evasion}")

@@ -222,12 +222,26 @@ class GameGUI(QWidget):
         main_layout.setStretch(1, 2) 
         main_layout.setStretch(2, 1)
         main_layout.addLayout(bottom_layout)
+        self.interactive_buttons = [self.font_size_decrease_button, 
+                                    self.font_size_increase_button,
+                                    north_button,
+                                    west_button,
+                                    east_button,
+                                    south_button,
+                                    self.interact_button]
         self.setWindowTitle("Undisclosed Game Title")
         self.setGeometry(100, 100, 800, 600)
         self.show()
         self.player = Player()
-        
         self.update_player_stats()
+
+    def disable_all_buttons(self):
+        for button in self.interactive_buttons:
+            button.setDisabled(True)
+
+    def enable_all_buttons(self):
+        for button in self.interactive_buttons:
+            button.setDisabled(False)
 
     def increase_font_size(self):
         if self.font_size < self.max_font_size:
@@ -277,6 +291,7 @@ class GameGUI(QWidget):
 
     def start_game(self):
         self.data_loader.game_map.set_player(self.player)
+        self.enable_all_buttons()
         if self.game_map:
             logging.info(f"Game_map object right here is {type(self.game_map)}")
             self.map_window = MapWindow(game_map=self.game_map)
@@ -325,6 +340,15 @@ class GameGUI(QWidget):
             inventory_text += f"{item.name}\n"
         self.inventory_text.setText(inventory_text)
 
+    def refresh_room(self):
+        self.update_interact_button()
+        available_directions = [direction for direction, room in self.current_room.connected_rooms.items() if room is not None]
+        available_directions = ", ".join(available_directions)
+        travel_options = f"You can go: {available_directions}"
+        self.game_text_area.append(travel_options)
+        self.game_text_area.moveCursor(QtGui.QTextCursor.End)
+        self.map_window.update_map()
+
     def travel(self, direction):
         if direction in self.current_room.connected_rooms:
             next_room = self.current_room.connected_rooms[direction]
@@ -362,7 +386,7 @@ class GameGUI(QWidget):
         elif current_room.lock_item:
             has_key = any(isinstance(item, Key) for item in self.game_map.player.inventory)
             self.interact_button.setText("Unlock") if has_key else self.interact_button.setText("Locked")
-        elif current_room.enemy:
+        elif current_room.enemy and not current_room.enemy.is_dead:
             self.interact_button.setText("Attack")
         elif current_room.ally:
             self.interact_button.setText("Greet")
@@ -423,6 +447,7 @@ class GameGUI(QWidget):
                 self.combat_object.combatUpdateSignal.connect(self.update_combat_text)
                 self.combat_object.statsUpdateSignal.connect(self.update_player_stats)
                 self.combat_object.combatEndSignal.connect(self.combat_object.stop_combat)
+                self.combat_object.battleEndSignal.connect(self.end_of_battle)
                 self.combat_thread = QThread()
                 self.combat_object.moveToThread(self.combat_thread)
                 self.combat_thread.started.connect(self.combat_object.combat)
@@ -448,6 +473,35 @@ class GameGUI(QWidget):
 
     def hide_map(self):
         self.map_window.hide()
+
+    def end_of_battle(self):
+        enemy = self.combat_object.enemies[0]
+        rounds = self.combat_object.rounds
+        p_hit_rate = self.combat_object.p_successful_attacks / rounds * 100
+        e_hit_rate = self.combat_object.e_successful_attacks / rounds * 100
+        p_total_dmg = self.combat_object.p_total_damage
+        e_total_dmg = self.combat_object.e_total_damage
+        if self.player.hp > 0:
+            enemy.is_dead = True
+            enemy.name = "dead " + enemy.name
+            xp_award = enemy.calculate_xp_award(self.player.level)
+            level_before = self.player.level
+            self.player.gain_xp(xp_award)
+            level_after = self.player.level
+            message = f"In {rounds} rounds, you defeated {enemy.name} and gained {int(enemy.calculate_xp_award(self.player.level))} XP.\n"
+            message += f"Player Hit rate: {int(p_hit_rate)}%, Total Player Damage dealt: {p_total_dmg}\n" 
+            message += f"Enemy Hit rate: {int(e_hit_rate)}%, Total Enemy Damage dealt: {e_total_dmg}\n"
+            self.game_text_area.append(message)
+            if level_after > level_before:
+                self.game_text_area.append(f"You leveled up! You're now level {self.player.level}!\n")
+            
+            self.update_player_stats() 
+            # Expand on the gains here ater, listing the old stats and the new ones like Attack: 30 > 32, or something like this.
+            self.refresh_room()
+        else:
+            # Game Over
+            self.display_message("You died. Please restart to continue.")
+            self.disable_all_buttons()
 
 
 class MapWindow(QWidget):

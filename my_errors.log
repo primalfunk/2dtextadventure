@@ -4,648 +4,279 @@ DEBUG:root:Select_random_genre: Data keys after loading: dict_keys(['genres'])
 DEBUG:root:Data length after loading: 1
 INFO:root:Genre data loaded successfully.
 INFO:root:Elements found in data.
-DEBUG:root:Elements before map generation: {'game_title': ['Searching for the', 'The Legendar
-DEBUG:root:Rooms before map generation: [{'type': 'alien planetscape', 'name': ['Bio-Dome'
-INFO:root:Room types selected are: ['alien temple', 'toxic alien wasteland', 'lunar base', 'futuristic research lab', 'alien spaceship interior', 'underground bunker', 'bio-dome', 'alien cavern', 'alien planetscape', 'floating city', 'alien ruins', 'spaceship interior', 'cybernetic hive', 'alien hive']
-INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 0 with room type alien temple
-INFO:root:Adding room to cluster 0 at 4, 4
-INFO:root:Adding room to cluster 0 at 3, 4
-INFO:root:Adding room to cluster 0 at 4, 5
-INFO:root:Adding room to cluster 0 at 4, 6
-INFO:root:Adding room to cluster 0 at 3, 5
-INFO:root:Adding room to cluster 0 at 4, 7
-INFO:root:Adding room to cluster 0 at 4, 3
-INFO:root:Adding room to cluster 0 at 2, 5
-INFO:root:Adding room to cluster 0 at 3, 3
-INFO:root:Adding room to cluster 0 at 5, 3
-INFO:root:Cluster creation result: True
-INFO:root:Setting player start room: 4, 3
-INFO:root:The player's start room is: 4, 3
-INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 1 with room type toxic alien wasteland
-INFO:root:Adding room to cluster 1 at 4, 8
-INFO:root:Adding room to cluster 1 at 5, 8
-INFO:root:Adding room to cluster 1 at 3, 8
-INFO:root:Adding room to cluster 1 at 6, 8
-INFO:root:Adding room to cluster 1 at 2, 8
-INFO:root:Adding room to cluster 1 at 7, 8
-INFO:root:Adding room to cluster 1 at 1, 8
-INFO:root:Adding room to cluster 1 at 6, 7
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 2 with room type lunar base
-INFO:root:Adding room to cluster 2 at 8, 8
-INFO:root:Adding room to cluster 2 at 8, 7
-INFO:root:Adding room to cluster 2 at 7, 7
-INFO:root:Adding room to cluster 2 at 7, 6
-INFO:root:Adding room to cluster 2 at 6, 6
-INFO:root:Adding room to cluster 2 at 8, 6
-INFO:root:Adding room to cluster 2 at 5, 6
-INFO:root:Adding room to cluster 2 at 5, 7
-INFO:root:Adding room to cluster 2 at 7, 5
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 54 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 54 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 54 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 3 with room type futuristic research lab
-INFO:root:Adding room to cluster 3 at 5, 4
-INFO:root:Adding room to cluster 3 at 6, 4
-INFO:root:Adding room to cluster 3 at 6, 5
-INFO:root:Adding room to cluster 3 at 6, 3
-INFO:root:Adding room to cluster 3 at 5, 5
-INFO:root:Adding room to cluster 3 at 6, 2
-INFO:root:Adding room to cluster 3 at 7, 2
-INFO:root:Adding room to cluster 3 at 6, 1
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 46 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 46 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 46 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 4 with room type alien spaceship interior
-INFO:root:Adding room to cluster 4 at 8, 4
-INFO:root:Adding room to cluster 4 at 8, 5
-INFO:root:Adding room to cluster 4 at 7, 4
-INFO:root:Adding room to cluster 4 at 7, 3
-INFO:root:Adding room to cluster 4 at 8, 3
-INFO:root:Adding room to cluster 4 at 8, 2
-INFO:root:Adding room to cluster 4 at 8, 1
-INFO:root:Adding room to cluster 4 at 8, 0
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 38 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 38 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 38 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 5 with room type underground bunker
-INFO:root:Adding room to cluster 5 at 5, 1
-INFO:root:Adding room to cluster 5 at 5, 2
-INFO:root:Adding room to cluster 5 at 4, 2
-INFO:root:Adding room to cluster 5 at 4, 1
-INFO:root:Adding room to cluster 5 at 5, 0
-INFO:root:Adding room to cluster 5 at 3, 1
-INFO:root:Adding room to cluster 5 at 2, 1
-INFO:root:Adding room to cluster 5 at 1, 1
-INFO:root:Adding room to cluster 5 at 1, 0
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 29 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 29 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 29 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 6 with room type bio-dome
-INFO:root:Adding room to cluster 6 at 1, 4
-INFO:root:Adding room to cluster 6 at 1, 3
-INFO:root:Adding room to cluster 6 at 0, 3
-INFO:root:Adding room to cluster 6 at 0, 4
-INFO:root:Adding room to cluster 6 at 0, 5
-INFO:root:Adding room to cluster 6 at 0, 2
-INFO:root:Adding room to cluster 6 at 2, 4
-INFO:root:Adding room to cluster 6 at 2, 3
-INFO:root:Adding room to cluster 6 at 1, 2
-INFO:root:Adding room to cluster 6 at 0, 1
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 19 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 19 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 19 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 7 with room type alien cavern
-INFO:root:Adding room to cluster 7 at 0, 8
-INFO:root:Adding room to cluster 7 at 0, 7
-INFO:root:Adding room to cluster 7 at 1, 7
-INFO:root:Adding room to cluster 7 at 2, 7
-INFO:root:Adding room to cluster 7 at 0, 6
-INFO:root:Adding room to cluster 7 at 3, 7
-INFO:root:Adding room to cluster 7 at 2, 6
-INFO:root:Adding room to cluster 7 at 1, 6
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 8 with room type alien planetscape
-INFO:root:Adding room to cluster 8 at 3, 2
-INFO:root:Adding room to cluster 8 at 2, 2
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 9 with room type floating city
-INFO:root:Adding room to cluster 9 at 2, 0
-INFO:root:Adding room to cluster 9 at 3, 0
-INFO:root:Adding room to cluster 9 at 4, 0
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 6 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 6 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 6 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 10 with room type alien ruins
-INFO:root:Adding room to cluster 10 at 6, 0
-INFO:root:Adding room to cluster 10 at 7, 0
-INFO:root:Adding room to cluster 10 at 7, 1
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 11 with room type spaceship interior
-INFO:root:Adding room to cluster 11 at 3, 6
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 12 with room type cybernetic hive
-INFO:root:Adding room to cluster 12 at 0, 0
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 13 with room type alien hive
-INFO:root:Adding room to cluster 13 at 1, 5
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
-INFO:root:X-X X X X X X X-X 
-  | | | | | |   | 
-X-X-X-X-X-X-X X X 
-  | |       | | | 
-X X X X A X X-E-X 
-|     | | | |     
-X-E X-X X-X-L-X X 
-  |   | |       | 
-X-X-X-X-X-X-X X X 
-|     | |     | | 
-X X-X-X W-X X X X 
-|   |   |   | | | 
-X E X X-X-X X X X 
-  |     |   | | | 
-X X X X-Y-X X X X 
-| | |   |   | | | 
-X-X-X-K-X-X-X-X-X 
-                  
-INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
-INFO:root:Game map successfully generated.
-DEBUG:root:Current game map: <game_logic.GameMap object at 0x00000122199FDC00>
-INFO:root:Generate_game_title is called.
-INFO:root:DL/Generate_game_title: Data now looks this way: {'genre': 'Sci-Fi', 'elements': {'game_title': ['S
-INFO:root:DL/Generate_game_title: title parts are Stellar Chronicles of the Celestial Veil
-INFO:root:Game_map object right here is <class 'game_logic.GameMap'>
-INFO:root:game_map type: <class 'game_logic.GameMap'>
-INFO:root:game_map value: <game_logic.GameMap object at 0x00000122199FDC00>
-INFO:root:game_map.grid_width: 9
-INFO:root:game_map.grid_height: 9
-INFO:root:Game_map object right here is <class 'game_logic.GameMap'>
-INFO:root:game_map type: <class 'game_logic.GameMap'>
-INFO:root:game_map value: <game_logic.GameMap object at 0x00000122199FDC00>
-INFO:root:game_map.grid_width: 9
-INFO:root:game_map.grid_height: 9
-INFO:root:Select_random_genre: Genres comes up as [{'genre': 'Fantasy', 'elements': {'game_title': [
-DEBUG:root:Select_random_genre: Data keys after loading: dict_keys(['genres'])
-DEBUG:root:Data length after loading: 1
-INFO:root:Genre data loaded successfully.
-INFO:root:Elements found in data.
 DEBUG:root:Elements before map generation: {'game_title': ['In Search of the', 'The Legendary
-DEBUG:root:Rooms before map generation: [{'type': 'castle', 'name': ['Donjon', 'Oubliette'
-INFO:root:Room types selected are: ['treasury', 'garden', 'sanctum', 'gallery', 'library', 'castle', 'apothecary', 'crypt', 'reliquary', 'forest', 'open', 'cavern', 'tavern']
+DEBUG:root:Rooms before map generation: [{'type': 'saloon', 'name': ["Card Shark's Den", '
+INFO:root:Room types selected are: ['gambling den', 'federal building', 'frontier town square', 'old church', 'train station', 'gold mine', "sheriff's office", 'trading post', 'general store', 'ranch', 'old-fashioned bank', "blacksmith's forge", 'frontier encampment', 'outlaw hideout', 'saloon']
 INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
 INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 0 with room type treasury
+INFO:root:Attempting to create cluster 0 with room type gambling den
 INFO:root:Adding room to cluster 0 at 4, 4
-INFO:root:Adding room to cluster 0 at 5, 4
-INFO:root:Adding room to cluster 0 at 5, 3
-INFO:root:Adding room to cluster 0 at 6, 4
-INFO:root:Adding room to cluster 0 at 4, 3
-INFO:root:Adding room to cluster 0 at 5, 5
 INFO:root:Adding room to cluster 0 at 3, 4
-INFO:root:Adding room to cluster 0 at 6, 3
-INFO:root:Adding room to cluster 0 at 6, 2
-INFO:root:Adding room to cluster 0 at 3, 3
+INFO:root:Adding room to cluster 0 at 2, 4
+INFO:root:Adding room to cluster 0 at 5, 4
+INFO:root:Adding room to cluster 0 at 3, 5
+INFO:root:Adding room to cluster 0 at 2, 5
+INFO:root:Adding room to cluster 0 at 1, 5
+INFO:root:Adding room to cluster 0 at 5, 5
 INFO:root:Cluster creation result: True
-INFO:root:Setting player start room: 5, 4
-INFO:root:The player's start room is: 5, 4
-INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
+INFO:root:Setting player start room: 3, 4
+INFO:root:The player's start room is: 3, 4
+INFO:root:Checked if the map was full. There are 73 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 73 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 73 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 1 with room type garden
-INFO:root:Adding room to cluster 1 at 8, 4
-INFO:root:Adding room to cluster 1 at 8, 5
-INFO:root:Adding room to cluster 1 at 7, 5
-INFO:root:Adding room to cluster 1 at 8, 6
-INFO:root:Adding room to cluster 1 at 8, 3
-INFO:root:Adding room to cluster 1 at 7, 4
-INFO:root:Adding room to cluster 1 at 7, 3
-INFO:root:Adding room to cluster 1 at 8, 7
+INFO:root:Attempting to create cluster 1 with room type federal building
+INFO:root:Adding room to cluster 1 at 8, 0
+INFO:root:Adding room to cluster 1 at 7, 0
+INFO:root:Adding room to cluster 1 at 8, 1
+INFO:root:Adding room to cluster 1 at 7, 1
+INFO:root:Adding room to cluster 1 at 6, 1
+INFO:root:Adding room to cluster 1 at 8, 2
+INFO:root:Adding room to cluster 1 at 6, 2
+INFO:root:Adding room to cluster 1 at 7, 2
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 65 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 65 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 65 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 2 with room type sanctum
-INFO:root:Adding room to cluster 2 at 6, 6
-INFO:root:Adding room to cluster 2 at 6, 7
-INFO:root:Adding room to cluster 2 at 5, 7
-INFO:root:Adding room to cluster 2 at 7, 7
-INFO:root:Adding room to cluster 2 at 6, 8
-INFO:root:Adding room to cluster 2 at 5, 6
-INFO:root:Adding room to cluster 2 at 4, 7
-INFO:root:Adding room to cluster 2 at 3, 7
+INFO:root:Attempting to create cluster 2 with room type frontier town square
+INFO:root:Adding room to cluster 2 at 5, 1
+INFO:root:Adding room to cluster 2 at 5, 2
+INFO:root:Adding room to cluster 2 at 5, 3
+INFO:root:Adding room to cluster 2 at 4, 1
+INFO:root:Adding room to cluster 2 at 4, 0
+INFO:root:Adding room to cluster 2 at 3, 1
+INFO:root:Adding room to cluster 2 at 3, 2
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 55 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 55 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 55 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 58 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 58 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 58 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 3 with room type gallery
-INFO:root:Adding room to cluster 3 at 1, 2
-INFO:root:Adding room to cluster 3 at 2, 2
-INFO:root:Adding room to cluster 3 at 3, 2
-INFO:root:Adding room to cluster 3 at 1, 3
-INFO:root:Adding room to cluster 3 at 2, 3
-INFO:root:Adding room to cluster 3 at 2, 4
-INFO:root:Adding room to cluster 3 at 0, 2
-INFO:root:Adding room to cluster 3 at 4, 2
-INFO:root:Adding room to cluster 3 at 0, 1
-INFO:root:Adding room to cluster 3 at 0, 0
+INFO:root:Attempting to create cluster 3 with room type old church
+INFO:root:Adding room to cluster 3 at 8, 3
+INFO:root:Adding room to cluster 3 at 8, 4
+INFO:root:Adding room to cluster 3 at 7, 4
+INFO:root:Adding room to cluster 3 at 7, 3
+INFO:root:Adding room to cluster 3 at 6, 3
+INFO:root:Adding room to cluster 3 at 6, 4
+INFO:root:Adding room to cluster 3 at 7, 5
+INFO:root:Adding room to cluster 3 at 7, 6
+INFO:root:Adding room to cluster 3 at 6, 6
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 45 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 45 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 45 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 49 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 49 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 49 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 4 with room type library
-INFO:root:Adding room to cluster 4 at 1, 7
-INFO:root:Adding room to cluster 4 at 2, 7
-INFO:root:Adding room to cluster 4 at 0, 7
-INFO:root:Adding room to cluster 4 at 2, 6
-INFO:root:Adding room to cluster 4 at 2, 8
+INFO:root:Attempting to create cluster 4 with room type train station
 INFO:root:Adding room to cluster 4 at 1, 8
-INFO:root:Adding room to cluster 4 at 1, 6
-INFO:root:Adding room to cluster 4 at 3, 6
-INFO:root:Adding room to cluster 4 at 0, 6
+INFO:root:Adding room to cluster 4 at 0, 8
+INFO:root:Adding room to cluster 4 at 1, 7
+INFO:root:Adding room to cluster 4 at 2, 8
+INFO:root:Adding room to cluster 4 at 0, 7
 INFO:root:Adding room to cluster 4 at 3, 8
+INFO:root:Adding room to cluster 4 at 3, 7
+INFO:root:Adding room to cluster 4 at 1, 6
+INFO:root:Adding room to cluster 4 at 4, 8
+INFO:root:Adding room to cluster 4 at 3, 6
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 35 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 35 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 35 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 39 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 39 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 39 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 5 with room type castle
-INFO:root:Adding room to cluster 5 at 1, 1
-INFO:root:Adding room to cluster 5 at 1, 0
-INFO:root:Adding room to cluster 5 at 2, 1
-INFO:root:Adding room to cluster 5 at 3, 1
-INFO:root:Adding room to cluster 5 at 4, 1
-INFO:root:Adding room to cluster 5 at 5, 1
-INFO:root:Adding room to cluster 5 at 5, 0
-INFO:root:Adding room to cluster 5 at 4, 0
+INFO:root:Attempting to create cluster 5 with room type gold mine
+INFO:root:Adding room to cluster 5 at 0, 4
+INFO:root:Adding room to cluster 5 at 1, 4
+INFO:root:Adding room to cluster 5 at 0, 3
+INFO:root:Adding room to cluster 5 at 0, 2
+INFO:root:Adding room to cluster 5 at 0, 5
+INFO:root:Adding room to cluster 5 at 1, 2
+INFO:root:Adding room to cluster 5 at 2, 2
+INFO:root:Adding room to cluster 5 at 0, 6
+INFO:root:Adding room to cluster 5 at 0, 1
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 27 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 27 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 27 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 30 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 30 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 30 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 6 with room type apothecary
+INFO:root:Attempting to create cluster 6 with room type sheriff's office
+INFO:root:Adding room to cluster 6 at 5, 6
 INFO:root:Adding room to cluster 6 at 4, 6
 INFO:root:Adding room to cluster 6 at 4, 5
-INFO:root:Adding room to cluster 6 at 3, 5
-INFO:root:Adding room to cluster 6 at 2, 5
-INFO:root:Adding room to cluster 6 at 1, 5
-INFO:root:Adding room to cluster 6 at 0, 5
-INFO:root:Adding room to cluster 6 at 1, 4
-INFO:root:Adding room to cluster 6 at 0, 4
-INFO:root:Adding room to cluster 6 at 0, 3
+INFO:root:Adding room to cluster 6 at 4, 7
+INFO:root:Adding room to cluster 6 at 5, 7
+INFO:root:Adding room to cluster 6 at 5, 8
+INFO:root:Adding room to cluster 6 at 6, 7
+INFO:root:Adding room to cluster 6 at 6, 8
+INFO:root:Adding room to cluster 6 at 7, 8
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 18 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 18 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 18 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 21 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 21 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 21 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 7 with room type crypt
-INFO:root:Adding room to cluster 7 at 8, 0
-INFO:root:Adding room to cluster 7 at 7, 0
-INFO:root:Adding room to cluster 7 at 8, 1
-INFO:root:Adding room to cluster 7 at 6, 0
-INFO:root:Adding room to cluster 7 at 7, 1
-INFO:root:Adding room to cluster 7 at 7, 2
-INFO:root:Adding room to cluster 7 at 6, 1
+INFO:root:Attempting to create cluster 7 with room type trading post
+INFO:root:Adding room to cluster 7 at 3, 3
+INFO:root:Adding room to cluster 7 at 2, 3
+INFO:root:Adding room to cluster 7 at 4, 3
+INFO:root:Adding room to cluster 7 at 1, 3
+INFO:root:Adding room to cluster 7 at 4, 2
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 16 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 16 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 16 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 8 with room type reliquary
-INFO:root:Adding room to cluster 8 at 7, 8
-INFO:root:Adding room to cluster 8 at 8, 8
+INFO:root:Attempting to create cluster 8 with room type general store
+INFO:root:Adding room to cluster 8 at 1, 1
+INFO:root:Adding room to cluster 8 at 1, 0
+INFO:root:Adding room to cluster 8 at 0, 0
+INFO:root:Adding room to cluster 8 at 2, 0
+INFO:root:Adding room to cluster 8 at 2, 1
+INFO:root:Adding room to cluster 8 at 3, 0
 INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 10 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 10 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 10 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 9 with room type forest
-INFO:root:Adding room to cluster 9 at 3, 0
-INFO:root:Adding room to cluster 9 at 2, 0
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 7 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 7 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 7 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 10 with room type open
-INFO:root:Adding room to cluster 10 at 4, 8
-INFO:root:Adding room to cluster 10 at 5, 8
+INFO:root:Attempting to create cluster 9 with room type ranch
+INFO:root:Adding room to cluster 9 at 8, 8
+INFO:root:Adding room to cluster 9 at 8, 7
+INFO:root:Adding room to cluster 9 at 8, 6
+INFO:root:Adding room to cluster 9 at 8, 5
+INFO:root:Adding room to cluster 9 at 7, 7
 INFO:root:Cluster creation result: True
 INFO:root:Checked if the map was full. There are 5 empty positions left in the grid.
 INFO:root:Checked if the map was full. There are 5 empty positions left in the grid.
 INFO:root:Checked if the map was full. There are 5 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 11 with room type cavern
-INFO:root:Adding room to cluster 11 at 8, 2
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 4 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 4 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 4 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 12 with room type tavern
-INFO:root:Adding room to cluster 12 at 5, 2
+INFO:root:Attempting to create cluster 10 with room type old-fashioned bank
+INFO:root:Adding room to cluster 10 at 5, 0
+INFO:root:Adding room to cluster 10 at 6, 0
 INFO:root:Cluster creation result: True
 INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
 INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
 INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 13 with room type treasury
-INFO:root:Adding room to cluster 13 at 0, 8
-INFO:root:Cluster creation result: True
-INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
-INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
-DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 14 with room type garden
-INFO:root:Adding room to cluster 14 at 6, 5
+INFO:root:Attempting to create cluster 11 with room type blacksmith's forge
+INFO:root:Adding room to cluster 11 at 2, 7
+INFO:root:Adding room to cluster 11 at 2, 6
 INFO:root:Cluster creation result: True
 INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
 INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
 INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
 DEBUG:root:Current state of is_map_full: False
-INFO:root:Attempting to create cluster 15 with room type sanctum
-INFO:root:Adding room to cluster 15 at 7, 6
+INFO:root:Attempting to create cluster 12 with room type frontier encampment
+INFO:root:Adding room to cluster 12 at 6, 5
 INFO:root:Cluster creation result: True
 INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
-INFO:root:X-X-X X X E-X-E-X 
-|     | | |   | | 
-X X X X X-X X X X 
-| | | | |   |     
-X-X-X-X W X X-X X 
-  |   | | | |   | 
-X-X X-X-X X-X-X X 
-  |     | |     | 
-X K Y-X-X-X-X-X-X 
-|   | | | | |   | 
-X X X X X X X X-X 
-| |       |   | | 
-X X X X X-X-X X X 
-| | | |     |   | 
-X-X-X-X-E-L-X X-X 
-| | | | | | | | | 
-X X X X X A X X X 
+INFO:root:X X-X X-X X X-X-X 
+| |     | |   | | 
+X X X-X-X-X-X-X X 
+| |   |     | | | 
+K-X X-X X-X-X X X 
+|         | | | | 
+X X X X X X X X X 
+| | | | | |     | 
+E-X-X-X-X-X-A X-L 
+    | | | |   | | 
+X-X-X X W X-X X E 
+  | | |   |   |   
+X X E X-X X X-X-X 
+| |       | | |   
+Y X-X X-X X X X X 
+| |   |         | 
+X-X-X-X-X-X-X-X-X 
                   
 INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
 INFO:root:Game map successfully generated.
-DEBUG:root:Current game map: <game_logic.GameMap object at 0x00000122199FDCC0>
-INFO:root:DL/Generate_game_title: Data now looks this way: {'genre': 'Fantasy', 'elements': {'game_title': ['
-INFO:root:DL/Generate_game_title: title parts are Age of the Cursed Relic
+DEBUG:root:Current game map: <game_logic.GameMap object at 0x00000262DBFFDD80>
+INFO:root:Generate_game_title is called.
+INFO:root:DL/Generate_game_title: Data now looks this way: {'genre': 'Western', 'elements': {'game_title': ['
+INFO:root:DL/Generate_game_title: title parts are The Legendary Desperado's Gambit
 INFO:root:Game_map object right here is <class 'game_logic.GameMap'>
 INFO:root:game_map type: <class 'game_logic.GameMap'>
-INFO:root:game_map value: <game_logic.GameMap object at 0x00000122199FDCC0>
+INFO:root:game_map value: <game_logic.GameMap object at 0x00000262DBFFDD80>
 INFO:root:game_map.grid_width: 9
 INFO:root:game_map.grid_height: 9
-INFO:root:Combat round started with: Player Level 1 HP 105 Atk 14 Defp 13 Acc 61 Ev 35
+INFO:root:Combat round started with: Player Level 1 HP 106 Atk 32 Defp 13 Acc 61 Ev 36
 INFO:root:There are no allies present.
-INFO:root:Enemy combatant is: Trained Thief (violent) Level 2 HP 102 Atk 15 Defp 9 Acc 52 Ev 37
+INFO:root:Enemy combatant is: Mature Cowgirl (crazed) Level 2 HP 89 Atk 16 Defp 10 Acc 47 Ev 43
 INFO:root:Initiative rolls:
-INFO:root:Trained Thief (violent) rolls 49 for initiative.
-INFO:root:Player rolls 45 for initiative.
+INFO:root:Mature Cowgirl (crazed) rolls 44 for initiative.
+INFO:root:Player rolls 48 for initiative.
 INFO:root:Round move order:
-INFO:root:Move orders are: Trained Thief (violent) Player .
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 66
+INFO:root:Move orders are: Player Mature Cowgirl (crazed) .
+INFO:root:Attacker accuracy: 61, defender evasion: 43
+INFO:root:Calculated chance after 15% randomness: 62
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 47, defender evasion: 36
+INFO:root:Calculated chance after 15% randomness: 57
 INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
 INFO:root:***Player has 103 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 66
-INFO:root:The attack hits!
-INFO:root:***Trained Thief (violent) has 96 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 67
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 94 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 54
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 65
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 54
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 92 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Attacker accuracy: 61, defender evasion: 43
 INFO:root:Calculated chance after 15% randomness: 61
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 47, defender evasion: 36
+INFO:root:Calculated chance after 15% randomness: 49
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 43
+INFO:root:Calculated chance after 15% randomness: 63
 INFO:root:The attack hits!
+INFO:root:Successful block, half damage 14.
 INFO:root:Critical hit!
-INFO:root:***Player has 98 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:***Mature Cowgirl (crazed) has 75 HP left.***
+INFO:root:Attacker accuracy: 47, defender evasion: 36
 INFO:root:Calculated chance after 15% randomness: 56
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 57
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 57
+INFO:root:The attack hits!
+INFO:root:***Player has 100 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 43
+INFO:root:Calculated chance after 15% randomness: 54
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 14.
+INFO:root:***Mature Cowgirl (crazed) has 64 HP left.***
+INFO:root:Attacker accuracy: 47, defender evasion: 36
+INFO:root:Calculated chance after 15% randomness: 51
 INFO:root:The attack hits!
 INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 90 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 59
+INFO:root:***Player has 98 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 43
+INFO:root:Calculated chance after 15% randomness: 58
 INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Attacker accuracy: 47, defender evasion: 36
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 43
+INFO:root:Calculated chance after 15% randomness: 53
+INFO:root:The attack hits!
+INFO:root:***Mature Cowgirl (crazed) has 41 HP left.***
+INFO:root:Attacker accuracy: 47, defender evasion: 36
 INFO:root:Calculated chance after 15% randomness: 61
 INFO:root:The attack hits!
-INFO:root:***Trained Thief (violent) has 85 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack hits!
-INFO:root:***Player has 94 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 57
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:***Player has 95 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 43
 INFO:root:Calculated chance after 15% randomness: 51
 INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 54
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Attacker accuracy: 47, defender evasion: 36
 INFO:root:Calculated chance after 15% randomness: 52
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 52
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 67
 INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 82 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 59
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 59
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 80 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Player has 92 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 56
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:Critical hit!
-INFO:root:***Trained Thief (violent) has 78 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 61
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
 INFO:root:***Player has 89 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 66
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 58
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 56
-INFO:root:The attack hits!
-INFO:root:***Trained Thief (violent) has 71 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 63
-INFO:root:The attack hits!
-INFO:root:Critical hit!
-INFO:root:***Player has 81 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 69
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 69 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 56
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 4.
-INFO:root:***Player has 80 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 70
-INFO:root:The attack hits!
-INFO:root:***Trained Thief (violent) has 64 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 54
-INFO:root:The attack hits!
-INFO:root:***Player has 76 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 54
-INFO:root:The attack hits!
-INFO:root:***Trained Thief (violent) has 57 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 61
-INFO:root:The attack hits!
-INFO:root:***Player has 72 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 54
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 65
-INFO:root:The attack hits!
-INFO:root:***Player has 69 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 53
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 55 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 65
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 60
-INFO:root:The attack hits!
-INFO:root:***Trained Thief (violent) has 49 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 61
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 58
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 47 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 61
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 70
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 44 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 58
-INFO:root:The attack hits!
-INFO:root:Successful block, half damage 5.
-INFO:root:***Player has 68 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 53
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Attacker accuracy: 61, defender evasion: 43
 INFO:root:Calculated chance after 15% randomness: 57
 INFO:root:The attack hits!
-INFO:root:***Player has 63 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 57
+INFO:root:Successful block, half damage 14.
+INFO:root:***Mature Cowgirl (crazed) has 31 HP left.***
+INFO:root:Attacker accuracy: 47, defender evasion: 36
+INFO:root:Calculated chance after 15% randomness: 62
 INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 60
-INFO:root:The attack misses.
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 56
+INFO:root:Attacker accuracy: 61, defender evasion: 43
+INFO:root:Calculated chance after 15% randomness: 53
+INFO:root:The attack hits!
+INFO:root:***Mature Cowgirl (crazed) has 10 HP left.***
+INFO:root:Attacker accuracy: 47, defender evasion: 36
+INFO:root:Calculated chance after 15% randomness: 48
 INFO:root:The attack hits!
 INFO:root:Successful block, half damage 5.
-INFO:root:***Trained Thief (violent) has 41 HP left.***
-INFO:root:Attacker accuracy: 52, defender evasion: 35
-INFO:root:Calculated chance after 15% randomness: 60
+INFO:root:***Player has 86 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 43
+INFO:root:Calculated chance after 15% randomness: 62
 INFO:root:The attack hits!
-INFO:root:***Player has 61 HP left.***
-INFO:root:Attacker accuracy: 61, defender evasion: 37
-INFO:root:Calculated chance after 15% randomness: 55
-INFO:root:The attack hits!
-INFO:root:***Trained Thief (violent) has 34 HP left.***
+INFO:root:***Mature Cowgirl (crazed) has -13 HP left.***
