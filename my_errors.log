@@ -1,331 +1,651 @@
-2023-07-03 15:09:20,362 - INFO - Initialize game is called.
-2023-07-03 15:09:20,362 - INFO - Select_random_genre: Genres comes up as [{'genre': 'Fantasy', 'elements': {'game_title': [
-2023-07-03 15:09:20,362 - DEBUG - Select_random_genre: Data keys after loading: dict_keys(['genres'])
-2023-07-03 15:09:20,362 - DEBUG - Data length after loading: 1
-2023-07-03 15:09:20,362 - INFO - self.data_loader.genre is this: {'genre': 'Sci-Fi', 'elements': {'game_title': ['S
-2023-07-03 15:09:20,362 - INFO - Genre data loaded successfully.
-2023-07-03 15:09:20,362 - INFO - Elements found in data.
-2023-07-03 15:09:20,362 - DEBUG - Elements before map generation: {'game_title': ['Searching for the', 'The Legendar
-2023-07-03 15:09:20,362 - DEBUG - Rooms before map generation: [{'type': 'alien planetscape', 'name': ['Bio-Dome'
-2023-07-03 15:09:20,362 - INFO - Room types selected are: ['underground bunker', 'cybernetic hive', 'alien ruins', 'alien spaceship interior', 'lunar base', 'bio-dome', 'toxic alien wasteland', 'futuristic research lab', 'alien temple', 'alien cavern', 'floating city', 'alien planetscape', 'alien hive', 'spaceship interior']
-2023-07-03 15:09:20,362 - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-2023-07-03 15:09:20,362 - INFO - Checked if the map was full. There are 81 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 0 with room type underground bunker
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 0 at (4, 4)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 4, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (5, 4), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 5, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (6, 4), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 6, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (6, 3), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 6, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (6, 2), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 6, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (7, 3), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 7, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (7, 4), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 7, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (6, 1), after which there will be 7 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 6, 1
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 0 at (3, 4), after which there will be 8 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 0 at 3, 4
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Setting player start room: 4, 4
-2023-07-03 15:09:20,378 - INFO - The player's start room is: 4, 4
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 72 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 72 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 72 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 1 with room type cybernetic hive
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 1 at (5, 8)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 5, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (4, 8), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 4, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (4, 7), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 4, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (3, 8), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 3, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (6, 8), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 6, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (3, 7), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 3, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (3, 6), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 3, 6
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (2, 6), after which there will be 7 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 2, 6
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 1 at (3, 5), after which there will be 8 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 1 at 3, 5
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 63 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 63 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 63 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 2 with room type alien ruins
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 2 at (7, 0)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 7, 0
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (8, 0), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 8, 0
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (7, 1), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 7, 1
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (8, 1), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 8, 1
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (8, 2), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 8, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (6, 0), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 6, 0
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (8, 3), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 8, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (7, 2), after which there will be 7 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 7, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (5, 0), after which there will be 8 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 5, 0
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 2 at (4, 0), after which there will be 9 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 2 at 4, 0
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 53 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 53 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 53 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 3 with room type alien spaceship interior
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 3 at (8, 5)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 8, 5
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (8, 4), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 8, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (8, 6), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 8, 6
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (7, 5), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 7, 5
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (7, 6), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 7, 6
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (6, 6), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 6, 6
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (6, 5), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 6, 5
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (6, 7), after which there will be 7 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 6, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 3 at (5, 6), after which there will be 8 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 3 at 5, 6
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 44 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 44 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 44 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 4 with room type lunar base
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 4 at (0, 8)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 0, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 4 at (1, 8), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 1, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 4 at (0, 7), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 0, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 4 at (0, 6), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 0, 6
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 4 at (1, 7), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 1, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 4 at (2, 8), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 2, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 4 at (2, 7), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 2, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 4 at (0, 5), after which there will be 7 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 4 at 0, 5
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 36 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 36 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 36 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 5 with room type bio-dome
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 5 at (2, 3)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 2, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (2, 4), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 2, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (1, 4), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 1, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (1, 3), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 1, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (1, 2), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 1, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (1, 1), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 1, 1
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (3, 3), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 3, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (2, 5), after which there will be 7 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 2, 5
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 5 at (2, 1), after which there will be 8 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 5 at 2, 1
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 27 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 27 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 27 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 6 with room type toxic alien wasteland
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 6 at (7, 7)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 6 at 7, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 6 at (8, 7), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 6 at 8, 7
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 6 at (8, 8), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 6 at 8, 8
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 6 at (7, 8), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 6 at 7, 8
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 23 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 23 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 23 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 7 with room type futuristic research lab
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 7 at (1, 5)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 7 at 1, 5
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 7 at (1, 6), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 7 at 1, 6
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 21 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 21 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 21 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 8 with room type alien temple
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 8 at (3, 2)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 3, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 8 at (3, 1), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 3, 1
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 8 at (4, 2), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 4, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 8 at (4, 1), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 4, 1
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 8 at (5, 2), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 5, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 8 at (3, 0), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 3, 0
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 8 at (5, 3), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 5, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 8 at (4, 3), after which there will be 7 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 8 at 4, 3
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 13 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 9 with room type alien cavern
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 9 at (0, 0)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 9 at 0, 0
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 9 at (0, 1), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 9 at 0, 1
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 9 at (0, 2), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 9 at 0, 2
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 9 at (0, 3), after which there will be 3 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 9 at 0, 3
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 9 at (1, 0), after which there will be 4 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 9 at 1, 0
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 9 at (0, 4), after which there will be 5 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 9 at 0, 4
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 9 at (2, 0), after which there will be 6 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 9 at 2, 0
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 6 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 10 with room type floating city
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 10 at (4, 5)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 10 at 4, 5
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 10 at (4, 6), after which there will be 1 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 10 at 4, 6
-2023-07-03 15:09:20,378 - INFO - Adding a room for cluster 10 at (5, 5), after which there will be 2 rooms in the cluster.
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 10 at 5, 5
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 3 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 11 with room type alien planetscape
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 11 at (5, 7)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 11 at 5, 7
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 2 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 12 with room type alien hive
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 12 at (2, 2)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 12 at 2, 2
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 1 empty positions left in the grid.
-2023-07-03 15:09:20,378 - DEBUG - Current state of is_map_full: False
-2023-07-03 15:09:20,378 - INFO - Attempting to create cluster 13 with room type spaceship interior
-2023-07-03 15:09:20,378 - INFO - Adding first room in cluster 13 at (5, 1)
-2023-07-03 15:09:20,378 - INFO - Adding room to cluster 13 at 5, 1
-2023-07-03 15:09:20,378 - INFO - Cluster creation result: True
-2023-07-03 15:09:20,378 - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-2023-07-03 15:09:20,399 - INFO - A X X X-X-X-X X-X 
-| | |   |   | | | 
-X-X-X-Y X X-X-K X 
-  |         |   | 
-X-X X X-X X-X-X X 
-  | | |     |     
-X-X-X X X X X-X-X 
-    | | | | |     
-X X-X-X-X-X-X-L-X 
-|     | | | | | | 
-X-X X X X X X X X 
-|   | |         | 
-X X-X-X X E-E-X-X 
+INFO:root:Initialize game is called.
+INFO:root:Select_random_genre: Genres comes up as [{'genre': 'Fantasy', 'elements': {'game_title': [
+DEBUG:root:Select_random_genre: Data keys after loading: dict_keys(['genres'])
+DEBUG:root:Data length after loading: 1
+INFO:root:Genre data loaded successfully.
+INFO:root:Elements found in data.
+DEBUG:root:Elements before map generation: {'game_title': ['Searching for the', 'The Legendar
+DEBUG:root:Rooms before map generation: [{'type': 'alien planetscape', 'name': ['Bio-Dome'
+INFO:root:Room types selected are: ['alien temple', 'toxic alien wasteland', 'lunar base', 'futuristic research lab', 'alien spaceship interior', 'underground bunker', 'bio-dome', 'alien cavern', 'alien planetscape', 'floating city', 'alien ruins', 'spaceship interior', 'cybernetic hive', 'alien hive']
+INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 0 with room type alien temple
+INFO:root:Adding room to cluster 0 at 4, 4
+INFO:root:Adding room to cluster 0 at 3, 4
+INFO:root:Adding room to cluster 0 at 4, 5
+INFO:root:Adding room to cluster 0 at 4, 6
+INFO:root:Adding room to cluster 0 at 3, 5
+INFO:root:Adding room to cluster 0 at 4, 7
+INFO:root:Adding room to cluster 0 at 4, 3
+INFO:root:Adding room to cluster 0 at 2, 5
+INFO:root:Adding room to cluster 0 at 3, 3
+INFO:root:Adding room to cluster 0 at 5, 3
+INFO:root:Cluster creation result: True
+INFO:root:Setting player start room: 4, 3
+INFO:root:The player's start room is: 4, 3
+INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 1 with room type toxic alien wasteland
+INFO:root:Adding room to cluster 1 at 4, 8
+INFO:root:Adding room to cluster 1 at 5, 8
+INFO:root:Adding room to cluster 1 at 3, 8
+INFO:root:Adding room to cluster 1 at 6, 8
+INFO:root:Adding room to cluster 1 at 2, 8
+INFO:root:Adding room to cluster 1 at 7, 8
+INFO:root:Adding room to cluster 1 at 1, 8
+INFO:root:Adding room to cluster 1 at 6, 7
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 2 with room type lunar base
+INFO:root:Adding room to cluster 2 at 8, 8
+INFO:root:Adding room to cluster 2 at 8, 7
+INFO:root:Adding room to cluster 2 at 7, 7
+INFO:root:Adding room to cluster 2 at 7, 6
+INFO:root:Adding room to cluster 2 at 6, 6
+INFO:root:Adding room to cluster 2 at 8, 6
+INFO:root:Adding room to cluster 2 at 5, 6
+INFO:root:Adding room to cluster 2 at 5, 7
+INFO:root:Adding room to cluster 2 at 7, 5
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 54 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 54 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 54 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 3 with room type futuristic research lab
+INFO:root:Adding room to cluster 3 at 5, 4
+INFO:root:Adding room to cluster 3 at 6, 4
+INFO:root:Adding room to cluster 3 at 6, 5
+INFO:root:Adding room to cluster 3 at 6, 3
+INFO:root:Adding room to cluster 3 at 5, 5
+INFO:root:Adding room to cluster 3 at 6, 2
+INFO:root:Adding room to cluster 3 at 7, 2
+INFO:root:Adding room to cluster 3 at 6, 1
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 46 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 46 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 46 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 4 with room type alien spaceship interior
+INFO:root:Adding room to cluster 4 at 8, 4
+INFO:root:Adding room to cluster 4 at 8, 5
+INFO:root:Adding room to cluster 4 at 7, 4
+INFO:root:Adding room to cluster 4 at 7, 3
+INFO:root:Adding room to cluster 4 at 8, 3
+INFO:root:Adding room to cluster 4 at 8, 2
+INFO:root:Adding room to cluster 4 at 8, 1
+INFO:root:Adding room to cluster 4 at 8, 0
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 38 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 38 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 38 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 5 with room type underground bunker
+INFO:root:Adding room to cluster 5 at 5, 1
+INFO:root:Adding room to cluster 5 at 5, 2
+INFO:root:Adding room to cluster 5 at 4, 2
+INFO:root:Adding room to cluster 5 at 4, 1
+INFO:root:Adding room to cluster 5 at 5, 0
+INFO:root:Adding room to cluster 5 at 3, 1
+INFO:root:Adding room to cluster 5 at 2, 1
+INFO:root:Adding room to cluster 5 at 1, 1
+INFO:root:Adding room to cluster 5 at 1, 0
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 29 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 29 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 29 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 6 with room type bio-dome
+INFO:root:Adding room to cluster 6 at 1, 4
+INFO:root:Adding room to cluster 6 at 1, 3
+INFO:root:Adding room to cluster 6 at 0, 3
+INFO:root:Adding room to cluster 6 at 0, 4
+INFO:root:Adding room to cluster 6 at 0, 5
+INFO:root:Adding room to cluster 6 at 0, 2
+INFO:root:Adding room to cluster 6 at 2, 4
+INFO:root:Adding room to cluster 6 at 2, 3
+INFO:root:Adding room to cluster 6 at 1, 2
+INFO:root:Adding room to cluster 6 at 0, 1
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 19 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 19 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 19 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 7 with room type alien cavern
+INFO:root:Adding room to cluster 7 at 0, 8
+INFO:root:Adding room to cluster 7 at 0, 7
+INFO:root:Adding room to cluster 7 at 1, 7
+INFO:root:Adding room to cluster 7 at 2, 7
+INFO:root:Adding room to cluster 7 at 0, 6
+INFO:root:Adding room to cluster 7 at 3, 7
+INFO:root:Adding room to cluster 7 at 2, 6
+INFO:root:Adding room to cluster 7 at 1, 6
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 8 with room type alien planetscape
+INFO:root:Adding room to cluster 8 at 3, 2
+INFO:root:Adding room to cluster 8 at 2, 2
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 9 with room type floating city
+INFO:root:Adding room to cluster 9 at 2, 0
+INFO:root:Adding room to cluster 9 at 3, 0
+INFO:root:Adding room to cluster 9 at 4, 0
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 6 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 6 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 6 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 10 with room type alien ruins
+INFO:root:Adding room to cluster 10 at 6, 0
+INFO:root:Adding room to cluster 10 at 7, 0
+INFO:root:Adding room to cluster 10 at 7, 1
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 11 with room type spaceship interior
+INFO:root:Adding room to cluster 11 at 3, 6
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 12 with room type cybernetic hive
+INFO:root:Adding room to cluster 12 at 0, 0
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 13 with room type alien hive
+INFO:root:Adding room to cluster 13 at 1, 5
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
+INFO:root:X-X X X X X X X-X 
+  | | | | | |   | 
+X-X-X-X-X-X-X X X 
+  | |       | | | 
+X X X X A X X-E-X 
+|     | | | |     
+X-E X-X X-X-L-X X 
+  |   | |       | 
+X-X-X-X-X-X-X X X 
 |     | |     | | 
-X X W-X-X X X X E 
-| |     | | |   | 
-X-X-X-X-X-X-X-X X 
+X X-X-X W-X X X X 
+|   |   |   | | | 
+X E X X-X-X X X X 
+  |     |   | | | 
+X X X X-Y-X X X X 
+| | |   |   | | | 
+X-X-X-K-X-X-X-X-X 
                   
-2023-07-03 15:09:20,399 - INFO - Checked if the map was full. There are 0 empty positions left in the grid.
-2023-07-03 15:09:20,399 - INFO - Number of clusters created: 14
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 0: 9
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 1: 9
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 2: 10
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 3: 9
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 4: 8
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 5: 9
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 6: 4
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 7: 2
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 8: 8
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 9: 7
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 10: 3
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 11: 1
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 12: 1
-2023-07-03 15:09:20,399 - INFO - Number of rooms in cluster 13: 1
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 0: 36
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 1: 36
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 2: 40
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 3: 36
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 4: 32
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 5: 36
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 6: 16
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 7: 8
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 8: 32
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 9: 28
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 10: 12
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 11: 4
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 12: 4
-2023-07-03 15:09:20,399 - INFO - Total connections in cluster 13: 4
-2023-07-03 15:09:20,399 - INFO - Room type underground bunker used: 9 times.
-2023-07-03 15:09:20,399 - INFO - Room type cybernetic hive used: 9 times.
-2023-07-03 15:09:20,399 - INFO - Room type alien ruins used: 10 times.
-2023-07-03 15:09:20,399 - INFO - Room type alien spaceship interior used: 9 times.
-2023-07-03 15:09:20,399 - INFO - Room type lunar base used: 8 times.
-2023-07-03 15:09:20,399 - INFO - Room type bio-dome used: 9 times.
-2023-07-03 15:09:20,399 - INFO - Room type toxic alien wasteland used: 4 times.
-2023-07-03 15:09:20,399 - INFO - Room type futuristic research lab used: 2 times.
-2023-07-03 15:09:20,399 - INFO - Room type alien temple used: 8 times.
-2023-07-03 15:09:20,399 - INFO - Room type alien cavern used: 7 times.
-2023-07-03 15:09:20,399 - INFO - Room type floating city used: 3 times.
-2023-07-03 15:09:20,399 - INFO - Room type alien planetscape used: 1 times.
-2023-07-03 15:09:20,399 - INFO - Room type alien hive used: 1 times.
-2023-07-03 15:09:20,399 - INFO - Room type spaceship interior used: 1 times.
-2023-07-03 15:09:20,415 - INFO - Game map successfully generated.
-2023-07-03 15:09:20,415 - DEBUG - Current game map: <game_logic.GameMap object at 0x0000013CA3F01B70>
-2023-07-03 15:09:20,415 - INFO - Generate_game_title is called.
-2023-07-03 15:09:20,417 - INFO - DL/Generate_game_title: Data now looks this way: {'genre': 'Sci-Fi', 'elements': {'game_title': ['S
-2023-07-03 15:09:20,417 - INFO - DL/Generate_game_title: title parts are Realm of the Astro Matrix
-2023-07-03 15:09:22,590 - INFO - Start button pressed.
-2023-07-03 15:09:22,590 - INFO - Game_map object right here is <class 'game_logic.GameMap'>
-2023-07-03 15:09:22,590 - INFO - game_map type: <class 'game_logic.GameMap'>
-2023-07-03 15:09:22,590 - INFO - game_map value: <game_logic.GameMap object at 0x0000013CA3F01B70>
-2023-07-03 15:09:22,590 - INFO - game_map.grid_width: 9
-2023-07-03 15:09:22,590 - INFO - game_map.grid_height: 9
+INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
+INFO:root:Game map successfully generated.
+DEBUG:root:Current game map: <game_logic.GameMap object at 0x00000122199FDC00>
+INFO:root:Generate_game_title is called.
+INFO:root:DL/Generate_game_title: Data now looks this way: {'genre': 'Sci-Fi', 'elements': {'game_title': ['S
+INFO:root:DL/Generate_game_title: title parts are Stellar Chronicles of the Celestial Veil
+INFO:root:Game_map object right here is <class 'game_logic.GameMap'>
+INFO:root:game_map type: <class 'game_logic.GameMap'>
+INFO:root:game_map value: <game_logic.GameMap object at 0x00000122199FDC00>
+INFO:root:game_map.grid_width: 9
+INFO:root:game_map.grid_height: 9
+INFO:root:Game_map object right here is <class 'game_logic.GameMap'>
+INFO:root:game_map type: <class 'game_logic.GameMap'>
+INFO:root:game_map value: <game_logic.GameMap object at 0x00000122199FDC00>
+INFO:root:game_map.grid_width: 9
+INFO:root:game_map.grid_height: 9
+INFO:root:Select_random_genre: Genres comes up as [{'genre': 'Fantasy', 'elements': {'game_title': [
+DEBUG:root:Select_random_genre: Data keys after loading: dict_keys(['genres'])
+DEBUG:root:Data length after loading: 1
+INFO:root:Genre data loaded successfully.
+INFO:root:Elements found in data.
+DEBUG:root:Elements before map generation: {'game_title': ['In Search of the', 'The Legendary
+DEBUG:root:Rooms before map generation: [{'type': 'castle', 'name': ['Donjon', 'Oubliette'
+INFO:root:Room types selected are: ['treasury', 'garden', 'sanctum', 'gallery', 'library', 'castle', 'apothecary', 'crypt', 'reliquary', 'forest', 'open', 'cavern', 'tavern']
+INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 81 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 0 with room type treasury
+INFO:root:Adding room to cluster 0 at 4, 4
+INFO:root:Adding room to cluster 0 at 5, 4
+INFO:root:Adding room to cluster 0 at 5, 3
+INFO:root:Adding room to cluster 0 at 6, 4
+INFO:root:Adding room to cluster 0 at 4, 3
+INFO:root:Adding room to cluster 0 at 5, 5
+INFO:root:Adding room to cluster 0 at 3, 4
+INFO:root:Adding room to cluster 0 at 6, 3
+INFO:root:Adding room to cluster 0 at 6, 2
+INFO:root:Adding room to cluster 0 at 3, 3
+INFO:root:Cluster creation result: True
+INFO:root:Setting player start room: 5, 4
+INFO:root:The player's start room is: 5, 4
+INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 71 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 1 with room type garden
+INFO:root:Adding room to cluster 1 at 8, 4
+INFO:root:Adding room to cluster 1 at 8, 5
+INFO:root:Adding room to cluster 1 at 7, 5
+INFO:root:Adding room to cluster 1 at 8, 6
+INFO:root:Adding room to cluster 1 at 8, 3
+INFO:root:Adding room to cluster 1 at 7, 4
+INFO:root:Adding room to cluster 1 at 7, 3
+INFO:root:Adding room to cluster 1 at 8, 7
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 63 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 2 with room type sanctum
+INFO:root:Adding room to cluster 2 at 6, 6
+INFO:root:Adding room to cluster 2 at 6, 7
+INFO:root:Adding room to cluster 2 at 5, 7
+INFO:root:Adding room to cluster 2 at 7, 7
+INFO:root:Adding room to cluster 2 at 6, 8
+INFO:root:Adding room to cluster 2 at 5, 6
+INFO:root:Adding room to cluster 2 at 4, 7
+INFO:root:Adding room to cluster 2 at 3, 7
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 55 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 55 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 55 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 3 with room type gallery
+INFO:root:Adding room to cluster 3 at 1, 2
+INFO:root:Adding room to cluster 3 at 2, 2
+INFO:root:Adding room to cluster 3 at 3, 2
+INFO:root:Adding room to cluster 3 at 1, 3
+INFO:root:Adding room to cluster 3 at 2, 3
+INFO:root:Adding room to cluster 3 at 2, 4
+INFO:root:Adding room to cluster 3 at 0, 2
+INFO:root:Adding room to cluster 3 at 4, 2
+INFO:root:Adding room to cluster 3 at 0, 1
+INFO:root:Adding room to cluster 3 at 0, 0
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 45 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 45 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 45 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 4 with room type library
+INFO:root:Adding room to cluster 4 at 1, 7
+INFO:root:Adding room to cluster 4 at 2, 7
+INFO:root:Adding room to cluster 4 at 0, 7
+INFO:root:Adding room to cluster 4 at 2, 6
+INFO:root:Adding room to cluster 4 at 2, 8
+INFO:root:Adding room to cluster 4 at 1, 8
+INFO:root:Adding room to cluster 4 at 1, 6
+INFO:root:Adding room to cluster 4 at 3, 6
+INFO:root:Adding room to cluster 4 at 0, 6
+INFO:root:Adding room to cluster 4 at 3, 8
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 35 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 35 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 35 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 5 with room type castle
+INFO:root:Adding room to cluster 5 at 1, 1
+INFO:root:Adding room to cluster 5 at 1, 0
+INFO:root:Adding room to cluster 5 at 2, 1
+INFO:root:Adding room to cluster 5 at 3, 1
+INFO:root:Adding room to cluster 5 at 4, 1
+INFO:root:Adding room to cluster 5 at 5, 1
+INFO:root:Adding room to cluster 5 at 5, 0
+INFO:root:Adding room to cluster 5 at 4, 0
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 27 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 27 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 27 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 6 with room type apothecary
+INFO:root:Adding room to cluster 6 at 4, 6
+INFO:root:Adding room to cluster 6 at 4, 5
+INFO:root:Adding room to cluster 6 at 3, 5
+INFO:root:Adding room to cluster 6 at 2, 5
+INFO:root:Adding room to cluster 6 at 1, 5
+INFO:root:Adding room to cluster 6 at 0, 5
+INFO:root:Adding room to cluster 6 at 1, 4
+INFO:root:Adding room to cluster 6 at 0, 4
+INFO:root:Adding room to cluster 6 at 0, 3
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 18 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 18 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 18 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 7 with room type crypt
+INFO:root:Adding room to cluster 7 at 8, 0
+INFO:root:Adding room to cluster 7 at 7, 0
+INFO:root:Adding room to cluster 7 at 8, 1
+INFO:root:Adding room to cluster 7 at 6, 0
+INFO:root:Adding room to cluster 7 at 7, 1
+INFO:root:Adding room to cluster 7 at 7, 2
+INFO:root:Adding room to cluster 7 at 6, 1
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 11 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 8 with room type reliquary
+INFO:root:Adding room to cluster 8 at 7, 8
+INFO:root:Adding room to cluster 8 at 8, 8
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 9 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 9 with room type forest
+INFO:root:Adding room to cluster 9 at 3, 0
+INFO:root:Adding room to cluster 9 at 2, 0
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 7 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 7 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 7 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 10 with room type open
+INFO:root:Adding room to cluster 10 at 4, 8
+INFO:root:Adding room to cluster 10 at 5, 8
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 5 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 5 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 5 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 11 with room type cavern
+INFO:root:Adding room to cluster 11 at 8, 2
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 4 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 4 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 4 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 12 with room type tavern
+INFO:root:Adding room to cluster 12 at 5, 2
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 3 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 13 with room type treasury
+INFO:root:Adding room to cluster 13 at 0, 8
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 2 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 14 with room type garden
+INFO:root:Adding room to cluster 14 at 6, 5
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
+INFO:root:Checked if the map was full. There are 1 empty positions left in the grid.
+DEBUG:root:Current state of is_map_full: False
+INFO:root:Attempting to create cluster 15 with room type sanctum
+INFO:root:Adding room to cluster 15 at 7, 6
+INFO:root:Cluster creation result: True
+INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
+INFO:root:X-X-X X X E-X-E-X 
+|     | | |   | | 
+X X X X X-X X X X 
+| | | | |   |     
+X-X-X-X W X X-X X 
+  |   | | | |   | 
+X-X X-X-X X-X-X X 
+  |     | |     | 
+X K Y-X-X-X-X-X-X 
+|   | | | | |   | 
+X X X X X X X X-X 
+| |       |   | | 
+X X X X X-X-X X X 
+| | | |     |   | 
+X-X-X-X-E-L-X X-X 
+| | | | | | | | | 
+X X X X X A X X X 
+                  
+INFO:root:Checked if the map was full. There are 0 empty positions left in the grid.
+INFO:root:Game map successfully generated.
+DEBUG:root:Current game map: <game_logic.GameMap object at 0x00000122199FDCC0>
+INFO:root:DL/Generate_game_title: Data now looks this way: {'genre': 'Fantasy', 'elements': {'game_title': ['
+INFO:root:DL/Generate_game_title: title parts are Age of the Cursed Relic
+INFO:root:Game_map object right here is <class 'game_logic.GameMap'>
+INFO:root:game_map type: <class 'game_logic.GameMap'>
+INFO:root:game_map value: <game_logic.GameMap object at 0x00000122199FDCC0>
+INFO:root:game_map.grid_width: 9
+INFO:root:game_map.grid_height: 9
+INFO:root:Combat round started with: Player Level 1 HP 105 Atk 14 Defp 13 Acc 61 Ev 35
+INFO:root:There are no allies present.
+INFO:root:Enemy combatant is: Trained Thief (violent) Level 2 HP 102 Atk 15 Defp 9 Acc 52 Ev 37
+INFO:root:Initiative rolls:
+INFO:root:Trained Thief (violent) rolls 49 for initiative.
+INFO:root:Player rolls 45 for initiative.
+INFO:root:Round move order:
+INFO:root:Move orders are: Trained Thief (violent) Player .
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 66
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Player has 103 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 66
+INFO:root:The attack hits!
+INFO:root:***Trained Thief (violent) has 96 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 67
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 94 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 54
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 65
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 54
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 92 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 61
+INFO:root:The attack hits!
+INFO:root:Critical hit!
+INFO:root:***Player has 98 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 56
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 57
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 57
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 90 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 59
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 61
+INFO:root:The attack hits!
+INFO:root:***Trained Thief (violent) has 85 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack hits!
+INFO:root:***Player has 94 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 57
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 51
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 54
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 52
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 52
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 67
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 82 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 59
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 59
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 80 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Player has 92 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 56
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:Critical hit!
+INFO:root:***Trained Thief (violent) has 78 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 61
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Player has 89 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 66
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 58
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 56
+INFO:root:The attack hits!
+INFO:root:***Trained Thief (violent) has 71 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 63
+INFO:root:The attack hits!
+INFO:root:Critical hit!
+INFO:root:***Player has 81 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 69
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 69 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 56
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 4.
+INFO:root:***Player has 80 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 70
+INFO:root:The attack hits!
+INFO:root:***Trained Thief (violent) has 64 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 54
+INFO:root:The attack hits!
+INFO:root:***Player has 76 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 54
+INFO:root:The attack hits!
+INFO:root:***Trained Thief (violent) has 57 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 61
+INFO:root:The attack hits!
+INFO:root:***Player has 72 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 54
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 65
+INFO:root:The attack hits!
+INFO:root:***Player has 69 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 53
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 55 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 65
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 60
+INFO:root:The attack hits!
+INFO:root:***Trained Thief (violent) has 49 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 61
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 58
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 47 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 61
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 70
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 44 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 58
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Player has 68 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 53
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 57
+INFO:root:The attack hits!
+INFO:root:***Player has 63 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 57
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 60
+INFO:root:The attack misses.
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 56
+INFO:root:The attack hits!
+INFO:root:Successful block, half damage 5.
+INFO:root:***Trained Thief (violent) has 41 HP left.***
+INFO:root:Attacker accuracy: 52, defender evasion: 35
+INFO:root:Calculated chance after 15% randomness: 60
+INFO:root:The attack hits!
+INFO:root:***Player has 61 HP left.***
+INFO:root:Attacker accuracy: 61, defender evasion: 37
+INFO:root:Calculated chance after 15% randomness: 55
+INFO:root:The attack hits!
+INFO:root:***Trained Thief (violent) has 34 HP left.***

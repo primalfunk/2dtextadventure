@@ -7,8 +7,7 @@ if __name__ == "__main__":
     app = QApplication([])
     logging.basicConfig(filename='my_errors.log', 
                     level=logging.DEBUG, 
-                    filemode='w',  # 'w' means overwrite the file, 'a' means append
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+                    filemode='w')
     game_init = DataLoader("data.json")
     game_gui = GameGUI(data_loader=game_init)
 

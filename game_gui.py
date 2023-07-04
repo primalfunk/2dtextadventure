@@ -226,6 +226,7 @@ class GameGUI(QWidget):
         self.setGeometry(100, 100, 800, 600)
         self.show()
         self.player = Player()
+        
         self.update_player_stats()
 
     def increase_font_size(self):
@@ -258,23 +259,24 @@ class GameGUI(QWidget):
         self.player_info_label.setText(f"Player Info - Position: ({self.current_room.x}, {self.current_room.y})")
 
     def update_player_stats(self):
+        self.stats_text.clear()
         self.stats_text.setPlainText(
             f"Level: {self.player.level}\n"
             f"Hit Points: {self.player.hp}\n"
             f"Attack: {self.player.atk}\n"
             f"Defense: {self.player.defp}\n"
-            f"Accuracy: {self.player.defp}\n"
-            f"Defense: {self.player.defp}"
+            f"Accuracy: {self.player.acc}\n"
+            f"Defense: {self.player.ev}"
         )
 
     def initialize_game(self):
+        # To refresh the genre selection and load a new map
         self.data_loader.select_random_genre()
-        logging.info(f"self.data_loader.genre is this: {str(self.data_loader.genre)[:50]}")
         self.data_loader.create_game_map()
         self.game_map = self.data_loader.get_game_map()
 
     def start_game(self):
-        logging.info(f"Start button pressed.")
+        self.data_loader.game_map.set_player(self.player)
         if self.game_map:
             logging.info(f"Game_map object right here is {type(self.game_map)}")
             self.map_window = MapWindow(game_map=self.game_map)
@@ -416,8 +418,10 @@ class GameGUI(QWidget):
             self.update_inventory_text()
         elif self.interact_button.text() == "Attack":
             try:
+                self.game_text_area.append(f"{current_room.enemy.name} readies itself to attack. Combat has begun.")
                 self.combat_object = Combat(self.game_map.player, [], [current_room.enemy], self)
                 self.combat_object.combatUpdateSignal.connect(self.update_combat_text)
+                self.combat_object.statsUpdateSignal.connect(self.update_player_stats)
                 self.combat_object.combatEndSignal.connect(self.combat_object.stop_combat)
                 self.combat_thread = QThread()
                 self.combat_object.moveToThread(self.combat_thread)
@@ -428,11 +432,13 @@ class GameGUI(QWidget):
                 self.combat_thread.start()
             except Exception:
                 logging.exception("Caught an error")
+        elif self.interact_button.text() == "Use Key":
+            self.data_loader.game_map = "" # we'll have to figure this out later
+            self.data_loader.game_map.set_player(self.player) 
         self.game_text_area.moveCursor(QtGui.QTextCursor.End)
 
     def update_combat_text(self, text):
         self.game_text_area.append(text)
-        self.update_player_stats()
         self.game_text_area.moveCursor(QtGui.QTextCursor.End)
 
     def show_self(self):
