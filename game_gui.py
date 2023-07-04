@@ -2,11 +2,13 @@ from combat import Combat
 from game_logic import GameMap, Player, Key
 import json
 import logging
+import os
 from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame, QGridLayout
 from PySide6.QtCore import Qt, QCoreApplication, QThread
 from PySide6 import QtGui
 from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor, QPixmap
 import random
+import sys
 import traceback
 
 class DataLoader:
@@ -19,13 +21,16 @@ class DataLoader:
         self.title = None
         self.load_data()
 
+    def resource_path(self, relative_path):
+        base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+        return os.path.join(base_path, relative_path)
+
     def generate_game_title(self):
         logging.info(f"DL/Generate_game_title: Data now looks this way: {str(self.genre)[:50]}")
         game_title = random.choice(self.genre["elements"]["game_title"]) 
         treasure = random.choice(self.genre["elements"]["treasure"])
         self.title = game_title
         self.treasure = treasure
-        logging.info(f"DL/Generate_game_title: title parts are {game_title} {treasure}")
         title = f"{game_title} {treasure}"
         return title
 
@@ -542,7 +547,7 @@ class GameGUI(QWidget):
             self.refresh_room()
         else:
             # Game Over
-            self.display_message("You died. Please restart to continue.")
+            self.game_text_area.append(f"You have been defeated. Please restart to continue.\n")
             self.disable_all_buttons()
 
 
@@ -570,14 +575,14 @@ class MapWindow(QWidget):
         self.room_type_legend_widget.setStyleSheet(f"background-color: {self.backColor};")
         self.room_type_legend_layout = QVBoxLayout(self.room_type_legend_widget)
         self.legend_labels = {
-            QPixmap("img/player.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Player"),
-            QPixmap("img/enemy.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Enemy"),
-            QPixmap("img/weapon.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Weapon"),
-            QPixmap("img/armor.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Armor"),
-            QPixmap("img/key.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Key"),
-            QPixmap("img/lock.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Lock"),
-            QPixmap("img/ally.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Ally"),
-            QPixmap("img/new_empty.png").scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel('Room')
+            QPixmap(self.resource_path("img/player.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Player"),
+            QPixmap(self.resource_path("img/enemy.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Enemy"),
+            QPixmap(self.resource_path("img/weapon.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Weapon"),
+            QPixmap(self.resource_path("img/armor.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Armor"),
+            QPixmap(self.resource_path("img/key.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Key"),
+            QPixmap(self.resource_path("img/lock.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Lock"),
+            QPixmap(self.resource_path("img/ally.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Ally"),
+            QPixmap(self.resource_path("img/new_empty.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel('Room')
         }
         for pixmap, label in self.legend_labels.items():
             legend_item_layout = QHBoxLayout()
@@ -609,19 +614,23 @@ class MapWindow(QWidget):
                     self.labels[i][j].setStyleSheet(f"background-color: {self.backColor}; min-width: 10px; min-height: 10px;")
                 self.grid_layout.addWidget(self.labels[i][j], i, j)
         self.room_pixmaps = {
-            "player": QPixmap("img/player.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "enemy": QPixmap("img/enemy.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "weapon": QPixmap("img/weapon.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "armor": QPixmap("img/armor.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "key": QPixmap("img/key.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "lock": QPixmap("img/lock.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "ally": QPixmap("img/ally.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "empty": QPixmap("img/new_empty.png").scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "player": QPixmap(self.resource_path("img/player.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "enemy": QPixmap(self.resource_path("img/enemy.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "weapon": QPixmap(self.resource_path("img/weapon.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "armor": QPixmap(self.resource_path("img/armor.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "key": QPixmap(self.resource_path("img/key.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "lock": QPixmap(self.resource_path("img/lock.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "ally": QPixmap(self.resource_path("img/ally.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "empty": QPixmap(self.resource_path("img/new_empty.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
             }
         self.setLayout(self.layout)
         self.room_type_colors = {}
         self.update_map()
         self.create_room_type_legend()
+
+    def resource_path(self, relative_path):
+        base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+        return os.path.join(base_path, relative_path)
 
     def update_map(self):
         try:
@@ -706,3 +715,5 @@ class MapWindow(QWidget):
 
     def show_self(self):
         self.show()
+
+
