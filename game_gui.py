@@ -1,85 +1,21 @@
+import colorsys
 from combat import Combat
-from game_logic import GameMap, Player, Key
-import json
+from game_logic import Player, Key
 import logging
-import os
-from PySide6.QtWidgets import QApplication, QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame, QGridLayout
-from PySide6.QtCore import Qt, QCoreApplication, QThread, Signal, QTimer
+from mapwindow import MapWindow
+from matplotlib import colors
+from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame, QGridLayout
+from PySide6.QtCore import Qt, QCoreApplication, QThread, QTimer
 from PySide6.QtGui import QKeySequence, QShortcut
 from PySide6 import QtGui
-from PySide6 import QtCore
-from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor, QPixmap
+from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor
 import random
-import sys
-import time
-import traceback
-
-class DataLoader:
-    def __init__(self, json_path):
-        self.json_path = json_path
-        self.data = None
-        self.genre = None
-        self.game_map = None
-        self.treasure = None
-        self.title = None
-        self.load_data()
-
-    def resource_path(self, relative_path):
-        base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-        return os.path.join(base_path, relative_path)
-
-    def generate_game_title(self):
-        logging.info(f"DL/Generate_game_title: Data now looks this way: {str(self.genre)[:50]}")
-        game_title = random.choice(self.genre["elements"]["game_title"]) 
-        treasure = random.choice(self.genre["elements"]["treasure"])
-        self.title = game_title
-        self.treasure = treasure
-        title = f"{game_title} {treasure}"
-        return title
-
-    def select_random_genre(self):
-        try:
-            genres = self.data.get("genres")
-            logging.info(f"Select_random_genre: Genres comes up as {str(genres)[:50]}")
-            if not genres:
-                raise ValueError("Genres not found in data")
-            self.genre = random.choice(genres)
-            logging.debug(f"Select_random_genre: Data keys after loading: {self.data.keys()}")
-            logging.debug(f"Data length after loading: {len(self.data)}")
-        except ValueError as e:
-            logging.error(f"Error in selecting random genre: {str(e)}")
-
-    def load_data(self):
-        try:
-            with open(self.json_path, 'r') as file:
-                self.data = json.load(file)
-        except (FileNotFoundError, ValueError) as e:
-            logging.error(f"Error in loading data: {str(e)}")
-        
-    def create_game_map(self, grid_width=9, grid_height=9, player=None):
-        # instantiates GameMap; returns a successful game map to data_loader.game_map (self.game_map, in here)
-        if self.genre:
-            elements = self.genre.get("elements")
-            if elements:
-                self.game_map = GameMap(elements["rooms"], grid_width, grid_height, data_loader=self, player=player)
-                retries = 5  # maximum number of retries
-                for _ in range(retries):
-                    successful_generation = self.game_map.generate_game_map(elements["rooms"])
-                    if successful_generation:
-                        return self.game_map
-        return False
-
-    def get_game_map(self):
-        logging.debug(f"Current game map: {self.game_map}")
-        if self.game_map:
-            return self.game_map
-        else:
-            raise Exception("Game map not created yet")
 
 class GameGUI(QWidget):
     def __init__(self, data_loader=None):
         super().__init__()
         self.player = None
+        self.set_color_scheme()
         self.subsToChoose = [
         "2023 all wrongs left unreserved",
         "2023 more rights than a roundabout",
@@ -115,29 +51,23 @@ class GameGUI(QWidget):
         ]
         # gain focus immediately when created
         self.setFocusPolicy(Qt.StrongFocus)
+
         self.combat_object = None
         self.combat_thread = None
         self.data_loader = data_loader
         self.game_map = None
-        self.chooseFonts = ["FoglihtenNo07calt", "FoglihtenNo04,", "Foglihten", "GlukMixer", "Mas Pendi Wow", "Great Vibes", "a Antara Distance", "a Anggota", "g Gerdu"]
-        self.fontT = QFont("Roboto", 13)
-        self.fontM = QFont("Fira Sans Medium", 16)
-        self.font_size = 14
-        self.min_font_size = 10
-        self.max_font_size = 30
-        self.backColorA = "#b1b1fa" # light blue
-        self.backColorB = "powderblue"
-        self.textColorA = "#000088" # darker blue
-        self.textColorB = "black"
+
+        self.set_fonts()
         
-        main_layout = QVBoxLayout()
+        main_layout = QVBoxLayout() # top level layout is a QVBox
         self.setLayout(main_layout)
     
-        self.player_info_label = QLabel("")
-        self.player_info_label.setFont(self.fontT)
-        player_info_layout = QHBoxLayout()
+        self.player_info_label = QLabel("") # player info section, single-row-height at the very top of the window stretching almost the whole width
+        self.player_info_label.setFont(self.font_title)
+        player_info_layout = QHBoxLayout() 
         player_info_layout.addWidget(self.player_info_label)
-        self.font_size_decrease_button = QPushButton("-")
+
+        self.font_size_decrease_button = QPushButton("-") # text size buttons, not currently working but do need styling
         self.font_size_decrease_button.setEnabled(False)
         self.font_size_decrease_button.setFixedWidth(20)
         self.font_size_increase_button = QPushButton("+")
@@ -145,45 +75,51 @@ class GameGUI(QWidget):
         self.font_size_increase_button.setFixedWidth(20)
         player_info_layout.addWidget(self.font_size_decrease_button)
         player_info_layout.addWidget(self.font_size_increase_button)
-        main_layout.addLayout(player_info_layout)
-        self.game_text_area = QTextEdit()
-        self.game_text_area.setReadOnly(True)
-        self.game_text_area.setAlignment(Qt.AlignCenter)
-        self.game_text_area.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.font_size_decrease_button.clicked.connect(self.decrease_font_size)
         self.font_size_increase_button.clicked.connect(self.increase_font_size)
+        main_layout.addLayout(player_info_layout)
+        
+        self.game_text_area = QTextEdit() # Main text area, starting under the player info section and taking up most of the window
+        self.game_text_area.setReadOnly(True)
+        self.game_text_area.setAlignment(Qt.AlignCenter)
+        self.game_text_area.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)        
         main_layout.addWidget(self.game_text_area)
-        # Player set up
-        self.initialize_game(won=False)
-        self.player = Player()
-        game_title = self.data_loader.generate_game_title()
+        
+        self.initialize_game(won=False) # Instantiate the GameMap and Player from scratch
+        self.player = Player() # The main Player object is here; all other methods/classes should operate on this one
+
+        game_title = self.data_loader.generate_game_title() # and set the treasure for the map
+        self.treasure = self.data_loader.treasure
+
         format = QtGui.QTextCharFormat()
-        font_choice = random.choice(self.chooseFonts)
-        font = QFont({font_choice}, 52)
+        font = QFont({self.font_m}, 52)
         format.setFont(font)
         cursor = self.game_text_area.textCursor()
         cursor.setCharFormat(format)
         cursor.insertText(game_title)
-        format.setFont(self.fontT)
+        format.setFont(self.font_title)
         cursor.insertBlock()
         cursor.setCharFormat(format)
         self.subLine = random.choice(self.subsToChoose)
         cursor.insertText(f"\na procedurally generated text adventure by j menard \n{self.subLine}\n")
+        
         lowest_row_height = 280
         self.start_button = QPushButton("s(T)art")
-        self.start_button.setFont(self.fontT)
+        self.start_button.setFont(self.font_title)
         self.quit_button = QPushButton("(Q)uit")
-        self.quit_button.setFont(self.fontT)
+        self.quit_button.setFont(self.font_title)
         self.start_button.clicked.connect(self.start_game)
         self.quit_button.clicked.connect(QCoreApplication.instance().quit)
+        
         self.stats_label = QLabel("Player Stats")
         self.stats_label.setAlignment(Qt.AlignCenter)
-        self.stats_label.setFont(self.fontT)
+        self.stats_label.setFont(self.font_title)
         self.stats_text = QTextEdit()
-        new_font = self.fontM.family()
-        stats_font = QFont(new_font, 12)
+        new_font = self.font_main.family()
+        stats_font = QFont(new_font, 12) # special font size adjustment to make sure they all fit vertically
         self.stats_text.setFont(stats_font)
         self.stats_text.setReadOnly(True)
+        
         button_layout = QVBoxLayout()
         button_layout.addWidget(self.stats_label)
         button_layout.addWidget(self.stats_text)
@@ -200,19 +136,20 @@ class GameGUI(QWidget):
         self.buttons_frame.setLayout(buttons_frame_layout)
         self.buttons_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         self.buttons_frame.setFixedHeight(lowest_row_height)
+        
         self.direction_frame = QFrame()
         self.direction_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
         direction_layout = QGridLayout()
         self.north_button = QPushButton("(N)orth")
-        self.north_button.setFont(self.fontT)
+        self.north_button.setFont(self.font_title)
         self.west_button = QPushButton("(W)est")
-        self.west_button.setFont(self.fontT)
+        self.west_button.setFont(self.font_title)
         self.east_button = QPushButton("(E)ast")
-        self.east_button.setFont(self.fontT)
+        self.east_button.setFont(self.font_title)
         self.south_button = QPushButton("(S)outh")
-        self.south_button.setFont(self.fontT)
+        self.south_button.setFont(self.font_title)
         self.interact_button = QPushButton("Interact(X)")
-        self.interact_button.setFont(self.fontT)
+        self.interact_button.setFont(self.font_title)
         direction_layout.addWidget(self.north_button, 0, 1, 1, 1)
         direction_layout.addWidget(self.west_button, 1, 0, 1, 1)
         direction_layout.addWidget(self.interact_button, 1, 1, 1, 1)
@@ -259,10 +196,10 @@ class GameGUI(QWidget):
         self.inventory_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
         inventory_layout = QVBoxLayout()
         self.inventory_label = QLabel("Inventory")
-        self.inventory_label.setFont(self.fontT)
+        self.inventory_label.setFont(self.font_title)
         self.inventory_label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
         self.inventory_text = QTextEdit()
-        self.inventory_text.setFont(self.fontM)
+        self.inventory_text.setFont(self.font_main)
         self.inventory_text.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         inventory_layout.addWidget(self.inventory_label)
         inventory_layout.addWidget(self.inventory_text)
@@ -288,30 +225,48 @@ class GameGUI(QWidget):
         self.setWindowTitle("Undeclared Game Title")
         self.setGeometry(200, 100, 950, 700)
         self.show()
-        self.set_GUI_color()
         self.update_player_stats()
 
-    def set_GUI_color(self):
-        self.player_info_label.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.stats_label.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.stats_text.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.stats_text.setAlignment(Qt.AlignCenter)
-        self.inventory_label.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.inventory_text.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.inventory_text.setAlignment(Qt.AlignCenter)
-        self.font_size_decrease_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.font_size_increase_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.game_text_area.setStyleSheet(f"background-color: {self.backColorA}; color: {self.textColorA};")
-        self.start_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.quit_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.north_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.west_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.east_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.south_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.interact_button.setStyleSheet(f"background-color: {self.backColorB}; color: {self.textColorB};")
-        self.buttons_frame.setStyleSheet(f"background-color: {self.backColorA};")
-        self.direction_frame.setStyleSheet(f"background-color: {self.backColorA};")
-        self.inventory_frame.setStyleSheet(f"background-color: {self.backColorA};")
+    def set_color_scheme(self):
+        # choose the color scheme
+        self.all_the_colors = [
+                "cyan", "magenta", "silver", "orange", "pink", "violet", 
+                "coral", "lavender", "turquoise", "skyblue", "salmon", "peachpuff", 
+                "chartreuse", "firebrick", "indigo", "khaki", "olive", "peru", 
+                "plum", "sienna", "teal", "thistle", "tomato", "navajowhite", "wheat", 
+                "springgreen", "royalblue", "saddlebrown", "seashell", "snow", "steelblue", 
+                "tan", "slategray", "lightcyan", "mintcream", "palevioletred"
+            ]
+        base_color = self.all_the_colors[random.randint(0, len(self.all_the_colors) -1)]
+        rgb_base_color = colors.cnames[base_color]
+        hsv_base_color = colorsys.rgb_to_hsv(*colors.hex2color(rgb_base_color))
+        shades_of_base_color = []
+        num_shades = 2
+        for i in range(num_shades):
+            h = (hsv_base_color[0] + i/float(num_shades)) % 1
+            rgb_shade = colorsys.hsv_to_rgb(h, hsv_base_color[1], hsv_base_color[2])
+            shades_of_base_color.append(self.rgb_to_hex((int(rgb_shade[0]*255), int(rgb_shade[1]*255), int(rgb_shade[2]*255))))
+        self.color_one = shades_of_base_color[0]
+        self.color_two = shades_of_base_color[1]
+        return shades_of_base_color
+
+    def set_fonts(self):
+        self.font_size = 14
+        self.min_font_size = 10
+        self.max_font_size = 30
+        # randomize the fonts
+        self.chooseFonts = ["Bebas Neue", "Cinzel", "Playfair Display", "Montserrat", "Raleway", "Roboto Slab", "Oswald", "Lato", "Open Sans", 
+                            "Droid Serif", "Merriweather", "Arvo", "PT Sans", "Ubuntu", "Lora", "Bitter"]
+        self.font_t= random.choice(self.chooseFonts)
+        self.font_m = random.choice(self.chooseFonts)
+        retries = 0
+        while self.font_t == self.font_m and retries < 10: # ensure two different fonts are chosen
+            retries += 1
+            self.font_m = random.choice(self.chooseFonts)
+        self.font_title = QFont(self.font_t, 14)
+        self.font_main = QFont(self.font_m, 14)
+        print(f"Titles font set to: {self.font_t}")
+        print(f"Main font set to {self.font_m}")
 
     def travel_to_north(self):
         self.travel("north")
@@ -344,7 +299,7 @@ class GameGUI(QWidget):
             self.update_font()
 
     def update_font(self):
-        font = self.fontM
+        font = self.font_main
         current_text = self.game_text_area.toPlainText()
         self.game_text_area.clear()
         self.game_text_area.setCurrentFont(font)
@@ -375,9 +330,7 @@ class GameGUI(QWidget):
         )
 
     def initialize_game(self, won):
-        # To refresh the genre selection and load a new map
-        print(f"Load new genre")
-        self.data_loader.select_random_genre()
+        self.data_loader.select_random_genre() # To refresh the genre selection and load a new map
         if not self.player or self.player.hp <= 0:
             print(f"Condition - create a new player object - self.player = Player()")
             self.player = Player()
@@ -390,7 +343,7 @@ class GameGUI(QWidget):
         self.game_map = self.data_loader.get_game_map()
 
     def start_game(self):
-        self.game_text_area.setStyleSheet(f"background-color: {self.backColorA};")
+        self.game_text_area.setStyleSheet(f"background-color: {self.color_one};")
         self.enable_all_buttons()
         self.update_player_stats()
         if self.game_map:
@@ -399,12 +352,11 @@ class GameGUI(QWidget):
             map_window_x = self.geometry().x() + self.width()
             map_window_y = self.frameGeometry().y()
             self.map_window.move(map_window_x, map_window_y)
-            # return focus to main window
-            QTimer.singleShot(100, self.regain_focus)
+            QTimer.singleShot(100, self.regain_focus) # return focus to main window
         if self.start_button.text() == "s(T)art":
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignLeft | Qt.AlignTop)
-            self.game_text_area.setFont(self.fontM)
+            self.game_text_area.setFont(self.font_main)
             first_room = self.game_map.rooms[0]
             available_directions = [direction for direction, room in first_room.connected_rooms.items() if room is not None]
             room_description = f"<b>{first_room.name}</b><br><br>{first_room.description}<br><br>You can go: {', '.join(available_directions)}"
@@ -421,12 +373,13 @@ class GameGUI(QWidget):
             self.map_window.show_self()
             self.map_window.update_map()
         else:
-            self.initialize_game(won=False)
+            self.initialize_game(won=False) # character chooses restart
             self.stats_text.clear()
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignCenter)
             game_title = self.data_loader.generate_game_title()
             format = QtGui.QTextCharFormat()
+            
             font_choice = random.choice(self.chooseFonts)
             print(f"font_choice: {font_choice}")
             font = QFont({font_choice}, 40)
@@ -434,7 +387,7 @@ class GameGUI(QWidget):
             cursor = self.game_text_area.textCursor()
             cursor.setCharFormat(format)
             cursor.insertText(game_title)
-            format.setFont(self.fontT)
+            format.setFont(self.font_title)
             cursor.insertBlock()
             cursor.setCharFormat(format)
             self.subLine = random.choice(self.subsToChoose)
@@ -686,7 +639,7 @@ class GameGUI(QWidget):
         QTimer.singleShot(2000, self.beat_the_level4)
     
     def beat_the_level4(self):
-        self.game_text_area.setStyleSheet(f"background-color: {self.backColorA};")
+        self.game_text_area.setStyleSheet(f"background-color: {self.color_one};")
         game_title = self.data_loader.generate_game_title()
         format = QtGui.QTextCharFormat()
         font_choice = random.choice(self.chooseFonts)
@@ -730,6 +683,9 @@ class GameGUI(QWidget):
         self.start_game()
         self.game_text_area.moveCursor(QtGui.QTextCursor.End)
 
+    def rgb_to_hex(self, rgb):
+        return '#%02x%02x%02x' % rgb
+
 class AspectRatioWidget(QWidget):
     def __init__(self, widget):
         super().__init__()
@@ -749,174 +705,3 @@ class AspectRatioWidget(QWidget):
             widget_h = w
 
         self._layout.itemAt(0).widget().resize(widget_w, widget_h)
-
-class MapWindow(QWidget):
-    def __init__(self, game_map, player):
-        self.game_map = game_map
-        self.player = player
-        print(f"MapWindow initialized with player at {id(self.player)}")
-        super(MapWindow, self).__init__()
-        self.setWindowTitle("The Map of Maps")
-        self.setWindowFlags(Qt.Window | Qt.WindowDoesNotAcceptFocus)
-        self.layout = QHBoxLayout()
-        self.room_type_legend_labels = {}
-        self.fontA = QFont("Roboto", 7)
-        self.backColor = "#b1b1fa"
-        self.textColor = "#000088"
-        self.grid_widget = QWidget()
-        self.grid_widget.setStyleSheet(f"background-color: {self.backColor};")
-        self.grid_layout = QGridLayout(self.grid_widget)
-        self.legend_widget = QWidget()
-        self.legend_widget.setMinimumWidth(100)
-        self.legend_widget.setMaximumWidth(100)
-        self.legend_widget.setStyleSheet(f"background-color: {self.backColor};")
-        self.legend_layout = QVBoxLayout(self.legend_widget)
-        self.room_type_legend_widget = QWidget()
-        self.room_type_legend_widget.setMinimumWidth(100)
-        self.room_type_legend_widget.setMaximumWidth(100)
-        self.room_type_legend_widget.setStyleSheet(f"background-color: {self.backColor};")
-        self.room_type_legend_layout = QVBoxLayout(self.room_type_legend_widget)
-        self.legend_labels = {
-            QPixmap(self.resource_path("img/player.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Player"),
-            QPixmap(self.resource_path("img/enemy.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Enemy"),
-            QPixmap(self.resource_path("img/weapon.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Weapon"),
-            QPixmap(self.resource_path("img/armor.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Armor"),
-            QPixmap(self.resource_path("img/key.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Key"),
-            QPixmap(self.resource_path("img/lock.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Lock"),
-            QPixmap(self.resource_path("img/ally.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Ally"),
-            QPixmap(self.resource_path("img/new_empty.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel('Room')
-        }
-        for pixmap, label in self.legend_labels.items():
-            legend_item_layout = QHBoxLayout()
-            legend_item_widget = QWidget()
-            pixmap_label = QLabel()
-            pixmap_label.setPixmap(pixmap)
-            legend_item_layout.addWidget(pixmap_label)
-            label.setFont(self.fontA)
-            label.setStyleSheet(f"background-color: {self.backColor}; color: {self.textColor};")
-            label.setAlignment(Qt.AlignCenter)
-            legend_item_layout.addWidget(label)
-            legend_item_widget.setLayout(legend_item_layout)
-            self.legend_layout.addWidget(legend_item_widget)
-        self.ar_widget_g = AspectRatioWidget(self.grid_widget)
-        self.ar_widget_l = AspectRatioWidget(self.legend_widget)
-        self.ar_widget_r = AspectRatioWidget(self.room_type_legend_widget)
-        self.layout.addWidget(self.legend_widget)
-        self.layout.addWidget(self.ar_widget_g)
-        self.layout.addWidget(self.room_type_legend_widget)
-        try:
-           self.labels = [[None for _ in range(2*game_map.grid_width - 1)] for _ in range(2*game_map.grid_height - 1)]
-        except Exception as e:
-            logging.error(traceback.format_exc())
-        for i in range(2*game_map.grid_height - 1):
-            for j in range(2*game_map.grid_width - 1):
-                self.labels[i][j] = QLabel(' ')
-                self.labels[i][j].setAlignment(Qt.AlignCenter)
-                if i % 2 == 0 and j % 2 == 0:
-                    self.labels[i][j].setStyleSheet("background-color: black; min-width: 50px; min-height: 50px; font-size: 10px;")  # Change font size to 10px
-                else:
-                    self.labels[i][j].setStyleSheet(f"background-color: {self.backColor}; min-width: 10px; min-height: 10px;")
-                self.grid_layout.addWidget(self.labels[i][j], i, j)
-        self.room_pixmaps = {
-            "player": QPixmap(self.resource_path("img/player.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "enemy": QPixmap(self.resource_path("img/enemy.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "weapon": QPixmap(self.resource_path("img/weapon.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "armor": QPixmap(self.resource_path("img/armor.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "key": QPixmap(self.resource_path("img/key.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "lock": QPixmap(self.resource_path("img/lock.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "ally": QPixmap(self.resource_path("img/ally.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "empty": QPixmap(self.resource_path("img/new_empty.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            }
-        self.setLayout(self.layout)
-        self.room_type_colors = {}
-        self.update_map()
-        self.create_room_type_legend()
-
-    def focusInEvent(self, event):
-            self.focusGained.emit()
-            super().focusInEvent(event)
-
-    def resource_path(self, relative_path):
-        base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-        return os.path.join(base_path, relative_path)
-
-    def update_map(self):
-        try:
-            all_the_colors = [
-                "cyan", "magenta", "silver", "orange", "pink", "violet", 
-                "coral", "lavender", "turquoise", "skyblue", "salmon", "peachpuff", 
-                "chartreuse", "firebrick", "indigo", "khaki", "olive", "peru", 
-                "plum", "sienna", "teal", "thistle", "tomato", "navajowhite", "wheat", 
-                "springgreen", "royalblue", "saddlebrown", "seashell", "snow", "steelblue", 
-                "tan", "slategray", "lightcyan", "mintcream", "palevioletred"
-            ]           
-            for room in self.game_map.rooms:
-                if room is not None:
-                    if (0 <= 2*room.y < len(self.labels)) and (0 <= 2*room.x < len(self.labels[0])):
-                        room_label = self.labels[2*room.y][2*room.x]
-                        room_label.setAlignment(Qt.AlignCenter)
-                        if room.type not in self.room_type_colors:
-                            random.shuffle(all_the_colors)
-                            shuffled_colors = all_the_colors
-                            color_choice = shuffled_colors.pop(0)
-                            self.room_type_colors[room.type] = color_choice
-                            room_type_text_label = QLabel(room.type)
-                            room_type_text_label.setFont(self.fontA)
-                            room_type_text_label.setStyleSheet(f"background-color: {color_choice}; border: 1px solid black; color: {self.textColor};")
-                            room_type_text_label.setAlignment(Qt.AlignCenter)
-                            self.room_type_legend_labels[room.type] = room_type_text_label
-                        else:
-                            color_choice = self.room_type_colors[room.type]
-                        if room == self.player.current_room:
-                            room_label.setPixmap(self.room_pixmaps["player"])
-                            room_label.setStyleSheet("background-color: lime; border: 2px dashed black")
-                        elif room.enemy and not room.enemy.is_dead:
-                            room_label.setPixmap(self.room_pixmaps["enemy"])
-                            room_label.setStyleSheet("background-color: red;")
-                        elif room.weapon:
-                            room_label.setPixmap(self.room_pixmaps["weapon"])
-                            room_label.setStyleSheet("background-color: whitesmoke;")
-                        elif room.armor:
-                            room_label.setPixmap(self.room_pixmaps["armor"])
-                            room_label.setStyleSheet("background-color: paleturquoise;")
-                        elif room.key_item:
-                            room_label.setPixmap(self.room_pixmaps["key"])
-                            room_label.setStyleSheet("background-color: gold;")
-                        elif room.lock_item:
-                            room_label.setPixmap(self.room_pixmaps["lock"])
-                            room_label.setStyleSheet("background-color: goldenrod;")
-                        elif room.ally:
-                            room_label.setPixmap(self.room_pixmaps["ally"])
-                            room_label.setStyleSheet("background-color: yellow;")
-                        else:
-                            room_label.setPixmap(self.room_pixmaps["empty"])
-                            room_label.setStyleSheet(f"background-color: {color_choice};")
-                        for direction, connected_room in room.connected_rooms.items():
-                            if connected_room is not None:
-                                connection_label = None
-                                if direction == "north" and 2*room.y - 1 >= 0:
-                                    connection_label = self.labels[2*room.y - 1][2*room.x]
-                                    connection_label.setStyleSheet("background-color: seashell; min-height: 10px;")
-                                elif direction == "south" and 2*room.y + 1 < len(self.labels):
-                                    connection_label = self.labels[2*room.y + 1][2*room.x]
-                                    connection_label.setStyleSheet("background-color: seashell; min-height: 10px;")
-                                elif direction == "west" and 2*room.x - 1 >= 0:
-                                    connection_label = self.labels[2*room.y][2*room.x - 1]
-                                    connection_label.setStyleSheet("background-color: seashell; min-width: 10px;")
-                                elif direction == "east" and 2*room.x + 1 < len(self.labels[0]):
-                                    connection_label = self.labels[2*room.y][2*room.x + 1]
-                                    connection_label.setStyleSheet("background-color: seashell; min-width: 10px;")
-                                if connection_label is not None:
-                                    connection_label.setAlignment(Qt.AlignCenter)
-        except Exception as e:
-            logging.error(f"Error occurred during update_map function: {e}")
-    
-    def create_room_type_legend(self):
-        for room_type_label in self.room_type_legend_labels.values():
-            room_type_label.setWordWrap(True)
-            self.room_type_legend_layout.addWidget(room_type_label)
-
-    def show_self(self):
-        self.show()
-
-

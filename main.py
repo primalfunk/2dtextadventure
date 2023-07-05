@@ -1,4 +1,5 @@
-from game_gui import DataLoader, GameGUI
+from data_loader import DataLoader
+from game_gui import GameGUI
 import logging
 import os
 from PySide6.QtWidgets import QApplication
