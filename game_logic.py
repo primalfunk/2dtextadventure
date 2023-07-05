@@ -6,14 +6,14 @@ import random
 from random import choice
 
 class GameMap:
-    def __init__(self, rooms_data, grid_width, grid_height, data_loader):
+    def __init__(self, rooms_data, grid_width, grid_height, data_loader, player=None):
         self.data_loader = data_loader
         self.max_retries = 10
         self.target_rooms = grid_width * grid_height
         self.rooms = []
         self.room_clusters = {}
         self.rooms_data = rooms_data
-        self.player = Player()
+        self.player = player if player else Player()
         self.player_start_room = None
         self.grid_height = grid_height
         self.grid_width = grid_width
@@ -33,9 +33,6 @@ class GameMap:
         self.scenery_cycle = self.init_cycle("scenery")
         self.atmosphere_cycle = self.init_cycle("atmosphere")
         self.room_dict = {(x, y): None  for x in range(grid_width) for y in range(grid_height)}
-
-    def set_player(self, player):
-        self.player = player
 
     def init_cycle(self, field):
         all_items = [data[field] for data in self.rooms_data]
@@ -82,6 +79,8 @@ class GameMap:
         weights = full_weights[(start_level_diff - 1):(end_level_diff - 1)]
         for _ in range(enemy_count):
             placeable_data.append(self.generate_character_data(weights, level_diffs, True))
+        
+        
         placeable_data.append(self.generate_character_data(weights, level_diffs, False))
         placeable_attributes = ["key_item", "lock_item", "weapon", "armor"]
         placeable_attributes.extend("enemy" for _ in range(enemy_count))
@@ -348,7 +347,7 @@ class GameMap:
         return Weapon(weapon_data["type"], weapon_data["stats"]["damage"], weapon_data["stats"]["accuracy"])
 
     def generate_armor(self, armor_data):
-        return Armor(armor_data["type"], armor_data["stats"]["def"], armor_data["stats"]["ev"])
+        return Armor(armor_data["type"], armor_data["stats"]["defp"], armor_data["stats"]["ev"])
 
     def generate_character(self, character_data, level, is_enemy = True):
         return Character(character_data["type"],
@@ -547,6 +546,7 @@ class Room:
         self.ally = None
         self.weapon = None
         self.armor = None
+        self.items = []
         if name != "":
             self.symbol = name[0]
         else:
@@ -596,6 +596,12 @@ class Room:
                 adjacent_rooms.append(room)
         return adjacent_rooms
 
+    def add_item(self, item):
+        self.items.append(item)
+
+    def remove_item(self, item):
+        self.items.remove(item)
+
 class Item:
     def __init__(self, name, details):
         self.name = name
@@ -629,12 +635,11 @@ class Armor(Item):
         self.evasion = ev
 
 class Character:
-    BASE_XP = 250
-    XP_GROWTH_FACTOR = 1.2
-    LEVEL_DIFF_FACTOR = 0.2
-
     def __init__(self, name, level, hp, atk, defp, acc, ev, is_enemy):
-        self.name = name
+        if not isinstance(self, Player):
+            self.name = self.generate_decorated_name(name, is_enemy, level)
+        else:
+            self.name = name
         self.level = level
         self.hp = hp + sum(random.randint(4, 6) for _ in range(self.level))  # Base HP is 10, plus 4-6 per level
         self.atk = atk + sum(random.randint(2, 4) for _ in range(self.level))  # Base attack is 5, plus 2-4 per level
@@ -650,21 +655,25 @@ class Character:
         self.is_enemy = is_enemy
         self.ally = None
         self.is_dead = False
-
+        self.base_xp_reward = 100
+        self.base_xp_peak = 250
+        
     def xp_required_to_level_up(self):
-        return self.BASE_XP * (self.XP_GROWTH_FACTOR ** self.level)
+        return self.base_xp_peak * (1.5 ** (self.level - 1)) 
 
     def calculate_xp_award(self, player_level):
         level_difference = self.level - player_level
-        level_difference = max(min(level_difference, 5), -5)
-        return self.BASE_XP * (1 + level_difference * self.LEVEL_DIFF_FACTOR)
+        if level_difference >= 0:
+            return self.base_xp_reward * ((1 + level_difference) * 0.5)
+        else:
+            return 100 / (1 - 0.1 * level_difference)
 
     def add_item(self, item):
         self.inventory.append(item)
         if isinstance(item, Weapon):
             self.atk += item.damage
         elif isinstance(item, Armor):
-            self.defp += item.defense
+            self.defp += item.defp
 
     def roll_initiative(self):
         return random.randint(1, 20) + self.ev
@@ -672,18 +681,18 @@ class Character:
     @staticmethod
     def generate_decorated_name(base_name, is_hostile, level_difference):
         descriptors = {
-            5: ["Terrifying", "Fearsome", "Formidable", "Intimidating", "Dreadful", "Scary"],
-            4: ["Dangerous", "Deadly", "Lethal", "Menacing", "Threatening"],
-            3: ["Expert", "Proficient", "Skilled", "Experienced", "Talented", "Boss"],
-            2: ["Tough", "Hard", "Solid", "Rugged", "Stout", "Strong", "Veteran", ],
-            1: ["Challenging", "Full-grown", "Trained", "Tricky"],
+            5: ["Elite", "Battle-Hardened", "Steely", "Hardened", "Ruthless", "Dauntless"],
+            4: ["Seasoned", "Practiced", "Adept", "Wise", "Veteran", "Proficient"],
+            3: ["Challenging", "Full-grown", "Trained", "Tricky"],
+            2: ["Tough", "Experienced", "Solid", "Rugged", "Stout", "Strong"],
+            1: ["Wily", "Cunning", "Spirited", "Fiery", "Energetic", "Ambitious"],
             0: ["Normal", "Average", "Standard", "Regular", "Usual"],
             -1: ["Hesitant", "Unprepared", "Immature", "Bruised", "Sick-looking"],
             -2: ["Innocuous", "Harmless", "Old", "Scowling", "Unfortunate"],
             -3: ["Inexperienced", "Novice", "Beginner", "Rookie"],
             -4: ["Weak", "Fragile", "Frail", "Feeble", "Tottering", "Sickly"],
             -5: ["Helpless", "Uninteresting", "Inept", "Ineffectual", "Sad", "Lame"]
-        }
+}
         friendly_synonyms = ["friendly", "ally", "peaceful", "relaxed", "polite", "smiling"]
         hostile_synonyms = ["hostile", "enemy", "angry", "violent", "rude", "crazed"]
         if level_difference > 5:
@@ -698,10 +707,24 @@ class Character:
         type_desc = choice(hostile_synonyms if is_hostile else friendly_synonyms)
         return f"{level_difference} {base_name} ({type_desc})"
 
+    def pick_up(self, item):
+            ...
+            # Remove the item from the room
+            self.current_room.remove_item(item)
+
+    def drop(self, item):
+        if isinstance(item, Weapon):
+            self.weapon = None
+        elif isinstance(item, Armor):
+            self.armor = None
+        # Add the item to the room
+        self.current_room.add_item(item)
+
 class Player(Character):
     def __init__(self):
-        super().__init__(name="Player", level=1, hp=100, atk=30, defp=10, acc=60, ev=35, is_enemy=False)
+        super().__init__(name="Player", level=1, hp=100, atk=10, defp=10, acc=45, ev=35, is_enemy=False)
         self.xp = 0
+        self.key = None
 
     def gain_xp(self, xp_amount):
         self.xp += xp_amount

@@ -16,5 +16,4 @@ if __name__ == "__main__":
     json_file_path = resource_path("data.json")
     game_init = DataLoader(json_file_path)
     game_gui = GameGUI(data_loader=game_init)
-
     app.exec()

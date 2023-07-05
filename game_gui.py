@@ -11,6 +11,7 @@ from PySide6 import QtCore
 from PySide6.QtGui import QFont, QTextCharFormat, QTextCursor, QPixmap
 import random
 import sys
+import time
 import traceback
 
 class DataLoader:
@@ -36,28 +37,6 @@ class DataLoader:
         title = f"{game_title} {treasure}"
         return title
 
-    def scrutinize_data(self, data): # debugging method
-        logging.info("Scrutinize_data is called.")
-        for genre_data in data["genres"]:
-            genre = genre_data["genre"]
-            logging.info(f"Genre: {genre}")
-            elements = genre_data["elements"]
-            for key, value in elements.items():
-                if key == "rooms":
-                    count = len(value)
-                    logging.info(f"Rooms count: {count}")
-                    for room in value:
-                        room_type = room["type"]
-                        name_count = len(room["name"])
-                        adjectives_count = len(room["adjectives"])
-                        scenery_count = len(room["scenery"])
-                        atmosphere_count = len(room["atmosphere"])
-                        logging.info(f"Room type: {room_type}")
-                        logging.info(f"Name count: {name_count}")
-                        logging.info(f"Adjectives count: {adjectives_count}")
-                        logging.info(f"Scenery count: {scenery_count}")
-                        logging.info(f"Atmosphere count: {atmosphere_count}")
-
     def select_random_genre(self):
         try:
             genres = self.data.get("genres")
@@ -77,35 +56,17 @@ class DataLoader:
         except (FileNotFoundError, ValueError) as e:
             logging.error(f"Error in loading data: {str(e)}")
         
-    def create_game_map(self, grid_width=9, grid_height=9):
-        try: 
-            if self.genre:
-                logging.info("Genre data loaded successfully.")
-                elements = self.genre.get("elements")
-                if elements:
-                    logging.info("Elements found in data.")
-                    logging.debug(f"Elements before map generation: {str(elements)[:50]}")
-                    logging.debug(f"Rooms before map generation: {str(elements['rooms'])[:50]}")
-                    try:
-                        self.game_map = GameMap(elements["rooms"], grid_width, grid_height, data_loader=self)
-                    except Exception as e:
-                        logging.exception("Failed to initialize game: %s, e)")
-                    retries = 5  # maximum number of retries
-                    for i in range(retries):
-                        successful_generation = self.game_map.generate_game_map(elements["rooms"])
-                        if successful_generation:
-                            logging.info("Game map successfully generated.")
-                            return self.game_map
-                        else:
-                            logging.error(f"***Game map generation failed at attempt {i+1}. Retrying...")
-                    logging.error("Game map generation failed after maximum retries.")
-                    raise Exception("Game map generation failed after maximum retries.")
-            else:
-                logging.warning("No genre data loaded.")
-                raise ValueError("No genre data loaded, can't create game map")
-        except Exception as e:
-            logging.error(f"An error occurred during game initialization: {e}")
-            logging.error(traceback.format_exc())
+    def create_game_map(self, grid_width=9, grid_height=9, player=None):
+        # instantiates GameMap; returns a successful game map to data_loader.game_map (self.game_map, in here)
+        if self.genre:
+            elements = self.genre.get("elements")
+            if elements:
+                self.game_map = GameMap(elements["rooms"], grid_width, grid_height, data_loader=self, player=player)
+                retries = 5  # maximum number of retries
+                for _ in range(retries):
+                    successful_generation = self.game_map.generate_game_map(elements["rooms"])
+                    if successful_generation:
+                        return self.game_map
         return False
 
     def get_game_map(self):
@@ -118,41 +79,39 @@ class DataLoader:
 class GameGUI(QWidget):
     def __init__(self, data_loader=None):
         super().__init__()
+        self.player = None
         self.subsToChoose = [
-        "2023 - all wrongs left unreserved",
-        "2023 - where rights make lefts",
-        "2023 - more rights than a roundabout",
-        "2023 - right-hand traffic not guaranteed",
-        "2023 - your rights are in another castle",
-        "2023 - all rights are on vacation",
-        "2023 - rights reserved, but we lost the reservation",
-        "2023 - we asked for rights, they sent us lefts",
-        "2023 - all rights reversed",
-        "2023 - no rights were harmed in the making",
-        "2023 - rights have been left in the past",
-        "2023 - rights not included",
-        "2023 - rights are overrated",
-        "2023 - not even wrongs are reserved",
-        "2023 - rights sold separately",
-        "2023 - please mind your rights",
-        "2023 - some rights reserved, others misplaced",
-        "2023 - all rights turned left",
-        "2023 - right-free zone",
-        "2023 - rights went left, never came back",
-        "2023 - rights are left to your imagination",
-        "2023 - all rights, no lefts",
-        "2023 - rights are off-duty",
-        "2023 - rights are not right now",
-        "2023 - rights are having a timeout",
-        "2023 - rights, once left, are never right",
-        "2023 - rights took the wrong turn",
-        "2023 - rights have left the chat",
-        "2023 - rights, not even once",
-        "2023 - no rights to begin with",
-        "2023 - little to no rights reserved",
-        "2023 - some rights reserved but you have to guess which",
-        "2023 - your rights are my rights, your lefts my lefts",
-        "2023 - lefts are not wrong but rights are always correct"
+        "2023 all wrongs left unreserved",
+        "2023 more rights than a roundabout",
+        "2023 right-hand traffic not guaranteed",
+        "2023 your rights are in another castle",
+        "2023 rights reserved but we lost the reservation",
+        "2023 we asked for rights they sent us lefts",
+        "2023 all rights reversed",
+        "2023 no rights were harmed in the making",
+        "2023 rights have been left in the past",
+        "2023 rights not included",
+        "2023 rights are overrated",
+        "2023 not even wrongs are reserved",
+        "2023 rights sold separately",
+        "2023 please mind your rights",
+        "2023 some rights reserved others misplaced",
+        "2023 rights went left never came back",
+        "2023 rights are left to your imagination",
+        "2023 all rights, no lefts",
+        "2023 rights are not right right now",
+        "2023 rights are having a timeout",
+        "2023 rights once left are never right",
+        "2023 rights took the wrong turn",
+        "2023 rights have left the chat",
+        "2023 rights not even once",
+        "2023 no rights to begin with",
+        "2023 little to no rights reserved",
+        "2023 some rights reserved but you have to guess which",
+        "2023 your rights are my rights your lefts my lefts",
+        "2023 lefts are not wrong but rights are always correct",
+        "2023 this is my rights there are many like it but this one is mine"
+        "2023 this right is my right, it isn't your right"
         ]
         # gain focus immediately when created
         self.setFocusPolicy(Qt.StrongFocus)
@@ -161,14 +120,14 @@ class GameGUI(QWidget):
         self.data_loader = data_loader
         self.game_map = None
         self.chooseFonts = ["FoglihtenNo07calt", "FoglihtenNo04,", "Foglihten", "GlukMixer", "Mas Pendi Wow", "Great Vibes", "a Antara Distance", "a Anggota", "g Gerdu"]
-        self.fontT = QFont("Roboto", 14)
-        self.fontM = QFont("Fira Sans Medium", 14)
+        self.fontT = QFont("Roboto", 13)
+        self.fontM = QFont("Fira Sans Medium", 16)
         self.font_size = 14
         self.min_font_size = 10
         self.max_font_size = 30
-        self.backColorA = "#b1b1fa"
+        self.backColorA = "#b1b1fa" # light blue
         self.backColorB = "powderblue"
-        self.textColorA = "#000088"
+        self.textColorA = "#000088" # darker blue
         self.textColorB = "black"
         
         main_layout = QVBoxLayout()
@@ -194,14 +153,13 @@ class GameGUI(QWidget):
         self.font_size_decrease_button.clicked.connect(self.decrease_font_size)
         self.font_size_increase_button.clicked.connect(self.increase_font_size)
         main_layout.addWidget(self.game_text_area)
-        logging.info(f"Initialize game is called.")
-        self.initialize_game()
-        logging.info(f"Generate_game_title is called.")
+        # Player set up
+        self.initialize_game(won=False)
+        self.player = Player()
         game_title = self.data_loader.generate_game_title()
         format = QtGui.QTextCharFormat()
         font_choice = random.choice(self.chooseFonts)
-        print(f"font_choice: {font_choice}")
-        font = QFont({font_choice}, 40)
+        font = QFont({font_choice}, 52)
         format.setFont(font)
         cursor = self.game_text_area.textCursor()
         cursor.setCharFormat(format)
@@ -210,11 +168,11 @@ class GameGUI(QWidget):
         cursor.insertBlock()
         cursor.setCharFormat(format)
         self.subLine = random.choice(self.subsToChoose)
-        cursor.insertText(f"a procedurally generated text adventure by j menard \n{self.subLine}\n")
+        cursor.insertText(f"\na procedurally generated text adventure by j menard \n{self.subLine}\n")
         lowest_row_height = 280
-        self.start_button = QPushButton("Start")
+        self.start_button = QPushButton("s(T)art")
         self.start_button.setFont(self.fontT)
-        self.quit_button = QPushButton("Quit")
+        self.quit_button = QPushButton("(Q)uit")
         self.quit_button.setFont(self.fontT)
         self.start_button.clicked.connect(self.start_game)
         self.quit_button.clicked.connect(QCoreApplication.instance().quit)
@@ -222,7 +180,9 @@ class GameGUI(QWidget):
         self.stats_label.setAlignment(Qt.AlignCenter)
         self.stats_label.setFont(self.fontT)
         self.stats_text = QTextEdit()
-        self.stats_text.setFont(self.fontM)
+        new_font = self.fontM.family()
+        stats_font = QFont(new_font, 12)
+        self.stats_text.setFont(stats_font)
         self.stats_text.setReadOnly(True)
         button_layout = QVBoxLayout()
         button_layout.addWidget(self.stats_label)
@@ -243,15 +203,15 @@ class GameGUI(QWidget):
         self.direction_frame = QFrame()
         self.direction_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
         direction_layout = QGridLayout()
-        self.north_button = QPushButton("North")
+        self.north_button = QPushButton("(N)orth")
         self.north_button.setFont(self.fontT)
-        self.west_button = QPushButton("West")
+        self.west_button = QPushButton("(W)est")
         self.west_button.setFont(self.fontT)
-        self.east_button = QPushButton("East")
+        self.east_button = QPushButton("(E)ast")
         self.east_button.setFont(self.fontT)
-        self.south_button = QPushButton("South")
+        self.south_button = QPushButton("(S)outh")
         self.south_button.setFont(self.fontT)
-        self.interact_button = QPushButton("Interact")
+        self.interact_button = QPushButton("Interact(X)")
         self.interact_button.setFont(self.fontT)
         direction_layout.addWidget(self.north_button, 0, 1, 1, 1)
         direction_layout.addWidget(self.west_button, 1, 0, 1, 1)
@@ -274,6 +234,7 @@ class GameGUI(QWidget):
         shortcut_east = QShortcut(QKeySequence("e"), self)
         shortcut_start = QShortcut(QKeySequence("t"), self)
         shortcut_quit = QShortcut(QKeySequence("q"), self)
+        shortcut_interact = QShortcut(QKeySequence("x"), self)
 
         shortcut_north.activated.connect(self.travel_to_north)
         shortcut_south.activated.connect(self.travel_to_south)
@@ -281,6 +242,7 @@ class GameGUI(QWidget):
         shortcut_east.activated.connect(self.travel_to_east)
         shortcut_start.activated.connect(self.start_game)
         shortcut_quit.activated.connect(QCoreApplication.instance().quit)
+        shortcut_interact.activated.connect(self.interact)
 
         # Adding arrow key shortcuts
         shortcut_up = QShortcut(QKeySequence(Qt.Key_Up), self)
@@ -327,7 +289,6 @@ class GameGUI(QWidget):
         self.setGeometry(200, 100, 950, 700)
         self.show()
         self.set_GUI_color()
-        self.player = Player()
         self.update_player_stats()
 
     def set_GUI_color(self):
@@ -399,6 +360,7 @@ class GameGUI(QWidget):
             cursor.setCharFormat(format_bold)
 
     def update_player_info(self):
+        print(f"Updating player info for player at {id(self.player)}")
         self.player_info_label.setText(f"Player Info - Position: ({self.current_room.x}, {self.current_room.y})")
 
     def update_player_stats(self):
@@ -412,25 +374,34 @@ class GameGUI(QWidget):
             f"Defense: {self.player.ev}"
         )
 
-    def initialize_game(self):
+    def initialize_game(self, won):
         # To refresh the genre selection and load a new map
+        print(f"Load new genre")
         self.data_loader.select_random_genre()
-        self.data_loader.create_game_map()
+        if not self.player or self.player.hp <= 0:
+            print(f"Condition - create a new player object - self.player = Player()")
+            self.player = Player()
+            print(f"New player object created at {id(self.player)}")
+        elif won:
+            print(f"Keeping a player that's alive into the next level at {id(self.player)}")
+        else:
+            self.player = Player()
+        self.data_loader.create_game_map(9, 9, self.player)
         self.game_map = self.data_loader.get_game_map()
 
     def start_game(self):
-        self.data_loader.game_map.set_player(self.player)
+        self.game_text_area.setStyleSheet(f"background-color: {self.backColorA};")
         self.enable_all_buttons()
+        self.update_player_stats()
         if self.game_map:
-            self.game_map = self.data_loader.create_game_map(self)
-            self.map_window = MapWindow(game_map=self.game_map)
+            self.map_window = MapWindow(game_map=self.game_map, player=self.player)
             self.map_window.setFixedSize(self.width(), self.height())
             map_window_x = self.geometry().x() + self.width()
             map_window_y = self.frameGeometry().y()
             self.map_window.move(map_window_x, map_window_y)
             # return focus to main window
             QTimer.singleShot(100, self.regain_focus)
-        if self.start_button.text() == "Start":
+        if self.start_button.text() == "s(T)art":
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignLeft | Qt.AlignTop)
             self.game_text_area.setFont(self.fontM)
@@ -438,19 +409,20 @@ class GameGUI(QWidget):
             available_directions = [direction for direction, room in first_room.connected_rooms.items() if room is not None]
             room_description = f"<b>{first_room.name}</b><br><br>{first_room.description}<br><br>You can go: {', '.join(available_directions)}"
             self.game_text_area.append(room_description)
-            self.game_map.player.x = first_room.x
-            self.game_map.player.y = first_room.y
-            self.game_map.player.current_room = first_room
+            self.player.x = first_room.x
+            self.player.y = first_room.y
+            self.player.current_room = first_room
             self.current_room = first_room
             self.update_player_info()
-            self.start_button.setText("Restart")
+            self.start_button.setText("Res(T)art")
             self.font_size_increase_button.setEnabled(True)
             self.font_size_decrease_button.setEnabled(True)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
             self.map_window.show_self()
             self.map_window.update_map()
         else:
-            self.initialize_game()
+            self.initialize_game(won=False)
+            self.stats_text.clear()
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignCenter)
             game_title = self.data_loader.generate_game_title()
@@ -467,10 +439,11 @@ class GameGUI(QWidget):
             cursor.setCharFormat(format)
             self.subLine = random.choice(self.subsToChoose)
             cursor.insertText(f"a procedurally generated text adventure by j menard\n{self.subLine}\n")
-            self.start_button.setText("Start")
+            self.start_button.setText("s(T)art")
             self.font_size_increase_button.setEnabled(False)
             self.font_size_decrease_button.setEnabled(False)
             self.game_text_area.moveCursor(QtGui.QTextCursor.End)
+            self.map_window = MapWindow(game_map=self.game_map, player=self.player)
             self.hide_map()
 
     def regain_focus(self):
@@ -479,8 +452,11 @@ class GameGUI(QWidget):
 
     def update_inventory_text(self):
         inventory_text = ""
-        for item in self.game_map.player.inventory:
-            inventory_text += f"{item.name}\n"
+        for item in self.player.inventory:
+            if item == self.player.weapon or item == self.player.armor:
+                inventory_text += f"{item.name} (equipped)\n"
+            else:
+                inventory_text += f"{item.name}\n"
         self.inventory_text.setText(inventory_text)
 
     def refresh_room(self):
@@ -501,18 +477,25 @@ class GameGUI(QWidget):
                 return
             self.game_text_area.append(f"You travel {direction}.\n")
             if direction == "north":
-                self.game_map.player.y -= 1
+                self.player.y -= 1
             elif direction == "south":
-                self.game_map.player.y += 1
+                self.player.y += 1
             elif direction == "east":
-                self.game_map.player.x += 1
+                self.player.x += 1
             elif direction == "west":
-                self.game_map.player.x -= 1
+                self.player.x -= 1
             self.current_room = next_room
-            self.game_map.player.current_room = next_room
+            self.player.current_room = next_room
             self.game_text_area.clear()
             self.display_room(self.current_room)
             self.update_player_info()
+            if self.player.ally is not None:
+                self.player.ally.x = self.player.x
+                self.player.ally.y = self.player.y
+                self.player.ally.current_room.ally = None
+                self.player.ally.current_room = self.current_room
+                self.current_room.ally = self.player.ally
+                self.game_text_area.append(f"{self.player.ally.name} arrives.")
             self.update_interact_button()
             available_directions = [direction for direction, room in self.current_room.connected_rooms.items() if room is not None]
             available_directions = ", ".join(available_directions)
@@ -524,18 +507,18 @@ class GameGUI(QWidget):
             self.game_text_area.append("You can't go that way.")
 
     def update_interact_button(self):
-        current_room = self.game_map.player.current_room
+        current_room = self.player.current_room
         if any([current_room.key_item, current_room.weapon, current_room.armor]): 
-            self.interact_button.setText("Pick Up")
+            self.interact_button.setText("Pick Up(X)")
         elif current_room.lock_item:
-            has_key = any(isinstance(item, Key) for item in self.game_map.player.inventory)
-            self.interact_button.setText("Unlock") if has_key else self.interact_button.setText("Locked")
+            has_key = any(isinstance(item, Key) for item in self.player.inventory)
+            self.interact_button.setText("Unlock(X)") if has_key else self.interact_button.setText("Locked")
         elif current_room.enemy and not current_room.enemy.is_dead:
-            self.interact_button.setText("Attack")
-        elif current_room.ally:
-            self.interact_button.setText("Greet")
+            self.interact_button.setText("Attack(X)")
+        elif current_room.ally and self.player.ally is None:
+            self.interact_button.setText("Greet(X)")
         else:
-            self.interact_button.setText("Interact")
+            self.interact_button.setText("Interact(X)")
 
     def get_current_room(self):
         room_name = self.game_text_area.toPlainText().split(":")[0]
@@ -565,29 +548,61 @@ class GameGUI(QWidget):
         self.game_text_area.moveCursor(QtGui.QTextCursor.End)
 
     def interact(self):
-        current_room = self.game_map.player.current_room
-        if self.interact_button.text() == "Pick Up":
+        current_room = self.player.current_room
+        if self.interact_button.text() == "Pick Up(X)":
             if current_room.key_item:
                 item = current_room.key_item
                 self.game_text_area.append(f"You pick up the {item.name}.")
-                self.game_map.player.inventory.append(item)
+                self.player.inventory.append(item)
                 current_room.key_item = None
+                self.player.key = item
             elif current_room.weapon:
                 item = current_room.weapon
+                if self.player.weapon:
+                    # drop the existing weapon; remove from inventory and add to room
+                    dropped_item = self.player.weapon
+                    self.player.atk -= dropped_item.damage
+                    self.player.acc -= dropped_item.accuracy
+                    self.player.weapon = None
+                    current_room.weapon = dropped_item
+                    self.player.inventory.remove(dropped_item)
+                    self.game_text_area.append(f"You drop the {dropped_item.name}.")
                 self.game_text_area.append(f"You pick up the {item.name}.")
-                self.game_map.player.inventory.append(item)
+                self.player.inventory.append(item)
+                self.player.weapon = item
+                self.player.atk += item.damage
+                self.player.acc += item.accuracy
                 current_room.weapon = None
+            
             elif current_room.armor:
                 item = current_room.armor
+                print(f"Armor is {item.name}")
+                if self.player.armor:
+                    dropped_item = self.player.armor
+                    self.player.defp -= dropped_item.stats["defp"]
+                    self.player.ev -= dropped_item.stats["ev"]
+                    self.player.armor = None
+                    current_room.armor = dropped_item
+                    self.player.inventory.remove(dropped_item)
+                    self.game_text_area.append(f"You drop the {dropped_item.name}.")
                 self.game_text_area.append(f"You pick up the {item.name}.")
-                self.game_map.player.inventory.append(item)
+                self.player.inventory.append(item)
+                self.player.defp += item.defense
+                self.player.ev += item.evasion
+                self.player.armor = item
                 current_room.armor = None
             self.update_interact_button()
             self.update_inventory_text()
-        elif self.interact_button.text() == "Attack":
+            self.update_player_stats()
+        
+        elif self.interact_button.text() == "Greet(X)":
+            self.player.ally = self.current_room.ally
+            self.game_text_area.append(f"{self.player.ally.name} starts following you.")
+
+        elif self.interact_button.text() == "Attack(X)":
             try:
-                self.game_text_area.append(f"{current_room.enemy.name} readies itself for battle. Combat has begun!\n")
-                self.combat_object = Combat(self.game_map.player, [], [current_room.enemy], self)
+                self.game_text_area.append(f"\n{current_room.enemy.name} sees you and readies itself for battle. Combat has begun!\n")
+                self.combat_object = Combat(self.player, [], [current_room.enemy], self)
                 self.combat_object.combatUpdateSignal.connect(self.update_combat_text)
                 self.combat_object.statsUpdateSignal.connect(self.update_player_stats)
                 self.combat_object.combatEndSignal.connect(self.combat_object.stop_combat)
@@ -601,10 +616,9 @@ class GameGUI(QWidget):
                 self.combat_thread.start()
             except Exception:
                 logging.exception("Caught an error")
-        elif self.interact_button.text() == "Use Key":
-            self.data_loader.game_map = "" # we'll have to figure this out later
-            self.data_loader.game_map.set_player(self.player) 
-        self.game_text_area.moveCursor(QtGui.QTextCursor.End)
+        elif self.interact_button.text() == "Unlock(X)":
+            # load a new game map and go on; reset everything except Player
+            self.beat_the_level0()
 
     def update_combat_text(self, text):
         self.game_text_area.append(text)
@@ -631,9 +645,10 @@ class GameGUI(QWidget):
             level_before = self.player.level
             self.player.gain_xp(xp_award)
             level_after = self.player.level
-            message = f"In {rounds} rounds, you defeated a level {enemy.level} {enemy.name} and gained {int(enemy.calculate_xp_award(self.player.level))} XP.\n"
+            message = f"In {rounds} rounds, you defeated a level {enemy.level} {enemy.name} and gained {xp_award} XP.\n"
             message += f"Player Hit rate: {int(p_hit_rate)}%, Total Player Damage dealt: {p_total_dmg}\n" 
             message += f"Enemy Hit rate: {int(e_hit_rate)}%, Total Enemy Damage dealt: {e_total_dmg}\n"
+            message += f"Current XP: {self.player.xp}, XP required for next level: {int(self.player.xp_required_to_level_up())}\n"
             self.game_text_area.append(message)
             enemy.name = "dead " + enemy.name
             if level_after > level_before:
@@ -646,6 +661,32 @@ class GameGUI(QWidget):
             # Game Over
             self.game_text_area.append(f"You have been defeated. Please restart to continue.\n")
             self.disable_all_buttons()
+    
+    def beat_the_level0(self):
+        self.game_text_area.clear()
+        self.game_text_area.append(f"\nYou use the {self.player.key.name} to open the {self.player.current_room.lock_item.name}!")
+        QTimer.singleShot(5000, self.beat_the_level1)
+    
+    def beat_the_level1(self):
+        self.game_text_area.clear()
+        self.game_text_area.append(f"From within the {self.player.current_room.lock_item.name}, a light begins to grow brighter and brighter, enveloping everything.")
+        self.player.key = None
+        QTimer.singleShot(5000, self.beat_the_level2)
+
+    def beat_the_level2(self):
+        self.game_text_area.clear()
+        self.game_text_area.append(f"You find yourself in another place...")
+        QTimer.singleShot(5000, self.beat_the_level3)
+
+    def beat_the_level3(self):
+        self.game_text_area.setStyleSheet(f"background-color: black;")
+        QTimer.singleShot(5000, self.restart_game_after_level_won)
+
+    def restart_game_after_level_won(self):
+        self.initialize_game(won=True)
+        self.start_button.setText("s(T)art")
+        self.start_game()
+        self.game_text_area.moveCursor(QtGui.QTextCursor.End)
 
 class AspectRatioWidget(QWidget):
     def __init__(self, widget):
@@ -668,8 +709,10 @@ class AspectRatioWidget(QWidget):
         self._layout.itemAt(0).widget().resize(widget_w, widget_h)
 
 class MapWindow(QWidget):
-    def __init__(self, game_map):
+    def __init__(self, game_map, player):
         self.game_map = game_map
+        self.player = player
+        print(f"MapWindow initialized with player at {id(self.player)}")
         super(MapWindow, self).__init__()
         self.setWindowTitle("The Map of Maps")
         self.setWindowFlags(Qt.Window | Qt.WindowDoesNotAcceptFocus)
@@ -782,7 +825,7 @@ class MapWindow(QWidget):
                             self.room_type_legend_labels[room.type] = room_type_text_label
                         else:
                             color_choice = self.room_type_colors[room.type]
-                        if room == self.game_map.player.current_room:
+                        if room == self.player.current_room:
                             room_label.setPixmap(self.room_pixmaps["player"])
                             room_label.setStyleSheet("background-color: lime; border: 2px dashed black")
                         elif room.enemy and not room.enemy.is_dead:
