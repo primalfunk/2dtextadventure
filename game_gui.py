@@ -490,6 +490,7 @@ class GameGUI(QWidget):
             self.display_room(self.current_room)
             self.update_player_info()
             if self.player.ally is not None:
+                print(f"Ally is: {self.player.ally.name}.")
                 self.player.ally.x = self.player.x
                 self.player.ally.y = self.player.y
                 self.player.ally.current_room.ally = None
@@ -598,6 +599,7 @@ class GameGUI(QWidget):
         elif self.interact_button.text() == "Greet(X)":
             self.player.ally = self.current_room.ally
             self.game_text_area.append(f"{self.player.ally.name} starts following you.")
+            print(f"Ally name is: {self.player.ally.name}")
 
         elif self.interact_button.text() == "Attack(X)":
             try:
@@ -664,23 +666,63 @@ class GameGUI(QWidget):
     
     def beat_the_level0(self):
         self.game_text_area.clear()
-        self.game_text_area.append(f"\nYou use the {self.player.key.name} to open the {self.player.current_room.lock_item.name}!")
-        QTimer.singleShot(5000, self.beat_the_level1)
+        self.game_text_area.append(f"You use the {self.player.key.name} to open the {self.player.current_room.lock_item.name}!")
+        QTimer.singleShot(3000, self.beat_the_level1)
     
     def beat_the_level1(self):
         self.game_text_area.clear()
         self.game_text_area.append(f"From within the {self.player.current_room.lock_item.name}, a light begins to grow brighter and brighter, enveloping everything.")
         self.player.key = None
-        QTimer.singleShot(5000, self.beat_the_level2)
+        QTimer.singleShot(3000, self.beat_the_level2)
 
     def beat_the_level2(self):
         self.game_text_area.clear()
-        self.game_text_area.append(f"You find yourself in another place...")
-        QTimer.singleShot(5000, self.beat_the_level3)
+        self.game_text_area.append(f"You find yourself in another place, deeper down the rabbit hole...")
+        QTimer.singleShot(3000, self.beat_the_level3)
 
     def beat_the_level3(self):
+        self.game_text_area.clear()
         self.game_text_area.setStyleSheet(f"background-color: black;")
-        QTimer.singleShot(5000, self.restart_game_after_level_won)
+        QTimer.singleShot(2000, self.beat_the_level4)
+    
+    def beat_the_level4(self):
+        self.game_text_area.setStyleSheet(f"background-color: {self.backColorA};")
+        game_title = self.data_loader.generate_game_title()
+        format = QtGui.QTextCharFormat()
+        font_choice = random.choice(self.chooseFonts)
+        font = QFont({font_choice}, 52)
+        format.setFont(font)
+        cursor = self.game_text_area.textCursor()
+        cursor.setCharFormat(format)
+        cursor.insertText(game_title)
+        quote = random.choice(['"And what is the use of a book,” thought Alice, “without pictures or conversations?"',
+                               '"How funny it will seem to come out among the people that walk with their heads downwards! The antipathies, I think—"',
+                               '“Oh, how I wish I could shut up like a telescope! I think I could, if only I knew how to begin.” For, you see, so many out-of-the-way things had happened lately, that Alice had begun to think that very few things indeed were really impossible.',
+                               'It was all very well to say "Drink me," but the wise little Alice was not going to do that in a hurry. "No, I will look first," she said, "and see whether it is marked poison or not."',
+                               '“But it is no use now," thought poor Alice, "to pretend to be two people! Why, there is hardly enough of me left to make one respectable person!"',
+                               '“Curiouser and curiouser!” cried Alice (she was so much surprised, that for the moment she quite forgot how to speak good English).',
+                               '“I wish I had not cried so much!” said Alice, as she swam about, trying to find her way out. “I shall be punished for it now, I suppose, by being drowned in my own tears! That will be a queer thing, to be sure! However, everything is queer to-day.”',
+                               '“When I used to read fairy tales, I fancied that kind of thing never happened, and now here I am in the middle of one!”',
+                               '“Well! I have often seen a cat without a grin,” thought Alice; “but a grin without a cat! It is the most curious thing I ever saw in all my life!”',
+                               '“How do you like the Queen?” said the Cat in a low voice.\n“Not at all,” said Alice: “she is so extremely—” Just then she noticed that the Queen was close behind her, listening: so she went on “—likely to win, that it is hardly worth while finishing the game.”',
+                               '“Speak English!” said the Eaglet. “I do not know the meaning of half those long words, and, what\'s more, I don\'t believe you do either!”',
+                               '“The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She\'ll get me executed, as sure as ferrets are ferrets!” ',
+                               'This was not an encouraging opening for a conversation. Alice replied, rather shyly, “I—I hardly know, Sir, just at present—at least I know who I was when I got up this morning, but I think I must have been changed several times since then.”',
+                               '“What do you mean by that?” said the Caterpillar, sternly. “Explain yourself!”\n“I can\'t explain myself, I\'m afraid, Sir,” said Alice, “because I am not myself, you see.”',
+                               '“Would you tell me, please, which way I ought to go from here?”\n “That depends a good deal on where you want to get to,” said the Cat.\n“I don\'t much care where—” said Alice. “Then it doesn\'t matter which way you go,” said the Cat. “—so long as I get somewhere,” Alice added as an explanation. \n“Oh, you\'re sure to do that,” said the Cat, “if you only walk long enough.”',
+                               '“In that direction,” the Cat said, waving its right paw round, “lives a Hatter: and in that direction,” waving the other paw, “lives a March Hare. Visit either you like: they\'re both mad.”\n“But I don\'t want to go among mad people,” Alice remarked.\n“Oh, you can\'t help that,” said the Cat: “we\'re all mad here. I\'m mad. You\'re mad.”\n“How do you know I\'m mad?” said Alice.\n“You must be,” said the Cat, “or you wouldn\'t have come here.” ',
+                               '“To begin with,” said the Cat, “a dog\'s not mad. You grant that?”\n“I suppose so,” said Alice.\n“Well, then,” the Cat went on, “you see a dog growls when it\'s angry, and wags its tail when it\'s pleased. Now I growl when I\'m pleased, and wag my tail when I\'m angry. Therefore I\'m mad.”\n“I call it purring, not growling,” said Alice.\n“Call it what you like,” said the Cat',
+                               '“If everybody minded their own business,” the Duchess said, in a hoarse growl, “the world would go round a deal faster than it does.”',
+                               '“And the moral of that is—\'Oh, \'tis love, \'tis love, that makes the world go round!’”\n“Somebody said,” Alice whispered, “that it\'s done by everybody minding their own business!”\n“Ah well! It means much the same thing,” said the Duchess, digging her sharp little chin into Alice\'s shoulder as she added, “and the moral of that is—\'Take care of the sense, and the sounds will take care of themselves.\'”',
+                               '“And the moral of that is—\'Be what you would seem to be\'—or, if you\'d like it put more simply—\'Never imagine yourself not to be otherwise than what it might appear to others that what you were or might have been was not otherwise than what you had been would have appeared to them to be otherwise.’”',
+                               '“Have some wine,” the March Hare said in an encouraging tone.\nAlice looked all round the table, but there was nothing on it but tea. “I don\'t see any wine,” she remarked.\n“There isn\'t any,” said the March Hare.\n“Then it wasn\'t very civil of you to offer it,” said Alice angrily.\n“It wasn\'t very civil of you to sit down without being invited,” said the March Hare.',
+                               '“When we were little,” the Mock Turtle went on at last, more calmly, though still sobbing a little now and then,” we went to school in the sea. The master was an old Turtle—we used to call him Tortoise—”\n“Why did you call him Tortoise, if he wasn\'t one?” asked Alice.\n“We called him Tortoise because he taught us,” said the Mock Turtle angrily. “Really you are very dull!”',
+                               'The Queen turned crimson with fury, and, after glaring at her for a moment like a wild beast, began screaming “Off with her head! Off with—”\n“Nonsense!” said Alice, very loudly and decidedly, and the Queen was silent.'])        
+        format.setFont(self.fontT)
+        cursor.insertBlock()
+        cursor.setCharFormat(format)
+        cursor.insertText(f"{quote}")
+        QTimer.singleShot(3000, self.restart_game_after_level_won)
 
     def restart_game_after_level_won(self):
         self.initialize_game(won=True)

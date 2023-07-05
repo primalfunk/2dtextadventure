@@ -94,6 +94,7 @@ class GameMap:
             room = random.choice(possible_locations)
             placeable = method(*data) if isinstance(data, tuple) else method(data)
             setattr(room, attr, placeable)
+            placeable.current_room = room
             possible_locations.remove(room)
 
     def generate_character_data(self, weights, level_diffs, is_enemy):
@@ -591,7 +592,7 @@ class Room:
     
     def get_adjacent_rooms(self):
         adjacent_rooms = []
-        for direction, room in self.connected_rooms.items():
+        for _, room in self.connected_rooms.items():
             if room is not None:
                 adjacent_rooms.append(room)
         return adjacent_rooms
@@ -605,32 +606,38 @@ class Room:
 class Item:
     def __init__(self, name, details):
         self.name = name
+        self.current_room = None
         self.details = details
 
 class Healing:
     def __init__(self, name, hp):
         self.name = name
+        self.current_room = None
         self.hp = hp
 
 class Key(Item):
     def __init__(self, name, unlock_room):
         super().__init__(name, "This key can unlock " + unlock_room)
+        self.current_room = None
         self.unlock_room = unlock_room
 
 class Lock(Item):
     def __init__(self, name, locked_room):
         super().__init__(name, "This lock can be opened with a key for " + locked_room)
+        self.current_room = None
         self.locked_room = locked_room
 
 class Weapon(Item):
     def __init__(self, name, damage, accuracy):
         super().__init__(name, "This weapon can cause " + str(damage) + " points of damage.")
+        self.current_room = None
         self.damage = damage
         self.accuracy = accuracy
 
 class Armor(Item):
     def __init__(self, name, defp, ev):
         super().__init__(name, "This armor can defend against " + str(defp) + " points of damage.")
+        self.current_room = None
         self.defense = defp
         self.evasion = ev
 
