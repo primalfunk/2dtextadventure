@@ -2,7 +2,7 @@ import colorsys
 from combat import Combat
 from game_logic import Player, Key
 import logging
-from mapwindow import MapWindow
+from map_window import MapWindow
 from matplotlib import colors
 from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame, QGridLayout
 from PySide6.QtCore import Qt, QCoreApplication, QThread, QTimer
@@ -15,8 +15,259 @@ class GameGUI(QWidget):
     def __init__(self, data_loader=None):
         super().__init__()
         self.player = None
+        self.all_the_colors = ["#FF0000",  # Red
+                            "#00FF00",  # Lime
+                            "#0000FF",  # Blue
+                            "#FFFF00",  # Yellow
+                            "#00FFFF",  # Cyan
+                            "#FF00FF",  # Magenta
+                            "#FF7F00",  # Orange
+                            "#00FF7F",  # Spring Green
+                            "#007FFF",  # Azure
+                            "#7F00FF",  # Violet
+                            "#FF007F",  # Rose
+                            "#7FFF00",  # Chartreuse
+        ]
+        # gain focus immediately when created
+        self.setFocusPolicy(Qt.StrongFocus)
+        self.combat_object = None
+        self.combat_thread = None
+        self.data_loader = data_loader
+        self.game_map = None
+        self.initialize_game(won=False) # Instantiate the GameMap and Player from scratch
+        self.set_fonts()
+        # main layout
+        main_layout = QVBoxLayout() # top level layout is a QVBox
+        self.setLayout(main_layout)
+        # Player Info section shows the player coordinates, maybe other things later
+        self.player_info_label = QLabel("") # single-row-height at the very top of the window stretching almost the whole width
+        self.player_info_label.setFont(self.font_title)
+        self.player_info_label.setObjectName("player_info_label")
+        player_info_layout = QHBoxLayout() 
+        player_info_layout.addWidget(self.player_info_label)
+        # Font Size up/down buttons, on the same row as the Player Info to the right edge
+        self.font_size_decrease_button = QPushButton("-")
+        self.font_size_decrease_button.setObjectName("self.font_size_decrease_button")
+        self.font_size_decrease_button.setEnabled(False)
+        self.font_size_decrease_button.setFixedWidth(20)
+        self.font_size_increase_button = QPushButton("+")
+        self.font_size_increase_button.setObjectName("self.font_size_increase_button")
+        self.font_size_increase_button.setEnabled(False)
+        self.font_size_increase_button.setFixedWidth(20)
+        player_info_layout.addWidget(self.font_size_decrease_button)
+        player_info_layout.addWidget(self.font_size_increase_button)
+        self.font_size_decrease_button.clicked.connect(self.decrease_font_size)
+        self.font_size_increase_button.clicked.connect(self.increase_font_size)
+        main_layout.addLayout(player_info_layout)
+        # Game Text Area is the main viewing area
+        self.game_text_area = QTextEdit() # starting under the player info section and taking up most of the window
+        self.game_text_area.setObjectName("self.game_text_area")
+        self.game_text_area.setReadOnly(True)
+        self.game_text_area.setAlignment(Qt.AlignCenter)
+        self.game_text_area.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)        
+        main_layout.addWidget(self.game_text_area)
+        # Stats Frame (shows Player details)
+        lowest_row_height = 280
+        self.stats_label = QLabel("Player Stats")
+        self.stats_label.setObjectName("self.stats_label")
+        self.stats_label.setAlignment(Qt.AlignCenter)
+        self.stats_label.setFont(self.font_title)
+        self.stats_text = QTextEdit()
+        self.stats_text.setObjectName("self.stats_text")
+        new_font = self.font_main.family()
+        stats_font = QFont(new_font, 12) # special font size adjustment to make sure they all fit vertically
+        self.stats_text.setFont(stats_font)
+        self.stats_text.setReadOnly(True)
+        button_layout = QVBoxLayout()
+        button_layout.addWidget(self.stats_label)
+        button_layout.addWidget(self.stats_text)
+        button_layout.addStretch(1)
+        button_layout.addStretch(1)
+        # Buttons Frame (Start and Quit buttons)
+        self.start_button = QPushButton("s(T)art")
+        self.start_button.setObjectName("self.start_button")
+        self.start_button.setFont(self.font_title)
+        self.quit_button = QPushButton("(Q)uit")
+        self.quit_button.setObjectName("self.quit_button")
+        self.quit_button.setFont(self.font_title)
+        button_layout.addWidget(self.start_button)
+        button_layout.addWidget(self.quit_button)
+        self.buttons_frame = QFrame()
+        self.buttons_frame.setObjectName("self.buttons_frame")
+        self.buttons_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
+        buttons_frame_layout = QVBoxLayout()
+        buttons_frame_layout.addStretch(1)
+        buttons_frame_layout.addLayout(button_layout)
+        buttons_frame_layout.addStretch(1)
+        self.buttons_frame.setLayout(buttons_frame_layout)
+        self.buttons_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        self.buttons_frame.setFixedHeight(lowest_row_height)
+        self.start_button.clicked.connect(self.start_game)
+        self.quit_button.clicked.connect(QCoreApplication.instance().quit)
+        # Direction Frame (Cardinal buttons and Interact)
+        self.direction_frame = QFrame()
+        self.direction_frame.setObjectName("self.direction_frame")
+        self.direction_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
+        direction_layout = QGridLayout()
+        self.north_button = QPushButton("(N)orth")
+        self.north_button.setObjectName("self.north_button")
+        self.north_button.setFont(self.font_title)
+        self.west_button = QPushButton("(W)est")
+        self.west_button.setObjectName("self.west_button")
+        self.west_button.setFont(self.font_title)
+        self.east_button = QPushButton("(E)ast")
+        self.east_button.setObjectName("self.east_button")
+        self.east_button.setFont(self.font_title)
+        self.south_button = QPushButton("(S)outh")
+        self.south_button.setObjectName("self.south_button")
+        self.south_button.setFont(self.font_title)
+        self.interact_button = QPushButton("Interact(X)")
+        self.interact_button.setObjectName("self.interact_button")
+        self.interact_button.setFont(self.font_title)
+        direction_layout.addWidget(self.north_button, 0, 1, 1, 1)
+        direction_layout.addWidget(self.west_button, 1, 0, 1, 1)
+        direction_layout.addWidget(self.interact_button, 1, 1, 1, 1)
+        direction_layout.addWidget(self.east_button, 1, 2, 1, 1)
+        direction_layout.addWidget(self.south_button, 2, 1, 1, 1)
+        self.direction_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        self.direction_frame.setFixedHeight(lowest_row_height)
+        self.direction_frame.setLayout(direction_layout)
+        self.north_button.clicked.connect(lambda: self.travel("north"))
+        self.west_button.clicked.connect(lambda: self.travel("west"))
+        self.east_button.clicked.connect(lambda: self.travel("east"))
+        self.south_button.clicked.connect(lambda: self.travel("south"))
+        self.interact_button.clicked.connect(lambda: self.interact())
+        # Keyboard shortcuts
+        shortcut_north = QShortcut(QKeySequence("n"), self)
+        shortcut_south = QShortcut(QKeySequence("s"), self)
+        shortcut_west = QShortcut(QKeySequence("w"), self)
+        shortcut_east = QShortcut(QKeySequence("e"), self)
+        shortcut_start = QShortcut(QKeySequence("t"), self)
+        shortcut_quit = QShortcut(QKeySequence("q"), self)
+        shortcut_interact = QShortcut(QKeySequence("x"), self)
+        shortcut_north.activated.connect(self.travel_to_north)
+        shortcut_south.activated.connect(self.travel_to_south)
+        shortcut_west.activated.connect(self.travel_to_west)
+        shortcut_east.activated.connect(self.travel_to_east)
+        shortcut_start.activated.connect(self.start_game)
+        shortcut_quit.activated.connect(QCoreApplication.instance().quit)
+        shortcut_interact.activated.connect(self.interact)
+        # Adding arrow key shortcuts
+        shortcut_up = QShortcut(QKeySequence(Qt.Key_Up), self)
+        shortcut_down = QShortcut(QKeySequence(Qt.Key_Down), self)
+        shortcut_left = QShortcut(QKeySequence(Qt.Key_Left), self)
+        shortcut_right = QShortcut(QKeySequence(Qt.Key_Right), self)
+        shortcut_up.activated.connect(self.travel_to_north)
+        shortcut_down.activated.connect(self.travel_to_south)
+        shortcut_left.activated.connect(self.travel_to_west)
+        shortcut_right.activated.connect(self.travel_to_east)
+        self.inventory_frame = QFrame()
+        self.inventory_frame.setObjectName("self.inventory_frame")
+        self.inventory_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
+        inventory_layout = QVBoxLayout()
+        self.inventory_label = QLabel("Inventory")
+        self.inventory_label.setFont(self.font_title)
+        self.inventory_label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.inventory_text = QTextEdit()
+        self.inventory_text.setObjectName("self.inventory_text")
+        self.inventory_text.setFont(self.font_main)
+        self.inventory_text.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        inventory_layout.addWidget(self.inventory_label)
+        inventory_layout.addWidget(self.inventory_text)
+        inventory_layout.setStretch(0, 0)
+        self.inventory_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        self.inventory_frame.setFixedHeight(lowest_row_height)
+        self.inventory_frame.setLayout(inventory_layout)
+        bottom_layout = QHBoxLayout()
+        bottom_layout.addWidget(self.buttons_frame)
+        bottom_layout.addWidget(self.direction_frame)
+        bottom_layout.addWidget(self.inventory_frame)
+        main_layout.setStretch(0, 0)
+        main_layout.setStretch(1, 2) 
+        main_layout.setStretch(2, 1)
+        main_layout.addLayout(bottom_layout)
+        self.interactive_buttons = [self.font_size_decrease_button, 
+                                    self.font_size_increase_button,
+                                    self.north_button,
+                                    self.west_button,
+                                    self.east_button,
+                                    self.south_button,
+                                    self.interact_button]
+        self.setWindowTitle("Undeclared Game Title")
+        self.setGeometry(200, 100, 950, 700)
+        self.set_new_game_title()
         self.set_color_scheme()
-        self.subsToChoose = [
+        self.show()
+        # self.player = Player() # The main Player object is here; all other methods/classes should operate on this one
+        self.treasure = self.data_loader.treasure # and set the treasure for the map
+        self.update_player_stats()
+
+    def set_color_scheme(self):
+        print("\nSetting color scheme...")
+        base_color = self.all_the_colors[random.randint(0, len(self.all_the_colors) - 1)]
+        print(f"base color is {base_color}")
+        rgb_base_color = colors.hex2color(base_color)
+        hsv_base_color = colorsys.rgb_to_hsv(*rgb_base_color)
+        num_shades = 9  # Total number of shades
+        # Define the start and end points for saturation and value
+        start_s, end_s = 0.1, 1
+        start_v, end_v = 1, 0.1
+        # Define the steps for saturation and value
+        step_s = (end_s - start_s) / (num_shades - 1)
+        step_v = (end_v - start_v) / (num_shades - 1)
+        gui_colors = []  # List to store the generated colors
+        # Generate the colors
+        for i in range(num_shades):
+            s = start_s + i * step_s
+            v = start_v + i * step_v
+            rgb_shade = colorsys.hsv_to_rgb(hsv_base_color[0], s, v)
+            hex_color = self.rgb_to_hex((int(rgb_shade[0]*255), int(rgb_shade[1]*255), int(rgb_shade[2]*255)))
+            gui_colors.append(hex_color)
+        # Set up the elements with the colors methodically and simply
+        self.player_info_label.setStyleSheet(f"background-color: {gui_colors[3]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[8]}")
+        self.font_size_increase_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.font_size_decrease_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.game_text_area.setStyleSheet(f"background-color: {gui_colors[0]}; border: 1px solid {gui_colors[5]}; color: {gui_colors[8]}")
+        self.stats_text.setStyleSheet(f"background-color: {gui_colors[1]}; border: 1px solid {gui_colors[4]}; color: {gui_colors[8]}")
+        self.stats_label.setStyleSheet(f"background-color: {gui_colors[3]}; border: 1px solid {gui_colors[7]}; color: {gui_colors[8]}")
+        self.inventory_text.setStyleSheet(f"background-color: {gui_colors[1]}; border: 1px solid {gui_colors[4]}; color: {gui_colors[8]}")
+        self.inventory_label.setStyleSheet(f"background-color: {gui_colors[3]}; border: 1px solid {gui_colors[7]}; color: {gui_colors[8]}")
+        self.inventory_label.setStyleSheet(f"background-color: {gui_colors[3]}; border: 1px solid {gui_colors[7]}; color: {gui_colors[8]}")
+        self.buttons_frame.setStyleSheet(f"background-color: {gui_colors[1]}; border: 1px solid {gui_colors[4]}; color: {gui_colors[8]}")
+        self.direction_frame.setStyleSheet(f"background-color: {gui_colors[1]}; border: 1px solid {gui_colors[4]}; color: {gui_colors[8]}")
+        self.start_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.quit_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.north_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.south_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.east_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.west_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+        self.interact_button.setStyleSheet(f"background-color: {gui_colors[4]}; border: 1px solid {gui_colors[6]}; color: {gui_colors[7]}")
+
+    def set_fonts(self):
+        self.font_size = 14
+        self.min_font_size = 10
+        self.max_font_size = 30
+        # randomize the fonts
+        self.chooseFonts = ["Bebas Neue", "Cinzel", "Playfair Display", "Montserrat", "Raleway", "Roboto Slab", "Oswald", "Lato", "Open Sans", 
+                            "Droid Serif", "Merriweather", "Arvo", "PT Sans", "Ubuntu", "Lora", "Bitter"]
+        self.font_t= random.choice(self.chooseFonts)
+        self.font_m = random.choice(self.chooseFonts)
+        retries = 0
+        while self.font_t == self.font_m and retries < 10: # ensure two different fonts are chosen
+            print(f"Looping to get a new font_m, retry {retries}")
+            retries += 1
+            self.font_m = random.choice(self.chooseFonts)
+        self.font_title = QFont(self.font_t, self.font_size)
+        self.font_main = QFont(self.font_m, self.font_size)
+        print(f"Titles font set to: {self.font_t}")
+        print(f"Main font set to {self.font_m}")
+
+    def set_frame_style(self, frame, color):
+        style_string = f"border: 2px solid {color};"
+        frame.setStyleSheet(style_string)
+
+    def set_new_game_title(self):
+        subsToChoose = [
         "2023 all wrongs left unreserved",
         "2023 more rights than a roundabout",
         "2023 right-hand traffic not guaranteed",
@@ -49,224 +300,18 @@ class GameGUI(QWidget):
         "2023 this is my rights there are many like it but this one is mine"
         "2023 this right is my right, it isn't your right"
         ]
-        # gain focus immediately when created
-        self.setFocusPolicy(Qt.StrongFocus)
-
-        self.combat_object = None
-        self.combat_thread = None
-        self.data_loader = data_loader
-        self.game_map = None
-
-        self.set_fonts()
-        
-        main_layout = QVBoxLayout() # top level layout is a QVBox
-        self.setLayout(main_layout)
-    
-        self.player_info_label = QLabel("") # player info section, single-row-height at the very top of the window stretching almost the whole width
-        self.player_info_label.setFont(self.font_title)
-        player_info_layout = QHBoxLayout() 
-        player_info_layout.addWidget(self.player_info_label)
-
-        self.font_size_decrease_button = QPushButton("-") # text size buttons, not currently working but do need styling
-        self.font_size_decrease_button.setEnabled(False)
-        self.font_size_decrease_button.setFixedWidth(20)
-        self.font_size_increase_button = QPushButton("+")
-        self.font_size_increase_button.setEnabled(False)
-        self.font_size_increase_button.setFixedWidth(20)
-        player_info_layout.addWidget(self.font_size_decrease_button)
-        player_info_layout.addWidget(self.font_size_increase_button)
-        self.font_size_decrease_button.clicked.connect(self.decrease_font_size)
-        self.font_size_increase_button.clicked.connect(self.increase_font_size)
-        main_layout.addLayout(player_info_layout)
-        
-        self.game_text_area = QTextEdit() # Main text area, starting under the player info section and taking up most of the window
-        self.game_text_area.setReadOnly(True)
-        self.game_text_area.setAlignment(Qt.AlignCenter)
-        self.game_text_area.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)        
-        main_layout.addWidget(self.game_text_area)
-        
-        self.initialize_game(won=False) # Instantiate the GameMap and Player from scratch
-        self.player = Player() # The main Player object is here; all other methods/classes should operate on this one
-
-        game_title = self.data_loader.generate_game_title() # and set the treasure for the map
-        self.treasure = self.data_loader.treasure
-
-        format = QtGui.QTextCharFormat()
-        font = QFont({self.font_m}, 52)
+        self.game_title = self.data_loader.generate_game_title()
+        format = QtGui.QTextCharFormat() # We need to use QTextCharFormat when we are going to write with more than one font in a single shot
+        font = QFont({self.font_m}, 30)
         format.setFont(font)
         cursor = self.game_text_area.textCursor()
         cursor.setCharFormat(format)
-        cursor.insertText(game_title)
+        cursor.insertText(self.game_title)
         format.setFont(self.font_title)
         cursor.insertBlock()
         cursor.setCharFormat(format)
-        self.subLine = random.choice(self.subsToChoose)
-        cursor.insertText(f"\na procedurally generated text adventure by j menard \n{self.subLine}\n")
-        
-        lowest_row_height = 280
-        self.start_button = QPushButton("s(T)art")
-        self.start_button.setFont(self.font_title)
-        self.quit_button = QPushButton("(Q)uit")
-        self.quit_button.setFont(self.font_title)
-        self.start_button.clicked.connect(self.start_game)
-        self.quit_button.clicked.connect(QCoreApplication.instance().quit)
-        
-        self.stats_label = QLabel("Player Stats")
-        self.stats_label.setAlignment(Qt.AlignCenter)
-        self.stats_label.setFont(self.font_title)
-        self.stats_text = QTextEdit()
-        new_font = self.font_main.family()
-        stats_font = QFont(new_font, 12) # special font size adjustment to make sure they all fit vertically
-        self.stats_text.setFont(stats_font)
-        self.stats_text.setReadOnly(True)
-        
-        button_layout = QVBoxLayout()
-        button_layout.addWidget(self.stats_label)
-        button_layout.addWidget(self.stats_text)
-        button_layout.addStretch(1)
-        button_layout.addStretch(1)
-        button_layout.addWidget(self.start_button)
-        button_layout.addWidget(self.quit_button)
-        self.buttons_frame = QFrame()
-        self.buttons_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
-        buttons_frame_layout = QVBoxLayout()
-        buttons_frame_layout.addStretch(1)
-        buttons_frame_layout.addLayout(button_layout)
-        buttons_frame_layout.addStretch(1)
-        self.buttons_frame.setLayout(buttons_frame_layout)
-        self.buttons_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        self.buttons_frame.setFixedHeight(lowest_row_height)
-        
-        self.direction_frame = QFrame()
-        self.direction_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
-        direction_layout = QGridLayout()
-        self.north_button = QPushButton("(N)orth")
-        self.north_button.setFont(self.font_title)
-        self.west_button = QPushButton("(W)est")
-        self.west_button.setFont(self.font_title)
-        self.east_button = QPushButton("(E)ast")
-        self.east_button.setFont(self.font_title)
-        self.south_button = QPushButton("(S)outh")
-        self.south_button.setFont(self.font_title)
-        self.interact_button = QPushButton("Interact(X)")
-        self.interact_button.setFont(self.font_title)
-        direction_layout.addWidget(self.north_button, 0, 1, 1, 1)
-        direction_layout.addWidget(self.west_button, 1, 0, 1, 1)
-        direction_layout.addWidget(self.interact_button, 1, 1, 1, 1)
-        direction_layout.addWidget(self.east_button, 1, 2, 1, 1)
-        direction_layout.addWidget(self.south_button, 2, 1, 1, 1)
-        self.direction_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        self.direction_frame.setFixedHeight(lowest_row_height)
-        self.direction_frame.setLayout(direction_layout)
-        self.north_button.clicked.connect(lambda: self.travel("north"))
-        self.west_button.clicked.connect(lambda: self.travel("west"))
-        self.east_button.clicked.connect(lambda: self.travel("east"))
-        self.south_button.clicked.connect(lambda: self.travel("south"))
-        self.interact_button.clicked.connect(lambda: self.interact())
-        
-        # Keyboard shortcuts
-        shortcut_north = QShortcut(QKeySequence("n"), self)
-        shortcut_south = QShortcut(QKeySequence("s"), self)
-        shortcut_west = QShortcut(QKeySequence("w"), self)
-        shortcut_east = QShortcut(QKeySequence("e"), self)
-        shortcut_start = QShortcut(QKeySequence("t"), self)
-        shortcut_quit = QShortcut(QKeySequence("q"), self)
-        shortcut_interact = QShortcut(QKeySequence("x"), self)
-
-        shortcut_north.activated.connect(self.travel_to_north)
-        shortcut_south.activated.connect(self.travel_to_south)
-        shortcut_west.activated.connect(self.travel_to_west)
-        shortcut_east.activated.connect(self.travel_to_east)
-        shortcut_start.activated.connect(self.start_game)
-        shortcut_quit.activated.connect(QCoreApplication.instance().quit)
-        shortcut_interact.activated.connect(self.interact)
-
-        # Adding arrow key shortcuts
-        shortcut_up = QShortcut(QKeySequence(Qt.Key_Up), self)
-        shortcut_down = QShortcut(QKeySequence(Qt.Key_Down), self)
-        shortcut_left = QShortcut(QKeySequence(Qt.Key_Left), self)
-        shortcut_right = QShortcut(QKeySequence(Qt.Key_Right), self)
-
-        shortcut_up.activated.connect(self.travel_to_north)
-        shortcut_down.activated.connect(self.travel_to_south)
-        shortcut_left.activated.connect(self.travel_to_west)
-        shortcut_right.activated.connect(self.travel_to_east)
-        
-        self.inventory_frame = QFrame()
-        self.inventory_frame.setFrameStyle(QFrame.Box | QFrame.Raised)
-        inventory_layout = QVBoxLayout()
-        self.inventory_label = QLabel("Inventory")
-        self.inventory_label.setFont(self.font_title)
-        self.inventory_label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
-        self.inventory_text = QTextEdit()
-        self.inventory_text.setFont(self.font_main)
-        self.inventory_text.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        inventory_layout.addWidget(self.inventory_label)
-        inventory_layout.addWidget(self.inventory_text)
-        inventory_layout.setStretch(0, 0)
-        self.inventory_frame.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        self.inventory_frame.setFixedHeight(lowest_row_height)
-        self.inventory_frame.setLayout(inventory_layout)
-        bottom_layout = QHBoxLayout()
-        bottom_layout.addWidget(self.buttons_frame)
-        bottom_layout.addWidget(self.direction_frame)
-        bottom_layout.addWidget(self.inventory_frame)
-        main_layout.setStretch(0, 0)
-        main_layout.setStretch(1, 2) 
-        main_layout.setStretch(2, 1)
-        main_layout.addLayout(bottom_layout)
-        self.interactive_buttons = [self.font_size_decrease_button, 
-                                    self.font_size_increase_button,
-                                    self.north_button,
-                                    self.west_button,
-                                    self.east_button,
-                                    self.south_button,
-                                    self.interact_button]
-        self.setWindowTitle("Undeclared Game Title")
-        self.setGeometry(200, 100, 950, 700)
-        self.show()
-        self.update_player_stats()
-
-    def set_color_scheme(self):
-        # choose the color scheme
-        self.all_the_colors = [
-                "cyan", "magenta", "silver", "orange", "pink", "violet", 
-                "coral", "lavender", "turquoise", "skyblue", "salmon", "peachpuff", 
-                "chartreuse", "firebrick", "indigo", "khaki", "olive", "peru", 
-                "plum", "sienna", "teal", "thistle", "tomato", "navajowhite", "wheat", 
-                "springgreen", "royalblue", "saddlebrown", "seashell", "snow", "steelblue", 
-                "tan", "slategray", "lightcyan", "mintcream", "palevioletred"
-            ]
-        base_color = self.all_the_colors[random.randint(0, len(self.all_the_colors) -1)]
-        rgb_base_color = colors.cnames[base_color]
-        hsv_base_color = colorsys.rgb_to_hsv(*colors.hex2color(rgb_base_color))
-        shades_of_base_color = []
-        num_shades = 2
-        for i in range(num_shades):
-            h = (hsv_base_color[0] + i/float(num_shades)) % 1
-            rgb_shade = colorsys.hsv_to_rgb(h, hsv_base_color[1], hsv_base_color[2])
-            shades_of_base_color.append(self.rgb_to_hex((int(rgb_shade[0]*255), int(rgb_shade[1]*255), int(rgb_shade[2]*255))))
-        self.color_one = shades_of_base_color[0]
-        self.color_two = shades_of_base_color[1]
-        return shades_of_base_color
-
-    def set_fonts(self):
-        self.font_size = 14
-        self.min_font_size = 10
-        self.max_font_size = 30
-        # randomize the fonts
-        self.chooseFonts = ["Bebas Neue", "Cinzel", "Playfair Display", "Montserrat", "Raleway", "Roboto Slab", "Oswald", "Lato", "Open Sans", 
-                            "Droid Serif", "Merriweather", "Arvo", "PT Sans", "Ubuntu", "Lora", "Bitter"]
-        self.font_t= random.choice(self.chooseFonts)
-        self.font_m = random.choice(self.chooseFonts)
-        retries = 0
-        while self.font_t == self.font_m and retries < 10: # ensure two different fonts are chosen
-            retries += 1
-            self.font_m = random.choice(self.chooseFonts)
-        self.font_title = QFont(self.font_t, 14)
-        self.font_main = QFont(self.font_m, 14)
-        print(f"Titles font set to: {self.font_t}")
-        print(f"Main font set to {self.font_m}")
+        subLine = random.choice(subsToChoose)
+        cursor.insertText(f"a procedurally generated text adventure mess by j menard \n{subLine}\n")
 
     def travel_to_north(self):
         self.travel("north")
@@ -343,7 +388,6 @@ class GameGUI(QWidget):
         self.game_map = self.data_loader.get_game_map()
 
     def start_game(self):
-        self.game_text_area.setStyleSheet(f"background-color: {self.color_one};")
         self.enable_all_buttons()
         self.update_player_stats()
         if self.game_map:
@@ -365,7 +409,6 @@ class GameGUI(QWidget):
             self.player.y = first_room.y
             self.player.current_room = first_room
             self.current_room = first_room
-            self.update_player_info()
             self.start_button.setText("Res(T)art")
             self.font_size_increase_button.setEnabled(True)
             self.font_size_decrease_button.setEnabled(True)
@@ -374,24 +417,13 @@ class GameGUI(QWidget):
             self.map_window.update_map()
         else:
             self.initialize_game(won=False) # character chooses restart
+            self.set_color_scheme()
             self.stats_text.clear()
             self.game_text_area.clear()
             self.game_text_area.setAlignment(Qt.AlignCenter)
-            game_title = self.data_loader.generate_game_title()
-            format = QtGui.QTextCharFormat()
-            
-            font_choice = random.choice(self.chooseFonts)
-            print(f"font_choice: {font_choice}")
-            font = QFont({font_choice}, 40)
-            format.setFont(font)
-            cursor = self.game_text_area.textCursor()
-            cursor.setCharFormat(format)
-            cursor.insertText(game_title)
-            format.setFont(self.font_title)
-            cursor.insertBlock()
-            cursor.setCharFormat(format)
-            self.subLine = random.choice(self.subsToChoose)
-            cursor.insertText(f"a procedurally generated text adventure by j menard\n{self.subLine}\n")
+            self.game_title = self.data_loader.generate_game_title()
+            self.set_fonts()
+            self.set_new_game_title()
             self.start_button.setText("s(T)art")
             self.font_size_increase_button.setEnabled(False)
             self.font_size_decrease_button.setEnabled(False)
@@ -581,7 +613,6 @@ class GameGUI(QWidget):
 
     def show_self(self):
         self.show()
-        print(self.isVisible())
         self.update_map()
 
     def hide_map(self):
@@ -639,7 +670,7 @@ class GameGUI(QWidget):
         QTimer.singleShot(2000, self.beat_the_level4)
     
     def beat_the_level4(self):
-        self.game_text_area.setStyleSheet(f"background-color: {self.color_one};")
+        self.game_text_area.setStyleSheet(f"background-color: {self.background_color};")
         game_title = self.data_loader.generate_game_title()
         format = QtGui.QTextCharFormat()
         font_choice = random.choice(self.chooseFonts)
@@ -685,23 +716,3 @@ class GameGUI(QWidget):
 
     def rgb_to_hex(self, rgb):
         return '#%02x%02x%02x' % rgb
-
-class AspectRatioWidget(QWidget):
-    def __init__(self, widget):
-        super().__init__()
-        self._layout = QVBoxLayout(self)
-        self._layout.setContentsMargins(0, 0, 0, 0)
-        self._layout.addWidget(widget)
-    
-    def resizeEvent(self, e):
-        w = e.size().width()
-        h = e.size().height()
-
-        if w > h:  # if the width is greater than the height
-            widget_h = h
-            widget_w = h
-        else:  # if the width is less than or equal to the height
-            widget_w = w
-            widget_h = w
-
-        self._layout.itemAt(0).widget().resize(widget_w, widget_h)
