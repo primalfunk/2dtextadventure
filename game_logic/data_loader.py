@@ -1,4 +1,4 @@
-from game_logic import GameMap
+from game_logic.game_logic import GameMap
 import json
 import logging
 import os

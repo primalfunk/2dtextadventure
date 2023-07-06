@@ -51,14 +51,14 @@ class MapWindow(QWidget):
         self.room_type_legend_layout = QVBoxLayout(self.room_type_legend_widget)
         self.text_color = "black"
         self.legend_labels = {
-            QPixmap(self.resource_path("img/player.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Player"),
-            QPixmap(self.resource_path("img/enemy.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Enemy"),
-            QPixmap(self.resource_path("img/weapon.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Weapon"),
-            QPixmap(self.resource_path("img/armor.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Armor"),
-            QPixmap(self.resource_path("img/key.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Key"),
-            QPixmap(self.resource_path("img/lock.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Lock"),
-            QPixmap(self.resource_path("img/ally.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Ally"),
-            QPixmap(self.resource_path("img/new_empty.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel('Room')
+            QPixmap(self.resource_path("../img/player.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Player"),
+            QPixmap(self.resource_path("../img/enemy.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Enemy"),
+            QPixmap(self.resource_path("../img/weapon.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Weapon"),
+            QPixmap(self.resource_path("../img/armor.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Armor"),
+            QPixmap(self.resource_path("../img/key.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Key"),
+            QPixmap(self.resource_path("../img/lock.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Lock"),
+            QPixmap(self.resource_path("../img/ally.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel("Ally"),
+            QPixmap(self.resource_path("../img/new_empty.png")).scaled(20, 20, Qt.KeepAspectRatio, Qt.SmoothTransformation): QLabel('Room')
         }
         # Set up for the Item Legend
         for pixmap, label in self.legend_labels.items():
@@ -92,14 +92,14 @@ class MapWindow(QWidget):
                     self.labels[i][j].setStyleSheet(f"background-color: blue; min-width: 10px; min-height: 10px;")
                 self.grid_layout.addWidget(self.labels[i][j], i, j)
         self.room_pixmaps = {
-            "player": QPixmap(self.resource_path("img/player.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "enemy": QPixmap(self.resource_path("img/enemy.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "weapon": QPixmap(self.resource_path("img/weapon.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "armor": QPixmap(self.resource_path("img/armor.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "key": QPixmap(self.resource_path("img/key.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "lock": QPixmap(self.resource_path("img/lock.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "ally": QPixmap(self.resource_path("img/ally.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
-            "empty": QPixmap(self.resource_path("img/new_empty.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "player": QPixmap(self.resource_path("../img/player.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "enemy": QPixmap(self.resource_path("../img/enemy.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "weapon": QPixmap(self.resource_path("../img/weapon.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "armor": QPixmap(self.resource_path("../img/armor.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "key": QPixmap(self.resource_path("../img/key.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "lock": QPixmap(self.resource_path("../img/lock.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "ally": QPixmap(self.resource_path("../img/ally.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
+            "empty": QPixmap(self.resource_path("../img/new_empty.png")).scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation),
             }
         self.setLayout(self.layout)
         self.room_type_colors = {}

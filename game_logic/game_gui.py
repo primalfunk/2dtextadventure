@@ -1,8 +1,8 @@
 import colorsys
-from combat import Combat
-from game_logic import Player, Key
+from .combat import Combat
+from .game_logic import Player, Key
 import logging
-from map_window import MapWindow
+from .map_window import MapWindow
 from matplotlib import colors
 from PySide6.QtWidgets import QWidget, QGridLayout, QTextEdit, QLabel, QPushButton, QSizePolicy, QHBoxLayout, QVBoxLayout, QFrame, QGridLayout
 from PySide6.QtCore import Qt, QCoreApplication, QThread, QTimer
@@ -250,8 +250,10 @@ class GameGUI(QWidget):
         # randomize the fonts
         self.chooseFonts = ["Bebas Neue", "Cinzel", "Playfair Display", "Montserrat", "Raleway", "Roboto Slab", "Oswald", "Lato", "Open Sans", 
                             "Droid Serif", "Merriweather", "Arvo", "PT Sans", "Ubuntu", "Lora", "Bitter"]
-        self.font_t= random.choice(self.chooseFonts)
+        # disconnecting this feature temporarily?
+        # self.font_t= random.choice(self.chooseFonts)
         self.font_m = random.choice(self.chooseFonts)
+        self.font_t = "Gothic"
         retries = 0
         while self.font_t == self.font_m and retries < 10: # ensure two different fonts are chosen
             print(f"Looping to get a new font_m, retry {retries}")
@@ -311,7 +313,7 @@ class GameGUI(QWidget):
         cursor.insertBlock()
         cursor.setCharFormat(format)
         subLine = random.choice(subsToChoose)
-        cursor.insertText(f"a procedurally generated text adventure mess by j menard \n{subLine}\n")
+        cursor.insertText(f"a procedurally generated text misadventure by j menard \n{subLine}\n")
 
     def travel_to_north(self):
         self.travel("north")

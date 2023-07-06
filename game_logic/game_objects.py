@@ -135,6 +135,8 @@ class Character:
         self.is_dead = False
         self.base_xp_reward = 100
         self.base_xp_peak = 250
+        self.weapon_tier = 0
+        self.armor_tier = 0
         
     def xp_required_to_level_up(self):
         return self.base_xp_peak * (1.5 ** (self.level - 1)) 

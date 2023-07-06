@@ -1,4 +1,4 @@
-from game_objects import Armor, Character, Healing, Key, Lock, Player, Room , Weapon 
+from .game_objects import Armor, Character, Healing, Key, Lock, Player, Room , Weapon 
 import itertools
 import logging
 import numpy as np
