@@ -113,17 +113,19 @@ class Armor(Item):
         self.evasion = ev
 
 class Character:
-    def __init__(self, name, level, hp, atk, defp, acc, ev, is_enemy):
+    def __init__(self, name, level, hp, atk, defp, acc, ev, wt, at, is_enemy):
         if not isinstance(self, Player):
             self.name = self.generate_decorated_name(name, is_enemy, level)
         else:
             self.name = name
         self.level = level
-        self.hp = hp + sum(random.randint(4, 6) for _ in range(self.level))  # Base HP is 10, plus 4-6 per level
-        self.atk = atk + sum(random.randint(2, 4) for _ in range(self.level))  # Base attack is 5, plus 2-4 per level
-        self.defp = defp + sum(random.randint(1, 3) for _ in range(self.level))  # Base defense is 5, plus 1-3 per level
-        self.acc = acc + sum(random.randint(0, 2) for _ in range(self.level))  # Base accuracy is 70%, plus 0-2% per level
-        self.ev = ev + sum(random.randint(0, 2) for _ in range(self.level))  # Base evasion is 10%, plus 0-2% per level
+        self.hp = hp + sum(random.randint(2, 12) for _ in range(self.level))
+        self.atk = atk + sum(random.randint(1, 3) for _ in range(self.level)) 
+        self.defp = defp + sum(random.randint(1, 2) for _ in range(self.level))
+        self.acc = acc + sum(random.randint(1, 2) for _ in range(self.level))
+        self.ev = ev + sum(random.randint(1, 2) for _ in range(self.level))
+        
+        
         self.weapon = None
         self.armor = None
         self.inventory = []
@@ -135,8 +137,8 @@ class Character:
         self.is_dead = False
         self.base_xp_reward = 100
         self.base_xp_peak = 250
-        self.weapon_tier = 0
-        self.armor_tier = 0
+        self.weapon_tier = wt
+        self.armor_tier = at
         
     def xp_required_to_level_up(self):
         return self.base_xp_peak * (1.5 ** (self.level - 1)) 
@@ -202,7 +204,7 @@ class Character:
 
 class Player(Character):
     def __init__(self):
-        super().__init__(name="Player", level=1, hp=100, atk=10, defp=10, acc=45, ev=35, is_enemy=False)
+        super().__init__(name="Player", level=1, hp=100, atk=10, defp=10, acc=45, ev=35, wt=0, at=0, is_enemy=False)
         self.xp = 0
         self.key = None
 
